@@ -1,0 +1,157 @@
+/* ====== Tablets and Small Laptops ====== */
+@media screen and (max-width: 1200px) {
+    section {
+        padding: 6rem 5% 4rem;
+    }
+    
+    .profile-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .profile-pic {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .about-pic {
+        width: 350px;
+        height: 350px;
+    }
+    
+    #desktop-nav {
+        display: none;
+    }
+    
+    #hamburger-nav {
+        display: flex;
+    }
+    
+    .section-container {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info-upper-container,
+    .contact-form {
+        width: 100%;
+    }
+    
+    .timeline::before {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
+        left: 15px;
+        right: auto;
+    }
+}
+
+/* ====== Large Phones and Small Tablets ====== */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 6rem 3% 4rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .about-pic {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .terminal-window {
+        margin: 1rem auto;
+    }
+    
+    .github-card {
+        margin: 1.5rem auto;
+    }
+    
+    .article-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .certifications-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====== Small Phones ====== */
+@media screen and (max-width: 480px) {
+    section {
+        padding: 6rem 2% 4rem;
+        min-height: auto;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about-pic {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .terminal-window {
+        border-radius: 0;
+        margin: 0.5rem -2%;
+        width: calc(100% + 4%);
+    }
+    
+    .btn-container {
+        flex-direction: column;
+    }
+    
+    .floating-tech-icons i {
+        font-size: 1.5rem;
+    }
+    
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .experience-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        width: 100%;
+    }
+}

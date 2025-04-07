@@ -1,561 +1,1135 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" data-theme="light">
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
+    <title>Isaac Zachary | Technical Support </title>
+    <meta name="description" content="Professional portfolio of Isaac Zachary - DevOps Engineer & Software Support Specialist with expertise in cloud infrastructure, CI/CD pipelines, and technical problem-solving">
+    <meta name="keywords" content="DevOps, Software Support, Cloud Engineering, CI/CD, AWS, Docker, Kubernetes, Python, Django">
+    <meta name="author" content="Isaac Zachary">
+    <meta property="og:title" content="Isaac Zachary | DevOps & Software Support Engineer">
+    <meta property="og:description" content="Professional portfolio showcasing DevOps and software support expertise">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://isaaczachary.github.io">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaqueries.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <!-- Terminal-style Dark Mode Toggle -->
+
+    <!-- Navigation -->
     <nav id="desktop-nav">
-      <div class="logo">Isaac Zachary</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="terminal-toggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        <span class="terminal-prompt">[]▐</span>
+                        <span class="terminal-command">dark</span>
+                        <span class="terminal-cursor">█</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
     </nav>
+    
+    <!-- Hamburger Navigation -->
     <nav id="hamburger-nav">
-      <div class="logo">Isaac Zachary</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()" class="nav-link">About</a></li>
+                <li><a href="#education" onclick="toggleMenu()" class="nav-link">Education</a></li>
+                <li><a href="#experience" onclick="toggleMenu()" class="nav-link">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" onclick="toggleMenu()" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" onclick="toggleMenu()" class="nav-link">Contact</a></li>
+            </div>
         </div>
-      </div>
     </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" 
-             alt="Isaac Zachary profile picture"
-             class="profile-pic"
-          />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Isaac Zachary</h1>
-        <p class="section__text__p2">Software Support Engineer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+
+    <!-- Profile Section with Floating Tech Icons -->
+    <section id="profile" class="profile-section">
+        <div class="floating-tech-icons">
+            <i class="fab fa-python" style="--i:1"></i>
+            <i class="fab fa-windows" style="--i:2"></i>
+            <i class="fab fa-linux" style="--i:3"></i>
+            <i class="fab fa-js" style="--i:4"></i>
+            <i class="fab fa-html5" style="--i:5"></i>
+            <i class="fab fa-css3-alt" style="--i:6"></i>
+            <i class="fab fa-git-alt" style="--i:7"></i>
+            <i class="fab fa-php" style="--i:8"></i>
+            <i class="fab fa-docker" style="--i:9"></i>
         </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/isaaczachary/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/IsaacZachary'"
-          />
+        
+        <div class="profile-content">
+            <div class="profile-pic-container">
+                <img src="./assets/profile-pic.png" alt="Isaac Zachary profile picture" class="profile-pic">
+            </div>
+            
+            <div class="terminal-window profile-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <div class="terminal-title">isaac_zachary --profile</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span> whoami
+                    </div>
+                    <div class="terminal-output">
+                        <h1 class="title">Isaac Zachary</h1>
+                        <p class="section__text__p2">Technical Support | Software Development </p>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span> cat about.txt
+                    </div>
+                    <div class="terminal-output">
+                        <p class="section__text__p1">Hello, I'm a passionate technologist specializing in</p>
+                        <p class="section__text__p1">- Software Support & Troubleshooting</p>
+                        <p class="section__text__p1">- Creative Design & AI/ML</p>
+                        <p class="section__text__p1">- DevOps & Cloud Infrastructure</p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+                          Download CV
+                        </button>
+                        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                          Contact Info
+                        </button>
+                      </div>
+                </div>
+            </div>
+            
+            <!-- Combined GitHub Stats Widget -->
+            <div class="github-card profile-github">
+                <div class="github-header">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub Activity</h3>
+                </div>
+                <div class="github-stats-container">
+                    <div class="stat-box">
+                        <div class="stat-value" id="github-repos">--</div>
+                        <div class="stat-label">Repositories</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="github-stars">--</div>
+                        <div class="stat-label">Stars</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="github-commits">--</div>
+                        <div class="stat-label">Commits</div>
+                    </div>
+                </div>
+                <div class="github-footer">
+                    <a href="https://github.com/IsaacZachary" target="_blank">View Profile →</a>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
+
+    <!-- About Section -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>3+ years <br />Software Support</p>
+        <div class="terminal-window compact">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
+                </div>
+                <div class="terminal-title">isaac_zachary --about</div>
             </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />Software Development</p>
+            <div class="terminal-body">
+                <p class="section__text__p1">Get To Know More</p>
+                <h1 class="title">Professional Overview</h1>
+                <div class="section-container">
+                    <div class="section__pic-container">
+                        <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic">
+                    </div>
+                    <div class="about-details-container">
+                        <div class="about-containers">
+                            <div class="details-container terminal-style">
+                                <i class="fas fa-server icon"></i>
+                                <h3>Support</h3>
+                                <p>Configuration<br>Troubleshooting</p>
+                            </div>
+                            <div class="details-container terminal-style">
+                                <i class="fas fa-code-branch icon"></i>
+                                <h3>Development</h3>
+                                <p>Python/PHP<br>Web Technologies</p>
+                            </div>
+                        </div>
+                        <div class="text-container terminal-style">
+                            <p>
+                                Software Technical Support Specialist with 3+ years of experience in 
+                                providing technical solutions, troubleshooting software issues, and 
+                                ensuring seamless system operations.
+                            </p>
+                            <p class="mt-2">
+                                Managing websites on CMS platforms like WordPress, implementing UI/UX designs, 
+                                and optimizing web performance. Passionate about bridging the gap between development 
+                                and operations through automation and best practices.
+                            </p>
+                            <p class="mt-2">
+                                Beyond the technical sphere, I’m an entrepreneur, mentor, and problem-solver—driven 
+                                by a vision to empower businesses and individuals through technology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Dynamic and results-oriented graduate in software development, equipped with proficient skills in documentation,
-              system implementation, web design, financial accounting, and client/server network administration. A fast learner
-              with a proactive mindset, I am both a collaborative team player and an effective leader. Passionate about pursuing a
-              career in software-related fields, I aim to make significant contributions via innovative research
-            </p>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="terminal-window compact">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
+                </div>
+                <div class="terminal-title">isaac_zachary --education</div>
+            </div>
+            <div class="terminal-body">
+                <p class="section__text__p1">My Academic</p>
+                <h1 class="title">Education</h1>
+                <div class="education-container">
+                    <div class="education-card terminal-style">
+                        <div class="education-header">
+                            <h3>KCA University</h3>
+                            <p class="education-date">2019 - 2023</p>
+                        </div>
+                        <div class="education-details">
+                            <h4>BSc Software Development</h4>
+                            <p class="education-grade">Grade: 2nd Class Upper Division</p>
+                            <div class="education-activities">
+                                <h5>Activities and Societies:</h5>
+                                <ul>
+                                    <li>SD Representative for 2019 Cohort</li>
+                                    <li>GSS, IT, Programming, Software Engineering, Networking & Computing Projects</li>
+                                </ul>
+                            </div>
+                            <div class="education-skills">
+                                <h5>Key Skills Gained:</h5>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Web Design</span>
+                                    <span class="skill-tag">Software Engineering</span>
+                                    <span class="skill-tag">Leadership</span>
+                                    <span class="skill-tag">Artificial Intelligence</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Financial Accounting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card terminal-style">
+                        <div class="education-header">
+                            <h3>PLP Academy (Power Learn Project)</h3>
+                            <p class="education-date">Feb 2024 - Jun 2024</p>
+                        </div>
+                        <div class="education-details">
+                            <h4>Software Development</h4>
+                            <div class="education-activities">
+                                <h5>Activities and Societies:</h5>
+                                <ul>
+                                    <li>Web Technologies</li>
+                                    <li>Python Programming</li>
+                                    <li>Database Management</li>
+                                    <li>Software Engineering</li>
+                                    <li>Dart with Flutter</li>
+                                    <li>Entrepreneurship & Personal Development</li>
+                                </ul>
+                            </div>
+                            <div class="education-skills">
+                                <h5>Key Skills Gained:</h5>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Software Engineering</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Dart</span>
+                                    <span class="skill-tag">MySQL</span>
+                                    <span class="skill-tag">Entrepreneurship</span>
+                                    <span class="skill-tag">Web Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-card terminal-style">
+                        <div class="education-header">
+                            <h3>DEFTEC (Defence Forces Technical College)</h3>
+                            <p class="education-date">Feb 2024 - Jun 2024</p>
+                        </div>
+                        <div class="education-details">
+                            <h4>Industrial Attachment</h4>
+                            <div class="education-activities">
+                                <h5>Activities and Societies:</h5>
+                                <ul>
+                                    <li>IT Support</li>
+                                    <li>Software Installation & Customization</li>
+                                    <li>Network Administration </li>
+                                    <li>Research & Innovation</li>
+                                    <li>Web Development</li>
+                                </ul>
+                            </div>
+                            <div class="education-skills">
+                                <h5>Key Skills Gained:</h5>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Networking</span>
+                                    <span class="skill-tag">Technical Support</span>
+                                    <span class="skill-tag">Server Configuration</span>
+                                    <span class="skill-tag">Automation</span>
+                                    <span class="skill-tag">CRUD - Laravel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">IT Support</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Installation</h3>
-                  <p>Experienced</p>
+        <div class="terminal-window compact">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Customization</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Configuration</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Networking</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Client/Server</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>DBMS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
+                <div class="terminal-title">isaac_zachary --experience</div>
             </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Software Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
+            <div class="terminal-body">
+                <p class="section__text__p1">Explore My</p>
+                <h1 class="title">Experience</h1>
+                <div class="experience-tabs">
+                    <button class="tab-btn active" data-tab="work">Work Experience</button>
+                    <button class="tab-btn" data-tab="technical">Technical Skills</button>
+                    <button class="tab-btn" data-tab="creative">Creative Skills</button>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
+                
+                <div class="tab-content active" id="work">
+                    <div class="experience-details-container">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Feb 2024 - Present</div>
+                                <div class="timeline-content terminal-style">
+                                    <h3>Technical Support Agent</h3>
+                                    <h4>First Basics Technologies</h4>
+                                    <ul>
+                                        <li>Providing customer technical support for internet services</li>
+                                        <li>Resolving network connectivity issues and enhancing customer satisfaction</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Feb 2022 - Nov 2023</div>
+                                <div class="timeline-content terminal-style">
+                                    <h3>IT Support (Entrepreneur) </h3>
+                                    <h4>Humble Crib Investment</h4>
+                                    <ul>
+                                        <li>Providing IT related solutions and implementing software in the business</li>
+                                        <li>Installation and configuration of operating systems (Windows/Linux) and other productive software</li>
+                                        <li>Sales and service delivery, financial accounting & managing enterprise project</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Jan 2021 - Jul 2021</div>
+                                <div class="timeline-content terminal-style">
+                                    <h3>Entrepreneur</h3>
+                                    <h4>JAK All-Time Tech</h4>
+                                    <ul>
+                                        <li>Managed cyber services, e-citizen support, printing & creative designs</li>
+                                        <li>Provided IT solutions for businesses and individuals</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">Apr 2019 - Sep 2020</div>
+                                <div class="timeline-content terminal-style">
+                                    <h3>Technician Assistant (Trainee)</h3>
+                                    <h4>GES Telecommunications Company</h4>
+                                    <ul>
+                                        <li>Installed & configured CCTV systems, electric fences, and automated gates</li>
+                                        <li>Assisted in network cabling and troubleshooting</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Javascript</h3>
-                  <p>Intermediate</p>
+
+                <div class="tab-content" id="technical">
+                    <div class="experience-details-container">
+                        <div class="about-containers">
+                            <div class="details-container terminal-style">
+                                <h2 class="experience-sub-title">IT Support</h2>
+                                <div class="article-container">
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Installation</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Customization</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Configuration</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Networking</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Client/Server</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>DBMS</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="details-container terminal-style">
+                                <h2 class="experience-sub-title">Software Development</h2>
+                                <div class="article-container">
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>HTML</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>CSS</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>JavaScript</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>PHP</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Node JS</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Git</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PHP</h3>
-                  <p>Intermediate</p>
+
+                <div class="tab-content" id="creative">
+                    <div class="experience-details-container">
+                        <div class="about-containers">
+                            <div class="details-container terminal-style">
+                                <h2 class="experience-sub-title">Creative Design</h2>
+                                <div class="article-container">
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>WordPress</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Figma</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>PowerPoint</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Canva</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Word</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Photoshop</h3>
+                                            <p>Basic</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="details-container terminal-style">
+                                <h2 class="experience-sub-title">Financial Accounting</h2>
+                                <div class="article-container">
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>QuickBooks</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>SAGE50</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Excel</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Sheets</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Sales</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <i class="fas fa-check icon"></i>
+                                        <div>
+                                            <h3>Inventory</h3>
+                                            <p>Intermediate</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
             </div>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience-2'"
-      />
     </section>
-      <section id="experience-2">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Other Competencies</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-            <div class="details-container">
-            <h2 class="experience-sub-title">Creative Design</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Wordpress</h3>
-                  <p>Intermediate</p>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="terminal-window compact">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Figma</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Powerpoint</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Canva</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Word</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Photoshop</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
+                <div class="terminal-title">isaac_zachary --certifications</div>
             </div>
-          </div>
-                    <div class="details-container">
-            <h2 class="experience-sub-title">Financial Accounting</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>QuickBooks</h3>
-                  <p>Experienced</p>
+            <div class="terminal-body">
+                <p class="section__text__p1">My Professional</p>
+                <h1 class="title">Certifications</h1>
+                <div class="certifications-container">
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Software Development Fundamentals</h3>
+                            <p class="certification-issuer">Power Learn Project (Sep 2024)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Software Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Advanced Social Media Strategy Training</h3>
+                            <p class="certification-issuer">AQskill (Jun 2024)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Meta</Meta></span>
+                                <span class="skill-tag">AI</span>
+                                <span class="skill-tag">X</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Django Python Development - PLP Hackathon II</h3>
+                            <p class="certification-issuer">Power Learn Project (Apr 2024)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Tailwind CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Analyzing and Visualizing Data with Microsoft Power BI</h3>
+                            <p class="certification-issuer">MindLuster (Feb 2024)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Ms Power BI</span>
+                                <span class="skill-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Website Development Beginners to Advanced</h3>
+                            <p class="certification-issuer">AQskill (Feb 2024)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">WordPress</span>
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Sage50 and QuickBooks Accounting Software</h3>
+                            <p class="certification-issuer">AQskill (Jan 2024)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Financial Accounting</span>
+                                <span class="skill-tag">QuickBooks</span>
+                                <span class="skill-tag">Sage50</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>BSc. Software Development</h3>
+                            <p class="certification-issuer">KCA University (Nov 2023)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Software Development</span>
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Software Engineering Practices</span>
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">AI/ML</span>
+                                <span class="skill-tag">Programming</span>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>CHAT GPT Mastery Course</h3>
+                            <p class="certification-issuer">AQskill (Jul 2023)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">Artificial Intelligence</span>
+                                <span class="skill-tag">GPT</span>
+                                <span class="skill-tag">Prompt Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>IT for Business Success</h3>
+                            <p class="certification-issuer">HP Life (May 2023)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">IT Operations</span>
+                                <span class="skill-tag">Business Success</span>
+                                <span class="skill-tag">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certification-card terminal-style">
+                        <div class="certification-header">
+                            <h3>Frontend Fundamentals</h3>
+                            <p class="certification-issuer">PIRPLE.COM (May 2020)</p>
+                        </div>
+                        <div class="certification-skills">
+                            <div class="skills-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">Web Design</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SAGE50</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Excel</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Sheets</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Sales</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Inventory</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
             </div>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
+
+    <!-- Projects Section -->
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
+        <div class="terminal-window compact">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
+                </div>
+                <div class="terminal-title">isaac_zachary --projects</div>
             </div>
-            <h2 class="experience-sub-title project-title">DEFTEC WEB</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/IsaacZachary/DEFTECWEB.git/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://isaaczachary.github.io/DEFTECWEB/'"
-              >
-                Live Demo
-              </button>
+            <div class="terminal-body">
+                <p class="section__text__p1">Browse My Recent</p>
+                <h1 class="title">Projects</h1>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-1.png" alt="Project 1" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Berry Wi-Fi Hotspot UI</h3>
+                                <p class="project-desc">Landing Page</p>
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Canva</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://github.com/IsaacZachary" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-2.png" alt="Project 2" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Personal Porfolio UI</h3>
+                                <p class="project-desc">Isaac Zachary - Creative Designer Portfolio Website</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Figma</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://www.figma.com/file/BvMmkd30eNzTtO9zpCAh15/PortFolio-by-Isaac-Zachary(Community)?type=design&node-id=0-1&mode=design&t=FLjuPwIgH8YX1oBS-0" target="_blank"><i class="fab fa-figma"></i></a>
+                                    <a href="https://www.figma.com/proto/BvMmkd30eNzTtO9zpCAh15/PortFolio-by-Isaac-Zachary(Community)?type=design&node-id=2-6&t=EvhiG36OdfdLQJGq-0&scaling=min-zoom&page-id=1%3A3" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-3.png" alt="Project 3" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Humble Crib Investment Website on Wordpress</h3>
+                                <p class="project-desc">Config files for a Business Site</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Wordpress</span>
+                                        <span class="skill-tag">PHP</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/h2i.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/posts/isaaczachary_webdevelopment-wordpress-elementor-activity-7068172404589510656-4v3R?utm_source=share&utm_medium=member_desktop" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-4.png" alt="Project 4" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">TechCareAfrica - IT Helpdesk System</h3>
+                                <p class="project-desc">Built to provide affordable and efficient IT solutions</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Python-Django</span>
+                                        <span class="skill-tag">Bootstrap</span>
+                                        <span class="skill-tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/DEFTECWEB.git/" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://isaaczachary.github.io/DEFTECWEB/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-5.jpg" alt="Project 5" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Django Tailwind Blog</h3>
+                                <p class="project-desc">A Developer Portfolio & Blog</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Python-Django</span>
+                                        <span class="skill-tag">Tailwind</span>
+                                        <span class="skill-tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/blog-site-django" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://github.com/IsaacZachary/blog-site-django" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-6.png" alt="Project 6" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Firebase Task Management WebApp</h3>
+                                <p class="project-desc">This project is a simple to-do list developed with ReactJS, Redux and Firebase.</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">ReactJS</span>
+                                        <span class="skill-tag">Firebase</span>
+                                        <span class="skill-tag">Redux</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/Firebase-Task-Management-Webapp.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://task-manager-135a7.web.app/login" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-7.png" alt="Project 7" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">IT-Workshop Computer Maintenance System</h3>
+                                <p class="project-desc">Support ticketing project based on Laravel 8.</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">PHP-Laravel</span>
+                                        <span class="skill-tag">Vue</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/IT-Workshop-Computer-Maintenance.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://github.com/IsaacZachary/IT-Workshop-Computer-Maintenance.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-8.png" alt="Project 8" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Online-Management-System</h3>
+                                <p class="project-desc">Jua's Enterprise Online Management System in PHP</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">PHP</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">Apache</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/Online-Management-System.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://github.com/IsaacZachary/Online-Management-System.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-9.png" alt="Project 9" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">KW Awards Voting Platform UI</h3>
+                                <p class="project-desc">A React-based web application for managing and voting in the KW Awards ceremony. </p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Canva</span>
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag">Redux</span>
+                                        <span class="skill-tag">Tailwind</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Bobybuu/KW_Awards-voting-platfom_frontend" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.canva.com/design/DAGfc5yYSC4/mUfUdoaQFY23fJc-0IG9VQ/view?utm_content=DAGfc5yYSC4&utm_campaign=designshare&utm_medium=link&utm_source=viewer" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-12.png" alt="Project 12" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">IT Helpdesk System</h3>
+                                <p class="project-desc">A comprehensive IT support system solutions</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Python-Django</span>
+                                        <span class="skill-tag">Bootstrap</span>
+                                        <span class="skill-tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/TechCareAfrica.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://github.com/IsaacZachary/TechCareAfrica.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-10.png" alt="Project 10" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Support_Company_Website</h3>
+                                <p class="project-desc">A Basic company website template designed using HTML, CSS, JS and Bootstrap</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">HTML</span>
+                                        <span class="skill-tag">javascript</span>
+                                        <span class="skill-tag">Bootstrap</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/Support_Company_Website.git" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://isaaczachary.github.io/Support_Company_Website/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="./assets/project-11.PNG" alt="Project 11" class="project-img">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Web Blueprint - Attachees</h3>
+                                <p class="project-desc">Creative and user-centric web design for industrial attachment collabotarive project</p>
+
+                                <div class="project-tech">
+                                    <h4>Technologies:</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">HTML</span>
+                                        <span class="skill-tag">Bootstrap-CSS</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/IsaacZachary/DEFTECWEB.git/" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://isaaczachary.github.io/DEFTECWEB/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Portfolio Template</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.figma.com/file/BvMmkd30eNzTtO9zpCAh15/PortFolio-by-Isaac-Zachary(Community)?type=design&node-id=0-1&mode=design&t=FLjuPwIgH8YX1oBS-0'"
-              >
-                Figma
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.figma.com/proto/BvMmkd30eNzTtO9zpCAh15/PortFolio-by-Isaac-Zachary(Community)?type=design&node-id=2-6&t=EvhiG36OdfdLQJGq-0&scaling=min-zoom&page-id=1%3A3'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Hi2</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/IsaacZachary/h2i.git'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.linkedin.com/posts/isaaczachary_webdevelopment-wordpress-elementor-activity-7068172404589510656-4v3R?utm_source=share&utm_medium=member_desktop'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a></p>
+        <div class="terminal-window compact">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
+                </div>
+                <div class="terminal-title">isaac_zachary --contact</div>
+            </div>
+            <div class="terminal-body">
+                <p class="section__text__p1">Get in Touch</p>
+                <h1 class="title">Contact Me</h1>
+                <div class="contact-container">
+                    <div class="contact-info-upper-container terminal-style">
+                        <div class="contact-info-container">
+                            <i class="fas fa-envelope contact-icon email-icon"></i>
+                            <p><a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a></p>
+                        </div>
+                        <div class="contact-info-container">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p><a href="tel:+254759325915">+254 759 325 915</a></p>
+                        </div>
+                        <div class="contact-info-container">
+                            <i class="fab fa-linkedin-in contact-icon"></i>
+                            <p><a href="https://www.linkedin.com/in/isaaczachary/" target="_blank">LinkedIn</a></p>
+                        </div>
+                        <div class="contact-info-container">
+                            <i class="fab fa-github contact-icon"></i>
+                            <p><a href="https://github.com/IsaacZachary" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                    <form class="contact-form terminal-style">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-color-2">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/isaaczachary/">LinkedIn</a></p>
-        </div>
-      </div>
     </section>
+
+    <!-- Footer -->
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <div class="terminal-window compact">
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span> <span class="typed-text" data-text="connect --with=isaac_zachary"></span><span class="terminal-cursor">█</span>
+                </div>
+                <div class="footer-content">
+                    <p>© <span id="year"></span> Isaac Zachary. All systems operational.</p>
+                    <div class="footer-links">
+                        <a href="https://linkedin.com/in/isaaczachary/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/IsaacZachary" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:isaaczachary18@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-      <p>Copyright &#169; 2024 Isaac Zachary. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
-  </body>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/motion.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
 </html>
