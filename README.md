@@ -1,6 +1,4 @@
 # A Developer Portfolio 
-![PLP](https://github.com/IsaacZachary/Support_Company_Website/blob/master/assets/img/plp.png)
-
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -61,10 +59,14 @@ To deploy the website to GitHub Pages, follow these steps:
 
 7. Access your website at `https://IsaacZachary.github.io/portfolio`.
 
-## Gratitude
+---
 
-I would like to express my deepest gratitude for being selected as one of the students for the scholarship in the #MillionDevsAfrica program. This 16-week software development training has been an incredible opportunity for me to learn and grow in the field of technology. I am thankful for the support of the vibrant community and the invaluable skills and knowledge gained throughout the program.
+## 👤 Author
+
+- **Isaac Zachary**
+- 📨 Email: [isaaczachary18@gmail.com](mailto:isaaczachary18@gmail.com)
+- 🧑‍💻 GitHub: [IsaacZachary](https://github.com/IsaacZachary)
+- 🌐 Portfolio: [Portfolio](https://isaaczachary.github.io/portfolio/)
 
 ---
 
-Remember, learning is a journey, and I'm excited to continue this journey alongside you all! Let's keep building and creating amazing things together. #MillionDevsAfrica 🚀
