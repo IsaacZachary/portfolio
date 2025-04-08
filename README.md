@@ -1,6 +1,3 @@
-I'll help you create a comprehensive, professional README.md file for your developer portfolio project. Here's the enhanced version with all the requested elements:
-
-```markdown
 # Isaac Zachary - Developer Portfolio 👨‍💻
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
