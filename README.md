@@ -9,7 +9,7 @@
 
 A modern, interactive developer portfolio showcasing my skills, projects, and professional journey. Built with a terminal-inspired UI and responsive design.
 
-🔗 **Live Demo**: [https://isaaczachary.netlify.app/](https://isaaczachary.netlify.app/)
+🔗 **Live Demo**: [https://isaaczachary.netlify.app/](https://izach.netlify.app/)
 
 ![Portfolio Screenshot](./assets/portfolio-screenshot.png)
 
