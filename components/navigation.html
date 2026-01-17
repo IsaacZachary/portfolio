@@ -1,0 +1,48 @@
+<!-- Navigation Component -->
+<nav id="desktop-nav">
+    <div class="logo-container">
+        <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+        <div class="logo">Isaac Zachary</div>
+    </div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="experience.html" class="nav-link">Experience</a></li>
+            <li><a href="writing.html" class="nav-link">Writing</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+                <button class="terminal-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <span class="terminal-prompt">[]▐</span>
+                    <span class="terminal-command">dark</span>
+                    <span class="terminal-cursor">█</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hamburger Navigation -->
+<nav id="hamburger-nav">
+    <div class="logo-container">
+        <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+        <div class="logo">Isaac Zachary</div>
+    </div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
+            <li><a href="about.html" onclick="toggleMenu()" class="nav-link">About</a></li>
+            <li><a href="projects.html" onclick="toggleMenu()" class="nav-link">Projects</a></li>
+            <li><a href="experience.html" onclick="toggleMenu()" class="nav-link">Experience</a></li>
+            <li><a href="writing.html" onclick="toggleMenu()" class="nav-link">Writing</a></li>
+            <li><a href="contact.html" onclick="toggleMenu()" class="nav-link">Contact</a></li>
+        </div>
+    </div>
+</nav>

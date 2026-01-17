@@ -14,6 +14,7 @@
     --terminal-red: #ff5555;
     --terminal-purple: #bd93f9;
     --terminal-cyan: #8be9fd;
+    --terminal-border: rgba(80, 250, 123, 0.2);
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --nav-height: 80px;
 }
@@ -1236,4 +1237,755 @@ footer {
 
 .compact .terminal-body {
     padding: 1.5rem;
+}
+
+/* ====== NEW MULTI-PAGE STYLES ====== */
+
+/* Hero Section Improvements */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 85vh;
+    padding: 4rem 2rem;
+    margin-top: 80px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-terminal {
+    background-color: var(--terminal-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+    color: var(--terminal-text);
+    font-size: 3rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.hero-subtitle {
+    color: var(--terminal-cyan);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    color: var(--terminal-text);
+    opacity: 0.9;
+    margin: 1rem 0;
+    line-height: 1.8;
+}
+
+.hero-profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-hero-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 3px solid var(--terminal-green);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, var(--terminal-cyan) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(20px);
+    z-index: 1;
+}
+
+.capabilities {
+    margin: 1.5rem 0;
+}
+
+.capability {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+    color: var(--terminal-text);
+}
+
+.capability .check {
+    color: var(--terminal-green);
+    font-weight: bold;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-terminal {
+    background-color: var(--terminal-green);
+    color: var(--terminal-bg);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-terminal:hover {
+    background-color: var(--terminal-cyan);
+    transform: translateY(-2px);
+}
+
+.btn-terminal-outline {
+    background-color: transparent;
+    color: var(--terminal-green);
+    border: 2px solid var(--terminal-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-terminal-outline:hover {
+    background-color: var(--terminal-green);
+    color: var(--terminal-bg);
+    transform: translateY(-2px);
+}
+
+/* Card Consistency Improvements */
+.project-card-home, .education-card, .certification-card {
+    background: var(--card-bg);
+    border: 1px solid var(--terminal-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-card-home:hover, .education-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--terminal-green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--terminal-bg);
+    color: var(--terminal-cyan);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--terminal-border);
+}
+
+.projects-grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-header {
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    color: var(--terminal-text);
+    margin: 0.5rem 0;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--terminal-bg);
+    color: var(--terminal-green);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border: 1px solid var(--terminal-border);
+}
+
+.project-link {
+    color: var(--terminal-cyan);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-link:hover {
+    color: var(--terminal-green);
+}
+
+/* Spacing & Hierarchy */
+.about-section, .project-detail, .article-preview {
+    margin-bottom: 3rem;
+}
+
+.about-section h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--terminal-green);
+}
+
+.terminal-accent {
+    background: rgba(80, 250, 123, 0.05);
+    border-left: 3px solid var(--terminal-green);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.terminal-accent .terminal-output {
+    margin-left: 0;
+}
+
+/* Navigation Refinement */
+.nav-link.active {
+    color: var(--terminal-green);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    background-color: var(--terminal-green);
+}
+
+/* Footer Refinement */
+.main-footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--terminal-green);
+}
+
+/* Currently Learning Section */
+.currently-learning {
+    margin-top: 4rem;
+}
+
+.learning-items {
+    margin: 2rem 0;
+}
+
+.learning-item {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(80, 250, 123, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--terminal-green);
+}
+
+.learning-icon {
+    color: var(--terminal-green);
+    font-size: 1.5rem;
+}
+
+.learning-content h4 {
+    color: var(--terminal-text);
+    margin-bottom: 0.5rem;
+}
+
+.learning-content p {
+    color: var(--terminal-text);
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.learning-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--terminal-bg);
+    color: var(--terminal-cyan);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Project Detail Styles */
+.project-detail {
+    padding: 2rem;
+    background: rgba(80, 250, 123, 0.03);
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid var(--terminal-border);
+}
+
+.project-tagline {
+    color: var(--terminal-cyan);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.project-story {
+    color: var(--terminal-text);
+    line-height: 1.8;
+    margin: 1.5rem 0;
+}
+
+.project-learnings {
+    margin: 1.5rem 0;
+}
+
+.project-learnings h4 {
+    color: var(--terminal-green);
+    margin-bottom: 0.75rem;
+}
+
+.project-learnings ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-learnings li {
+    color: var(--terminal-text);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-learnings li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--terminal-green);
+}
+
+/* Other Projects Grid */
+.other-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.project-card-mini {
+    background: var(--terminal-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--terminal-border);
+    transition: all 0.3s ease;
+}
+
+.project-card-mini:hover {
+    transform: translateY(-4px);
+    border-color: var(--terminal-green);
+}
+
+.project-card-mini h3 {
+    color: var(--terminal-text);
+    margin-bottom: 0.5rem;
+}
+
+.project-card-mini p {
+    color: var(--terminal-text);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.project-link-mini {
+    color: var(--terminal-cyan);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-link-mini:hover {
+    color: var(--terminal-green);
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.skill-category {
+    background: rgba(80, 250, 123, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--terminal-border);
+}
+
+.skill-category h3 {
+    color: var(--terminal-green);
+    margin-bottom: 1rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    color: var(--terminal-text);
+    padding: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Skills Matrix */
+.skills-matrix-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.skills-column h3 {
+    color: var(--terminal-green);
+    margin-bottom: 1.5rem;
+}
+
+.skill-item {
+    margin: 1.5rem 0;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    color: var(--terminal-text);
+    font-weight: 500;
+}
+
+.skill-percent {
+    color: var(--terminal-cyan);
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(80, 250, 123, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--terminal-green), var(--terminal-cyan));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Roadmap Styles */
+.roadmap-container {
+    margin-top: 4rem;
+}
+
+.roadmap-steps {
+    margin: 2rem 0;
+}
+
+.step {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(80, 250, 123, 0.03);
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.step.completed {
+    border-left-color: var(--terminal-green);
+    opacity: 0.9;
+}
+
+.step.current {
+    border-left-color: var(--terminal-cyan);
+    background: rgba(139, 233, 253, 0.1);
+}
+
+.step.upcoming {
+    border-left-color: rgba(80, 250, 123, 0.3);
+    opacity: 0.7;
+}
+
+.step-marker {
+    font-size: 1.5rem;
+    color: var(--terminal-green);
+    flex-shrink: 0;
+}
+
+.step.current .step-marker {
+    color: var(--terminal-cyan);
+}
+
+.step.upcoming .step-marker {
+    color: rgba(80, 250, 123, 0.5);
+}
+
+.step-content h4 {
+    color: var(--terminal-text);
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: var(--terminal-text);
+    opacity: 0.8;
+    margin-bottom: 0.75rem;
+}
+
+.step-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--terminal-bg);
+    color: var(--terminal-cyan);
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.step-progress {
+    margin-top: 0.75rem;
+}
+
+.mini-progress {
+    height: 4px;
+    background: var(--terminal-green);
+    border-radius: 2px;
+}
+
+/* Resources Section */
+.resources-section {
+    margin-top: 3rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.resource-card {
+    background: var(--terminal-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--terminal-border);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--terminal-green);
+}
+
+.resource-card h4 {
+    color: var(--terminal-text);
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    color: var(--terminal-text);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Article Styles */
+.article-preview {
+    padding: 2rem;
+    background: rgba(80, 250, 123, 0.03);
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid var(--terminal-border);
+}
+
+.article-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.article-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--terminal-bg);
+    color: var(--terminal-cyan);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.article-meta {
+    color: var(--terminal-text);
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+.article-preview h2 {
+    color: var(--terminal-text);
+    margin-bottom: 1rem;
+}
+
+.article-excerpt {
+    color: var(--terminal-text);
+    opacity: 0.9;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.article-content {
+    color: var(--terminal-text);
+    opacity: 0.8;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Page Styles */
+.contact-status {
+    margin: 2rem 0;
+}
+
+.contact-status p {
+    color: var(--terminal-text);
+    margin: 0.5rem 0;
+}
+
+.contact-status strong {
+    color: var(--terminal-green);
+}
+
+.resume-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(80, 250, 123, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.resume-section h2 {
+    color: var(--terminal-text);
+    margin-bottom: 1rem;
+}
+
+.resume-section p {
+    color: var(--terminal-text);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Terminal Header Dots */
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.dot.red {
+    background-color: var(--terminal-red);
+}
+
+.dot.yellow {
+    background-color: var(--terminal-yellow);
+}
+
+.dot.green {
+    background-color: var(--terminal-green);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+}
+
+.terminal-header span:last-child {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    color: #f3f4f6;
+    opacity: 0.7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .profile-hero-img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .projects-grid-home {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid,
+    .skills-matrix-container {
+        grid-template-columns: 1fr;
+    }
 }

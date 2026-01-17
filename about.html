@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Isaac Zachary</title>
+    <meta name="description" content="My journey from technical support to DevOps development. Learning in public, building reliable systems, and growing infrastructure skills.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaqueries.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="writing.html" class="nav-link">Writing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="terminal-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                        <span class="terminal-prompt">[]▐</span>
+                        <span class="terminal-command">dark</span>
+                        <span class="terminal-cursor">█</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hamburger Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()" class="nav-link">About</a></li>
+                <li><a href="projects.html" onclick="toggleMenu()" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" onclick="toggleMenu()" class="nav-link">Experience</a></li>
+                <li><a href="writing.html" onclick="toggleMenu()" class="nav-link">Writing</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()" class="nav-link">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <section class="about-page">
+        <article class="about-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span>terminal — about_me/</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="command">cat journey.txt</span>
+                    </div>
+                    
+                    <h1>From Technical Support to Infrastructure Development</h1>
+                    
+                    <div class="about-section">
+                        <h2>Background & Foundation</h2>
+                        <p>My career began in technical support and troubleshooting—resolving network issues, configuring systems, and helping users navigate technical challenges. This foundation gave me deep empathy for end-users and a practical understanding of what breaks in production systems.</p>
+                        
+                        <p>Working with ISPs and small businesses, I saw recurring patterns: manual deployments that failed, inconsistent environments, and systems that were hard to maintain. I realized I wanted to <strong>build systems that prevent these issues</strong>, not just fix the symptoms.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Transition to Development & DevOps</h2>
+                        <p>I started building applications to solve real problems—first simple scripts, then full-stack applications, and eventually containerized systems. Each project taught me something new: how to design APIs, manage databases, secure deployments, and automate repetitive tasks.</p>
+                        
+                        <div class="terminal-accent">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">cat career_timeline.txt</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p><strong>2019-2021:</strong> Technical Support & System Administration</p>
+                                <p><strong>2021-2023:</strong> Full-Stack Development (Python, React, Databases)</p>
+                                <p><strong>2023-Present:</strong> DevOps Focus (Containers, CI/CD, Cloud)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Current Focus & Approach</h2>
+                        <p>Today, I'm deepening my DevOps skills with a focus on containerization, infrastructure automation, and reliable deployment practices. I believe in <strong>learning in public</strong> and <strong>building in the open</strong>—sharing what I learn through projects and writing.</p>
+                        
+                        <p>My approach combines <strong>AI-enabled development</strong> with hands-on implementation. I use modern tools effectively while maintaining a deep understanding of underlying systems. Based in Nairobi, I understand both local infrastructure challenges and global best practices.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Education</h2>
+                        <div class="education-card">
+                            <h3>BSc Software Development</h3>
+                            <p class="institution">KCA University • 2019-2023</p>
+                            <p class="details">Second Class Upper Division • Focus on software engineering, system design, and practical development</p>
+                        </div>
+                        
+                        <div class="education-card">
+                            <h3>Software Development Fundamentals</h3>
+                            <p class="institution">Power Learn Project • 2024</p>
+                            <p class="details">Web technologies, Python programming, database management, and entrepreneurship</p>
+                        </div>
+                        
+                        <div class="education-card">
+                            <h3>Career Essentials in Generative AI</h3>
+                            <p class="institution">Microsoft & LinkedIn • 2025</p>
+                            <p class="details">AI integration patterns, practical applications, and ethical considerations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="command">cd ../experience</span>
+                    </div>
+                    <a href="experience.html" class="btn btn-terminal-outline">
+                        <span class="prompt">$</span>
+                        view_experience
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="terminal-window compact">
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span> <span class="typed-text" data-text="connect --with=isaac_zachary"></span><span class="terminal-cursor">█</span>
+                </div>
+                <div class="footer-content">
+                    <p>© <span id="year"></span> Isaac Zachary. All systems operational.</p>
+                    <div class="footer-links">
+                        <a href="https://linkedin.com/in/isaaczachary/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/IsaacZachary" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:isaaczachary18@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
+</html>

@@ -6,15 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize theme from localStorage
   const savedTheme = localStorage.getItem('theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
-  updateThemeToggleText(savedTheme);
+  if (terminalToggle) {
+    updateThemeToggleText(savedTheme);
+  }
   
-  terminalToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeToggleText(newTheme);
-  });
+  if (terminalToggle) {
+    terminalToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeToggleText(newTheme);
+    });
+  }
   
   function updateThemeToggleText(theme) {
       const prompt = terminalToggle.querySelector('.terminal-prompt');
@@ -29,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
   
+  // Highlight current page in navigation
+  highlightCurrentPage();
+  
   // GitHub Stats Fetch
   fetchGitHubStats();
   
@@ -42,16 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
           showCursor: false
       });
   }
+  
+  // Interactive roadmap progress
+  updateRoadmapProgress();
 });
 
 // Fetch GitHub Stats
 async function fetchGitHubStats() {
   try {
+      const reposEl = document.getElementById('github-repos');
+      const starsEl = document.getElementById('github-stars');
+      const commitsEl = document.getElementById('github-commits');
+      
+      if (!reposEl && !starsEl && !commitsEl) return;
+      
       const response = await fetch('https://api.github.com/users/IsaacZachary');
       const data = await response.json();
       
-      document.getElementById('github-repos').textContent = data.public_repos || '--';
-      document.getElementById('github-stars').textContent = '--'; // Need another endpoint for stars
+      if (reposEl) reposEl.textContent = data.public_repos || '--';
+      if (starsEl) starsEl.textContent = '--'; // Need another endpoint for stars
       
       // Fetch commit count (this would require a backend service)
       // For demo purposes, we'll simulate it
@@ -63,8 +79,11 @@ async function fetchGitHubStats() {
 
 function simulateCommitCount() {
   // In a real implementation, you'd call a backend service that checks your commit history
-  const commitCount = Math.floor(Math.random() * 500) + 100; // Random number for demo
-  document.getElementById('github-commits').textContent = commitCount;
+  const commitsEl = document.getElementById('github-commits');
+  if (commitsEl) {
+    const commitCount = Math.floor(Math.random() * 500) + 100; // Random number for demo
+    commitsEl.textContent = commitCount;
+  }
 }
 
 // Enhanced Mobile Menu Toggle
@@ -126,40 +145,97 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Scroll-to-Top Button
 window.addEventListener('scroll', function() {
   const backToTopBtn = document.getElementById('back-to-top');
-  backToTopBtn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+  if (backToTopBtn) {
+    backToTopBtn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+  }
 });
 
-document.getElementById('back-to-top').addEventListener('click', function() {
-  window.scrollTo({
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
       top: 0,
       behavior: 'smooth'
+    });
   });
-});
+}
 
-// Form Submission Handling
+// Highlight current page in navigation
+function highlightCurrentPage() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+// Interactive roadmap progress
+function updateRoadmapProgress() {
+  const progressElement = document.querySelector('.progress-value');
+  const progressFill = document.querySelector('.progress-fill');
+  
+  if (progressElement && progressFill) {
+    // Calculate based on completed steps
+    const totalSteps = document.querySelectorAll('.roadmap-steps .step').length;
+    const completedSteps = document.querySelectorAll('.roadmap-steps .step.completed').length;
+    const progress = Math.round((completedSteps / totalSteps) * 100);
+    
+    progressElement.textContent = `${progress}%`;
+    progressFill.style.width = `${progress}%`;
+  }
+}
+
+// Form Submission Handling (Netlify compatible)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
       
-      // Get form values
-      const formData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          message: document.getElementById('message').value
-      };
-      
-      // Here you would typically send the data to a server
-      console.log('Form submitted:', formData);
-      
-      // Show success message
-      alert('Thank you for your message! I will get back to you soon.');
-      contactForm.reset();
+      if (response.ok) {
+        submitBtn.textContent = 'Message Sent!';
+        this.reset();
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      submitBtn.textContent = 'Error - Try Again';
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 3000);
+    }
   });
 }
 
 // Set current year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // Animation on Scroll
 document.addEventListener('DOMContentLoaded', function() {

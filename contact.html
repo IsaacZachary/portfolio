@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Isaac Zachary</title>
+    <meta name="description" content="Get in touch for DevOps opportunities, collaboration, or technical discussion. Based in Nairobi, open to remote work.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaqueries.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="writing.html" class="nav-link">Writing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="terminal-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                        <span class="terminal-prompt">[]▐</span>
+                        <span class="terminal-command">dark</span>
+                        <span class="terminal-cursor">█</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hamburger Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()" class="nav-link">About</a></li>
+                <li><a href="projects.html" onclick="toggleMenu()" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" onclick="toggleMenu()" class="nav-link">Experience</a></li>
+                <li><a href="writing.html" onclick="toggleMenu()" class="nav-link">Writing</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()" class="nav-link">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span>terminal — contact/</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">cat contact_info.txt</span>
+                </div>
+                
+                <h1>Get in Touch</h1>
+                
+                <div class="contact-status terminal-accent">
+                    <p><strong>Status:</strong> Open to remote DevOps/Platform Support opportunities</p>
+                    <p><strong>Location:</strong> Nairobi, Kenya (GMT+3)</p>
+                    <p><strong>Timezone:</strong> East Africa Time (EAT)</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info-upper-container terminal-style">
+                        <div class="contact-info-container">
+                            <i class="fas fa-envelope contact-icon email-icon"></i>
+                            <p><a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a></p>
+                        </div>
+                        <div class="contact-info-container">
+                            <i class="fab fa-linkedin-in contact-icon"></i>
+                            <p><a href="https://www.linkedin.com/in/isaaczachary/" target="_blank">LinkedIn</a></p>
+                        </div>
+                        <div class="contact-info-container">
+                            <i class="fab fa-github contact-icon"></i>
+                            <p><a href="https://github.com/IsaacZachary" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form terminal-style" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-terminal">
+                            <span class="prompt">$</span>
+                            send_message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls resume/</span>
+                </div>
+                
+                <div class="resume-section">
+                    <h2>Resume Download</h2>
+                    <p>Download my latest resume for detailed information about my experience and skills.</p>
+                    <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn btn-terminal-outline" download>
+                        <i class="fas fa-download"></i>
+                        <span class="prompt">$</span>
+                        download_cv
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="terminal-window compact">
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span> <span class="typed-text" data-text="connect --with=isaac_zachary"></span><span class="terminal-cursor">█</span>
+                </div>
+                <div class="footer-content">
+                    <p>© <span id="year"></span> Isaac Zachary. All systems operational.</p>
+                    <div class="footer-links">
+                        <a href="https://linkedin.com/in/isaaczachary/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/IsaacZachary" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:isaaczachary18@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
+</html>
