@@ -70,84 +70,101 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-content">
-            <div class="hero-terminal">
+        <!-- Floating Tech Stack Logos -->
+        <div class="floating-tech-icons">
+            <i class="fab fa-docker" style="--i:1"></i>
+            <i class="fab fa-linux" style="--i:2"></i>
+            <i class="fab fa-python" style="--i:3"></i>
+            <i class="fab fa-git-alt" style="--i:4"></i>
+            <i class="fab fa-html5" style="--i:5"></i>
+            <i class="fab fa-css3-alt" style="--i:6"></i>
+            <i class="fab fa-js" style="--i:7"></i>
+            <i class="fab fa-php" style="--i:8"></i>
+            <i class="fab fa-windows" style="--i:9"></i>
+        </div>
+        
+        <!-- Hero Grid Layout -->
+        <div class="hero-grid">
+            <!-- Left: Compact Terminal -->
+            <div class="hero-terminal-compact">
                 <div class="terminal-header">
                     <span class="dot red"></span>
                     <span class="dot yellow"></span>  
                     <span class="dot green"></span>
                     <span>terminal — isaac@portfolio:~</span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
+                    </div>
+                <div class="terminal-body-compact">
+                    <div class="terminal-line-compact">
                         <span class="prompt">$</span>
                         <span class="command">whoami</span>
+                </div>
+                    <h1 class="hero-title-compact">Isaac Zachary</h1>
+                    <h2 class="hero-subtitle-compact">Junior DevOps / Systems Engineer</h2>
+                    <div class="terminal-separator"></div>
+                    <div class="tech-tags-compact">
+                        <span>[ Docker · Linux · CI/CD · Nginx · Cloudflare ]</span>
                     </div>
-                    <h1 class="hero-title">Isaac Zachary</h1>
-                    <h2 class="hero-subtitle">DevOps & Infrastructure Developer</h2>
-                    
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command">cat about.txt | head -3</span>
+                    <div class="context-tags-compact">
+                        <span>[ ISP Ops · ERP · Production Support ]</span>
                     </div>
-                    <p class="hero-description">
-                        Building reliable, containerized systems with hands-on deployment experience.<br>
-                        AI-enabled development • Practical DevOps focus • Always learning
-                    </p>
-                    
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command">ls capabilities/</span>
-                    </div>
-                    <div class="capabilities">
-                        <div class="capability">
-                            <span class="check">✓</span>
-                            <span>3+ years technical support & troubleshooting</span>
-                    </div>
-                        <div class="capability">
-                            <span class="check">✓</span>
-                            <span>Production experience with Docker & CI/CD</span>
-                        </div>
-                        <div class="capability">
-                            <span class="check">✓</span>
-                            <span>Full-stack systems (Python, Node.js, React)</span>
-                        </div>
-                        <div class="capability">
-                            <span class="check">✓</span>
-                            <span>AI-enabled system building & automation</span>
-                        </div>
-                        <div class="capability">
-                            <span class="check">📍</span>
-                            <span>Nairobi, Kenya | Open to Remote Opportunities</span>
-                        </div>
-                    </div>
-                    
-                    <div class="terminal-line">
+                    <div class="terminal-separator"></div>
+                    <div class="terminal-line-compact">
                         <span class="prompt">$</span>
                         <span class="command">./next_step.sh</span>
-                    </div>
-                    <div class="hero-actions">
-                        <a href="projects.html" class="btn btn-terminal">
-                            <span class="prompt">$</span>
-                            view_projects
-                        </a>
-                        <a href="writing.html" class="btn btn-terminal-outline">
-                            <span class="prompt">$</span>
-                            read_writing
-                        </a>
-                        <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn btn-terminal-outline" download>
-                            <span class="prompt">$</span>
-                            download_cv
-                        </a>
-                    </div>
+                      </div>
                 </div>
             </div>
+            
+            <!-- Right: Profile Panel -->
+            <div class="hero-profile-panel">
+                <img src="./assets/profile-pic.png" alt="Isaac Zachary" class="profile-img-panel">
+                <div class="profile-info">
+                    <div class="status-badge">
+                        <span class="status-indicator">></span>
+                        <span>Open to opportunities</span>
+                    </div>
+                    <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn btn-download-cv" download>
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+                    
+        <!-- Capability Tiles (2x2 Grid) -->
+        <div class="whoami-cards-grid">
+            <div class="whoami-card-compact">
+                <h4>Role Snapshot</h4>
+                <p>Junior DevOps / Systems Engineer</p>
+                <p class="card-subtitle-compact">Support → DevOps transition</p>
+            </div>
+            
+            <div class="whoami-card-compact">
+                <h4>Core Capabilities</h4>
+                <p>Docker, Linux, CI/CD basics, Nginx, DNS, SSL, Cloudflare</p>
+            </div>
+            
+            <div class="whoami-card-compact">
+                <h4>Current Status</h4>
+                <p>Freelancing + professional / personal development</p>
+            </div>
+
+            <div class="whoami-card-compact">
+                <h4>Context / Domain</h4>
+                <p>ISP ops, ERP systems, real production support</p>
+            </div>
         </div>
-        
-        <!-- Floating profile picture (hero treatment) -->
-        <div class="hero-profile">
-            <img src="./assets/profile-pic.png" alt="Isaac Zachary" class="profile-hero-img">
-            <div class="profile-glow"></div>
+
+        <!-- Action Bar -->
+        <div class="hero-actions-bar">
+            <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn btn-primary-action" download>
+                Download CV
+            </a>
+            <a href="projects.html" class="btn btn-secondary-action">
+                View Projects
+            </a>
+            <a href="writing.html" class="btn btn-secondary-action">
+                Read Writing
+            </a>
         </div>
     </section>
 
@@ -163,70 +180,104 @@
             <div class="terminal-body">
                 <div class="terminal-line">
                     <span class="prompt">$</span>
-                    <span class="command">ls -la</span>
+                    <span class="command">ls featured_projects/</span>
+                </div>
+                <div class="terminal-output">
+                    <div class="terminal-ls-output">
+                        <span class="ls-line">drwxr-xr-x zakaflow</span>
+                        <span class="ls-line">drwxr-xr-x coffee-kiosk</span>
+                        <span class="ls-line">drwxr-xr-x drowsy-driver-detection</span>
                     </div>
-                    
+                </div>
+                
                 <div class="projects-grid-home">
                     <!-- Project 1: ZakaFlow -->
-                    <article class="project-card-home">
-                        <div class="project-header">
-                            <span class="project-badge">Architecture Prototype</span>
+                    <article class="project-card-home-dark">
+                        <div class="project-terminal-preview">
+                            <div class="terminal-preview-header">
+                                <span>project://zakaflow</span>
+                            </div>
+                            <div class="terminal-preview-body">
+                                <div class="preview-line">STATUS: Architecture Prototype</div>
+                                <div class="preview-line">STACK: Docker · Kafka · Spark · Airflow</div>
+                                <div class="preview-line">TYPE: Data Pipeline</div>
+                            </div>
+                        </div>
+                        <div class="project-header-dark">
+                            <span class="project-badge-dark">Architecture Prototype</span>
                             <h3>ZakaFlow</h3>
                         </div>
-                        <p>Containerized data pipeline exploring Kafka, Spark, and Airflow integration</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Kafka</span>
-                            <span class="tech-tag">Spark</span>
+                        <p class="project-description-dark">Containerized data pipeline exploring Kafka, Spark, and Airflow integration</p>
+                        <div class="project-tech-dark">
+                            <span class="tech-tag-dark">Docker</span>
+                            <span class="tech-tag-dark">Kafka</span>
+                            <span class="tech-tag-dark">Spark</span>
+                            <span class="tech-tag-dark">Airflow</span>
                         </div>
-                        <div class="project-links">
-                            <a href="projects.html#zakaflow" class="project-link">
-                                <span class="prompt">$</span>
-                                view_details
-                            </a>
+                        <div class="project-links-dark">
+                            <a href="projects.html#zakaflow" class="project-link-dark">View</a>
+                            <a href="https://github.com/IsaacZachary/zaka-flow" target="_blank" class="project-link-dark">Code</a>
                         </div>
                     </article>
                     
                     <!-- Project 2: Coffee Kiosk -->
-                    <article class="project-card-home">
-                        <div class="project-header">
-                            <span class="project-badge">Deployed Demo</span>
+                    <article class="project-card-home-dark">
+                        <div class="project-terminal-preview">
+                            <div class="terminal-preview-header">
+                                <span>project://coffee-kiosk</span>
+                            </div>
+                            <div class="terminal-preview-body">
+                                <div class="preview-line">STATUS: Deployed Demo</div>
+                                <div class="preview-line">STACK: React · Node.js · M-Pesa · Docker</div>
+                                <div class="preview-line">TYPE: E-commerce Platform</div>
+                            </div>
+                        </div>
+                        <div class="project-header-dark">
+                            <span class="project-badge-dark">Deployed Demo</span>
                             <h3>Coffee Kiosk</h3>
                         </div>
-                        <p>E-commerce with M-Pesa payments, Dockerized deployment</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Docker</span>
+                        <p class="project-description-dark">E-commerce with M-Pesa payments, Dockerized deployment</p>
+                        <div class="project-tech-dark">
+                            <span class="tech-tag-dark">React</span>
+                            <span class="tech-tag-dark">Node.js</span>
+                            <span class="tech-tag-dark">Docker</span>
+                            <span class="tech-tag-dark">M-Pesa</span>
                         </div>
-                        <div class="project-links">
-                            <a href="projects.html#coffee-kiosk" class="project-link">
-                                <span class="prompt">$</span>
-                                view_details
-                            </a>
+                        <div class="project-links-dark">
+                            <a href="projects.html#coffee-kiosk" class="project-link-dark">View</a>
+                            <a href="https://github.com/IsaacZachary/CoffeeKiosk" target="_blank" class="project-link-dark">Code</a>
                         </div>
                     </article>
                     
-                    <!-- Project 3: AI Recommender -->
-                    <article class="project-card-home">
-                        <div class="project-header">
-                            <span class="project-badge">Functional Prototype</span>
-                            <h3>AI Recommender</h3>
+                    <!-- Project 3: Drowsy Driver Detection -->
+                    <article class="project-card-home-dark">
+                        <div class="project-terminal-preview">
+                            <div class="terminal-preview-header">
+                                <span>project://drowsy-driver-detection</span>
+                            </div>
+                            <div class="terminal-preview-body">
+                                <div class="preview-line">STATUS: ML Project</div>
+                                <div class="preview-line">STACK: Python · TensorFlow · OpenCV</div>
+                                <div class="preview-line">TYPE: Real-time Inference</div>
+                            </div>
                         </div>
-                        <p>FastAPI + React AI system with OpenAI integration</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">OpenAI</span>
+                        <div class="project-header-dark">
+                            <span class="project-badge-dark">ML Project</span>
+                            <h3>Drowsy Driver Detection</h3>
                         </div>
-                        <div class="project-links">
-                            <a href="projects.html#ai-recommender" class="project-link">
-                                <span class="prompt">$</span>
-                                view_details
-                            </a>
+                        <p class="project-description-dark">Real-time webcam inference with alert, microsleep, and yawning detection</p>
+                        <div class="project-tech-dark">
+                            <span class="tech-tag-dark">Python</span>
+                            <span class="tech-tag-dark">TensorFlow</span>
+                            <span class="tech-tag-dark">OpenCV</span>
+                            <span class="tech-tag-dark">ML</span>
+                        </div>
+                        <div class="project-links-dark">
+                            <a href="projects.html#drowsy-driver" class="project-link-dark">View</a>
+                            <a href="https://github.com/IsaacZachary/DrowsyDriverDetection" target="_blank" class="project-link-dark">Code</a>
                         </div>
                     </article>
-                    </div>
+                </div>
 
                 <div class="terminal-line">
                     <span class="prompt">$</span>
@@ -253,8 +304,8 @@
                 <div class="terminal-line">
                     <span class="prompt">$</span>
                     <span class="command">tail -f</span>
-                                    </div>
-                
+                    </div>
+                    
                 <div class="learning-items">
                     <div class="learning-item">
                         <span class="learning-icon">⟫</span>
@@ -273,21 +324,21 @@
                             <span class="learning-status">Started</span>
                         </div>
                     </div>
-                    
+
                     <div class="learning-item">
                         <span class="learning-icon">⟫</span>
                         <div class="learning-content">
                             <h4>AWS Cloud Practitioner</h4>
                             <p>Preparing for certification with focus on core services</p>
                             <span class="learning-status">Planning</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
+
                 <div class="terminal-line">
                     <span class="prompt">$</span>
                     <span class="command">cat roadmap.md</span>
-                </div>
+                                    </div>
                 <a href="writing.html#roadmap" class="btn btn-terminal-outline">
                     <span class="prompt">$</span>
                     view_full_roadmap

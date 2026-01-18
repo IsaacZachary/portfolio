@@ -3,28 +3,30 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub Stars](https://img.shields.io/github/stars/IsaacZachary/portfolio?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
-![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge)
 
-A modern, interactive developer portfolio showcasing my skills, projects, and professional journey. Built with a terminal-inspired UI and responsive design.
+A professional, multi-page developer portfolio showcasing DevOps skills, projects, and professional journey. Built with a terminal-inspired UI, Docker support, and responsive design.
 
-🔗 **Live Demo**: [My Website](https://izach.netlify.app/)
-
-![Portfolio Screenshot](./assets/portfolio-screenshot.png)
+🔗 **Live Demo**: [My Website](https://isaaczachary.github.io)
 
 ## ✨ Features
 
 - **Terminal-inspired UI** with interactive command-line elements
-- **Dark/Light mode toggle** with system preference detection
-- **Responsive design** that works on all devices
-- **Animated elements** with ScrollReveal and custom animations
+- **Multi-page structure** (Home, About, Projects, Experience, Writing, Contact)
+- **Dark/Light mode toggle** with persistent theme storage
+- **Responsive design** optimized for mobile, tablet, and desktop
+- **Interactive code playground** with CodeMirror editor
+- **Docker support** for easy deployment
 - **GitHub integration** displaying real-time stats
-- **Project showcase** with hover effects and details
-- **Contact form** with validation
+- **Project showcase** with detailed descriptions and tech stacks
+- **Contact form** with Netlify integration
 - **SEO optimized** with proper meta tags
 
 ## 🚀 Quick Start
+
+### Local Development
 
 1. **Clone the repository**
    ```bash
@@ -41,6 +43,22 @@ A modern, interactive developer portfolio showcasing my skills, projects, and pr
    start index.html
    ```
 
+### Docker Deployment
+
+See [README-docker.md](./README-docker.md) for detailed Docker instructions.
+
+**Quick Docker commands:**
+```bash
+# Production
+docker-compose up -d --build
+
+# Development (with live reload)
+docker-compose -f docker-compose.dev.yml up -d
+
+# Using deployment script
+./deploy.sh prod
+```
+
 ## 🛠️ Project Structure
 
 ```
@@ -51,141 +69,195 @@ portfolio/
 │   ├── about-pic.png          # About section image
 │   └── project-*.png          # Project screenshots
 │
+├── 📁 components/              # Shared components
+│   ├── navigation.html         # Navigation component
+│   └── footer.html            # Footer component
+│
 ├── 📁 css/                     # Stylesheets
-│   ├── all.min.css            # Font Awesome icons
 │   ├── style.css              # Main styles
 │   └── mediaqueries.css       # Responsive styles
 │
 ├── 📁 js/                      # JavaScript files
+│   ├── data.js                # Portfolio data
 │   ├── motion.js              # Animations and scroll effects
-│   └── script.js              # Main functionality
+│   ├── script.js              # Main functionality
+│   └── playground.js          # Code playground logic
 │
-├── 📁 webfonts/                # Font files
-├── index.html                 # Main HTML file
-└── README.md                  # Project documentation
+├── 📁 nginx/                   # Nginx configuration
+│   └── nginx.conf             # Production nginx config
+│
+├── 📁 pdf/                     # Resume/CV files
+│
+├── 📄 index.html              # Home/Landing page
+├── 📄 about.html              # About & Journey page
+├── 📄 projects.html           # Projects & Tech Stack page
+├── 📄 experience.html         # Experience & Skills page
+├── 📄 writing.html            # Articles & Roadmap page
+├── 📄 contact.html            # Contact & Resume page
+│
+├── 🐳 Dockerfile               # Production Docker image
+├── 🐳 docker-compose.yml      # Production compose file
+├── 🐳 docker-compose.dev.yml  # Development compose file
+├── 🐳 .dockerignore           # Docker ignore file
+├── 🚀 deploy.sh               # Deployment script
+│
+├── 📖 README.md               # This file
+└── 📖 README-docker.md        # Docker documentation
 ```
+
+## 📄 Pages Overview
+
+### Home (`index.html`)
+- Hero section with whoami cards
+- Floating tech stack logos
+- Featured projects showcase
+- Currently learning section
+
+### About (`about.html`)
+- Professional journey
+- Education timeline
+- Background and transition story
+
+### Projects (`projects.html`)
+- Detailed project descriptions
+- Tech stack breakdown
+- Key learnings from each project
+- Links to GitHub repositories
+
+### Experience (`experience.html`)
+- Professional timeline
+- Skills categorized by experience level
+- Technology badges
+
+### Writing (`writing.html`)
+- Technical articles
+- Interactive code playground
+- DevOps learning roadmap
+- Learning resources
+
+### Contact (`contact.html`)
+- Contact form (Netlify)
+- Social links
+- Resume download
 
 ## 🎨 Design System
 
 ### UI Components
-- **Terminal Windows**: Interactive command-line interfaces throughout the site
-- **Skill Tags**: Color-coded badges for technologies
-- **Timeline**: Visual representation of experience and education
-- **Project Cards**: Interactive cards with hover effects
+- **Terminal Windows**: Interactive command-line interfaces
+- **Whoami Cards**: Structured profile information
+- **Skill Badges**: Categorized technology tags
+- **Timeline**: Visual experience representation
+- **Project Cards**: Interactive cards with images
+- **Code Playground**: Live code editor with terminal output
 
 ### Color Palette
 | Color          | Hex       | Usage                |
 |----------------|-----------|----------------------|
-| Primary        | `#2563eb` | Buttons, links       |
 | Terminal Green | `#50fa7b` | Success, commands    |
+| Terminal Cyan  | `#8be9fd` | Info, highlights    |
 | Terminal Red   | `#ff5555` | Errors, warnings     |
-| Terminal Purple| `#bd93f9` | Accents, highlights  |
+| Terminal Purple| `#bd93f9` | Accents              |
 
 ## 🖥️ Tech Stack
 
 **Frontend:**
-- HTML5, CSS3, JavaScript
+- HTML5, CSS3, Vanilla JavaScript
 - Font Awesome for icons
+- CodeMirror for code playground
 - ScrollReveal for animations
 - Typed.js for terminal typing effects
+
+**DevOps:**
+- Docker & Docker Compose
+- Nginx for static hosting
+- Multi-stage builds
+- Health checks
 
 **Tools:**
 - VS Code
 - Git & GitHub
-- Netlify for deployment
+- Netlify/GitHub Pages for deployment
 
-## 📸 Screenshots
+## 🌟 Featured Projects
 
-### Light Mode
-![Light Mode Screenshot](./assets/light-mode-screenshot.png)
+### ISP Management System
+Containerized multi-tenant ERP with Docker, RADIUS concepts, and time-based accounting.
 
-### Dark Mode
-![Dark Mode Screenshot](./assets/dark-mode-screenshot.png)
+**Tech:** Docker, Django REST, PostgreSQL, Redis, Nginx, Cloudflare
 
-### Mobile View
-![Mobile Screenshot](./assets/mobile-screenshot.png)
+### Smart AI Product Recommender
+Terminal-style UX with multilingual queries and AI-assisted recommendations.
 
-## 🎥 Demo Video
+**Tech:** FastAPI, React, OpenAI API, Python, Docker
 
-[![Portfolio Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+### TechCareAfrica Helpdesk
+Django-based support workflow with ticketing, user roles, and dashboards.
 
-## 🌟 Highlights
+**Tech:** Python, Django, Bootstrap, PostgreSQL
 
-1. **Interactive Terminal UI**
-   - Realistic command-line interface elements
-   - Animated cursor and typing effects
-   - Theme switching via terminal command
+### Drowsy Driver Detection
+Real-time webcam inference with alert, microsleep, and yawning detection.
 
-2. **Dynamic GitHub Integration**
-   ```javascript
-   // Fetches GitHub stats from API
-   async function fetchGitHubStats() {
-     const response = await fetch('https://api.github.com/users/IsaacZachary');
-     const data = await response.json();
-     document.getElementById('github-repos').textContent = data.public_repos;
-   }
-   ```
+**Tech:** Python, TensorFlow, OpenCV, Computer Vision
 
-3. **Responsive Design**
-   - Mobile-first approach
-   - Flexible grid layouts
-   - Adaptive typography
+**GitHub:** [IsaacZachary/DrowsyDriverDetection](https://github.com/IsaacZachary/DrowsyDriverDetection)
+
+### Coffee Kiosk
+E-commerce platform with M-Pesa integration and Dockerized deployment.
+
+**Tech:** React, TypeScript, Node.js, Docker, M-Pesa API, Supabase
+
+**GitHub:** [IsaacZachary/CoffeeKiosk](https://github.com/IsaacZachary/CoffeeKiosk)
+
+**Live Demo:** [coffee-kiosk-frontend.onrender.com](https://coffee-kiosk-frontend.onrender.com)
+
+## 🚀 Deployment
+
+### Option 1: Docker (Recommended)
+
+See [README-docker.md](./README-docker.md) for complete Docker deployment guide.
+
+### Option 2: Static Hosting
+
+**Netlify:**
+1. Connect GitHub repository
+2. Set publish directory: `/` (root)
+3. Enable automatic deploys
+
+**GitHub Pages:**
+```bash
+git checkout -b gh-pages
+git push origin gh-pages
+```
+Then enable in repository settings.
+
+## 📝 Updating Content
+
+### Update Projects
+Edit `js/data.js` and `projects.html`
+
+### Update Experience
+Edit `experience.html` and `js/data.js`
+
+### Update Images
+Replace files in `assets/` directory and update references in HTML
+
+### Update Articles
+Edit `writing.html` - articles are embedded in the page
 
 ## 🛠️ Development
 
 ### Built With
 - [Font Awesome](https://fontawesome.com/) - Icon library
+- [CodeMirror](https://codemirror.net/) - Code editor
 - [ScrollReveal](https://scrollrevealjs.org/) - Scroll animations
 - [Typed.js](https://github.com/mattboldt/typed.js/) - Typing animations
 
-### Custom Components
-1. **Terminal Window Component**
-   ```html
-   <div class="terminal-window">
-     <div class="terminal-header">
-       <div class="terminal-buttons">
-         <span class="terminal-btn red"></span>
-         <span class="terminal-btn yellow"></span>
-         <span class="terminal-btn green"></span>
-       </div>
-       <div class="terminal-title">isaac_zachary --profile</div>
-     </div>
-     <div class="terminal-body">
-       <!-- Content here -->
-     </div>
-   </div>
-   ```
-
-2. **Project Card Component**
-   ```html
-   <div class="project-card">
-     <div class="project-img-container">
-       <img src="./assets/project-1.png" class="project-img">
-       <div class="project-overlay">
-         <h3>Project Title</h3>
-         <div class="project-links">
-           <a href="#"><i class="fab fa-github"></i></a>
-           <a href="#"><i class="fas fa-external-link-alt"></i></a>
-         </div>
-       </div>
-     </div>
-   </div>
-   ```
-
-## 🚀 Deployment
-
-1. **Netlify**
-   - Connect your GitHub repository
-   - Set build command: `npm run build` (if applicable)
-   - Set publish directory: `/` (root)
-   - Enable automatic deploys
-
-2. **GitHub Pages**
-   ```bash
-   git checkout -b gh-pages
-   git push origin gh-pages
-   ```
-   Then enable in repository settings.
+### Custom Features
+1. **Interactive Code Playground** - Edit Docker, Nginx, Python examples
+2. **Terminal UI Components** - Consistent terminal aesthetic
+3. **Theme Toggle** - Persistent dark/light mode
+4. **Responsive Navigation** - Mobile hamburger menu
 
 ## 🤝 Contributing
 
@@ -197,8 +269,6 @@ Contributions are welcome! Here's how:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-Please make sure to update tests as appropriate.
-
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
@@ -207,12 +277,18 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Isaac Zachary - [isaaczachary18@gmail.com](mailto:isaaczachary18@gmail.com)
 
-Project Link: [https://github.com/IsaacZachary/portfolio](https://github.com/IsaacZachary/portfolio)
+- **LinkedIn:** [linkedin.com/in/isaaczachary](https://linkedin.com/in/isaaczachary)
+- **GitHub:** [github.com/IsaacZachary](https://github.com/IsaacZachary)
+- **Portfolio:** [isaaczachary.github.io](https://isaaczachary.github.io)
 
 ## 🙏 Acknowledgments
 
 - [Font Awesome](https://fontawesome.com/) for icons
+- [CodeMirror](https://codemirror.net/) for code editor
 - [ScrollReveal](https://scrollrevealjs.org/) for animations
 - [Shields.io](https://shields.io/) for badges
-- Inspiration from various terminal-style portfolios
-```
+- Inspiration from terminal-style portfolios
+
+---
+
+**Status:** ✅ Production Ready | **Last Updated:** January 2025

@@ -78,34 +78,126 @@
                 
                 <h1>Featured Projects</h1>
                 
-                <!-- ZakaFlow Project -->
-                <article id="zakaflow" class="project-detail">
+                <!-- ISP Management System -->
+                <article id="isp-management" class="project-detail">
                     <div class="project-header">
-                        <span class="project-badge">Architecture Prototype</span>
-                        <h2>ZakaFlow</h2>
-                        <p class="project-tagline">Containerized data pipeline architecture</p>
+                        <span class="project-badge">Production System</span>
+                        <h2>ISP Management System</h2>
+                        <p class="project-tagline">Containerized multi-tenant ERP with Docker</p>
                     </div>
-                    <p class="project-story">Started as a learning project to understand data pipelines in production. Designed multi-service architecture with Docker Compose connecting Kafka, Spark, Airflow, and dbt to explore distributed systems patterns.</p>
+                    <p class="project-story">Built a containerized multi-tenant ERP system using Docker via aaPanel. Features 11 isolated environments across 10 niches, with SSL, DNS, and Cloudflare integration. Implemented GitHub-based deployment, automated backups, and monitoring. Includes RADIUS concepts for time-based accounting and network access control.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Docker Compose</span>
-                        <span class="tech-tag">Apache Kafka</span>
-                        <span class="tech-tag">Apache Spark</span>
-                        <span class="tech-tag">Apache Airflow</span>
-                        <span class="tech-tag">dbt</span>
-                        <span class="tech-tag">Terraform (concepts)</span>
+                        <span class="tech-tag">Django REST</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">RADIUS</span>
+                        <span class="tech-tag">Nginx</span>
+                        <span class="tech-tag">Cloudflare</span>
                     </div>
                     <div class="project-learnings">
                         <h4>Key Learnings:</h4>
                         <ul>
-                            <li>Multi-service Docker architecture</li>
-                            <li>Data flow between distributed systems</li>
-                            <li>Infrastructure-as-code concepts</li>
-                            <li>Real-time vs batch processing tradeoffs</li>
+                            <li>Multi-tenant architecture with Docker isolation</li>
+                            <li>RADIUS authentication and time-based accounting</li>
+                            <li>SSL/DNS management at scale</li>
+                            <li>GitHub-based CI/CD workflows</li>
                         </ul>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/IsaacZachary/zaka-flow" target="_blank" class="btn btn-terminal-outline">
+                        <a href="https://github.com/IsaacZachary" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Smart AI Product Recommender -->
+                <article id="ai-recommender" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Functional Prototype</span>
+                        <h2>Smart AI Product Recommender</h2>
+                        <p class="project-tagline">Terminal-style UX with multilingual queries</p>
+                    </div>
+                    <p class="project-story">Developed an AI recommendation system with a unique terminal-style user interface. Combines FastAPI backend with OpenAI's API to provide multilingual query support and AI-assisted product recommendations. The terminal aesthetic creates an engaging developer-focused experience while maintaining modern functionality.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Terminal-style UI/UX design patterns</li>
+                            <li>Multilingual query processing</li>
+                            <li>OpenAI API integration and prompt engineering</li>
+                            <li>FastAPI async patterns</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/ai-recommender" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- TechCareAfrica Project -->
+                <article id="techcareafrica" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Production Ready</span>
+                        <h2>TechCareAfrica Helpdesk</h2>
+                        <p class="project-tagline">Django-based support workflow system</p>
+                    </div>
+                    <p class="project-story">Built to provide affordable and efficient IT solutions for African businesses. Created a full helpdesk system with ticket management, user roles, dashboards, and reporting. This project combined my technical support experience with software development skills to solve real business problems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Django ORM and models</li>
+                            <li>User authentication and role-based access</li>
+                            <li>Bootstrap UI components</li>
+                            <li>Database design patterns</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/TechCareAfrica" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Drowsy Driver Detection -->
+                <article id="drowsy-driver" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">ML Project</span>
+                        <h2>Drowsy Driver Detection</h2>
+                        <p class="project-tagline">Real-time webcam inference with alert system</p>
+                    </div>
+                    <p class="project-story">Developed a machine learning system for detecting driver drowsiness in real-time using webcam input. The system detects alert states, microsleep patterns, and yawning to prevent accidents. Built with TensorFlow for model training and OpenCV for real-time video processing.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Real-time video processing with OpenCV</li>
+                            <li>TensorFlow model training and deployment</li>
+                            <li>Facial landmark detection</li>
+                            <li>Alert system integration</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/DrowsyDriverDetection" target="_blank" class="btn btn-terminal-outline">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
@@ -118,13 +210,14 @@
                         <h2>Coffee Kiosk</h2>
                         <p class="project-tagline">E-commerce platform with M-Pesa integration</p>
                     </div>
-                    <p class="project-story">Built a complete e-commerce solution for a local coffee business. Integrated M-Pesa mobile payments, implemented Docker containerization for consistent deployments, and created a responsive React frontend. This project taught me about payment gateway integration, container orchestration, and production deployment practices.</p>
+                    <p class="project-story">A modern web application combining coffee e-commerce with M-PESA mobile payments. Built with React TypeScript frontend and Node.js backend, featuring Docker containerization for consistent deployments. Includes real-time payment status updates and transaction history.</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">Docker</span>
                         <span class="tech-tag">M-Pesa API</span>
-                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Supabase</span>
                     </div>
                     <div class="project-learnings">
                         <h4>Key Learnings:</h4>
@@ -132,43 +225,15 @@
                             <li>M-Pesa API integration patterns</li>
                             <li>Docker multi-stage builds</li>
                             <li>Payment callback handling</li>
-                            <li>Production deployment workflows</li>
+                            <li>Production deployment on Render.com</li>
                         </ul>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/IsaacZachary/coffee-kiosk" target="_blank" class="btn btn-terminal-outline">
+                        <a href="https://github.com/IsaacZachary/CoffeeKiosk" target="_blank" class="btn btn-terminal-outline">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
-                    </div>
-                </article>
-
-                <!-- AI Recommender Project -->
-                <article id="ai-recommender" class="project-detail">
-                    <div class="project-header">
-                        <span class="project-badge">Functional Prototype</span>
-                        <h2>Smart AI Recommender</h2>
-                        <p class="project-tagline">FastAPI + React AI system</p>
-                    </div>
-                    <p class="project-story">Developed an AI recommendation system combining FastAPI backend with OpenAI's API. Built a React frontend for user interaction and containerized the entire stack. This project demonstrated practical AI integration, API design, and modern full-stack development patterns.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">OpenAI API</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                    <div class="project-learnings">
-                        <h4>Key Learnings:</h4>
-                        <ul>
-                            <li>OpenAI API integration</li>
-                            <li>FastAPI async patterns</li>
-                            <li>AI prompt engineering</li>
-                            <li>React state management</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/IsaacZachary/ai-recommender" target="_blank" class="btn btn-terminal-outline">
-                            <i class="fab fa-github"></i> View on GitHub
+                        <a href="https://coffee-kiosk-frontend.onrender.com" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </article>

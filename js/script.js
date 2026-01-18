@@ -237,6 +237,21 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+// Article Read More Toggle
+function toggleArticle(button) {
+  const articleContent = button.previousElementSibling;
+  if (articleContent && articleContent.classList.contains('article-expanded')) {
+    if (articleContent.style.display === 'none') {
+      articleContent.style.display = 'block';
+      button.textContent = 'Read Less';
+      button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      articleContent.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  }
+}
+
 // Animation on Scroll
 document.addEventListener('DOMContentLoaded', function() {
   const animateOnScroll = (elements, animationClass) => {
