@@ -20,11 +20,11 @@
     }
     
     #desktop-nav {
-        display: none;
+        display: none !important;
     }
     
     #hamburger-nav {
-        display: flex;
+        display: flex !important;
     }
     
     .section-container {
@@ -153,5 +153,83 @@
     
     .tab-btn {
         width: 100%;
+    }
+    
+    .learning-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .whoami-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid-home {
+        grid-template-columns: 1fr;
+    }
+    
+    .whoami-micro-tiles {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====== Medium screens - 2x2 grid for projects ====== */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .projects-grid-home {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ====== Responsive Improvements for All Devices (0-200% zoom) ====== */
+* {
+    box-sizing: border-box;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* ====== Zoom Level Optimizations ====== */
+@media screen and (min-width: 1201px) {
+    /* Ensure content doesn't exceed readable width even at high zoom */
+    .hero-section,
+    .featured-projects-home,
+    .currently-learning {
+        max-width: min(var(--content-max), 90vw);
+    }
+}
+
+/* ====== High Zoom Support (150-200%) ====== */
+@media screen and (min-resolution: 1.5dppx) {
+    .project-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ====== Zoom Level Optimizations ====== */
+@media screen and (min-width: 1201px) {
+    /* Ensure content doesn't exceed readable width even at high zoom */
+    .hero-section,
+    .featured-projects-home,
+    .currently-learning {
+        max-width: min(var(--content-max), 90vw);
+    }
+}
+
+/* ====== High Zoom Support (150-200%) ====== */
+@media screen and (min-resolution: 1.5dppx) {
+    .project-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
