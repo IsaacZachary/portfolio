@@ -1,0 +1,9 @@
+/* Homepage Featured Projects - Match Hero Width */
+.featured-projects-home .terminal-window {
+    max-width: 1200px;
+}
+
+/* Ensure projects grid stays within reasonable bounds */
+.projects-grid-home {
+    max-width: 100%;
+}

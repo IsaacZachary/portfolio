@@ -1,5 +1,5 @@
 // Interactive Code Playground
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const codeExamples = {
         dockerfile: {
             title: 'Dockerfile',
@@ -86,91 +86,104 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)`
         }
     };
-    
+
     let editor;
     const editorElement = document.getElementById('code-editor');
-    const exampleSelect = document.getElementById('example-select');
+    const envOptions = document.querySelectorAll('.env-opt');
     const deployBtn = document.getElementById('deploy-btn');
     const outputPanel = document.getElementById('terminal-output');
     const editorTitle = document.getElementById('editor-title');
-    
+
     // Initialize CodeMirror
-    editor = CodeMirror.fromTextArea(editorElement, {
-        lineNumbers: true,
-        mode: 'dockerfile',
-        theme: 'monokai',
-        indentUnit: 2,
-        lineWrapping: true,
-        autofocus: true
+    if (editorElement) {
+        editor = CodeMirror.fromTextArea(editorElement, {
+            lineNumbers: true,
+            mode: 'dockerfile',
+            theme: 'monokai',
+            indentUnit: 2,
+            lineWrapping: true,
+            autofocus: true
+        });
+
+        // Load initial example
+        loadExample('dockerfile');
+    }
+
+    // Handle environment selection
+    envOptions.forEach(opt => {
+        opt.addEventListener('click', function () {
+            // Remove active class from all
+            envOptions.forEach(o => o.classList.remove('active'));
+            // Add to clicked
+            this.classList.add('active');
+
+            const value = this.getAttribute('data-value');
+            loadExample(value);
+        });
     });
-    
-    // Load initial example
-    loadExample('dockerfile');
-    
-    // Handle example selection
-    exampleSelect.addEventListener('change', function() {
-        loadExample(this.value);
-    });
-    
+
     // Handle deploy button
-    deployBtn.addEventListener('click', function() {
-        simulateDeploy();
-    });
-    
+    if (deployBtn) {
+        deployBtn.addEventListener('click', function () {
+            simulateDeploy();
+        });
+    }
+
     function loadExample(exampleKey) {
         const example = codeExamples[exampleKey];
-        if (example) {
+        if (example && editor) {
             editor.setValue(example.content);
             editor.setOption('mode', example.mode);
             editorTitle.textContent = example.title;
         }
     }
-    
+
     function simulateDeploy() {
-        const selectedExample = exampleSelect.value;
-        const code = editor.getValue();
-        
+        const activeOpt = document.querySelector('.env-opt.active');
+        const exampleKey = activeOpt ? activeOpt.getAttribute('data-value') : 'dockerfile';
+
         // Clear output
         outputPanel.innerHTML = '';
-        
-        // Simulate deployment process
-        addOutputLine('$ docker build -t myapp .', 'command');
+
+        const timestamp = new Array(8).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+
+        addOutputLine(`[SYSTEM] Initiating deployment for ${exampleKey}...`, 'info');
+
         setTimeout(() => {
-            addOutputLine('Sending build context to Docker daemon...', 'output');
-            addOutputLine('Step 1/6 : FROM python:3.11-slim', 'output');
-            addOutputLine('Step 2/6 : WORKDIR /app', 'output');
-            addOutputLine('Step 3/6 : COPY requirements.txt .', 'output');
-            addOutputLine('Step 4/6 : RUN pip install --no-cache-dir -r requirements.txt', 'output');
-            addOutputLine('Step 5/6 : COPY . .', 'output');
-            addOutputLine('Step 6/6 : CMD ["python", "app.py"]', 'output');
-            addOutputLine('Successfully built abc123def456', 'success');
-            
+            addOutputLine(`$ docker build -t myapp:${timestamp} .`, 'command');
             setTimeout(() => {
-                addOutputLine('$ docker run -d -p 8000:8000 myapp', 'command');
+                addOutputLine('Sending build context to Docker daemon...', 'output');
+                addOutputLine('Step 1/6 : FROM environment', 'output');
+                addOutputLine('Step 2/6 : RUN security-audit --strict', 'output');
+                addOutputLine('Successfully built container image.', 'success');
+
                 setTimeout(() => {
-                    addOutputLine('Container started: myapp-container-123', 'success');
-                    addOutputLine('Application running at http://localhost:8000', 'success');
-                    addOutputLine('', 'output');
-                    addOutputLine('Note: This is a simulation. No actual containers were created.', 'info');
-                }, 500);
-            }, 500);
-        }, 500);
+                    addOutputLine(`$ docker-compose up -d`, 'command');
+                    setTimeout(() => {
+                        addOutputLine('Container started: prod-node-01', 'success');
+                        addOutputLine('System integrity verified at 100%.', 'success');
+                        addOutputLine('', 'output');
+                        addOutputLine('Note: This is a safe pre-deployment simulation.', 'info');
+                    }, 800);
+                }, 800);
+            }, 800);
+        }, 400);
     }
-    
+
     function addOutputLine(text, type = 'output') {
         const line = document.createElement('div');
         line.className = `terminal-line-output ${type}`;
-        
+
         if (type === 'command') {
-            line.innerHTML = `<span class="prompt">$</span> <span>${text}</span>`;
+            line.innerHTML = `<span class="prompt">></span> <span>${text}</span>`;
         } else if (type === 'success') {
-            line.innerHTML = `<span class="success">✓</span> <span>${text}</span>`;
+            line.innerHTML = `<span class="success" style="color:#10B981">✓</span> <span>${text}</span>`;
         } else if (type === 'info') {
-            line.innerHTML = `<span class="info">ℹ</span> <span>${text}</span>`;
+            line.innerHTML = `<span class="info" style="color:#3B82F6">ℹ</span> <span>${text}</span>`;
         } else {
             line.innerHTML = `<span>${text}</span>`;
         }
-        
+
         outputPanel.appendChild(line);
         outputPanel.scrollTop = outputPanel.scrollHeight;
     }

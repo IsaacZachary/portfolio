@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Isaac - Premium DevOps Engineer. Schedule a consultation, discuss your infrastructure challenges, or explore collaboration opportunities. Professional networking and technical partnership.">
+    <meta name="keywords" content="Contact DevOps Engineer, Technical Consultation, Infrastructure Consulting, DevOps Partnership, Cloud Architecture Services">
+    <meta name="author" content="Isaac">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Isaac - Let's Build Something Exceptional">
+    <meta property="og:description" content="Professional networking and opportunity generation. Schedule a consultation or discuss your next project.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <title>Contact Isaac - Premium DevOps Engineer & Technical Leader</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fisaacport6861back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.14"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background text-text-primary">
+    
+    <!-- Glassmorphic Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <!-- Logo -->
+                    <a href="homepage.html" class="flex items-center space-x-2 group">
+                        <svg class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 12H16V28H12V12Z" fill="white"/>
+                            <path d="M20 16H28V20H20V16Z" fill="white"/>
+                            <path d="M20 24H28V28H20V24Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB"/>
+                                    <stop offset="1" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac</span>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="homepage.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300" aria-label="Toggle dark mode">
+                        <svg id="theme-icon-light" class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <svg id="theme-icon-dark" class="w-5 h-5 text-primary hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="homepage.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="contact-hero" class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-secondary-50 rounded-full mb-4">
+                    <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="font-body text-sm font-medium text-secondary-700">Available for new opportunities</span>
+                </div>
+                
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Let's Build Something 
+                    <span class="text-gradient">Exceptional</span>
+                </h1>
+                
+                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    Whether you're looking to optimize your infrastructure, implement DevOps best practices, or need strategic technical leadership, I'm here to help transform your challenges into elegant solutions.
+                </p>
+
+                <!-- Response Time Indicator -->
+                <div class="flex items-center justify-center space-x-8 pt-6">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="font-body text-sm text-text-secondary">Response within 24 hours</span>
+                    </div>
+                    <div class="w-px h-6 bg-border"></div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="font-body text-sm text-text-secondary">Free initial consultation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods & Form Section -->
+    <section id="contact-main" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Left Column - Contact Information -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Direct Contact Card -->
+                    <div class="card space-y-6">
+                        <h2 class="font-headline text-h3 font-semibold text-text-primary">Direct Contact</h2>
+                        
+                        <!-- Email -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-body text-sm font-medium text-text-tertiary">Email</p>
+                                    <a href="mailto:isaac@devops.pro" class="font-body text-body text-primary hover:text-primary-700 transition-colors duration-300">isaac@devops.pro</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-secondary-100 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-body text-sm font-medium text-text-tertiary">Phone</p>
+                                    <a href="tel:+15551234567" class="font-body text-body text-secondary hover:text-secondary-700 transition-colors duration-300">+1 (555) 123-4567</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-accent-100 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-body text-sm font-medium text-text-tertiary">Location</p>
+                                    <p class="font-body text-body text-text-primary">San Francisco, CA</p>
+                                    <p class="font-body text-body-sm text-text-secondary">Available for remote work globally</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links Card -->
+                    <div class="card space-y-6">
+                        <h3 class="font-headline text-h4 font-semibold text-text-primary">Connect With Me</h3>
+                        
+                        <div class="space-y-3">
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-primary-50 transition-colors duration-300 group">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                <span class="font-body text-body text-text-primary group-hover:text-primary transition-colors duration-300">LinkedIn</span>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-primary-50 transition-colors duration-300 group">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <span class="font-body text-body text-text-primary group-hover:text-primary transition-colors duration-300">GitHub</span>
+                            </a>
+
+                            <!-- Twitter -->
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-primary-50 transition-colors duration-300 group">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                                <span class="font-body text-body text-text-primary group-hover:text-primary transition-colors duration-300">Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="card space-y-4">
+                        <h3 class="font-headline text-h4 font-semibold text-text-primary">Trust & Security</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                                <span class="font-body text-body-sm text-text-secondary">SSL Encrypted Communication</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                <span class="font-body text-body-sm text-text-secondary">GDPR Compliant</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="font-body text-body-sm text-text-secondary">Professional Associations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Contact Form & Calendar -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Contact Form -->
+                    <div class="card">
+                        <h2 class="font-headline text-h3 font-semibold text-text-primary mb-6">Send a Message</h2>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <!-- Name & Email Row -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block font-body text-body-sm font-medium text-text-primary mb-2">Full Name *</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        required
+                                        class="input-field"
+                                        placeholder="John Doe"
+                                    >
+                                    <p id="name-error" class="text-body-xs text-error mt-1 hidden">Please enter your name</p>
+                                </div>
+                                <div>
+                                    <label for="email" class="block font-body text-body-sm font-medium text-text-primary mb-2">Email Address *</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        required
+                                        class="input-field"
+                                        placeholder="john@company.com"
+                                    >
+                                    <p id="email-error" class="text-body-xs text-error mt-1 hidden">Please enter a valid email</p>
+                                </div>
+                            </div>
+
+                            <!-- Company & Phone Row -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="company" class="block font-body text-body-sm font-medium text-text-primary mb-2">Company</label>
+                                    <input 
+                                        type="text" 
+                                        id="company" 
+                                        name="company"
+                                        class="input-field"
+                                        placeholder="Your Company"
+                                    >
+                                </div>
+                                <div>
+                                    <label for="phone" class="block font-body text-body-sm font-medium text-text-primary mb-2">Phone Number</label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone"
+                                        class="input-field"
+                                        placeholder="+1 (555) 123-4567"
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Project Type -->
+                            <div>
+                                <label for="project-type" class="block font-body text-body-sm font-medium text-text-primary mb-2">Project Type *</label>
+                                <select 
+                                    id="project-type" 
+                                    name="project-type" 
+                                    required
+                                    class="input-field"
+                                >
+                                    <option value="">Select a project type</option>
+                                    <option value="cloud-migration">Cloud Migration</option>
+                                    <option value="devops-implementation">DevOps Implementation</option>
+                                    <option value="infrastructure-optimization">Infrastructure Optimization</option>
+                                    <option value="ci-cd-pipeline">CI/CD Pipeline Setup</option>
+                                    <option value="kubernetes-deployment">Kubernetes Deployment</option>
+                                    <option value="consulting">Technical Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <p id="project-type-error" class="text-body-xs text-error mt-1 hidden">Please select a project type</p>
+                            </div>
+
+                            <!-- Budget Range -->
+                            <div>
+                                <label for="budget" class="block font-body text-body-sm font-medium text-text-primary mb-2">Budget Range (USD)</label>
+                                <select 
+                                    id="budget" 
+                                    name="budget"
+                                    class="input-field"
+                                >
+                                    <option value="">Select budget range</option>
+                                    <option value="under-10k">Under $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="over-100k">Over $100,000</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block font-body text-body-sm font-medium text-text-primary mb-2">Project Details *</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="6" 
+                                    required
+                                    class="input-field resize-none"
+                                    placeholder="Tell me about your project, challenges, and goals..."
+                                ></textarea>
+                                <p id="message-error" class="text-body-xs text-error mt-1 hidden">Please provide project details</p>
+                            </div>
+
+                            <!-- Privacy Consent -->
+                            <div class="flex items-start space-x-3">
+                                <input 
+                                    type="checkbox" 
+                                    id="privacy" 
+                                    name="privacy" 
+                                    required
+                                    class="mt-1 w-4 h-4 text-primary border-border rounded focus:ring-2 focus:ring-primary-500"
+                                >
+                                <label for="privacy" class="font-body text-body-sm text-text-secondary">
+                                    I agree to the privacy policy and consent to the processing of my personal data for the purpose of responding to my inquiry. *
+                                </label>
+                            </div>
+                            <p id="privacy-error" class="text-body-xs text-error hidden">Please accept the privacy policy</p>
+
+                            <!-- Submit Button -->
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button 
+                                    type="submit" 
+                                    id="submit-btn"
+                                    class="btn-primary inline-flex items-center justify-center space-x-2 group"
+                                >
+                                    <span>Send Message</span>
+                                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+                                <button 
+                                    type="button" 
+                                    id="schedule-btn"
+                                    class="btn-outline inline-flex items-center justify-center space-x-2"
+                                >
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span>Schedule Consultation</span>
+                                </button>
+                            </div>
+
+                            <!-- Success Message -->
+                            <div id="success-message" class="hidden p-4 rounded-xl bg-success-light border border-secondary">
+                                <div class="flex items-start space-x-3">
+                                    <svg class="w-6 h-6 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-headline text-h4 font-semibold text-secondary-700 mb-1">Message Sent Successfully!</h4>
+                                        <p class="font-body text-body-sm text-secondary-700">Thank you for reaching out. I'll respond within 24 hours.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Error Message -->
+                            <div id="error-message" class="hidden p-4 rounded-xl bg-error-light border border-error">
+                                <div class="flex items-start space-x-3">
+                                    <svg class="w-6 h-6 text-error flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-headline text-h4 font-semibold text-error mb-1">Submission Failed</h4>
+                                        <p class="font-body text-body-sm text-error">Please check your information and try again.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Calendar Integration Card -->
+                    <div class="card" id="calendar-section">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Schedule a Consultation</h3>
+                                <p class="font-body text-body text-text-secondary">Book a free 30-minute consultation to discuss your project</p>
+                            </div>
+                            <button id="close-calendar" class="text-text-tertiary hover:text-text-primary transition-colors duration-300">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Calendar Placeholder -->
+                        <div class="border-2 border-dashed border-border rounded-xl p-8 text-center">
+                            <svg class="w-16 h-16 text-primary mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Calendar Integration</h4>
+                            <p class="font-body text-body text-text-secondary mb-6">Connect with your preferred calendar service to schedule a meeting</p>
+                            
+                            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                                <button class="btn-outline inline-flex items-center justify-center space-x-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+                                    </svg>
+                                    <span>Google Calendar</span>
+                                </button>
+                                <button class="btn-outline inline-flex items-center justify-center space-x-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm1-17h-2v7h7v-2h-5V5z"/>
+                                    </svg>
+                                    <span>Outlook Calendar</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Available Time Slots -->
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-headline text-h4 font-semibold text-text-primary">Typical Availability</h4>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="p-4 rounded-xl bg-primary-50 border border-primary-100">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="font-body text-body-sm font-medium text-primary-700">Weekdays</span>
+                                    </div>
+                                    <p class="font-body text-body-sm text-text-secondary">9:00 AM - 6:00 PM PST</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-secondary-50 border border-secondary-100">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                        </svg>
+                                        <span class="font-body text-body-sm font-medium text-secondary-700">Response Time</span>
+                                    </div>
+                                    <p class="font-body text-body-sm text-text-secondary">Within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-gradient-to-br from-background via-accent-50 to-background">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">Frequently Asked Questions</h2>
+                    <p class="text-body-lg text-text-secondary">Common questions about working together</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="card">
+                        <button class="faq-question w-full flex items-center justify-between text-left" data-faq="1">
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">What is your typical project timeline?</h3>
+                            <svg class="w-6 h-6 text-primary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                            <p class="font-body text-body text-text-secondary">Project timelines vary based on scope and complexity. A typical cloud migration project takes 8-12 weeks, while CI/CD pipeline implementation can be completed in 4-6 weeks. During our initial consultation, I'll provide a detailed timeline specific to your project requirements.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="card">
+                        <button class="faq-question w-full flex items-center justify-between text-left" data-faq="2">
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">Do you work with startups or only established companies?</h3>
+                            <svg class="w-6 h-6 text-primary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                            <p class="font-body text-body text-text-secondary">I work with organizations of all sizes, from early-stage startups to enterprise companies. Each client receives the same level of dedication and expertise. For startups, I offer flexible engagement models and can provide strategic guidance on building scalable infrastructure from the ground up.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="card">
+                        <button class="faq-question w-full flex items-center justify-between text-left" data-faq="3">
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">What is your pricing structure?</h3>
+                            <svg class="w-6 h-6 text-primary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                            <p class="font-body text-body text-text-secondary">I offer both project-based and hourly rate pricing models. Project-based pricing provides a fixed cost for defined deliverables, while hourly rates work well for ongoing support and consulting. All pricing is transparent and discussed during our initial consultation. I also offer retainer packages for long-term partnerships.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="card">
+                        <button class="faq-question w-full flex items-center justify-between text-left" data-faq="4">
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">Do you provide ongoing support after project completion?</h3>
+                            <svg class="w-6 h-6 text-primary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                            <p class="font-body text-body text-text-secondary">Yes, I offer comprehensive post-project support including documentation, knowledge transfer, and ongoing maintenance packages. Most projects include a 30-day support period, and I'm available for extended support contracts to ensure your infrastructure continues to perform optimally.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="card">
+                        <button class="faq-question w-full flex items-center justify-between text-left" data-faq="5">
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">Can you work remotely or do you require on-site presence?</h3>
+                            <svg class="w-6 h-6 text-primary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                            <p class="font-body text-body text-text-secondary">I'm fully equipped for remote work and have successfully delivered projects for clients worldwide. However, I'm also available for on-site work when needed, particularly during critical phases like initial architecture planning or major deployments. We can discuss the best arrangement during our consultation.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="card">
+                        <button class="faq-question w-full flex items-center justify-between text-left" data-faq="6">
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">What technologies and platforms do you specialize in?</h3>
+                            <svg class="w-6 h-6 text-primary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                            <p class="font-body text-body text-text-secondary">My core expertise includes AWS, Azure, and GCP for cloud platforms; Kubernetes and Docker for containerization; Terraform and Ansible for infrastructure as code; Jenkins, GitLab CI, and GitHub Actions for CI/CD; and Python and Go for automation. I stay current with emerging technologies and can quickly adapt to your existing tech stack.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section id="testimonials" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-12 space-y-4">
+                <h2 class="font-headline text-display-sm text-text-primary">What Clients Say</h2>
+                <p class="text-body-lg text-text-secondary">Feedback from successful collaborations</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card space-y-4">
+                    <div class="flex items-center space-x-1 text-accent">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="font-body text-body text-text-secondary italic">"Isaac transformed our infrastructure from a maintenance nightmare into a well-oiled machine. His expertise in Kubernetes and cloud architecture reduced our operational costs by 40% while improving reliability. Exceptional communication throughout the project."</p>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-border">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-100">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_13b46af78-1763293813661.png" 
+                                alt="Professional headshot of Sarah Chen, CTO at TechScale Solutions, providing testimonial about DevOps transformation"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop'; this.onerror=null;"
+                            >
+                        </div>
+                        <div>
+                            <p class="font-body text-body-sm font-semibold text-text-primary">Sarah Chen</p>
+                            <p class="font-body text-body-xs text-text-tertiary">CTO, TechScale Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card space-y-4">
+                    <div class="flex items-center space-x-1 text-accent">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="font-body text-body text-text-secondary italic">"Working with Isaac was a game-changer for our startup. He implemented a CI/CD pipeline that reduced our deployment time from hours to minutes. His ability to explain complex concepts in simple terms made the entire team more confident in our infrastructure."</p>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-border">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-secondary-100">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ac5db228-1763292306320.png" 
+                                alt="Professional headshot of Michael Rodriguez, VP Engineering at CloudNative Inc, sharing experience about CI/CD implementation"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                            >
+                        </div>
+                        <div>
+                            <p class="font-body text-body-sm font-semibold text-text-primary">Michael Rodriguez</p>
+                            <p class="font-body text-body-xs text-text-tertiary">VP Engineering, CloudNative Inc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card space-y-4">
+                    <div class="flex items-center space-x-1 text-accent">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="font-body text-body text-text-secondary italic">"Isaac's strategic approach to our cloud migration was impressive. He didn't just move our infrastructure—he optimized it. The result was a 50% reduction in cloud costs and significantly improved performance. Highly recommend for any DevOps challenge."</p>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-border">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-accent-100">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6a0bcd8-1763291649889.png" 
+                                alt="Professional headshot of David Kim, Director of Infrastructure at FinTech Global, discussing cloud migration success"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop'; this.onerror=null;"
+                            >
+                        </div>
+                        <div>
+                            <p class="font-body text-body-sm font-semibold text-text-primary">David Kim</p>
+                            <p class="font-body text-body-xs text-text-tertiary">Director of Infrastructure, FinTech Global</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 12H16V28H12V12Z" fill="white"/>
+                            <path d="M20 16H28V20H20V16Z" fill="white"/>
+                            <path d="M20 24H28V28H20V24Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB"/>
+                                    <stop offset="1" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="font-headline font-bold text-xl">Isaac</span>
+                    </div>
+                    <p class="text-body-sm text-gray-400">
+                        Premium DevOps engineer transforming infrastructure challenges into elegant solutions.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a></li>
+                        <li><a href="projects.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="experience.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a></li>
+                        <li><a href="writing.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Cloud Architecture</span></li>
+                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Container Orchestration</span></li>
+                        <li><span class="text-body-sm text-gray-400">Infrastructure as Code</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:isaac@devops.pro" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span>isaac@devops.pro</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">
+                        © 2026 Isaac. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <a href="javascript:void(0)" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <a href="javascript:void(0)" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIconLight = document.getElementById('theme-icon-light');
+        const themeIconDark = document.getElementById('theme-icon-dark');
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIconLight.classList.add('hidden');
+            themeIconDark.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            themeIconLight.classList.toggle('hidden');
+            themeIconDark.classList.toggle('hidden');
+            
+            const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Sticky Header Effect
+        const header = document.getElementById('main-header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.querySelector('nav').classList.add('shadow-card');
+            } else {
+                header.querySelector('nav').classList.remove('shadow-card');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Clear previous messages
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+            
+            // Clear field errors
+            document.querySelectorAll('[id$="-error"]').forEach(el => el.classList.add('hidden'));
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Validation
+            let isValid = true;
+            
+            if (!data.name || data.name.trim().length < 2) {
+                document.getElementById('name-error').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (!data.email || !data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                document.getElementById('email-error').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (!data['project-type']) {
+                document.getElementById('project-type-error').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (!data.message || data.message.trim().length < 10) {
+                document.getElementById('message-error').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (!data.privacy) {
+                document.getElementById('privacy-error').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+            
+            // Simulate form submission
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Sending...</span>';
+            
+            // Simulate API call
+            setTimeout(() => {
+                successMessage.classList.remove('hidden');
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Send Message</span><svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>';
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1500);
+        });
+
+        // Schedule Consultation Button
+        const scheduleBtn = document.getElementById('schedule-btn');
+        const calendarSection = document.getElementById('calendar-section');
+        const closeCalendar = document.getElementById('close-calendar');
+
+        scheduleBtn.addEventListener('click', () => {
+            calendarSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            calendarSection.classList.add('animate-scale-in');
+        });
+
+        closeCalendar.addEventListener('click', () => {
+            calendarSection.classList.add('hidden');
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqId = question.getAttribute('data-faq');
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('svg');
+                
+                // Close all other FAQs
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('svg').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current FAQ
+                answer.classList.toggle('hidden');
+                icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .card-interactive, section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

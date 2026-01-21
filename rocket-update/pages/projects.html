@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Isaac's Projects Portfolio - Full-width case studies showcasing DevOps excellence, cloud architecture, and infrastructure automation with quantified results and technical depth.">
+    <meta name="keywords" content="DevOps Projects, Cloud Architecture, Infrastructure Automation, Kubernetes, CI/CD, Portfolio, Case Studies">
+    <meta name="author" content="Isaac">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Isaac - Projects Portfolio & Case Studies">
+    <meta property="og:description" content="Explore detailed case studies of cloud migrations, CI/CD pipelines, and infrastructure automation projects with measurable outcomes">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <title>Projects - Isaac Portfolio | DevOps Case Studies & Technical Excellence</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fisaacport6861back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.14"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background text-text-primary">
+    
+    <!-- Glassmorphic Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <!-- Logo -->
+                    <a href="homepage.html" class="flex items-center space-x-2 group">
+                        <svg class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 12H16V28H12V12Z" fill="white"/>
+                            <path d="M20 16H28V20H20V16Z" fill="white"/>
+                            <path d="M20 24H28V28H20V24Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB"/>
+                                    <stop offset="1" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac</span>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="homepage.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html" class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Projects</a>
+                        <a href="experience.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300" aria-label="Toggle dark mode">
+                        <svg id="theme-icon-light" class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <svg id="theme-icon-dark" class="w-5 h-5 text-primary hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="homepage.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html" class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Projects</a>
+                        <a href="experience.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="projects-hero" class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-secondary-50 rounded-full mb-4">
+                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                    <span class="font-body text-sm font-medium text-secondary-700">50+ Projects Delivered</span>
+                </div>
+                
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Engineering Excellence in 
+                    <span class="text-gradient">Action</span>
+                </h1>
+                
+                <p class="text-body-lg text-text-secondary max-w-3xl mx-auto">
+                    Explore detailed case studies showcasing cloud migrations, infrastructure automation, and CI/CD pipelines with measurable outcomes and technical depth. Each project demonstrates complex problems solved with elegant solutions.
+                </p>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold text-primary">50+</div>
+                        <div class="font-body text-sm text-text-secondary">Projects Completed</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold text-secondary">99.99%</div>
+                        <div class="font-body text-sm text-text-secondary">Uptime Achieved</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold text-accent">40%</div>
+                        <div class="font-body text-sm text-text-secondary">Cost Reduction</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold text-primary">15min</div>
+                        <div class="font-body text-sm text-text-secondary">Deploy Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section id="project-filters" class="py-8 bg-surface sticky top-24 z-40 border-b border-border">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-96">
+                    <input 
+                        type="text" 
+                        id="search-input"
+                        placeholder="Search projects..." 
+                        class="input-field pl-10"
+                        aria-label="Search projects"
+                    >
+                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <button class="filter-btn active" data-filter="all">
+                        <span>All Projects</span>
+                        <span class="ml-2 px-2 py-0.5 bg-primary-100 text-primary-700 rounded-lg text-xs font-semibold">12</span>
+                    </button>
+                    <button class="filter-btn" data-filter="cloud">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                        </svg>
+                        <span>Cloud</span>
+                    </button>
+                    <button class="filter-btn" data-filter="cicd">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <span>CI/CD</span>
+                    </button>
+                    <button class="filter-btn" data-filter="kubernetes">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                        </svg>
+                        <span>Kubernetes</span>
+                    </button>
+                    <button class="filter-btn" data-filter="automation">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>Automation</span>
+                    </button>
+                    <button id="reset-filters" class="text-text-tertiary hover:text-primary transition-colors duration-300 text-sm font-medium">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project - Full Width -->
+    <section id="featured-project" class="section-padding bg-gradient-to-br from-background via-primary-50 to-background">
+        <div class="container-custom">
+            <div class="mb-8">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-accent-50 rounded-full mb-4">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    <span class="font-body text-sm font-medium text-accent-700">Featured Project</span>
+                </div>
+                <h2 class="font-headline text-display-sm text-text-primary">Enterprise Cloud Migration Platform</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Project Image with Lightbox -->
+                <div class="relative group cursor-pointer" id="featured-image-trigger">
+                    <div class="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 shadow-card">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1e1073bc1-1767880718853.png" 
+                            alt="Enterprise cloud migration platform dashboard showing multi-region infrastructure deployment with real-time monitoring and automated scaling capabilities"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="eager"
+                            onerror="this.src='https://img.rocket.new/generatedImages/rocket_gen_img_1e7d88cc1-1768151733109.png'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-2xl flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Python</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="font-headline text-h2 font-semibold text-text-primary">Multi-Region Cloud Infrastructure</h3>
+                        <p class="text-body text-text-secondary leading-relaxed">
+                            Architected and deployed a comprehensive multi-region cloud infrastructure for a Fortune 500 enterprise, migrating 200+ microservices from on-premise data centers to AWS. Implemented automated disaster recovery, achieving 99.99% uptime while reducing operational costs by 40%.
+                        </p>
+                    </div>
+
+                    <!-- Metrics Grid -->
+                    <div class="grid grid-cols-2 gap-4 py-4">
+                        <div class="card">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-headline text-2xl font-bold text-secondary">40%</div>
+                                    <div class="text-body-sm text-text-secondary">Cost Reduction</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-headline text-2xl font-bold text-primary">99.99%</div>
+                                    <div class="text-body-sm text-text-secondary">Uptime SLA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client Testimonial -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-start space-x-4">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1fd83305f-1763291739924.png" 
+                                alt="Michael Chen, CTO of TechCorp, professional headshot showing satisfied client"
+                                class="w-12 h-12 rounded-full object-cover"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                            >
+                            <div class="flex-1">
+                                <p class="text-body-sm text-text-secondary italic mb-2">
+                                    "Isaac's expertise transformed our infrastructure. The migration was seamless, and we're now operating at a fraction of the previous cost with better performance."
+                                </p>
+                                <div class="font-body text-sm font-semibold text-text-primary">Michael Chen</div>
+                                <div class="text-body-xs text-text-tertiary">CTO, TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="javascript:void(0)" class="btn-primary inline-flex items-center justify-center space-x-2">
+                            <span>View Full Case Study</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center justify-center space-x-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>GitHub Repository</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects-grid" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="mb-12">
+                <h2 class="font-headline text-display-sm text-text-primary mb-4">All Projects</h2>
+                <p class="text-body-lg text-text-secondary max-w-3xl">
+                    Comprehensive portfolio showcasing infrastructure automation, cloud architecture, and DevOps excellence across various industries and technologies.
+                </p>
+            </div>
+
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <article class="card-interactive project-card" data-category="cicd automation">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-secondary-100 to-secondary-200">
+                        <img 
+                            src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                            alt="Automated CI/CD pipeline visualization showing continuous integration workflow with Jenkins, Docker containers, and automated testing stages"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2934&auto=format&fit=crop'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Jenkins</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">GitLab</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Enterprise CI/CD Pipeline
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Designed and implemented automated CI/CD pipeline reducing deployment time from 4 hours to 15 minutes, enabling 50+ daily deployments with zero downtime.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>6 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                    <span>FinTech</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="card-interactive project-card" data-category="kubernetes cloud">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-accent-100 to-accent-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_16b9ca134-1764781622892.png" 
+                            alt="Kubernetes cluster architecture diagram illustrating container orchestration with microservices deployment and auto-scaling configuration"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=2832&auto=format&fit=crop'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Kubernetes</span>
+                            <span class="tech-badge">Helm</span>
+                            <span class="tech-badge">Istio</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Microservices Orchestration
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Built scalable Kubernetes infrastructure managing 150+ microservices with automated scaling, service mesh implementation, and comprehensive monitoring.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>8 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                    <span>E-commerce</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="card-interactive project-card" data-category="automation cloud">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-primary-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_144eb7b64-1768960701612.png" 
+                            alt="Infrastructure as Code dashboard showing Terraform configurations with automated resource provisioning and state management"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://img.rocket.new/generatedImages/rocket_gen_img_1c5d40144-1768077209358.png'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Terraform</span>
+                            <span class="tech-badge">Ansible</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Infrastructure as Code Platform
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Implemented comprehensive IaC framework managing 200+ cloud resources across multiple environments, achieving 95% infrastructure automation.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>5 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span>Healthcare</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 4 -->
+                <article class="card-interactive project-card" data-category="cloud automation">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-secondary-100 to-secondary-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_12dd32a00-1767606163618.png" 
+                            alt="Cloud monitoring dashboard displaying real-time performance metrics, resource utilization graphs, and automated alerting system"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Prometheus</span>
+                            <span class="tech-badge">Grafana</span>
+                            <span class="tech-badge">ELK</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Observability & Monitoring
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Deployed comprehensive monitoring solution with real-time alerting, reducing incident response time by 70% and improving system visibility.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>4 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>Finance</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 5 -->
+                <article class="card-interactive project-card" data-category="kubernetes cicd">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-accent-100 to-accent-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1446abdd5-1764781621874.png" 
+                            alt="Serverless architecture diagram showing AWS Lambda functions, API Gateway integration, and event-driven microservices deployment"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2944&auto=format&fit=crop'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Lambda</span>
+                            <span class="tech-badge">API Gateway</span>
+                            <span class="tech-badge">DynamoDB</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Serverless Architecture
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Architected event-driven serverless platform processing 10M+ requests daily with 99.9% availability and 60% cost reduction compared to traditional infrastructure.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>7 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span>Media</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 6 -->
+                <article class="card-interactive project-card" data-category="automation cloud">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-primary-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1b7c8e5dd-1764666529978.png" 
+                            alt="Security compliance dashboard showing automated vulnerability scanning, penetration testing results, and compliance audit reports"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Security</span>
+                            <span class="tech-badge">Compliance</span>
+                            <span class="tech-badge">Vault</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Security & Compliance Automation
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Implemented automated security scanning and compliance monitoring achieving SOC 2 Type II certification with continuous vulnerability assessment.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>9 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                    <span>Enterprise</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 7 -->
+                <article class="card-interactive project-card" data-category="cloud kubernetes">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-secondary-100 to-secondary-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1974990b4-1768750265218.png" 
+                            alt="Multi-cloud deployment architecture showing hybrid cloud infrastructure with AWS, Azure, and GCP integration for disaster recovery"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2934&auto=format&fit=crop'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Multi-Cloud</span>
+                            <span class="tech-badge">Azure</span>
+                            <span class="tech-badge">GCP</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Hybrid Cloud Strategy
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Designed multi-cloud architecture spanning AWS, Azure, and GCP with automated failover, achieving 99.999% availability and vendor independence.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>12 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span>SaaS</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 8 -->
+                <article class="card-interactive project-card" data-category="cicd automation">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-accent-100 to-accent-200">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1c7916d1f-1768960702611.png" 
+                            alt="Database migration strategy visualization showing zero-downtime migration process with automated rollback capabilities"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Migration</span>
+                            <span class="tech-badge">RDS</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Zero-Downtime Database Migration
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Executed complex database migration for 500GB+ dataset with zero downtime, implementing automated rollback and data validation procedures.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>3 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                    <span>Education</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 9 -->
+                <article class="card-interactive project-card" data-category="kubernetes automation">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-primary-200">
+                        <img 
+                            src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                            alt="Container registry and artifact management system showing Docker image versioning and automated security scanning pipeline"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=2832&auto=format&fit=crop'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Registry</span>
+                            <span class="tech-badge">Harbor</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Container Registry Platform
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Built enterprise container registry with automated vulnerability scanning, image signing, and compliance enforcement for 1000+ container images.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div class="flex items-center space-x-4 text-body-xs text-text-tertiary">
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>5 months</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                                    </svg>
+                                    <span>Tech</span>
+                                </span>
+                            </div>
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="load-more" class="btn-outline inline-flex items-center space-x-2">
+                    <span>Load More Projects</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section id="tech-architecture" class="section-padding bg-gradient-to-br from-background via-accent-50 to-background">
+        <div class="container-custom">
+            <div class="text-center mb-12 space-y-4">
+                <h2 class="font-headline text-display-sm text-text-primary">Technical Excellence</h2>
+                <p class="text-body-lg text-text-secondary max-w-3xl mx-auto">
+                    Comprehensive technology stack and architectural patterns used across projects
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tech Category 1 -->
+                <div class="card">
+                    <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">Cloud Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Azure</span>
+                        <span class="tech-badge">GCP</span>
+                        <span class="tech-badge">DigitalOcean</span>
+                    </div>
+                </div>
+
+                <!-- Tech Category 2 -->
+                <div class="card">
+                    <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">Orchestration</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Helm</span>
+                        <span class="tech-badge">Istio</span>
+                    </div>
+                </div>
+
+                <!-- Tech Category 3 -->
+                <div class="card">
+                    <div class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">CI/CD Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Jenkins</span>
+                        <span class="tech-badge">GitLab CI</span>
+                        <span class="tech-badge">GitHub Actions</span>
+                        <span class="tech-badge">ArgoCD</span>
+                    </div>
+                </div>
+
+                <!-- Tech Category 4 -->
+                <div class="card">
+                    <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">IaC & Config</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Ansible</span>
+                        <span class="tech-badge">CloudFormation</span>
+                        <span class="tech-badge">Pulumi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="section-padding bg-gradient-to-br from-primary via-primary-600 to-accent text-white">
+        <div class="container-custom">
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <h2 class="font-headline text-display-sm">Let's Build Something Exceptional</h2>
+                <p class="text-body-lg opacity-90">
+                    Ready to transform your infrastructure with proven DevOps expertise? Let's discuss how these solutions can be adapted to your unique challenges.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-white text-primary font-cta font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-interactive">
+                        <span>Start a Project</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                    <a href="experience.html" class="border-2 border-white text-white font-cta font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                        <span>View Experience</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 12H16V28H12V12Z" fill="white"/>
+                            <path d="M20 16H28V20H20V16Z" fill="white"/>
+                            <path d="M20 24H28V28H20V24Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB"/>
+                                    <stop offset="1" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="font-headline font-bold text-xl">Isaac</span>
+                    </div>
+                    <p class="text-body-sm text-gray-400">
+                        Premium DevOps engineer transforming infrastructure challenges into elegant solutions.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a></li>
+                        <li><a href="projects.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="experience.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a></li>
+                        <li><a href="writing.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Cloud Architecture</span></li>
+                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Container Orchestration</span></li>
+                        <li><span class="text-body-sm text-gray-400">Infrastructure as Code</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:isaac@devops.pro" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span>isaac@devops.pro</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">
+                        © 2026 Isaac. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <a href="javascript:void(0)" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <a href="javascript:void(0)" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
+        <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-300" aria-label="Close lightbox">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIconLight = document.getElementById('theme-icon-light');
+        const themeIconDark = document.getElementById('theme-icon-dark');
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIconLight.classList.add('hidden');
+            themeIconDark.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            themeIconLight.classList.toggle('hidden');
+            themeIconDark.classList.toggle('hidden');
+            
+            const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Sticky Header Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.querySelector('nav').classList.add('shadow-card');
+            } else {
+                header.querySelector('nav').classList.remove('shadow-card');
+            }
+        });
+
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        const searchInput = document.getElementById('search-input');
+        const resetButton = document.getElementById('reset-filters');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                // Update active state
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('animate-fade-in'), 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search Functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            projectCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.tech-badge')).map(badge => badge.textContent.toLowerCase()).join(' ');
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Reset Filters
+        resetButton.addEventListener('click', () => {
+            searchInput.value = '';
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons[0].classList.add('active');
+            projectCards.forEach(card => {
+                card.style.display = 'block';
+            });
+        });
+
+        // Lightbox Functionality
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const featuredImageTrigger = document.getElementById('featured-image-trigger');
+
+        featuredImageTrigger.addEventListener('click', () => {
+            const img = featuredImageTrigger.querySelector('img');
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxModal.classList.remove('hidden');
+            lightboxModal.classList.add('flex');
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightboxModal.classList.add('hidden');
+            lightboxModal.classList.remove('flex');
+        });
+
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                lightboxModal.classList.add('hidden');
+                lightboxModal.classList.remove('flex');
+            }
+        });
+
+        // Load More Functionality
+        const loadMoreBtn = document.getElementById('load-more');
+        let visibleProjects = 9;
+
+        loadMoreBtn.addEventListener('click', () => {
+            visibleProjects += 6;
+            const allProjects = document.querySelectorAll('.project-card');
+            
+            allProjects.forEach((project, index) => {
+                if (index < visibleProjects) {
+                    project.style.display = 'block';
+                }
+            });
+
+            if (visibleProjects >= allProjects.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .card-interactive, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Filter Button Styling
+        const style = document.createElement('style');
+        style.textContent = `
+            .filter-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 0.75rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: var(--color-text-secondary);
+                background-color: var(--color-surface);
+                border: 1px solid var(--color-border);
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            .filter-btn:hover {
+                background-color: var(--color-primary-50);
+                color: var(--color-primary);
+                border-color: var(--color-primary-200);
+            }
+            .filter-btn.active {
+                background-color: var(--color-primary);
+                color: white;
+                border-color: var(--color-primary);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

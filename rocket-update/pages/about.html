@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Isaac - Premium DevOps Engineer. Discover my technical philosophy, career journey, and the values that drive engineering excellence through thoughtful design.">
+    <meta name="keywords" content="DevOps Engineer, Technical Philosophy, Career Timeline, Engineering Excellence, Cloud Architecture">
+    <meta name="author" content="Isaac">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Isaac - Premium DevOps Engineer">
+    <meta property="og:description" content="Personal story, technical philosophy, and career journey of a sophisticated engineer">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <title>About Isaac - Premium DevOps Engineer & Technical Leader</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fisaacport6861back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.14"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background text-text-primary">
+    
+    <!-- Glassmorphic Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <!-- Logo -->
+                    <a href="homepage.html" class="flex items-center space-x-2 group">
+                        <svg class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 12H16V28H12V12Z" fill="white"/>
+                            <path d="M20 16H28V20H20V16Z" fill="white"/>
+                            <path d="M20 24H28V28H20V24Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB"/>
+                                    <stop offset="1" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac</span>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="homepage.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html" class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">About</a>
+                        <a href="projects.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300" aria-label="Toggle dark mode">
+                        <svg id="theme-icon-light" class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <svg id="theme-icon-dark" class="w-5 h-5 text-primary hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="homepage.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html" class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">About</a>
+                        <a href="projects.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html" class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section - Personal Story Introduction -->
+    <section id="about-hero" class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-secondary-50 rounded-full">
+                    <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="font-body text-sm font-medium text-secondary-700">Engineering Excellence Since 2018</span>
+                </div>
+                
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Where Technical Mastery Meets 
+                    <span class="text-gradient">Design Excellence</span>
+                </h1>
+                
+                <p class="text-body-lg text-text-secondary max-w-3xl mx-auto">
+                    I'm Isaac, a premium DevOps engineer who believes that the best infrastructure solutions are both technically sound and elegantly designed. My journey has been about transforming complex challenges into scalable, maintainable systems that teams love to work with.
+                </p>
+
+                <!-- Professional Headshot -->
+                <div class="relative inline-block">
+                    <div class="w-48 h-48 rounded-3xl overflow-hidden shadow-card mx-auto">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_173d804ae-1763295409178.png" 
+                            alt="Isaac - Premium DevOps Engineer professional portrait showing confident technical leader with modern aesthetic"
+                            class="w-full h-full object-cover"
+                            loading="eager"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;"
+                        >
+                    </div>
+                    <div class="absolute -bottom-2 -right-2 w-16 h-16 bg-primary-200 rounded-full opacity-50 blur-2xl"></div>
+                    <div class="absolute -top-2 -left-2 w-20 h-20 bg-accent-200 rounded-full opacity-50 blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Philosophy Section -->
+    <section id="philosophy" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">Technical Philosophy</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Core principles that guide my approach to engineering
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Philosophy Card 1 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">Precision Over Perfection</h3>
+                        <p class="text-body text-text-secondary">
+                            I believe in delivering solutions that are precisely tailored to solve real problems, rather than pursuing theoretical perfection. Every architectural decision is made with measurable outcomes in mind.
+                        </p>
+                    </div>
+
+                    <!-- Philosophy Card 2 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center mb-4 group-hover:bg-secondary-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">Innovation Through Simplicity</h3>
+                        <p class="text-body text-text-secondary">
+                            The most innovative solutions are often the simplest. I focus on reducing complexity while maintaining functionality, making systems easier to understand, maintain, and scale.
+                        </p>
+                    </div>
+
+                    <!-- Philosophy Card 3 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center mb-4 group-hover:bg-accent-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">Clarity in Communication</h3>
+                        <p class="text-body text-text-secondary">
+                            Technical excellence means nothing if it can't be communicated effectively. I make complex concepts accessible to all stakeholders, from developers to executives.
+                        </p>
+                    </div>
+
+                    <!-- Philosophy Card 4 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">Forward-Thinking Approach</h3>
+                        <p class="text-body text-text-secondary">
+                            I design systems with tomorrow in mind, anticipating growth and change. Every solution is built to evolve with your business needs without requiring complete rewrites.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline Section -->
+    <section id="career-timeline" class="section-padding bg-gradient-to-br from-background via-primary-50 to-background">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">Career Journey</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Eight years of continuous growth and technical evolution
+                    </p>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-border transform md:-translate-x-1/2"></div>
+
+                    <!-- Timeline Items -->
+                    <div class="space-y-12">
+                        <!-- Timeline Item 1 - Current -->
+                        <div class="relative timeline-item revealed">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0">
+                                    <div class="card">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <span class="tech-badge">Current</span>
+                                            <span class="text-body-sm text-text-tertiary">2024 - Present</span>
+                                        </div>
+                                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Senior DevOps Engineer</h3>
+                                        <p class="text-body-sm text-secondary-700 font-medium mb-3">TechScale Solutions</p>
+                                        <p class="text-body text-text-secondary mb-4">
+                                            Leading cloud infrastructure transformation initiatives, architecting multi-region deployments, and mentoring a team of 5 engineers. Reduced infrastructure costs by 40% while improving system reliability to 99.99% uptime.
+                                        </p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="tech-badge">AWS</span>
+                                            <span class="tech-badge">Kubernetes</span>
+                                            <span class="tech-badge">Terraform</span>
+                                            <span class="tech-badge">Python</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background transform md:-translate-x-1/2 z-10"></div>
+                                <div class="flex-1 md:pl-12"></div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative timeline-item revealed">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <div class="flex-1 md:pr-12"></div>
+                                <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-background transform md:-translate-x-1/2 z-10"></div>
+                                <div class="flex-1 md:pl-12 mb-4 md:mb-0">
+                                    <div class="card">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <span class="text-body-sm text-text-tertiary">2021 - 2024</span>
+                                        </div>
+                                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">DevOps Engineer</h3>
+                                        <p class="text-body-sm text-secondary-700 font-medium mb-3">CloudScale Innovations</p>
+                                        <p class="text-body text-text-secondary mb-4">
+                                            Designed and implemented enterprise-grade CI/CD pipelines, reducing deployment time from 4 hours to 15 minutes. Automated infrastructure provisioning for 200+ cloud resources across multiple environments.
+                                        </p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="tech-badge">Jenkins</span>
+                                            <span class="tech-badge">Docker</span>
+                                            <span class="tech-badge">GitLab CI</span>
+                                            <span class="tech-badge">Ansible</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="relative timeline-item revealed">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0">
+                                    <div class="card">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <span class="text-body-sm text-text-tertiary">2019 - 2021</span>
+                                        </div>
+                                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Systems Engineer</h3>
+                                        <p class="text-body-sm text-secondary-700 font-medium mb-3">InfraSys Technologies</p>
+                                        <p class="text-body text-text-secondary mb-4">
+                                            Managed Linux server infrastructure, implemented monitoring solutions, and automated routine maintenance tasks. Improved system uptime from 95% to 99.5% through proactive monitoring and incident response.
+                                        </p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="tech-badge">Linux</span>
+                                            <span class="tech-badge">Bash</span>
+                                            <span class="tech-badge">Nagios</span>
+                                            <span class="tech-badge">MySQL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background transform md:-translate-x-1/2 z-10"></div>
+                                <div class="flex-1 md:pl-12"></div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 - Start -->
+                        <div class="relative timeline-item revealed">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <div class="flex-1 md:pr-12"></div>
+                                <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background transform md:-translate-x-1/2 z-10"></div>
+                                <div class="flex-1 md:pl-12 mb-4 md:mb-0">
+                                    <div class="card">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <span class="tech-badge">Start</span>
+                                            <span class="text-body-sm text-text-tertiary">2018 - 2019</span>
+                                        </div>
+                                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Junior DevOps Engineer</h3>
+                                        <p class="text-body-sm text-secondary-700 font-medium mb-3">DevOps Pro Solutions</p>
+                                        <p class="text-body text-text-secondary mb-4">
+                                            Started my DevOps journey supporting deployment processes, learning cloud technologies, and contributing to infrastructure automation projects. Built foundational skills in scripting and system administration.
+                                        </p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="tech-badge">Git</span>
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge">AWS EC2</span>
+                                            <span class="tech-badge">Shell</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Skill Matrix Section -->
+    <section id="skill-matrix" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">Technical Expertise</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Comprehensive skill set across modern DevOps technologies
+                    </p>
+                </div>
+
+                <!-- Skill Categories -->
+                <div class="space-y-8">
+                    <!-- Cloud Platforms -->
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary">Cloud Platforms</h3>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">AWS</span>
+                                    <span class="font-mono text-xs text-primary-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Azure</span>
+                                    <span class="font-mono text-xs text-primary-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">GCP</span>
+                                    <span class="font-mono text-xs text-primary-700">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Container Orchestration -->
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-secondary-100 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary">Container Orchestration</h3>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Kubernetes</span>
+                                    <span class="font-mono text-xs text-secondary-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full transition-all duration-300" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Docker</span>
+                                    <span class="font-mono text-xs text-secondary-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full transition-all duration-300" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Helm</span>
+                                    <span class="font-mono text-xs text-secondary-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full transition-all duration-300" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Infrastructure as Code -->
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-accent-100 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary">Infrastructure as Code</h3>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Terraform</span>
+                                    <span class="font-mono text-xs text-accent-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full transition-all duration-300" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Ansible</span>
+                                    <span class="font-mono text-xs text-accent-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full transition-all duration-300" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">CloudFormation</span>
+                                    <span class="font-mono text-xs text-accent-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full transition-all duration-300" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CI/CD Tools -->
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary">CI/CD Tools</h3>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Jenkins</span>
+                                    <span class="font-mono text-xs text-primary-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 93%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">GitLab CI</span>
+                                    <span class="font-mono text-xs text-primary-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">GitHub Actions</span>
+                                    <span class="font-mono text-xs text-primary-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Programming Languages -->
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-secondary-100 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary">Programming Languages</h3>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Python</span>
+                                    <span class="font-mono text-xs text-secondary-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full transition-all duration-300" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Go</span>
+                                    <span class="font-mono text-xs text-secondary-700">Advanced</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full transition-all duration-300" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-body text-sm font-medium text-text-primary">Bash</span>
+                                    <span class="font-mono text-xs text-secondary-700">Expert</span>
+                                </div>
+                                <div class="w-full bg-border-light rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full transition-all duration-300" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-gradient-to-br from-background via-accent-50 to-background">
+        <div class="container-custom">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">What People Say</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Testimonials from colleagues, clients, and managers
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="card">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-100">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_120e93620-1763296634685.png" 
+                                    alt="Sarah Chen - CTO at TechScale Solutions providing testimonial about Isaac's technical leadership"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h4 class="font-headline text-h4 font-semibold text-text-primary">Sarah Chen</h4>
+                                <p class="text-body-sm text-text-secondary">CTO, TechScale Solutions</p>
+                            </div>
+                        </div>
+                        <p class="text-body text-text-secondary italic">
+                            "Isaac transformed our infrastructure from a maintenance nightmare into a well-oiled machine. His ability to explain complex technical decisions to non-technical stakeholders is exceptional."
+                        </p>
+                        <div class="flex items-center space-x-1 mt-4">
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="card">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-secondary-100">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1de55a8f4-1767654199755.png" 
+                                    alt="Michael Rodriguez - Senior DevOps Engineer colleague sharing experience working with Isaac"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h4 class="font-headline text-h4 font-semibold text-text-primary">Michael Rodriguez</h4>
+                                <p class="text-body-sm text-text-secondary">Senior DevOps Engineer</p>
+                            </div>
+                        </div>
+                        <p class="text-body text-text-secondary italic">
+                            "Working with Isaac has elevated my own skills. He's not just technically brilliant but also an excellent mentor who takes time to share knowledge and best practices."
+                        </p>
+                        <div class="flex items-center space-x-1 mt-4">
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="card">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-accent-100">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1894a93f0-1767093570450.png" 
+                                    alt="David Thompson - Engineering Manager at CloudScale Innovations discussing Isaac's impact"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h4 class="font-headline text-h4 font-semibold text-text-primary">David Thompson</h4>
+                                <p class="text-body-sm text-text-secondary">Engineering Manager</p>
+                            </div>
+                        </div>
+                        <p class="text-body text-text-secondary italic">
+                            "Isaac's CI/CD pipeline implementation reduced our deployment time by 94%. His attention to detail and commitment to automation excellence is unmatched."
+                        </p>
+                        <div class="flex items-center space-x-1 mt-4">
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Interests Section -->
+    <section id="personal-interests" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">Beyond the Terminal</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        What drives me outside of engineering
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Interest Card 1 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="aspect-video rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-primary-100 to-primary-200">
+                            <img 
+                                src="https://images.unsplash.com/photo-1690260893626-1c05436a039b" 
+                                alt="Mountain hiking trail showcasing Isaac's passion for outdoor adventures and nature exploration"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                            >
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Mountain Hiking</h3>
+                        <p class="text-body text-text-secondary">
+                            Finding clarity and perspective on mountain trails. The problem-solving mindset required for challenging hikes mirrors the approach I take to complex technical challenges.
+                        </p>
+                    </div>
+
+                    <!-- Interest Card 2 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="aspect-video rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-secondary-100 to-secondary-200">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11aa3ce00-1767428145195.png" 
+                                alt="Open source code contribution interface demonstrating Isaac's commitment to community development"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2938&auto=format&fit=crop'; this.onerror=null;"
+                            >
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Open Source Contributions</h3>
+                        <p class="text-body text-text-secondary">
+                            Contributing to the DevOps community through open-source projects. Giving back to the tools and frameworks that have shaped my career.
+                        </p>
+                    </div>
+
+                    <!-- Interest Card 3 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="aspect-video rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-accent-100 to-accent-200">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16771f2c5-1768960701561.png" 
+                                alt="Technical workshop or conference setting showing Isaac's dedication to knowledge sharing and mentorship"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/1181622/pexels-photo-1181622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;"
+                            >
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Technical Mentorship</h3>
+                        <p class="text-body text-text-secondary">
+                            Mentoring junior engineers and sharing knowledge through workshops and speaking engagements. Helping others grow in their DevOps journey.
+                        </p>
+                    </div>
+
+                    <!-- Interest Card 4 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="aspect-video rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-primary-100 to-primary-200">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_12641a7ba-1768960700414.png" 
+                                alt="Photography equipment and landscape showcasing Isaac's creative side through visual storytelling"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=2874&auto=format&fit=crop'; this.onerror=null;"
+                            >
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-2">Photography</h3>
+                        <p class="text-body text-text-secondary">
+                            Capturing moments and landscapes through the lens. Photography teaches patience, attention to detail, and the importance of perspective.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloadable Resume Section -->
+    <section id="resume-download" class="section-padding bg-gradient-to-br from-primary via-primary-600 to-accent text-white">
+        <div class="container-custom">
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <div class="space-y-4">
+                    <h2 class="font-headline text-display-sm">Download My Resume</h2>
+                    <p class="text-body-lg opacity-90">
+                        Get a comprehensive overview of my experience, skills, and achievements
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="javascript:void(0)" class="bg-white text-primary font-cta font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-interactive">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>Download PDF Resume</span>
+                    </a>
+                    <a href="contact.html" class="border-2 border-white text-white font-cta font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        <span>Let's Connect</span>
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white border-opacity-20">
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold">8+</div>
+                        <div class="text-body-sm opacity-90">Years Experience</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold">50+</div>
+                        <div class="text-body-sm opacity-90">Projects Completed</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-headline text-3xl font-bold">15+</div>
+                        <div class="text-body-sm opacity-90">Certifications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 12H16V28H12V12Z" fill="white"/>
+                            <path d="M20 16H28V20H20V16Z" fill="white"/>
+                            <path d="M20 24H28V28H20V24Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB"/>
+                                    <stop offset="1" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="font-headline font-bold text-xl">Isaac</span>
+                    </div>
+                    <p class="text-body-sm text-gray-400">
+                        Premium DevOps engineer transforming infrastructure challenges into elegant solutions.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a></li>
+                        <li><a href="projects.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="experience.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a></li>
+                        <li><a href="writing.html" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Cloud Architecture</span></li>
+                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Container Orchestration</span></li>
+                        <li><span class="text-body-sm text-gray-400">Infrastructure as Code</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:isaac@devops.pro" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span>isaac@devops.pro</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">
+                        © 2026 Isaac. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <a href="javascript:void(0)" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <a href="javascript:void(0)" class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIconLight = document.getElementById('theme-icon-light');
+        const themeIconDark = document.getElementById('theme-icon-dark');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIconLight.classList.add('hidden');
+            themeIconDark.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            themeIconLight.classList.toggle('hidden');
+            themeIconDark.classList.toggle('hidden');
+            
+            // Save preference
+            const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Sticky Header Effect
+        const header = document.getElementById('main-header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.querySelector('nav').classList.add('shadow-card');
+            } else {
+                header.querySelector('nav').classList.remove('shadow-card');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Timeline Animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        // Skill Bar Animation on Scroll
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.bg-primary, .bg-secondary, .bg-accent');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('#skill-matrix .card').forEach(card => {
+            skillObserver.observe(card);
+        });
+
+        // Fade-in Animation for Cards
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .card-interactive').forEach(card => {
+            cardObserver.observe(card);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

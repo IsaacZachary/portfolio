@@ -7,13 +7,13 @@
 ![GitHub Stars](https://img.shields.io/github/stars/IsaacZachary/portfolio?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 
-A professional, multi-page developer portfolio showcasing DevOps skills, projects, and professional journey. Built with a terminal-inspired UI, Docker support, and responsive design.
+A professional, multi-page developer portfolio showcasing DevOps skills, projects, and professional journey. Built with a GitHub-inspired Engineering UI, Docker support, and responsive design.
 
 🔗 **Live Demo**: [My Website](https://isaaczachary.github.io)
 
 ## ✨ Features
 
-- **Terminal-inspired UI** with interactive command-line elements
+- **GitHub-inspired Engineering UI** for high technical credibility
 - **Multi-page structure** (Home, About, Projects, Experience, Writing, Contact)
 - **Dark/Light mode toggle** with persistent theme storage
 - **Responsive design** optimized for mobile, tablet, and desktop
@@ -143,20 +143,20 @@ portfolio/
 ## 🎨 Design System
 
 ### UI Components
-- **Terminal Windows**: Interactive command-line interfaces
-- **Whoami Cards**: Structured profile information
-- **Skill Badges**: Categorized technology tags
-- **Timeline**: Visual experience representation
-- **Project Cards**: Interactive cards with images
-- **Code Playground**: Live code editor with terminal output
+- **GitHub-style Cards**: Organized, bento-box layouts for project details
+- **Status Indicators**: Live "Available for opportunities" indicators
+- **Skill Badges**: Royal blue technical tags (GitHub aesthetic)
+- **Timeline**: Horizontal and vertical technical evolution timelines
+- **Project Cards**: High-impact cards with tech-stack overlays
+- **Code Playground**: Professional editor with JetBrains Mono integration
 
-### Color Palette
+### Color Palette (GitHub Option B)
 | Color          | Hex       | Usage                |
 |----------------|-----------|----------------------|
-| Terminal Green | `#50fa7b` | Success, commands    |
-| Terminal Cyan  | `#8be9fd` | Info, highlights    |
-| Terminal Red   | `#ff5555` | Errors, warnings     |
-| Terminal Purple| `#bd93f9` | Accents              |
+| GitHub Blue    | `#58a6ff` | Accents (Dark Mode)  |
+| GitHub Blue    | `#0969da` | Accents (Light Mode) |
+| Success Green  | `#2ea44f` | Status, commands     |
+| Danger Red     | `#da3633` | Errors, warnings     |
 
 ## 🖥️ Tech Stack
 
@@ -254,8 +254,8 @@ Edit `writing.html` - articles are embedded in the page
 - [Typed.js](https://github.com/mattboldt/typed.js/) - Typing animations
 
 ### Custom Features
-1. **Interactive Code Playground** - Edit Docker, Nginx, Python examples
-2. **Terminal UI Components** - Consistent terminal aesthetic
+1. **Interactive Code Playground** - Edit Docker, Nginx, Python examples with JetBrains Mono
+2. **GitHub UI Components** - Consistent engineering-first aesthetic
 3. **Theme Toggle** - Persistent dark/light mode
 4. **Responsive Navigation** - Mobile hamburger menu
 

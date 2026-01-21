@@ -1,172 +1,350 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" class="smooth-scroll">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Isaac Zachary</title>
-    <meta name="description" content="Get in touch for DevOps opportunities, collaboration, or technical discussion. Based in Nairobi, open to remote work.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get in touch with Isaac Zachary for DevOps opportunities, collaboration, or technical discussion. Based in Nairobi, open to remote work.">
+    <title>Contact - Isaac Zachary | DevOps Engineer</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/mediaqueries.css" />
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav id="desktop-nav">
-        <div class="logo-container">
-            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
-            <div class="logo">Isaac Zachary</div>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="writing.html" class="nav-link">Writing</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li>
-                    <button class="terminal-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                        <span class="terminal-prompt">[]▐</span>
-                        <span class="terminal-command">dark</span>
-                        <span class="terminal-cursor">█</span>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
-    <!-- Hamburger Navigation -->
-    <nav id="hamburger-nav">
-        <div class="logo-container">
-            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
-            <div class="logo">Isaac Zachary</div>
-        </div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
-                <li><a href="about.html" onclick="toggleMenu()" class="nav-link">About</a></li>
-                <li><a href="projects.html" onclick="toggleMenu()" class="nav-link">Projects</a></li>
-                <li><a href="experience.html" onclick="toggleMenu()" class="nav-link">Experience</a></li>
-                <li><a href="writing.html" onclick="toggleMenu()" class="nav-link">Writing</a></li>
-                <li><a href="contact.html" onclick="toggleMenu()" class="nav-link">Contact</a></li>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Contact Section -->
-    <section class="contact-page">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span>terminal — contact/</span>
-            </div>
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="prompt">$</span>
-                    <span class="command">cat contact_info.txt</span>
-                </div>
-                
-                <h1>Get in Touch</h1>
-                
-                <div class="contact-status terminal-accent">
-                    <p><strong>Status:</strong> Open to remote DevOps/Platform Support opportunities</p>
-                    <p><strong>Location:</strong> Nairobi, Kenya (GMT+3)</p>
-                    <p><strong>Timezone:</strong> East Africa Time (EAT)</p>
-                </div>
-                
-                <div class="contact-container">
-                    <div class="contact-info-upper-container terminal-style">
-                        <div class="contact-info-container">
-                            <i class="fas fa-envelope contact-icon email-icon"></i>
-                            <p><a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a></p>
-                        </div>
-                        <div class="contact-info-container">
-                            <i class="fab fa-linkedin-in contact-icon"></i>
-                            <p><a href="https://www.linkedin.com/in/isaaczachary/" target="_blank">LinkedIn</a></p>
-                        </div>
-                        <div class="contact-info-container">
-                            <i class="fab fa-github contact-icon"></i>
-                            <p><a href="https://github.com/IsaacZachary" target="_blank">GitHub</a></p>
-                        </div>
-                    </div>
-                    
-                    <form class="contact-form terminal-style" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-terminal">
-                            <span class="prompt">$</span>
-                            send_message
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="terminal-line">
-                    <span class="prompt">$</span>
-                    <span class="command">ls resume/</span>
-                </div>
-                
-                <div class="resume-section">
-                    <h2>Resume Download</h2>
-                    <p>Download my latest resume for detailed information about my experience and skills.</p>
-                    <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn btn-terminal-outline" download>
-                        <i class="fas fa-download"></i>
-                        <span class="prompt">$</span>
-                        download_cv
+<body class="bg-background text-text-primary">
+
+    <!-- Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary"
+                            class="w-10 h-10 rounded-full transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac Zachary</span>
                     </a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="contact-hero"
+        class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-secondary-50 rounded-full mb-4">
+                    <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="font-body text-sm font-medium text-secondary-700">Open to opportunities</span>
+                </div>
+
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Let's Build Something
+                    <span class="text-gradient">Amazing Together</span>
+                </h1>
+
+                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    Available for DevOps/Platform Support opportunities, technical collaboration, or just a conversation
+                    about infrastructure and automation.
+                </p>
+
+                <!-- Status Info -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <div class="flex items-center space-x-2 text-body-sm text-text-secondary">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-body-sm text-text-secondary">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>GMT+3 (EAT)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods & Form -->
+    <section id="contact-content" class="section-padding bg-surface">
+        <div class="container-custom max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Left Column: Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="font-headline text-h2 font-semibold text-text-primary mb-6">Get in Touch</h2>
+                        <p class="text-body text-text-secondary mb-8">
+                            I'm always interested in hearing about new opportunities, collaborations, or just connecting
+                            with fellow engineers. Feel free to reach out through any of these channels.
+                        </p>
+                    </div>
+
+                    <!-- Contact Methods -->
+                    <div class="space-y-4">
+                        <a href="mailto:isaaczachary18@gmail.com"
+                            class="card group hover:shadow-interactive flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="font-headline text-h4 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                                    Email</h3>
+                                <p class="text-body-sm text-text-secondary">isaaczachary18@gmail.com</p>
+                            </div>
+                            <svg class="w-5 h-5 text-text-tertiary group-hover:text-primary transition-colors duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/isaaczachary/" target="_blank" rel="noopener noreferrer"
+                            class="card group hover:shadow-interactive flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center group-hover:bg-secondary-200 transition-colors duration-300">
+                                <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="font-headline text-h4 font-semibold text-text-primary group-hover:text-secondary transition-colors duration-300">
+                                    LinkedIn</h3>
+                                <p class="text-body-sm text-text-secondary">Connect professionally</p>
+                            </div>
+                            <svg class="w-5 h-5 text-text-tertiary group-hover:text-secondary transition-colors duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+
+                        <a href="https://github.com/IsaacZachary" target="_blank" rel="noopener noreferrer"
+                            class="card group hover:shadow-interactive flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center group-hover:bg-accent-200 transition-colors duration-300">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="font-headline text-h4 font-semibold text-text-primary group-hover:text-accent transition-colors duration-300">
+                                    GitHub</h3>
+                                <p class="text-body-sm text-text-secondary">View my code & projects</p>
+                            </div>
+                            <svg class="w-5 h-5 text-text-tertiary group-hover:text-accent transition-colors duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Resume Download -->
+                    <div class="card bg-gradient-to-br from-primary-50 to-accent-50">
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">Download Resume</h3>
+                        <p class="text-body-sm text-text-secondary mb-4">
+                            Get detailed information about my experience, skills, and education.
+                        </p>
+                        <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn-primary inline-flex items-center space-x-2"
+                            download>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <div>
+                    <div class="card">
+                        <h2 class="font-headline text-h2 font-semibold text-text-primary mb-6">Send a Message</h2>
+
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true"
+                            netlify-honeypot="bot-field" class="space-y-6">
+                            <input type="hidden" name="form-name" value="contact">
+                            <p class="hidden">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+
+                            <div>
+                                <label for="name" class="block text-body-sm font-medium text-text-primary mb-2">Name
+                                    *</label>
+                                <input type="text" id="name" name="name" required class="input-field"
+                                    placeholder="Your name">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-body-sm font-medium text-text-primary mb-2">Email
+                                    *</label>
+                                <input type="email" id="email" name="email" required class="input-field"
+                                    placeholder="your.email@example.com">
+                            </div>
+
+                            <div>
+                                <label for="subject"
+                                    class="block text-body-sm font-medium text-text-primary mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="input-field"
+                                    placeholder="What's this about?">
+                            </div>
+
+                            <div>
+                                <label for="message"
+                                    class="block text-body-sm font-medium text-text-primary mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="6" required class="input-field resize-none"
+                                    placeholder="Tell me about your project, opportunity, or just say hi..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="btn-primary w-full inline-flex items-center justify-center space-x-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                </svg>
+                                <span>Send Message</span>
+                            </button>
+
+                            <p class="text-body-xs text-text-tertiary text-center">
+                                I typically respond within 24-48 hours
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="terminal-window compact">
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="terminal-prompt">$</span> <span class="typed-text" data-text="connect --with=isaac_zachary"></span><span class="terminal-cursor">█</span>
-                </div>
-                <div class="footer-content">
-                    <p>© <span id="year"></span> Isaac Zachary. All systems operational.</p>
-                    <div class="footer-links">
-                        <a href="https://linkedin.com/in/isaaczachary/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/IsaacZachary" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="mailto:isaaczachary18@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary" class="w-10 h-10 rounded-full">
+                        <span class="font-headline font-bold text-xl">Isaac Zachary</span>
                     </div>
+                    <p class="text-body-sm text-gray-400">DevOps engineer transforming infrastructure challenges into
+                        elegant solutions.</p>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                        </li>
+                        <li><a href="experience.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
+                        </li>
+                        <li><a href="writing.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Cloud Infrastructure</span></li>
+                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Containerization</span></li>
+                        <li><span class="text-body-sm text-gray-400">Full-Stack Development</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:isaaczachary18@gmail.com"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fas fa-envelope"></i><span>Email</span></a></li>
+                        <li><a href="https://linkedin.com/in/isaaczachary/" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/IsaacZachary" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-github"></i><span>GitHub</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">© <span id="year"></span> Isaac Zachary. All Rights Reserved.
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
 
-    <!-- Scripts -->
-    <script src="js/data.js"></script>
-    <script src="js/motion.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        // Form submission feedback
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg><span>Sending...</span>';
+            });
+        }
+    </script>
 </body>
+
 </html>

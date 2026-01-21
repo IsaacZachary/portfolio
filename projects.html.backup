@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Isaac Zachary</title>
+    <meta name="description" content="Hands-on DevOps and full-stack projects with Docker, React, Python, and AI integration. Practical implementations with deployment experience.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaqueries.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="writing.html" class="nav-link">Writing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="terminal-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                        <span class="terminal-prompt">[]▐</span>
+                        <span class="terminal-command">dark</span>
+                        <span class="terminal-cursor">█</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hamburger Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo-container">
+            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
+            <div class="logo">Isaac Zachary</div>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()" class="nav-link">About</a></li>
+                <li><a href="projects.html" onclick="toggleMenu()" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" onclick="toggleMenu()" class="nav-link">Experience</a></li>
+                <li><a href="writing.html" onclick="toggleMenu()" class="nav-link">Writing</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()" class="nav-link">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-page">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span>terminal — projects/</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls -la projects/</span>
+                </div>
+                
+                <div class="content-column">
+                    <h1>Featured Projects</h1>
+                    
+                    <!-- ISP Management System -->
+                <article id="isp-management" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Production System</span>
+                        <h2>ISP Management System</h2>
+                        <p class="project-tagline">Containerized multi-tenant ERP with Docker</p>
+                    </div>
+                    <p class="project-story">Built a containerized multi-tenant ERP system using Docker via aaPanel. Features 11 isolated environments across 10 niches, with SSL, DNS, and Cloudflare integration. Implemented GitHub-based deployment, automated backups, and monitoring. Includes RADIUS concepts for time-based accounting and network access control.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Django REST</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">RADIUS</span>
+                        <span class="tech-tag">Nginx</span>
+                        <span class="tech-tag">Cloudflare</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Multi-tenant architecture with Docker isolation</li>
+                            <li>RADIUS authentication and time-based accounting</li>
+                            <li>SSL/DNS management at scale</li>
+                            <li>GitHub-based CI/CD workflows</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Smart AI Product Recommender -->
+                <article id="ai-recommender" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Functional Prototype</span>
+                        <h2>Smart AI Product Recommender</h2>
+                        <p class="project-tagline">Terminal-style UX with multilingual queries</p>
+                    </div>
+                    <p class="project-story">Developed an AI recommendation system with a unique terminal-style user interface. Combines FastAPI backend with OpenAI's API to provide multilingual query support and AI-assisted product recommendations. The terminal aesthetic creates an engaging developer-focused experience while maintaining modern functionality.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Terminal-style UI/UX design patterns</li>
+                            <li>Multilingual query processing</li>
+                            <li>OpenAI API integration and prompt engineering</li>
+                            <li>FastAPI async patterns</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/ai-recommender" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- TechCareAfrica Project -->
+                <article id="techcareafrica" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Production Ready</span>
+                        <h2>TechCareAfrica Helpdesk</h2>
+                        <p class="project-tagline">Django-based support workflow system</p>
+                    </div>
+                    <p class="project-story">Built to provide affordable and efficient IT solutions for African businesses. Created a full helpdesk system with ticket management, user roles, dashboards, and reporting. This project combined my technical support experience with software development skills to solve real business problems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Django ORM and models</li>
+                            <li>User authentication and role-based access</li>
+                            <li>Bootstrap UI components</li>
+                            <li>Database design patterns</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/TechCareAfrica" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Drowsy Driver Detection -->
+                <article id="drowsy-driver" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">ML Project</span>
+                        <h2>Drowsy Driver Detection</h2>
+                        <p class="project-tagline">Real-time webcam inference with alert system</p>
+                    </div>
+                    <p class="project-story">Developed a machine learning system for detecting driver drowsiness in real-time using webcam input. The system detects alert states, microsleep patterns, and yawning to prevent accidents. Built with TensorFlow for model training and OpenCV for real-time video processing.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Real-time video processing with OpenCV</li>
+                            <li>TensorFlow model training and deployment</li>
+                            <li>Facial landmark detection</li>
+                            <li>Alert system integration</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/DrowsyDriverDetection" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Coffee Kiosk Project -->
+                <article id="coffee-kiosk" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Deployed Demo</span>
+                        <h2>Coffee Kiosk</h2>
+                        <p class="project-tagline">E-commerce platform with M-Pesa integration</p>
+                    </div>
+                    <p class="project-story">A modern web application combining coffee e-commerce with M-PESA mobile payments. Built with React TypeScript frontend and Node.js backend, featuring Docker containerization for consistent deployments. Includes real-time payment status updates and transaction history.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">M-Pesa API</span>
+                        <span class="tech-tag">Supabase</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>M-Pesa API integration patterns</li>
+                            <li>Docker multi-stage builds</li>
+                            <li>Payment callback handling</li>
+                            <li>Production deployment on Render.com</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/CoffeeKiosk" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        <a href="https://coffee-kiosk-frontend.onrender.com" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </article>
+
+                <!-- TechCareAfrica Project -->
+                <article id="techcareafrica" class="project-detail">
+                    <div class="project-header">
+                        <span class="project-badge">Production Ready</span>
+                        <h2>TechCareAfrica</h2>
+                        <p class="project-tagline">IT Helpdesk System</p>
+                    </div>
+                    <p class="project-story">Built to provide affordable and efficient IT solutions for African businesses. Created a full helpdesk system with ticket management, user roles, and reporting. This project combined my technical support experience with software development skills.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-learnings">
+                        <h4>Key Learnings:</h4>
+                        <ul>
+                            <li>Django ORM and models</li>
+                            <li>User authentication systems</li>
+                            <li>Bootstrap UI components</li>
+                            <li>Database design patterns</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/IsaacZachary/TechCareAfrica" target="_blank" class="btn btn-terminal-outline">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Other Projects Section -->
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls other_projects/</span>
+                </div>
+                <h2>Other Projects</h2>
+                <div class="other-projects-grid">
+                    <div class="project-card-mini">
+                        <h3>Django Tailwind Blog</h3>
+                        <p>A Developer Portfolio & Blog</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python-Django</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/IsaacZachary/blog-site-django" target="_blank" class="project-link-mini">View →</a>
+                    </div>
+                    
+                    <div class="project-card-mini">
+                        <h3>Firebase Task Management</h3>
+                        <p>Simple to-do list with ReactJS, Redux and Firebase</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ReactJS</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Redux</span>
+                        </div>
+                        <a href="https://github.com/IsaacZachary/Firebase-Task-Management-Webapp" target="_blank" class="project-link-mini">View →</a>
+                    </div>
+                    
+                    <div class="project-card-mini">
+                        <h3>IT Workshop System</h3>
+                        <p>Support ticketing project based on Laravel 8</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP-Laravel</span>
+                            <span class="tech-tag">Vue</span>
+                        </div>
+                        <a href="https://github.com/IsaacZachary/IT-Workshop-Computer-Maintenance" target="_blank" class="project-link-mini">View →</a>
+                    </div>
+                    
+                    <div class="project-card-mini">
+                        <h3>Online Management System</h3>
+                        <p>Jua's Enterprise Online Management System in PHP</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Apache</span>
+                        </div>
+                        <a href="https://github.com/IsaacZachary/Online-Management-System" target="_blank" class="project-link-mini">View →</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span>terminal — tech_stack/</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls -la skills/</span>
+                </div>
+                
+                <h1>Tech Stack</h1>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Production Experience</h3>
+                        <ul>
+                            <li><strong>Docker & Containerization:</strong> Multi-service apps, Docker Compose</li>
+                            <li><strong>CI/CD Basics:</strong> GitHub Actions, automated deployments</li>
+                            <li><strong>Linux & Servers:</strong> Nginx, SSL/TLS, basic administration</li>
+                            <li><strong>API Development:</strong> Python (FastAPI/Django), Node.js</li>
+                            <li><strong>Databases:</strong> PostgreSQL, MySQL, Firebase</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Currently Learning</h3>
+                        <ul>
+                            <li><strong>Kubernetes:</strong> Fundamentals, local cluster setup</li>
+                            <li><strong>Terraform/IaC:</strong> AWS resource provisioning basics</li>
+                            <li><strong>AWS Services:</strong> EC2, S3, RDS, IAM fundamentals</li>
+                            <li><strong>Monitoring:</strong> Prometheus/Grafana introduction</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Specialized Context</h3>
+                        <ul>
+                            <li><strong>AI Integration:</strong> OpenAI API, AI-assisted development</li>
+                            <li><strong>Payment Systems:</strong> M-Pesa API integration awareness</li>
+                            <li><strong>Data Pipelines:</strong> Kafka/Spark/Airflow concepts</li>
+                            <li><strong>African Tech:</strong> Infrastructure challenges, mobile-first</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="terminal-window compact">
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span> <span class="typed-text" data-text="connect --with=isaac_zachary"></span><span class="terminal-cursor">█</span>
+                </div>
+                <div class="footer-content">
+                    <p>© <span id="year"></span> Isaac Zachary. All systems operational.</p>
+                    <div class="footer-links">
+                        <a href="https://linkedin.com/in/isaaczachary/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/IsaacZachary" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:isaaczachary18@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
+</html>

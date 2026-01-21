@@ -1,209 +1,348 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" class="smooth-scroll">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experience | Isaac Zachary</title>
-    <meta name="description" content="Professional experience timeline combining technical support, full-stack development, and growing DevOps responsibilities.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Isaac Zachary's Professional Experience - Technical support, full-stack development, and DevOps responsibilities from 2019 to present.">
+    <title>Experience - Isaac Zachary | DevOps Engineer</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/mediaqueries.css" />
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav id="desktop-nav">
-        <div class="logo-container">
-            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
-            <div class="logo">Isaac Zachary</div>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="writing.html" class="nav-link">Writing</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li>
-                    <button class="terminal-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                        <span class="terminal-prompt">[]▐</span>
-                        <span class="terminal-command">dark</span>
-                        <span class="terminal-cursor">█</span>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
-    <!-- Hamburger Navigation -->
-    <nav id="hamburger-nav">
-        <div class="logo-container">
-            <img src="./assets/profile-pic.png" alt="Profile" class="nav-logo">
-            <div class="logo">Isaac Zachary</div>
-        </div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
-                <li><a href="about.html" onclick="toggleMenu()" class="nav-link">About</a></li>
-                <li><a href="projects.html" onclick="toggleMenu()" class="nav-link">Projects</a></li>
-                <li><a href="experience.html" onclick="toggleMenu()" class="nav-link">Experience</a></li>
-                <li><a href="writing.html" onclick="toggleMenu()" class="nav-link">Writing</a></li>
-                <li><a href="contact.html" onclick="toggleMenu()" class="nav-link">Contact</a></li>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Experience Timeline -->
-    <section class="experience-page">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span>terminal — experience/</span>
-            </div>
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="prompt">$</span>
-                    <span class="command">cat career_timeline.txt</span>
+<body class="bg-background text-text-primary">
+
+    <!-- Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary"
+                            class="w-10 h-10 rounded-full transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac Zachary</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Experience</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
-                
-                <h1>Professional Experience</h1>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Jul 2025 – Dec 2025</div>
-                        <div class="timeline-content terminal-style">
-                            <h3>Technical Architect | Freelance / Contract (Remote)</h3>
-                            <h4>Freelance</h4>
-                            <p class="location">Remote</p>
-                            <ul>
-                                <li>Containerized multi-tenant ERP using Docker via aaPanel</li>
-                                <li>11 isolated environments, 10 niches</li>
-                                <li>SSL, DNS, Cloudflare configuration</li>
-                                <li>GitHub-based deployment, backups, monitoring</li>
-                            </ul>
-                            <div class="tech-used">
-                                <strong>Tech:</strong> Docker, Laravel, MySQL, Nginx, Git/GitHub, Cloudflare
-                            </div>
-                        </div>
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Experience</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">Feb 2024 – Dec 2025</div>
-                        <div class="timeline-content terminal-style">
-                            <h3>Technical Support Engineer / Acting Support Lead</h3>
-                            <h4>First Basics Technologies</h4>
-                            <p class="location">Nairobi, Kenya</p>
-                            <ul>
-                                <li>L1–L2 ISP support, router configuration</li>
-                                <li>Escalations, SLA troubleshooting</li>
-                                <li>SSL/DNS/server support</li>
-                                <li>WordPress & Canva content</li>
-                                <li>Surveillance monitoring</li>
-                                <li>CRM & onboarding</li>
-                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="experience-hero"
+        class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Professional
+                    <span class="text-gradient">Experience</span>
+                </h1>
+                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    A journey from technical support through full-stack development to DevOps engineering, building
+                    reliable systems and solving real-world infrastructure challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section-padding bg-surface">
+        <div class="container-custom max-w-4xl">
+            <div class="space-y-8">
+                <!-- Experience 1: Technical Architect -->
+                <div class="card border-l-4 border-primary">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Technical Architect
+                            </h3>
+                            <p class="text-body font-medium text-primary mb-2">Freelance / Contract (Remote)</p>
+                            <p class="text-body-sm text-text-tertiary">Remote</p>
                         </div>
+                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Jul 2025 – Dec
+                            2025</span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">Feb 2022 - Nov 2023</div>
-                        <div class="timeline-content terminal-style">
-                            <h3>IT Support & Entrepreneurship</h3>
-                            <h4>Humble Crib Investment</h4>
-                            <p class="location">Nairobi, Kenya</p>
-                            <ul>
-                                <li>Providing IT related solutions and implementing software in the business</li>
-                                <li>Installation and configuration of operating systems (Windows/Linux) and other productive software</li>
-                                <li>Sales and service delivery, financial accounting & managing enterprise projects</li>
-                            </ul>
+                    <ul class="space-y-2 text-body-sm text-text-secondary mb-4">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Containerized multi-tenant ERP using Docker via aaPanel</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>11 isolated environments across 10 niches</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>SSL, DNS, and Cloudflare configuration</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>GitHub-based deployment, automated backups, and monitoring</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Nginx</span>
+                        <span class="tech-badge">Git/GitHub</span>
+                        <span class="tech-badge">Cloudflare</span>
+                    </div>
+                </div>
+
+                <!-- Experience 2: Technical Support Engineer -->
+                <div class="card border-l-4 border-secondary">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Technical Support
+                                Engineer / Acting Support Lead</h3>
+                            <p class="text-body font-medium text-secondary mb-2">First Basics Technologies</p>
+                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
                         </div>
+                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Feb 2024 – Dec
+                            2025</span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">Jan 2021 - Jul 2021</div>
-                        <div class="timeline-content terminal-style">
-                            <h3>Entrepreneur & IT Solutions</h3>
-                            <h4>JAK All-Time Tech</h4>
-                            <p class="location">Nairobi, Kenya</p>
-                            <ul>
-                                <li>Managed cyber services, e-citizen support, printing & creative designs</li>
-                                <li>Provided IT solutions for businesses and individuals</li>
-                            </ul>
+                    <ul class="space-y-2 text-body-sm text-text-secondary mb-4">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>L1–L2 ISP support and router configuration</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Escalations and SLA troubleshooting</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>SSL/DNS/server support and configuration</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>WordPress & Canva content creation</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Surveillance monitoring, CRM & customer onboarding</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experience 3: IT Support & Entrepreneurship -->
+                <div class="card border-l-4 border-accent">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">IT Support &
+                                Entrepreneurship</h3>
+                            <p class="text-body font-medium text-accent mb-2">Humble Crib Investment</p>
+                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
                         </div>
+                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Feb 2022 - Nov
+                            2023</span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">Apr 2019 - Sep 2020</div>
-                        <div class="timeline-content terminal-style">
-                            <h3>Technician Assistant (Trainee)</h3>
-                            <h4>GES Telecommunications Company</h4>
-                            <p class="location">Nairobi, Kenya</p>
-                            <ul>
-                                <li>Installed & configured CCTV systems, electric fences, and automated gates</li>
-                                <li>Assisted in network cabling and troubleshooting</li>
-                            </ul>
+                    <ul class="space-y-2 text-body-sm text-text-secondary">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Providing IT related solutions and implementing software in the business</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Installation and configuration of operating systems (Windows/Linux) and productive
+                                software</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Sales and service delivery, financial accounting & managing enterprise projects</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experience 4: Entrepreneur & IT Solutions -->
+                <div class="card border-l-4 border-primary">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Entrepreneur & IT
+                                Solutions</h3>
+                            <p class="text-body font-medium text-primary mb-2">JAK All-Time Tech</p>
+                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
                         </div>
+                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Jan 2021 - Jul
+                            2021</span>
                     </div>
+                    <ul class="space-y-2 text-body-sm text-text-secondary">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Managed cyber services, e-citizen support, printing & creative designs</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Provided IT solutions for businesses and individuals</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experience 5: Technician Assistant -->
+                <div class="card border-l-4 border-secondary">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Technician Assistant
+                                (Trainee)</h3>
+                            <p class="text-body font-medium text-secondary mb-2">GES Telecommunications Company</p>
+                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
+                        </div>
+                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Apr 2019 - Sep
+                            2020</span>
+                    </div>
+                    <ul class="space-y-2 text-body-sm text-text-secondary">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Installed & configured CCTV systems, electric fences, and automated gates</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Assisted in network cabling and troubleshooting</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Matrix -->
-    <section class="skills-matrix">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span>terminal — skills_matrix/</span>
+    <section id="skills" class="section-padding bg-gradient-to-br from-background via-primary-50 to-background">
+        <div class="container-custom max-w-4xl">
+            <div class="mb-12">
+                <h2 class="font-headline text-display-sm text-text-primary mb-4">Skills & Technologies</h2>
+                <p class="text-body-lg text-text-secondary max-w-3xl">
+                    Comprehensive technical skillset from production experience to continuous learning
+                </p>
             </div>
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="prompt">$</span>
-                    <span class="command">cat skills.json | jq</span>
-                </div>
-                
-                <h1>Skills & Technologies</h1>
-                
-                <div class="skills-matrix-container">
-                    <div class="skills-column">
-                        <h3>Production Experience</h3>
-                        <div class="skills-badges">
-                            <span class="skill-badge">Docker & Containerization</span>
-                            <span class="skill-badge">CI/CD Basics (GitHub Actions)</span>
-                            <span class="skill-badge">Linux & Server Management</span>
-                            <span class="skill-badge">Nginx</span>
-                            <span class="skill-badge">DNS & SSL/TLS</span>
-                            <span class="skill-badge">Cloudflare</span>
-                            <span class="skill-badge">Python (Django, FastAPI)</span>
-                            <span class="skill-badge">Node.js</span>
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">PostgreSQL</span>
-                            <span class="skill-badge">MySQL</span>
-                            <span class="skill-badge">Git/GitHub</span>
-                        </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="font-headline text-h3 font-semibold text-text-primary mb-6">Production Experience</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Docker & Containerization</span>
+                        <span class="tech-badge">CI/CD (GitHub Actions)</span>
+                        <span class="tech-badge">Linux & Server Management</span>
+                        <span class="tech-badge">Nginx</span>
+                        <span class="tech-badge">DNS & SSL/TLS</span>
+                        <span class="tech-badge">Cloudflare</span>
+                        <span class="tech-badge">Python (Django, FastAPI)</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Git/GitHub</span>
                     </div>
-                    
-                    <div class="skills-column">
-                        <h3>Familiar / Learning</h3>
-                        <div class="skills-badges">
-                            <span class="skill-badge learning">Kubernetes</span>
-                            <span class="skill-badge learning">Terraform</span>
-                            <span class="skill-badge learning">AWS Basics</span>
-                            <span class="skill-badge learning">Prometheus/Grafana</span>
-                            <span class="skill-badge learning">Redis</span>
-                            <span class="skill-badge learning">Laravel</span>
-                        </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-headline text-h3 font-semibold text-text-primary mb-6">Familiar / Learning</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">AWS Basics</span>
+                        <span class="tech-badge">Prometheus/Grafana</span>
+                        <span class="tech-badge">Redis</span>
+                        <span class="tech-badge">Laravel</span>
                     </div>
                 </div>
             </div>
@@ -211,33 +350,75 @@
     </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="terminal-window compact">
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="terminal-prompt">$</span> <span class="typed-text" data-text="connect --with=isaac_zachary"></span><span class="terminal-cursor">█</span>
-                </div>
-                <div class="footer-content">
-                    <p>© <span id="year"></span> Isaac Zachary. All systems operational.</p>
-                    <div class="footer-links">
-                        <a href="https://linkedin.com/in/isaaczachary/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/IsaacZachary" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="mailto:isaaczachary18@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary" class="w-10 h-10 rounded-full">
+                        <span class="font-headline font-bold text-xl">Isaac Zachary</span>
                     </div>
+                    <p class="text-body-sm text-gray-400">DevOps engineer transforming infrastructure challenges into
+                        elegant solutions.</p>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                        </li>
+                        <li><a href="experience.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
+                        </li>
+                        <li><a href="writing.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Cloud Infrastructure</span></li>
+                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Containerization</span></li>
+                        <li><span class="text-body-sm text-gray-400">Full-Stack Development</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:isaaczachary18@gmail.com"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fas fa-envelope"></i><span>Email</span></a></li>
+                        <li><a href="https://linkedin.com/in/isaaczachary/" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/IsaacZachary" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-github"></i><span>GitHub</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">© <span id="year"></span> Isaac Zachary. All Rights Reserved.
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script src="js/data.js"></script>
-    <script src="js/motion.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+    </script>
 </body>
+
 </html>
