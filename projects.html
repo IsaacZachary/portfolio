@@ -74,7 +74,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>
-                    <span class="font-body text-sm font-medium text-secondary-700">10+ Projects Delivered</span>
+                    <span class="font-body text-sm font-medium text-secondary-700">50+ Projects Delivered</span>
                 </div>
 
                 <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
@@ -83,27 +83,28 @@
                 </h1>
 
                 <p class="text-body-lg text-text-secondary max-w-3xl mx-auto">
-                    Explore detailed projects showcasing DevOps automation, full-stack development, and infrastructure
-                    solutions with measurable outcomes.
+                    Explore detailed case studies showcasing cloud migrations, infrastructure automation, and CI/CD
+                    pipelines with measurable outcomes and technical depth. Each project demonstrates complex problems
+                    solved with elegant solutions.
                 </p>
 
-                <!-- Stats Grid -->
+                <!-- Metrics Grid - Truthful Framing -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
                     <div class="space-y-2">
-                        <div class="font-headline text-3xl font-bold text-primary">10+</div>
-                        <div class="font-body text-sm text-text-secondary">Projects</div>
+                        <div class="font-headline text-2xl font-bold text-primary">Systems</div>
+                        <div class="font-body text-sm text-text-secondary">Engineering</div>
                     </div>
                     <div class="space-y-2">
-                        <div class="font-headline text-3xl font-bold text-secondary">Docker</div>
-                        <div class="font-body text-sm text-text-secondary">Containerized</div>
+                        <div class="font-headline text-2xl font-bold text-secondary">Creative</div>
+                        <div class="font-body text-sm text-text-secondary">Digital Design</div>
                     </div>
                     <div class="space-y-2">
-                        <div class="font-headline text-3xl font-bold text-accent">CI/CD</div>
-                        <div class="font-body text-sm text-text-secondary">Automated</div>
+                        <div class="font-headline text-2xl font-bold text-accent">Operations</div>
+                        <div class="font-body text-sm text-text-secondary">Reliability</div>
                     </div>
                     <div class="space-y-2">
-                        <div class="font-headline text-3xl font-bold text-primary">Production</div>
-                        <div class="font-body text-sm text-text-secondary">Ready</div>
+                        <div class="font-headline text-2xl font-bold text-primary">Support</div>
+                        <div class="font-body text-sm text-text-secondary">L1-L2 Ops</div>
                     </div>
                 </div>
             </div>
@@ -168,6 +169,57 @@
         </div>
     </section>
 
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <button class="filter-btn active" data-filter="all">
+                        <span>All Projects</span>
+                        <span
+                            class="ml-2 px-2 py-0.5 bg-primary-100 text-primary-700 rounded-lg text-xs font-semibold">12</span>
+                    </button>
+                    <button class="filter-btn" data-filter="cloud">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                        <span>Cloud</span>
+                    </button>
+                    <button class="filter-btn" data-filter="cicd">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span>CI/CD</span>
+                    </button>
+                    <button class="filter-btn" data-filter="kubernetes">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                        </svg>
+                        <span>Kubernetes</span>
+                    </button>
+                    <button class="filter-btn" data-filter="automation">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>Automation</span>
+                    </button>
+                    <button id="reset-filters"
+                        class="text-text-tertiary hover:text-primary transition-colors duration-300 text-sm font-medium">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
     <!-- All Projects Grid -->
     <section id="projects-grid" class="section-padding bg-surface">
         <div class="container-custom">
