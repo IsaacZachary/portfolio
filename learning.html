@@ -5,670 +5,731 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Isaac Zachary's Academy student portal. A high-fidelity LMS for professional computing and technical leadership.">
+        content="Isaac Zachary's Academy | A premium professional learning portal for technical mastery.">
     <title>Student Portal | Isaac's Academy</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Modern LMS Experience Styles */
+        /* High-Definition LMS Design System */
         :root {
-            --lms-sidebar-width: 400px;
+            --lms-sidebar-width: 360px;
             --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --accent: #f59e0b;
+            --primary-light: #eff6ff;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-900: #0f172a;
         }
 
         body {
-            background-color: #f1f5f9;
+            background-color: var(--slate-50);
+            color: var(--slate-900);
             font-family: 'Inter', -apple-system, sans-serif;
-            color: #1e293b;
+            overflow-x: hidden;
         }
 
-        /* Portal Security Overlay */
-        #portal-gate {
+        /* Portal Security Overlay: Elegant & Non-overlapping */
+        #portal-auth-overlay {
             position: fixed;
             inset: 0;
-            z-index: 1000;
-            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95) 0%, #0f172a 100%);
-            backdrop-filter: blur(25px);
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        #portal-gate.authorized {
             opacity: 0;
             pointer-events: none;
-            transform: scale(1.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .auth-card {
+        #portal-auth-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .auth-modal {
             background: white;
-            padding: 4rem;
-            border-radius: 3rem;
             width: 100%;
-            max-width: 520px;
-            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        .auth-logo {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            border-radius: 2rem;
-            margin: 0 auto 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
-            transform: rotate(-5deg);
-        }
-
-        /* Course Dashboard */
-        .dashboard-header {
-            padding: 10rem 0 5rem;
-            background: linear-gradient(to bottom, #fff, transparent);
-        }
-
-        .lms-card {
-            background: white;
+            max-width: 480px;
+            padding: 4rem;
             border-radius: 2.5rem;
-            border: 1px solid #e2e8f0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+            transform: translateY(30px);
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .lms-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
+        #portal-auth-overlay.active .auth-modal {
+            transform: translateY(0);
         }
 
-        /* Classroom Interface */
-        .classroom-layout {
-            display: flex;
+        /* Classroom Interface: Robust Layout */
+        .classroom-frame {
+            display: grid;
+            grid-template-columns: var(--lms-sidebar-width) 1fr;
             height: 100vh;
-            background: #fff;
+            background: white;
+            position: fixed;
+            inset: 0;
+            z-index: 900;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .classroom-frame.active {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .classroom-sidebar {
-            width: var(--lms-sidebar-width);
-            border-right: 1px solid #e2e8f0;
+            border-right: 1px solid var(--slate-200);
             display: flex;
             flex-direction: column;
-            background: #fcfdfe;
+            background: white;
+            overflow: hidden;
         }
 
-        .curriculum-list {
+        .curriculum-scroller {
             flex-grow: 1;
             overflow-y: auto;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
-        .unit-item {
-            padding: 1.5rem;
-            border-radius: 1.5rem;
-            margin-bottom: 0.75rem;
-            cursor: pointer;
+        .lesson-node {
             display: flex;
             align-items: center;
             gap: 1.25rem;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
             transition: all 0.2s ease;
             border: 1px solid transparent;
         }
 
-        .unit-item:hover {
-            background: #f8fafc;
+        .lesson-node:hover {
+            background: var(--slate-50);
         }
 
-        .unit-item.active {
-            background: #eff6ff;
+        .lesson-node.active {
+            background: var(--primary-light);
             border-color: #dbeafe;
         }
 
-        .unit-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: #f1f5f9;
+        .node-index {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            background: var(--slate-100);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             font-weight: 800;
             color: #64748b;
             flex-shrink: 0;
-            transition: all 0.3s ease;
         }
 
-        .unit-item.active .unit-icon {
+        .lesson-node.active .node-index {
             background: var(--primary);
             color: white;
             box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
         }
 
-        .unit-item.completed .unit-icon {
+        .lesson-node.completed .node-index {
             background: #dcfce7;
             color: #166534;
         }
 
-        /* Video Player Simulator */
-        .video-container {
-            position: relative;
-            background: #000;
-            border-radius: 2.5rem;
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-ui {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        .classroom-main {
+            overflow-y: auto;
+            background: #fcfdfe;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 3rem;
-            opacity: 1;
-            transition: opacity 0.3s ease;
         }
 
-        .video-play-btn {
+        .video-stage {
+            background: black;
+            aspect-ratio: 16/9;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .video-control-bar {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            background: var(--primary);
-            border-radius: 50%;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            box-shadow: 0 0 50px rgba(37, 99, 235, 0.5);
-            transition: all 0.3s ease;
+            gap: 1.5rem;
+            z-index: 10;
         }
 
-        .video-play-btn:hover {
-            transform: translate(-50%, -50%) scale(1.1);
+        /* Common Elements */
+        .badge-premium {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            background-color: #0f172a;
+            color: white;
         }
 
-        .lms-footer {
-            background: #0f172a;
-            color: white;
-            padding: 6rem 0 3rem;
-            margin-top: 8rem;
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
         }
 
         @media (max-width: 1024px) {
-            .classroom-layout {
-                flex-direction: column;
-                height: auto;
+            .classroom-frame {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
             }
 
             .classroom-sidebar {
-                width: 100%;
-                height: 400px;
+                height: 300px;
+                border-right: none;
+                border-bottom: 1px solid var(--slate-200);
             }
         }
     </style>
 </head>
 
-<body class="bg-gray-50">
-
-    <!-- LMS Navigation -->
-    <nav class="fixed top-0 inset-x-0 z-[100] bg-white/80 backdrop-blur-xl border-b border-gray-100">
-        <div class="container-custom py-5 flex items-center justify-between">
+<body>
+    <!-- Premium Global Header -->
+    <header class="fixed top-0 left-0 right-0 z-[1000] bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="container-custom py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
                 <div
-                    class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 rotate-3 transition-transform hover:rotate-0">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-headline font-bold text-lg leading-tight uppercase tracking-tight">Isaac's
+                    <span class="font-headline font-bold text-lg leading-tight tracking-tight uppercase">Isaac's
                         Academy</span>
-                    <span class="text-[9px] font-bold text-primary tracking-[0.25em] uppercase">Executive Portal</span>
+                    <span class="text-[9px] font-bold text-primary tracking-[0.3em] uppercase">Executive Portal</span>
                 </div>
             </a>
 
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-8">
                 <a href="index.html"
-                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-primary transition-colors">Website</a>
-                <div class="h-6 w-px bg-gray-100"></div>
-                <div id="student-info" class="hidden flex items-center gap-4">
+                    class="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors">Go
+                    to Website</a>
+                <div class="h-6 w-px bg-slate-200"></div>
+                <div id="logged-user" class="hidden flex items-center gap-3">
                     <div class="text-right">
-                        <div id="student-id-display" class="text-xs font-bold text-gray-900 leading-none mb-1">...</div>
+                        <div id="user-pill-email" class="text-xs font-bold text-slate-900 leading-none mb-1">...</div>
                         <div class="text-[9px] font-bold text-primary uppercase tracking-widest leading-none">Standard
-                            Level</div>
+                            Subscription</div>
                     </div>
                     <div
-                        class="w-10 h-10 rounded-full bg-gray-100 border-2 border-white shadow-sm flex items-center justify-center text-gray-400">
-                        <i class="fas fa-user"></i>
+                        class="w-10 h-10 rounded-full bg-slate-100 border-2 border-white shadow-sm flex items-center justify-center text-slate-400">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
                 </div>
-                <button id="auth-trigger" onclick="openAuth()"
-                    class="btn-primary py-3 px-8 rounded-xl text-xs font-bold shadow-xl shadow-primary/20">LOGIN</button>
+                <button id="main-login-trigger" onclick="openAuthentication()"
+                    class="btn-primary py-3 px-8 rounded-xl text-xs font-bold shadow-xl shadow-primary/20">STUDENT
+                    LOGIN</button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Portal Auth Gate -->
-    <div id="portal-gate">
-        <div class="auth-card">
-            <div id="login-form-view">
-                <div class="auth-logo">
-                    <i class="fas fa-lock-open"></i>
+    <!-- Authentication Gate -->
+    <div id="portal-auth-overlay">
+        <div class="auth-modal">
+            <div class="text-center mb-10">
+                <div
+                    class="w-20 h-20 bg-primary-light text-primary rounded-3xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                    <i class="fas fa-lock"></i>
                 </div>
-                <h2 class="font-headline text-3xl font-bold mb-3">Course Access</h2>
-                <p class="text-gray-400 text-sm mb-10">Enter your official student credentials to access the
-                    <b>Mastering Computer Packages</b> track.
-                </p>
+                <h2 class="font-headline text-3xl font-bold mb-2">Authenticated Entry</h2>
+                <p class="text-slate-400 text-sm">Please provide your academy credentials to resume your professional
+                    track.</p>
+            </div>
 
-                <form onsubmit="handleAuth(event)" class="space-y-4">
-                    <div class="text-left space-y-1">
-                        <label class="text-[10px] uppercase font-bold text-gray-400 ml-1">Student ID / Email</label>
-                        <input type="email" id="student-email" placeholder="student@isaacacademy.io"
-                            class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none"
-                            required>
-                    </div>
-                    <div class="text-left space-y-1">
-                        <label class="text-[10px] uppercase font-bold text-gray-400 ml-1">Universal Token</label>
-                        <input type="password" placeholder="••••••••"
-                            class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none"
-                            required>
-                    </div>
-                    <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mb-4 text-left">
-                        <p
-                            class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider mb-1 flex items-center">
-                            <i class="fas fa-info-circle mr-2"></i> Demo User Instruction
-                        </p>
-                        <p class="text-[10px] text-indigo-400 leading-tight">For evaluation: Enter any email and any
-                            8-character token to unlock the curriculum.</p>
-                    </div>
-                    <button type="submit"
-                        class="w-full btn-primary py-5 rounded-2xl font-bold mt-6 text-sm shadow-xl shadow-primary/30">UNLOCK
-                        CURRICULUM</button>
-                </form>
-
-                <div class="mt-10 pt-10 border-t border-gray-100">
-                    <p class="text-xs text-gray-400">Need enroll? <button
-                            onclick="alert('Enrollment request received! A unique access token has been generated for your session. You can now use any email to log in.')"
-                            class="text-primary font-bold hover:underline">Request Token</button></p>
+            <form onsubmit="initiateAccess(event)" class="space-y-4">
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Student
+                        Identifier</label>
+                    <input type="email" id="auth-email" placeholder="student@isaaczachary.com"
+                        class="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none"
+                        required>
                 </div>
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Universal
+                        Token</label>
+                    <input type="password" placeholder="••••••••"
+                        class="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none"
+                        required>
+                </div>
+
+                <div class="p-4 bg-indigo-50/50 rounded-2xl border border-indigo-100 flex gap-4 items-start mb-6">
+                    <i class="fas fa-info-circle text-indigo-500 mt-1"></i>
+                    <p class="text-[10px] text-indigo-700 leading-relaxed font-medium">
+                        <b>Instructor Note:</b> For evaluation, enter any email and any 8-character token to unlock the
+                        curriculum.
+                    </p>
+                </div>
+
+                <button type="submit"
+                    class="w-full btn-primary py-5 rounded-2xl font-bold text-sm shadow-xl shadow-primary/30">UNLOCK
+                    CURRICULUM</button>
+            </form>
+
+            <div class="mt-10 pt-8 border-t border-slate-100 text-center">
+                <button onclick="closeAuthentication()"
+                    class="text-xs font-bold text-slate-400 hover:text-slate-600 transition-colors uppercase tracking-widest">Back
+                    to Directory</button>
             </div>
         </div>
     </div>
 
-    <!-- Dashboard Content -->
-    <main id="dashboard" class="dashboard-header">
+    <!-- Dashboard Management View -->
+    <main id="lms-dashboard" class="pt-32 pb-20">
         <div class="container-custom">
-            <!-- Mastery Header -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-                <div>
-                    <h1 class="font-headline text-5xl md:text-6xl font-bold mb-4">Course Marketplace</h1>
-                    <p class="text-gray-500 text-lg max-w-2xl">Advance your career with role-based certification tracks
-                        and industrial computing mastery.</p>
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-10">
+                <div class="space-y-4">
+                    <h1 class="font-headline text-5xl md:text-6xl font-bold leading-none tracking-tight">The Curriculum
+                        Hub.</h1>
+                    <p class="text-slate-500 text-lg max-w-2xl">Your centralized portal for high-fidelity technical
+                        training and industrial computing certification.</p>
                 </div>
                 <div
-                    class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100 flex items-center gap-8 min-w-[340px]">
+                    class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex items-center gap-8 min-w-[360px]">
                     <div class="flex-grow">
                         <div class="flex justify-between mb-3">
-                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Global
-                                Mastery</span>
-                            <span id="global-pct" class="text-xs font-bold text-primary">0%</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Certification
+                                Progress</span>
+                            <span id="global-mastery-txt" class="text-xs font-bold text-primary">0%</span>
                         </div>
-                        <div class="h-2.5 bg-gray-50 rounded-full overflow-hidden">
-                            <div id="global-progress" class="h-full bg-primary transition-all duration-1000"
+                        <div class="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div id="global-mastery-fill" class="h-full bg-primary transition-all duration-1000"
                                 style="width: 0%"></div>
                         </div>
                     </div>
                     <div
-                        class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl">
-                        <i class="fas fa-medal"></i>
+                        class="w-14 h-14 bg-primary-light text-primary rounded-2xl flex items-center justify-center text-xl shadow-inner">
+                        <i class="fas fa-award"></i>
                     </div>
                 </div>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-10">
-                <!-- Primary Course -->
+                <!-- Course Primary Card -->
                 <div class="lg:col-span-2">
-                    <div class="lms-card group">
-                        <div class="aspect-[2.5/1] bg-gray-900 relative p-12 flex flex-col justify-end overflow-hidden">
+                    <div
+                        class="group relative bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl transition-all hover:-translate-y-2">
+                        <div class="aspect-[2.4/1] relative p-12 flex flex-col justify-end">
                             <div
-                                class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80')] bg-cover">
+                                class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80')] bg-cover">
                             </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent">
                             </div>
                             <div class="relative z-10 text-white">
                                 <div
-                                    class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 text-xs font-bold text-primary mb-6">
+                                    class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 text-[10px] font-bold text-primary mb-6 uppercase tracking-widest">
                                     <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                                    MASTER TRACK
+                                    Flagship Certification
                                 </div>
-                                <h3 class="text-4xl font-bold font-headline mb-4">The Professional Computer <br>Packages
-                                    Foundation</h3>
-                                <p class="text-gray-300 text-sm max-w-xl leading-relaxed">Master enterprise workflows,
-                                    OS architecture, and professional documentation standards.</p>
+                                <h2 class="text-4xl md:text-5xl font-bold font-headline mb-4 leading-tight">Professional
+                                    Computer <br>Packages Mastery</h2>
+                                <p class="text-slate-400 text-sm max-w-xl leading-relaxed">Integrated foundation in OS
+                                    layer architecture, MS Office executive workflows, and digital infrastructure
+                                    networking.</p>
                             </div>
                         </div>
-                        <div class="p-10 flex items-center justify-between border-t border-gray-50">
+                        <div class="p-12 bg-white flex flex-col md:flex-row items-center justify-between gap-8">
                             <div class="flex items-center gap-12">
-                                <div>
-                                    <div class="text-[10px] font-bold text-gray-400 uppercase mb-1">Learning Time</div>
-                                    <div class="text-sm font-bold">12.5 Hours</div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 text-lg">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                            Training Time</div>
+                                        <div class="text-sm font-bold">12.5 Contact Hours</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="text-[10px] font-bold text-gray-400 uppercase mb-1">Course Units</div>
-                                    <div class="text-sm font-bold">10 Progressive Units</div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 text-lg">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                            Curriculum</div>
+                                        <div class="text-sm font-bold">10 High-Fed Units</div>
+                                    </div>
                                 </div>
                             </div>
-                            <button onclick="startCourse()"
-                                class="btn-primary py-4 px-10 rounded-2xl font-bold text-sm shadow-xl shadow-primary/20 group-hover:scale-105 transition-transform">RESUME
-                                LEARNING</button>
+                            <button onclick="enterMasteryClassroom()"
+                                class="btn-primary py-5 px-12 rounded-2xl font-bold text-sm shadow-xl shadow-primary/30 group-hover:scale-[1.03] transition-transform">RESUME
+                                TRACK</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Next-Gen Token -->
+                <!-- Strategic Roadmap Card -->
                 <div class="lg:col-span-1">
                     <div
-                        class="bg-indigo-900 rounded-[2.5rem] p-10 h-full flex flex-col justify-between text-white relative overflow-hidden group">
+                        class="h-full bg-slate-900 rounded-[3rem] p-12 flex flex-col justify-between text-white relative overflow-hidden">
                         <div
-                            class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-110 transition-transform">
+                            class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2">
                         </div>
                         <div class="relative z-10">
                             <div
-                                class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/10">
-                                <i class="fas fa-robot text-2xl text-indigo-300"></i>
+                                class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/10 text-2xl text-primary">
+                                <i class="fas fa-microchip"></i>
                             </div>
-                            <h3 class="text-2xl font-bold font-headline mb-4">Coming: AI Agentic <br>Mastery Pipeline
-                            </h3>
-                            <p class="text-indigo-200 text-sm leading-relaxed mb-10">Automation, Large Language Model
-                                orchestration, and LLMOps. Join the cohort waitlist.</p>
+                            <h3 class="text-3xl font-bold font-headline mb-4">AI Frameworks &<br>Agentic Pipelines</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-10">Advanced track covering Large
+                                Language Model orchestration, Python automation, and industry-grade AI workflows.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-white/5 border border-white/5 py-1 px-3 rounded-full text-[9px] font-bold text-slate-300 uppercase letter-spacing-widest">Waitlist
+                                    Only</span>
+                                <span
+                                    class="bg-white/5 border border-white/5 py-1 px-3 rounded-full text-[9px] font-bold text-slate-300 uppercase letter-spacing-widest">Advanced</span>
+                            </div>
                         </div>
                         <button
-                            class="w-full bg-white text-indigo-900 py-4 rounded-2xl font-bold text-[10px] tracking-widest hover:bg-indigo-50 transition-colors uppercase">Register
-                            Interest</button>
+                            onclick="alert('Enrollment for the AI Masterclass will open in Q3 2026. You have been added to the notification queue.')"
+                            class="w-full bg-white text-slate-900 py-4 rounded-2xl font-bold text-[10px] tracking-[0.2em] uppercase mt-12 hover:bg-slate-100 transition-colors">Notify
+                            Availability</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Post-Login Classroom -->
-    <div id="classroom" class="hidden fixed inset-0 z-[200] bg-white">
-        <div class="classroom-layout">
-            <aside class="classroom-sidebar">
-                <div class="p-8 border-b border-gray-100 flex items-center justify-between">
-                    <div>
-                        <h3 class="font-headline font-bold text-lg mb-1">Curriculum</h3>
-                        <div id="sidebar-progress-txt"
-                            class="text-[9px] font-bold text-primary uppercase tracking-[0.2em]">0/10 Finished</div>
-                    </div>
-                    <button onclick="exitToDashboard()"
-                        class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 transition-colors">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-
-                <div class="curriculum-list" id="unit-list">
-                    <!-- Loaded via JS -->
-                </div>
-
-                <div class="p-8 border-t border-gray-50 text-center">
-                    <div class="h-1 bg-gray-100 rounded-full overflow-hidden mb-4">
-                        <div id="sidebar-progress-bar" class="h-full bg-primary transition-all duration-300"
-                            style="width: 0%"></div>
-                    </div>
-                    <span class="text-[10px] font-bold text-gray-400 uppercase">Your Mastery Level</span>
-                </div>
-            </aside>
-
-            <main class="flex-grow overflow-y-auto bg-gray-50">
-                <div class="max-w-5xl mx-auto p-8 lg:p-20">
-                    <!-- Instruction Header -->
-                    <div class="flex items-center gap-4 mb-10">
-                        <div
-                            class="px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-[10px] font-bold text-indigo-600 uppercase tracking-widest">
-                            Mastery Unit</div>
-                        <span class="text-gray-300">/</span>
-                        <div id="breadcrumb-title"
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Introduction</div>
-                    </div>
-
-                    <!-- Video Simulator -->
-                    <div class="video-container mb-12">
-                        <div class="video-ui">
-                            <div>
-                                <h1 id="player-main-title" class="text-3xl md:text-4xl font-bold text-white mb-2">
-                                    Introduction to Computing</h1>
-                                <p class="text-gray-400 text-sm font-medium">Professional Instruction • Executive Track
-                                </p>
-                            </div>
-                        </div>
-                        <div class="video-play-btn">
-                            <i class="fas fa-play ml-1"></i>
-                        </div>
-                        <div class="absolute bottom-6 left-6 right-6 flex items-center gap-6">
-                            <div class="flex-grow h-1.5 bg-white/20 rounded-full overflow-hidden backdrop-blur-md">
-                                <div class="h-full bg-primary w-1/4 shadow-[0_0_20px_rgba(37,99,235,0.6)]"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-white/60 tabular-nums">08:24 / 45:00</span>
-                        </div>
-                    </div>
-
-                    <!-- Post-Video Info -->
-                    <div class="grid lg:grid-cols-3 gap-16">
-                        <div class="lg:col-span-2 space-y-12">
-                            <div class="flex gap-10 border-b border-gray-100">
-                                <button
-                                    class="pb-4 text-xs font-bold border-b-2 border-primary text-primary tracking-widest uppercase">Instructional
-                                    Body</button>
-                                <button
-                                    class="pb-4 text-xs font-bold border-b-2 border-transparent text-gray-400 hover:text-gray-600 tracking-widest uppercase"
-                                    onclick="alert('Module resources are available for registered standard users.')">Downloads</button>
-                            </div>
-                            <div id="unit-content"
-                                class="prose prose-slate max-w-none prose-headings:font-headline prose-headings:font-bold">
-                                <!-- Loaded via JS -->
-                            </div>
-                        </div>
-
-                        <div class="lg:col-span-1">
-                            <div
-                                class="sticky top-12 p-10 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm text-center">
-                                <div
-                                    class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                                    <i class="fas fa-award text-2xl text-gray-300"></i>
-                                </div>
-                                <h4 class="text-sm font-bold mb-2">Unit Validation</h4>
-                                <p class="text-xs text-gray-400 mb-8 leading-relaxed">Complete the practical lab
-                                    associated with this unit to unlock the next certification module.</p>
-                                <button onclick="completeUnit()"
-                                    class="w-full btn-primary py-4 rounded-2xl font-bold text-xs shadow-xl shadow-primary/20">COMPLETE
-                                    & ADVANCE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-
-    <!-- Official Portal Footer -->
-    <footer class="lms-footer">
+    <!-- Professional Academy Footer -->
+    <footer id="lms-global-footer" class="bg-slate-900 text-white pt-32 pb-12">
         <div class="container-custom">
-            <div class="grid md:grid-cols-4 gap-16 mb-20">
-                <div class="col-span-2 space-y-8">
+            <div class="grid md:grid-cols-4 gap-20 mb-24">
+                <div class="col-span-2 space-y-10">
                     <div class="flex items-center gap-4">
                         <div
-                            class="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white shadow-xl">
-                            <i class="fas fa-graduation-cap text-xl"></i>
+                            class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shadow-2xl">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
                         </div>
                         <div>
-                            <span class="font-headline font-bold text-2xl block uppercase tracking-tight">Isaac's
-                                Academy</span>
-                            <span class="text-[10px] font-bold text-primary tracking-[0.3em] uppercase">Executive
-                                Education</span>
+                            <span class="font-headline font-bold text-3xl block tracking-tight uppercase">Isaac
+                                Zachary</span>
+                            <span class="text-[10px] font-bold text-primary tracking-[0.4em] uppercase">Technical
+                                Infrastructure Education</span>
                         </div>
                     </div>
-                    <p class="text-gray-400 max-w-md text-sm leading-relaxed">
-                        Industry-ready training built for professional excellence. Empowering technical careers through
-                        rigorous, lab-based curriculum since 2024.
+                    <p class="text-slate-400 max-w-lg leading-relaxed text-sm">
+                        Establishing professional standards for digital literacy and software engineering across the
+                        African continent. Lab-driven mastery for the high-end workforce.
                     </p>
+                    <div class="flex gap-6">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all text-xl"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all text-xl"><i
+                                class="fab fa-github"></i></a>
+                    </div>
                 </div>
-                <div class="space-y-6">
-                    <h4 class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Mastery Tracks</h4>
-                    <ul class="space-y-4 text-sm font-medium text-gray-300">
-                        <li><a href="#" class="hover:text-primary transition-colors">Computer Packages</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">AI Engineering (Waitlist)</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Career Workshop</a></li>
+
+                <div class="space-y-10">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">Learning Paths</h4>
+                    <ul class="space-y-6 text-sm font-semibold text-slate-300">
+                        <li><a href="#" class="hover:text-primary transition-colors">Computer Packages Core</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">AI Engineering (Beta)</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Technical Leadership</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Enterprise Registry</a></li>
                     </ul>
                 </div>
-                <div class="space-y-6">
-                    <h4 class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Connect</h4>
-                    <ul class="space-y-4 text-sm font-medium text-gray-300">
-                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn Network</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Admissions Desk</a></li>
-                        <li><a href="index.html" class="hover:text-primary transition-colors">Portfolio Hub</a></li>
+
+                <div class="space-y-10">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">Resources</h4>
+                    <ul class="space-y-6 text-sm font-semibold text-slate-300">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Main Portfolio</a></li>
+                        <li><a href="experience.html" class="hover:text-primary transition-colors">Experience Deck</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Consultations</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Student Handbook</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">© 2026 Isaac Zachary.
-                    Technical infrastructure secured.</p>
-                <div class="flex items-center gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms</a>
-                    <a href="#" class="hover:text-white transition-colors">Status</a>
+            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center">
+                    &copy; 2026 Isaac Zachary. All knowledge bases secured and encrypted.
+                </p>
+                <div class="flex items-center gap-12 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Infrastructure</a>
+                    <a href="#" class="hover:text-white transition-colors">Rights</a>
+                    <a href="#" class="hover:text-white transition-colors">SOC2 Status</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- High-Fidelity Classroom Frame (Hidden till Authorized) -->
+    <div id="classroom-interface" class="classroom-frame">
+        <aside class="classroom-sidebar shadow-2xl">
+            <div class="p-8 border-b border-slate-100 bg-slate-50/30 flex items-center justify-between">
+                <div>
+                    <h3 class="font-headline font-bold text-xl mb-1">Curriculum</h3>
+                    <div id="classroom-counter" class="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">
+                        0/10 Mastery Units</div>
+                </div>
+                <button onclick="exitClassroomView()"
+                    class="w-10 h-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 hover:text-red-500 transition-all">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="curriculum-scroller" id="unit-node-list">
+                <!-- Dynamically Linked via JS -->
+            </div>
+
+            <div class="p-8 border-t border-slate-100 text-center">
+                <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden mb-4">
+                    <div id="classroom-bar" class="h-full bg-primary transition-all duration-300" style="width: 0%">
+                    </div>
+                </div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Current Unit Mastery</div>
+            </div>
+        </aside>
+
+        <main class="classroom-main">
+            <div class="p-8 lg:p-20 max-w-6xl mx-auto w-full">
+                <!-- Active Unit Context -->
+                <div class="flex items-center gap-4 mb-8">
+                    <span
+                        class="px-5 py-2 rounded-full bg-primary-light text-primary font-bold text-[10px] tracking-widest uppercase border border-blue-100">In
+                        Instruction</span>
+                    <span class="text-slate-200">/</span>
+                    <span id="breadcrumb-unit-title"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">...</span>
+                </div>
+
+                <!-- Instructional Video Stage -->
+                <div class="video-stage mb-16">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent flex flex-col justify-end p-12">
+                        <div class="relative z-10 transition-transform">
+                            <h2 id="active-player-title"
+                                class="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight">Introduction to
+                                Computing Architecture</h2>
+                            <p class="text-slate-400 text-sm font-medium tracking-wide">Professional Instruction •
+                                Executive Leadership Track • Isaac Zachary</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white text-3xl shadow-[0_0_60px_rgba(37,99,235,0.6)] cursor-pointer hover:scale-110 active:scale-95 transition-all">
+                        <i class="fas fa-play ml-1"></i>
+                    </div>
+
+                    <div class="video-control-bar">
+                        <div class="flex-grow h-1 bg-white/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-1/4 shadow-lg shadow-primary"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-white/80 tabular-nums">08:24 / 45:00</span>
+                    </div>
+                </div>
+
+                <!-- Instructional Content Body -->
+                <div class="grid lg:grid-cols-3 gap-20">
+                    <div class="lg:col-span-2 space-y-12">
+                        <div class="flex gap-12 border-b border-slate-100">
+                            <button
+                                class="pb-5 text-[11px] font-extrabold border-b-2 border-primary text-primary uppercase tracking-widest">Instructor
+                                Content</button>
+                            <button
+                                class="pb-5 text-[11px] font-extrabold border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-colors uppercase tracking-widest"
+                                onclick="alert('Resources are reserved for authenticated students.')">Resource
+                                Pack</button>
+                        </div>
+                        <div id="unit-manifesto"
+                            class="prose prose-slate max-w-none prose-headings:font-headline prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-600">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div
+                            class="sticky top-12 bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm text-center">
+                            <div
+                                class="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-8 text-3xl text-slate-200">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4 class="font-headline font-bold text-lg mb-4">Unit Validation</h4>
+                            <p class="text-sm text-slate-500 mb-10 leading-relaxed">Complete the practical instructional
+                                lab to unlock the next professional module in this track.</p>
+                            <button onclick="commitUnitMastery()"
+                                class="w-full btn-primary py-5 rounded-2xl font-bold text-xs shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">VALIDATE
+                                & ADVANCE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Classroom Footer -->
+            <footer class="mt-auto py-12 border-t border-slate-100 bg-white">
+                <div
+                    class="container-custom flex flex-col md:flex-row justify-between items-center opacity-40 grayscale">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Powered by Isaac's
+                        Learning Management Systems v4.0.2</span>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Academic
+                        Infrastructure</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
     <script>
-        // Academy Master Curriculum
+        // Academy State Management
         const courses = [
-            { id: 1, title: "Foundations of Computing", duration: "1.2h", content: "<h2>Unit 1: The OS Frontier</h2><p>In this instructional module, we explore the historical and technical evolution of computing systems, focusing on the von Neumann architecture and the abstraction layers of modern operating systems.</p><h3>Key Modules:</h3><ul><li>Architecture Overview</li><li>Binary & Hex Logic</li><li>Memory Address Calculation</li></ul>" },
-            { id: 2, title: "Operating Systems Mastery", duration: "2.1h", content: "<h2>Unit 2: Kernel Mechanics</h2><p>Deep dive into process scheduling, virtual memory management, and the difference between monolithic and microkernels.</p>" },
-            { id: 3, title: "Executive Document Engineering", duration: "3.5h", content: "<h2>Unit 3: Documentation Lifecycle</h2><p>Professional standards for enterprise documentation. Beyond simple word processing into styles, indexing, and modular document architecture.</p>" },
-            { id: 4, title: "Data Informatics (Excel)", duration: "4.2h", content: "<h2>Unit 4: Quantitative Logic</h2><p>Master the syntax of spreadsheet engineering. Formula architecture, data validation, and visual informatics.</p>" },
-            { id: 5, title: "Visual Narrative Flow (PPT)", duration: "1.8h", content: "<h2>The Art of the Presentation</h2><p>Cognitive load theory in visual design. Storytelling frameworks for professional delivery.</p>" },
-            { id: 6, title: "Relational Logic (Access)", duration: "2.4h", content: "<h2>Database Fundamentals</h2><p>Schema design, entity-relationship models, and the logic of structured query languages.</p>" },
-            { id: 7, title: "Desktop Publishing Standards", duration: "1.5h", content: "<h2>Digital Layout Engine</h2><p>Typography scales, grid systems, and pre-press production requirements.</p>" },
-            { id: 8, title: "Network Grid Architecture", duration: "2.5h", content: "<h2>Infrastructure Basics</h2><p>IP protocols, DNS hierarchy, and the foundational security of the global grid.</p>" },
-            { id: 9, title: "Enterprise Communication", duration: "1.2h", content: "<h2>Communication Hubs</h2><p>Secure pipeline management, SMTP/IMAP architecture, and collaborative tooling.</p>" },
-            { id: 10, title: "Mastery Synthesis Exam", duration: "4.0h", content: "<h2>The Final Evaluation</h2><p>Apply across-the-board skills to a single industrial project scenario. Validation of all modules.</p>" }
+            { id: 1, title: "Foundations of Computing Architecture", duration: "1.2h", content: "<h2>Unit 1: The Binary Frontier</h2><p>In this instructional module, we explore the historical and technical evolution of computing systems, focusing on the von Neumann architecture and the abstraction layers of modern operating systems.</p><h3>High-Level Learning Objects:</h3><ul><li>Computational Logic Architecture</li><li>Bit/Byte Storage Primitives</li><li>Operating System Memory Handlers</li></ul>" },
+            { id: 2, title: "Enterprise OS Mastery (Win/Unix)", duration: "2.1h", content: "<h2>Unit 2: Kernel Orchestration</h2><p>Deep dive into process scheduling, virtual memory management, and the difference between monolithic and microkernels in an enterprise environment.</p>" },
+            { id: 3, title: "Executive Document Lifecycle (Word)", duration: "3.5h", content: "<h2>Unit 3: Structural Documentation</h2><p>Professional standards for enterprise documentation. Designing structural styles, indexing algorithms, and modular document architecture.</p>" },
+            { id: 4, title: "Quantitative Informatics (Excel)", duration: "4.2h", content: "<h2>Unit 4: Logic Gates in Spreadsheets</h2><p>Master the syntax of spreadsheet engineering. Formula architecture, data validation, and visual informatics for executive reporting.</p>" },
+            { id: 5, title: "Visual Narrative Logic (PPT)", duration: "1.8h", content: "<h2>The Art of Structural Delivery</h2><p>Cognitive load theory in visual design. Building storytelling frameworks for professional technical delivery.</p>" },
+            { id: 6, title: "Relational Logic & Data Management", duration: "2.4h", content: "<h2>Database Infrastructure</h2><p>Schema design, entity-relationship models, and the logic of structured query languages in production.</p>" },
+            { id: 7, title: "Desktop Publishing & Grid Systems", duration: "1.5h", content: "<h2>Digital Layout Engine</h2><p>Typography scales, grid systems, and pre-press production requirements for professional print ops.</p>" },
+            { id: 8, title: "Global Grid & Network Architecture", duration: "2.5h", content: "<h2>Fundamental Infrastructure</h2><p>IP protocols, DNS hierarchy, and the foundational security of the global grid in a connected world.</p>" },
+            { id: 9, title: "Enterprise Communication Pipelines", duration: "1.2h", content: "<h2>Communication Hubs</h2><p>Secure pipeline management, SMTP/IMAP protocol architecture, and collaborative tooling in the modern workspace.</p>" },
+            { id: 10, title: "Final Path Mastery Synthesis", duration: "4.0h", content: "<h2>The Full-Stack Evaluation</h2><p>Synthesize every skill unit into a single industrial software project scenario. Final validation of certification.</p>" }
         ];
 
         let state = {
-            isAuthorized: false,
-            email: '',
-            currentUnit: 0,
-            mastery: JSON.parse(localStorage.getItem('academy_progress')) || { completed: 0 }
+            authenticated: false,
+            userMail: '',
+            activeUnit: 0,
+            progress: JSON.parse(localStorage.getItem('academy_progress_exec')) || { count: 0 }
         };
 
-        // Core UI Logic
-        function openAuth() {
-            document.getElementById('portal-gate').classList.remove('authorized');
-            document.getElementById('dashboard').classList.add('blur-sm');
+        // UI Core Controllers
+        function openAuthentication() {
+            document.getElementById('portal-auth-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        function handleAuth(e) {
+        function closeAuthentication() {
+            document.getElementById('portal-auth-overlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function initiateAccess(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button');
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> AUTHORIZING...';
+            const mail = document.getElementById('auth-email').value;
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> AUTHORIZING ACCESS...';
 
             setTimeout(() => {
-                state.isAuthorized = true;
-                state.email = document.getElementById('student-email').value;
-                document.getElementById('portal-gate').classList.add('authorized');
-                document.getElementById('dashboard').classList.remove('blur-sm');
-                document.getElementById('auth-trigger').classList.add('hidden');
-                document.getElementById('student-info').classList.remove('hidden');
-                document.getElementById('student-id-display').innerText = state.email;
-                updateMasteryUI();
-            }, 1200);
+                state.authenticated = true;
+                state.userMail = mail;
+
+                // UI Sync
+                document.getElementById('main-login-trigger').classList.add('hidden');
+                document.getElementById('logged-user').classList.remove('hidden');
+                document.getElementById('user-pill-email').innerText = mail;
+
+                closeAuthentication();
+                updateDashboardMastery();
+            }, 1500);
         }
 
-        function updateMasteryUI() {
-            const pct = Math.round((state.mastery.completed / courses.length) * 100);
-            document.getElementById('global-pct').innerText = pct + '%';
-            document.getElementById('global-progress').style.width = pct + '%';
+        function updateDashboardMastery() {
+            const pct = Math.round((state.progress.count / courses.length) * 100);
+            document.getElementById('global-mastery-txt').innerText = pct + '%';
+            document.getElementById('global-mastery-fill').style.width = pct + '%';
         }
 
-        function startCourse() {
-            if (!state.isAuthorized) {
-                openAuth();
+        function enterMasteryClassroom() {
+            if (!state.authenticated) {
+                openAuthentication();
                 return;
             }
-            enterClassroom();
+
+            document.getElementById('classroom-interface').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            renderUnits();
+            loadInstructionUnit(state.progress.count < courses.length ? state.progress.count : 0);
         }
 
-        function enterClassroom() {
-            document.getElementById('classroom').classList.remove('hidden');
-            renderCurriculum();
-            loadUnit(state.mastery.completed < courses.length ? state.mastery.completed : 0);
+        function exitClassroomView() {
+            document.getElementById('classroom-interface').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            updateDashboardMastery();
         }
 
-        function exitToDashboard() {
-            document.getElementById('classroom').classList.add('hidden');
-            updateMasteryUI();
-        }
-
-        function renderCurriculum() {
-            const list = document.getElementById('unit-list');
+        function renderUnits() {
+            const list = document.getElementById('unit-node-list');
             list.innerHTML = courses.map((c, i) => `
-                <div onclick="loadUnit(${i})" class="unit-item ${i === state.currentUnit ? 'active' : ''} ${i < state.mastery.completed ? 'completed' : ''}">
-                    <div class="unit-icon">
-                        ${i < state.mastery.completed ? '<i class="fas fa-check"></i>' : (i + 1)}
+                <div onclick="loadInstructionUnit(${i})" class="lesson-node ${i === state.activeUnit ? 'active' : ''} ${i < state.progress.count ? 'completed' : ''}">
+                    <div class="node-index">
+                        ${i < state.progress.count ? '<i class="fas fa-check"></i>' : (i + 1)}
                     </div>
                     <div>
-                        <div class="text-[11px] font-extrabold ${i === state.currentUnit ? 'text-primary' : 'text-gray-900'} leading-none mb-1">${c.title}</div>
-                        <div class="text-[8px] font-bold text-gray-400 uppercase tracking-widest leading-none">${c.duration} Instructional Time</div>
+                        <div class="text-[11px] font-extrabold ${i === state.activeUnit ? 'text-primary' : 'text-slate-700'} leading-none mb-1">${c.title}</div>
+                        <div class="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none">${c.duration} Path Time</div>
                     </div>
+                    ${i === state.activeUnit ? '<i class="fas fa-chevron-right text-[10px] text-primary ml-auto"></i>' : ''}
                 </div>
             `).join('');
 
-            const progress = (state.mastery.completed / 10) * 100;
-            document.getElementById('sidebar-progress-txt').innerText = `${state.mastery.completed}/10 Finished`;
-            document.getElementById('sidebar-progress-bar').style.width = progress + '%';
+            const ratio = (state.progress.count / courses.length) * 100;
+            document.getElementById('classroom-counter').innerText = `${state.progress.count}/10 Mastery Units`;
+            document.getElementById('classroom-bar').style.width = ratio + '%';
         }
 
-        function loadUnit(idx) {
-            state.currentUnit = idx;
+        function loadInstructionUnit(idx) {
+            state.activeUnit = idx;
             const c = courses[idx];
-            document.getElementById('player-main-title').innerText = c.title;
-            document.getElementById('breadcrumb-title').innerText = c.title;
-            document.getElementById('unit-content').innerHTML = c.content;
-            renderCurriculum();
+
+            document.getElementById('active-player-title').innerText = c.title;
+            document.getElementById('breadcrumb-unit-title').innerText = c.title;
+            document.getElementById('unit-manifesto').innerHTML = c.content;
+
+            renderUnits();
+            document.querySelector('.classroom-main').scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function completeUnit() {
-            if (state.currentUnit >= state.mastery.completed) {
-                state.mastery.completed = state.currentUnit + 1;
-                localStorage.setItem('academy_progress', JSON.stringify(state.mastery));
+        function commitUnitMastery() {
+            if (state.activeUnit >= state.progress.count) {
+                state.progress.count = state.activeUnit + 1;
+                localStorage.setItem('academy_progress_exec', JSON.stringify(state.progress));
             }
 
-            if (state.currentUnit < courses.length - 1) {
-                loadUnit(state.currentUnit + 1);
+            if (state.activeUnit < courses.length - 1) {
+                loadInstructionUnit(state.activeUnit + 1);
             } else {
-                alert("🎉 CERTIFICATION ACHIEVED! You have successfully completed the core foundation track.");
-                exitToDashboard();
+                alert("🎆 CERTIFICATION ACHIEVED! You have successfully completed the Computer Packages Executive Mastery track.");
+                exitClassroomView();
             }
         }
 
-        window.onload = updateMasteryUI;
+        window.onload = updateDashboardMastery;
     </script>
 </body>
 
