@@ -9,7 +9,7 @@
     <title>Experience - Isaac Zachary | DevOps Engineer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
 </head>
 
 <body class="bg-background text-text-primary">
@@ -32,7 +32,10 @@
                         <a href="projects.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
-                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Experience</a>
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
@@ -54,7 +57,10 @@
                         <a href="projects.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
-                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Experience</a>
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
@@ -81,229 +87,164 @@
         </div>
     </section>
 
-   <!-- Timeline Section -->
-    <section id="timeline" class="section-padding bg-surface">
-        <div class="container-custom max-w-4xl">
-            <div class="space-y-8">
-                <!-- Experience 1: Technical Architect -->
-                <div class="card border-l-4 border-primary">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div>
-                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Technical Architect
-                            </h3>
-                            <p class="text-body font-medium text-primary mb-2">Freelance / Contract (Remote)</p>
-                            <p class="text-body-sm text-text-tertiary">Remote</p>
-                        </div>
-                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Jul 2025 – Dec
-                            2025</span>
-                    </div>
-                    <ul class="space-y-2 text-body-sm text-text-secondary mb-4">
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Containerized multi-tenant ERP using Docker via aaPanel</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>11 isolated environments across 10 niches</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>SSL, DNS, and Cloudflare configuration</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>GitHub-based deployment, automated backups, and monitoring</span>
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Laravel</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">Nginx</span>
-                        <span class="tech-badge">Git/GitHub</span>
-                        <span class="tech-badge">Cloudflare</span>
-                    </div>
+    <!-- Timeline Section (Stacked Deck Layout) -->
+    <section id="timeline" class="section-padding bg-surface pt-40">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto relative h-[1000px] md:h-[900px] mt-12" id="experience-deck">
+                <!-- Navigation Triggers -->
+                <div class="absolute -left-4 md:-left-24 top-1/2 -translate-y-1/2 z-50">
+                    <button onclick="prevCard()"
+                        class="w-14 h-14 rounded-full bg-white shadow-2xl flex items-center justify-center text-primary hover:scale-110 transition-transform border border-border-light">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div class="absolute -right-4 md:-right-24 top-1/2 -translate-y-1/2 z-50">
+                    <button onclick="nextCard()"
+                        class="w-14 h-14 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
 
-                <!-- Experience 2: Technical Support Engineer -->
-                <div class="card border-l-4 border-secondary">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div>
-                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Technical Support
-                                Engineer / Acting Support Lead</h3>
-                            <p class="text-body font-medium text-secondary mb-2">First Basics Technologies</p>
-                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
-                        </div>
-                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Feb 2024 – Dec
-                            2025</span>
-                    </div>
-                    <ul class="space-y-2 text-body-sm text-text-secondary mb-4">
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>L1–L2 ISP support and router configuration</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Escalations and SLA troubleshooting</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>SSL/DNS/server support and configuration</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>WordPress & Canva content creation</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Surveillance monitoring, CRM & customer onboarding</span>
-                        </li>
-                    </ul>
-                </div>
+                <!-- Experience Cards Stack -->
+                <div class="deck-container relative w-full h-full">
 
-                <!-- Experience 3: IT Support & Entrepreneurship -->
-                <div class="card border-l-4 border-accent">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div>
-                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">IT Support &
-                                Entrepreneurship</h3>
-                            <p class="text-body font-medium text-accent mb-2">Humble Crib Investment</p>
-                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
-                        </div>
-                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Feb 2022 - Nov
-                            2023</span>
+                    <!-- Experience 1 -->
+                    <div class="deck-card active" data-index="0">
+                        <article class="card h-full flex flex-col border-l-4 border-primary shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Software Systems
+                                        Architect</h3>
+                                    <p class="text-body font-medium text-primary">MobKazi Business OS</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-primary-100 text-primary px-3 py-1 rounded-full whitespace-nowrap">2024
+                                    – Present</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Developing a mobile-first business operating system for African enterprises in
+                                        low-connectivity environments.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Leading system design and M-PESA payment integrations with offline-tolerant
+                                        workflows.</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 pt-6 border-t border-border-light">
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">M-PESA G2</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                        </article>
                     </div>
-                    <ul class="space-y-2 text-body-sm text-text-secondary">
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Providing IT related solutions and implementing software in the business</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Installation and configuration of operating systems (Windows/Linux) and productive
-                                software</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Sales and service delivery, financial accounting & managing enterprise projects</span>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Experience 4: Entrepreneur & IT Solutions -->
-                <div class="card border-l-4 border-primary">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div>
-                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Entrepreneur & IT
-                                Solutions</h3>
-                            <p class="text-body font-medium text-primary mb-2">JAK All-Time Tech</p>
-                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
-                        </div>
-                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Jan 2021 - Jul
-                            2021</span>
+                    <!-- Experience 2 -->
+                    <div class="deck-card" data-index="1">
+                        <article class="card h-full flex flex-col border-l-4 border-secondary shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Technical Architect
+                                    </h3>
+                                    <p class="text-body font-medium text-secondary">Tapscott Digital Solutions</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-secondary-100 text-secondary px-3 py-1 rounded-full whitespace-nowrap">2023
+                                    – 2024</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-secondary mt-1"></i>
+                                    <span>Deployed secure, containerized multi-tenant ERP systems in live
+                                        production.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-secondary mt-1"></i>
+                                    <span>Established CI/CD pipelines and automated backup workflows.</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 pt-6 border-t border-border-light">
+                                <span class="tech-badge">ERP Architecture</span>
+                                <span class="tech-badge">CI/CD</span>
+                                <span class="tech-badge">Docker Swarm</span>
+                            </div>
+                        </article>
                     </div>
-                    <ul class="space-y-2 text-body-sm text-text-secondary">
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Managed cyber services, e-citizen support, printing & creative designs</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Provided IT solutions for businesses and individuals</span>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Experience 5: Technician Assistant -->
-                <div class="card border-l-4 border-secondary">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div>
-                            <h3 class="font-headline text-h3 font-semibold text-text-primary mb-1">Technician Assistant
-                                (Trainee)</h3>
-                            <p class="text-body font-medium text-secondary mb-2">GES Telecommunications Company</p>
-                            <p class="text-body-sm text-text-tertiary">Nairobi, Kenya</p>
-                        </div>
-                        <span class="text-body-sm font-medium text-text-tertiary mt-2 md:mt-0">Apr 2019 - Sep
-                            2020</span>
+                    <!-- Experience 3 -->
+                    <div class="deck-card" data-index="2">
+                        <article class="card h-full flex flex-col border-l-4 border-accent shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Technical Support
+                                        Engineer</h3>
+                                    <p class="text-body font-medium text-accent">First Basics Technologies</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-accent-100 text-accent px-3 py-1 rounded-full whitespace-nowrap">Jun
+                                    - Dec 2025</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-accent mt-1"></i>
+                                    <span>Led investigation of complex network, server, and application
+                                        incidents.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-accent mt-1"></i>
+                                    <span>Managed secure DNS/SSL and proactive server stability.</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 pt-6 border-t border-border-light">
+                                <span class="tech-badge">ISP Ops</span>
+                                <span class="tech-badge">SysAdmin</span>
+                                <span class="tech-badge">MikroTik</span>
+                            </div>
+                        </article>
                     </div>
-                    <ul class="space-y-2 text-body-sm text-text-secondary">
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Installed & configured CCTV systems, electric fences, and automated gates</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Assisted in network cabling and troubleshooting</span>
-                        </li>
-                    </ul>
+
+                    <!-- Experience 4 -->
+                    <div class="deck-card" data-index="3">
+                        <article class="card h-full flex flex-col border-l-4 border-primary shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Platform Support
+                                        Engineer</h3>
+                                    <p class="text-body font-medium text-primary">Power Learn Project</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-primary-100 text-primary px-3 py-1 rounded-full whitespace-nowrap">Mar
+                                    - Jul 2025</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Enhanced engagement through ticketing and issue resolution on learning
+                                        platforms.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Reviewed backend logic, APIs, and data handling for mentored projects.</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+
                 </div>
+            </div>
+
+            <!-- Stack Indicator -->
+            <div class="flex justify-center mt-12 space-x-3" id="deck-indicators">
+                <!-- JS Populates -->
             </div>
         </div>
     </section>
+
+
+
 
 
     <!-- CTA Section -->
@@ -328,7 +269,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="bg-text-primary text-white section-padding">
         <div class="container-custom">
@@ -344,27 +285,28 @@
                 <div>
                     <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        </li>
                         <li><a href="about.html"
                                 class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
                         </li>
                         <li><a href="projects.html"
                                 class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
                         </li>
-                        <li><a href="experience.html"
-                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
-                        </li>
-                        <li><a href="writing.html"
-                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a>
+                        <li><a href="learning.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Learning
+                                Portal</a>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
                     <ul class="space-y-2">
-                        <li><span class="text-body-sm text-gray-400">Cloud Infrastructure</span></li>
-                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
-                        <li><span class="text-body-sm text-gray-400">Containerization</span></li>
-                        <li><span class="text-body-sm text-gray-400">Full-Stack Development</span></li>
+                        <li><span class="text-body-sm text-gray-400">Custom Web Apps</span></li>
+                        <li><span class="text-body-sm text-gray-400">Business OS (POS)</span></li>
+                        <li><span class="text-body-sm text-gray-400">System Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Tech Training</span></li>
                     </ul>
                 </div>
                 <div>
@@ -397,6 +339,86 @@
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenuToggle && mobileMenu) {
             mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Experience Deck Logic
+        let currentCardIndex = 0;
+        const deckCards = document.querySelectorAll('.deck-card');
+        const indicatorsContainer = document.getElementById('deck-indicators');
+
+        if (deckCards.length > 0) {
+            function initDeck() {
+                // Create indicators
+                deckCards.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.className = `h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-12 bg-primary' : 'w-4 bg-gray-200'}`;
+                    dot.onclick = () => goToCard(i);
+                    indicatorsContainer.appendChild(dot);
+                });
+                updateDeck();
+            }
+
+            function updateDeck() {
+                deckCards.forEach((card, i) => {
+                    const offset = i - currentCardIndex;
+
+                    if (offset === 0) {
+                        card.style.transform = 'translateY(180px) scale(1) rotateX(0)';
+                        card.style.opacity = '1';
+                        card.style.visibility = 'visible';
+                        card.style.pointerEvents = 'auto';
+                        card.style.zIndex = '40';
+                    } else if (offset > 0 && offset <= 3) {
+                        // Cards behind peak out from the TOP with enough clearance
+                        const displacement = (3 - offset) * 60;
+                        card.style.transform = `translateY(${displacement}px) scale(${1 - offset * 0.04}) rotateX(1deg)`;
+                        card.style.opacity = 0.85 - (offset * 0.15);
+                        card.style.visibility = 'visible';
+                        card.style.pointerEvents = 'none';
+                        card.style.zIndex = (30 - offset).toString();
+                    } else {
+                        // Wide transition for better UX
+                        card.style.transform = offset < 0 ? 'translateY(600px) scale(0.9)' : 'translateY(-300px) scale(0.9)';
+                        card.style.opacity = '0';
+                        card.style.visibility = 'hidden';
+                        card.style.pointerEvents = 'none';
+                        card.style.zIndex = '0';
+                    }
+                });
+
+                // Update indicators
+                const dots = indicatorsContainer.children;
+                if (dots.length > 0) {
+                    for (let i = 0; i < dots.length; i++) {
+                        dots[i].className = `h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === currentCardIndex ? 'w-12 bg-primary' : 'w-4 bg-gray-300'}`;
+                    }
+                }
+            }
+
+            window.nextCard = function () {
+                if (currentCardIndex < deckCards.length - 1) {
+                    currentCardIndex++;
+                } else {
+                    currentCardIndex = 0;
+                }
+                updateDeck();
+            }
+
+            window.prevCard = function () {
+                if (currentCardIndex > 0) {
+                    currentCardIndex--;
+                } else {
+                    currentCardIndex = deckCards.length - 1;
+                }
+                updateDeck();
+            }
+
+            window.goToCard = function (index) {
+                currentCardIndex = index;
+                updateDeck();
+            }
+
+            initDeck();
         }
     </script>
 </body>
