@@ -9,7 +9,7 @@
     <title>Writing & Resources - Isaac Zachary</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
     <!-- CodeMirror for Code Playground -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
@@ -36,6 +36,9 @@
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
@@ -58,6 +61,9 @@
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
@@ -171,19 +177,30 @@
             </div>
         </div>
     </section>
-    
+
     <!-- My Articles Section -->
     <section id="my-articles" class="section-padding bg-surface">
         <div class="container-custom">
-            <div class="mb-12">
-                <h2 class="font-headline text-display-sm text-text-primary mb-4">My Articles</h2>
-                <p class="text-body-lg text-text-secondary max-w-3xl">
-                    Practical insights from real-world DevOps implementations, career transitions, and technical
-                    challenges.
-                </p>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+                <div>
+                    <h2 class="font-headline text-display-sm text-text-primary mb-2">My Articles</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Practical insights from real-world DevOps implementations.
+                    </p>
+                </div>
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-96">
+                    <input type="text" id="article-search" oninput="filterArticles()" placeholder="Search articles..."
+                        class="input-field pl-10 focus:ring-2 focus:ring-primary/20">
+                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-tertiary"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Article Card  -->
                 <article class="card-interactive group article-card" data-category="best-practices">
@@ -214,7 +231,7 @@
                         </p>
                     </div>
                 </article>
-                
+
                 <!-- Article 1: Docker Lessons -->
                 <article class="card-interactive group">
                     <div
@@ -286,7 +303,7 @@
                         </a>
                     </div>
                 </article>
-                
+
                 <!-- Article 3: AI-Assisted Development -->
                 <article class="card-interactive group">
                     <div
@@ -381,16 +398,22 @@
                             Comprehensive guide covering Microsoft Office, graphic design basics, and networking
                             fundamentals with real-world scenarios for local businesses.
                         </p>
-                        <a href="https://isaaczachary.github.io/computer-packages-guide/" target="_blank"
+                        <a href="learning.html#packages"
                             class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
-                            <span>Read Article</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
+                            <span>Start Learning</span>
+                            <i class="fas fa-graduation-cap"></i>
                         </a>
                     </div>
                 </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="flex justify-center mt-12" id="load-more-container">
+                <button onclick="loadMoreArticles()"
+                    class="btn-outline px-8 py-3 text-sm font-bold flex items-center space-x-2">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Load More Articles</span>
+                </button>
             </div>
         </div>
     </section>
@@ -552,6 +575,47 @@
                 </div>
             </div>
 
+            <!-- Courses & Step-by-Step Guides Section -->
+            <div class="mt-20">
+                <h2 class="font-headline text-display-sm text-text-primary mb-8 text-center">📚 Courses & Step-by-Step
+                    Guides</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Guide 1 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Computer Packages Guide
+                        </h4>
+                        <p class="text-body-sm text-text-secondary mb-4">Comprehensive tutorial on MS Office, Graphics,
+                            and basic Networking for beginners.</p>
+                        <a href="https://isaaczachary.github.io/computer-packages-guide/" target="_blank"
+                            class="text-primary text-sm font-bold">Access Guide →</a>
+                    </div>
+                    <!-- Guide 2 -->
+                    <div class="card group hover:shadow-interactive">
+                        <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-coffee text-secondary text-xl"></i>
+                        </div>
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Coffee Kiosk
+                            Implementation</h4>
+                        <p class="text-body-sm text-text-secondary mb-4">A step-by-step guide to building a digital
+                            kiosk with M-PESA integration.</p>
+                        <a href="#" class="text-secondary text-sm font-bold">Coming Soon</a>
+                    </div>
+                    <!-- Guide 3 -->
+                    <div class="card group hover:shadow-interactive border-2 border-dashed border-gray-200">
+                        <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center mb-4">
+                            <i class="fas fa-video text-gray-400 text-xl"></i>
+                        </div>
+                        <h4 class="font-headline text-h4 font-semibold text-gray-400 mb-2">DevOps Video Series</h4>
+                        <p class="text-body-sm text-gray-400 mb-4">Future modules on AI-assisted infrastructure and
+                            automation workflows.</p>
+                        <span class="text-gray-300 text-sm font-bold italic">Planning Phase</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Learning Resources -->
             <div class="mt-12">
                 <h3 class="font-headline text-h2 font-semibold text-text-primary mb-6">Learning Resources</h3>
@@ -663,6 +727,44 @@
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenuToggle && mobileMenu) {
             mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Article Filtering & Search
+        function filterArticles() {
+            const query = document.getElementById('article-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.article-card, article.card-interactive');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                if (title.includes(query) || desc.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Hide/Show Load More based on search
+            const loadMore = document.getElementById('load-more-container');
+            if (query.length > 0) {
+                loadMore.classList.add('hidden');
+            } else {
+                loadMore.classList.remove('hidden');
+            }
+        }
+
+        function loadMoreArticles() {
+            const btn = document.querySelector('#load-more-container button');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Loading...</span>';
+
+            setTimeout(() => {
+                // Simulated fetch of more articles
+                alert('All current premium articles have been loaded. Check back soon for new weekly insights!');
+                btn.innerHTML = '<i class="fas fa-check"></i><span>All Articles Loaded</span>';
+                btn.classList.add('opacity-50', 'pointer-events-none');
+            }, 1000);
         }
     </script>
 </body>

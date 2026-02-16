@@ -88,9 +88,9 @@
     </section>
 
     <!-- Timeline Section (Stacked Deck Layout) -->
-    <section id="timeline" class="section-padding bg-surface pt-40">
+    <section id="timeline" class="section-padding bg-surface pt-64">
         <div class="container-custom">
-            <div class="max-w-4xl mx-auto relative h-[1000px] md:h-[900px] mt-12" id="experience-deck">
+            <div class="max-w-4xl mx-auto relative h-[1100px] md:h-[1000px] mt-12" id="experience-deck">
                 <!-- Navigation Triggers -->
                 <div class="absolute -left-4 md:-left-24 top-1/2 -translate-y-1/2 z-50">
                     <button onclick="prevCard()"
@@ -363,22 +363,23 @@
                     const offset = i - currentCardIndex;
 
                     if (offset === 0) {
-                        card.style.transform = 'translateY(180px) scale(1) rotateX(0)';
+                        card.style.transform = 'translateY(0) scale(1) rotateX(0)';
                         card.style.opacity = '1';
                         card.style.visibility = 'visible';
                         card.style.pointerEvents = 'auto';
                         card.style.zIndex = '40';
                     } else if (offset > 0 && offset <= 3) {
-                        // Cards behind peak out from the TOP with enough clearance
-                        const displacement = (3 - offset) * 60;
-                        card.style.transform = `translateY(${displacement}px) scale(${1 - offset * 0.04}) rotateX(1deg)`;
-                        card.style.opacity = 0.85 - (offset * 0.15);
+                        // Fan behind cards UPWARDS so they peak from the top
+                        // Offset 1 at -60px, Offset 2 at -120px, etc.
+                        const displacement = -offset * 65;
+                        card.style.transform = `translateY(${displacement}px) scale(${1 - offset * 0.05}) rotateX(1deg)`;
+                        card.style.opacity = 0.9 - (offset * 0.2);
                         card.style.visibility = 'visible';
                         card.style.pointerEvents = 'none';
                         card.style.zIndex = (30 - offset).toString();
                     } else {
-                        // Wide transition for better UX
-                        card.style.transform = offset < 0 ? 'translateY(600px) scale(0.9)' : 'translateY(-300px) scale(0.9)';
+                        // Wide transition
+                        card.style.transform = offset < 0 ? 'translateY(500px) scale(0.9) rotateX(-5deg)' : 'translateY(-300px) scale(0.9) rotateX(5deg)';
                         card.style.opacity = '0';
                         card.style.visibility = 'hidden';
                         card.style.pointerEvents = 'none';

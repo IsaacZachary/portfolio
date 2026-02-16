@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac Zachary - Developer Resume</title>
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--bg);
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: bold;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+        }
+
+        .job-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .company {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-group {
+            margin-bottom: 10px;
+        }
+
+        .skill-group strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="no-print" style="text-align: right;">
+        <a href="javascript:window.print()" class="btn-download">Print to PDF</a>
+    </div>
+
+    <header>
+        <h1>Isaac Siko Zachary</h1>
+        <div class="contact-info">
+            <span>Nairobi, Kenya</span>
+            <span>+254 759 325 915</span>
+            <a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a>
+            <a href="https://linkedin.com/in/isaaczachary">linkedin.com/in/isaaczachary</a>
+            <a href="https://izach.netlify.app/">izach.netlify.app</a>
+        </div>
+    </header>
+
+    <section id="summary">
+        <h2>Professional Summary</h2>
+        <p>
+            IT and Software Systems professional with progressive experience in software systems development, enterprise
+            IT support, and security-aware operations. Experienced in taking ideas from concept through implementation
+            and deployment, supporting production systems, and improving reliability, security, and operational
+            efficiency. Strong background in incident management, infrastructure deployment, and technical documentation
+            with a focus on AI-assisted development (Vibe Coding).
+        </p>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Software Systems Architect</span>
+                <span class="job-date">2024 - Present</span>
+            </div>
+            <div class="company">MobKazi Business Operating System (Freelance)</div>
+            <ul>
+                <li>Developing a business operating system for African enterprises in mobile-first and low-connectivity
+                    environments.</li>
+                <li>Leading system design, backend architecture, and deployment of core business modules with data
+                    protection.</li>
+                <li>Implementing scalable infrastructure and integrations including M-PESA payments and offline-tolerant
+                    workflows.</li>
+                <li>Driving product direction from idea validation through implementation and live deployment.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Technical Architect</span>
+                <span class="job-date">Jul 2025 - Dec 2025</span>
+            </div>
+            <div class="company">Tapscott Digital Solutions (Remote)</div>
+            <ul>
+                <li>Designed and deployed a secure, containerized multi-tenant ERP system in a live production
+                    environment.</li>
+                <li>Implemented environment isolation, database separation, and role-based access controls.</li>
+                <li>Established CI/CD pipelines, automated backups, and controlled deployment workflows.</li>
+                <li>Improved system reliability through incident resolution, system hardening, and operational risk
+                    documentation.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Technical Support Engineer</span>
+                <span class="job-date">Jun 2025 - Dec 2025</span>
+            </div>
+            <div class="company">First Basics Technologies Ltd</div>
+            <ul>
+                <li>Led investigation and escalation of complex network, server, and application incidents in SLA-driven
+                    ISP environments.</li>
+                <li>Improved system stability through coordinated patching, secure DNS/SSL configuration, and server
+                    management.</li>
+                <li>Designed and maintained incident records and operational documentation for audit compliance.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Platform Support Engineer</span>
+                <span class="job-date">Mar 2025 - Jul 2025</span>
+            </div>
+            <div class="company">Power Learn Project (Remote)</div>
+            <ul>
+                <li>Enhanced learners' engagement through structured ticketing and issue resolution.</li>
+                <li>Reviewed backend logic, APIs, and data handling during guided builds and hackathons.</li>
+                <li>Improved platform reliability by tracking and escalating recurring system issues.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">IT Support Technician</span>
+                <span class="job-date">Feb 2022 - Dec 2023</span>
+            </div>
+            <div class="company">Humble Crib Investment</div>
+            <ul>
+                <li>Installed and configured operating systems, applications, and network components following security
+                    baselines.</li>
+                <li>Implemented data backup processes, access control management, and risk mitigation.</li>
+                <li>Conducted user sensitization on secure computing practices and acceptable IT usage.</li>
+                <li>Authored technical guides for training staff and students on computer systems.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Bachelor of Science in Software Development</span>
+                <span class="job-date">2023</span>
+            </div>
+            <div class="company">KCA University - Nairobi, Kenya</div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Tools & Platforms</h2>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <strong>Core Tech:</strong> Linux & Windows, Docker, MySQL, aaPanel, AWS.
+            </div>
+            <div class="skill-group">
+                <strong>Dev Stack:</strong> Git, VS Code, Next.js, Node.js, Python, M-PESA API.
+            </div>
+            <div class="skill-group">
+                <strong>IT Ops:</strong> ITSM, Jira, UV Desk, WordPress, PowerShell.
+            </div>
+            <div class="skill-group">
+                <strong>Data & Design:</strong> Power BI, Excel, Canva, Google Docs.
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Decoding DevOps - Udemy (2025)</li>
+            <li>EF SET English Certificate (C1 Advanced) (2025)</li>
+            <li>ICT Support & Network Administration - Defense Forces Technical College (2024)</li>
+            <li>Generative AI Career Essentials - Microsoft / LinkedIn (2024)</li>
+            <li>Software Development Fundamentals - Power Learn Project (2023)</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

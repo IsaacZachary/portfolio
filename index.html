@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://isaaczachary.github.io">
 
     <!-- Favicon -->
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
 
     <title>Isaac Zachary - Premium DevOps Engineer & Technical Leader</title>
     <link rel="stylesheet" href="css/main.css">
@@ -41,13 +41,16 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="index.html"
-                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Home</a>
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
                         <a href="about.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
                         <a href="projects.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
@@ -91,6 +94,9 @@
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
@@ -119,9 +125,8 @@
                         </h1>
 
                         <p class="text-body-lg text-text-secondary max-w-xl">
-                            DevOps practitioner and technical enthusiast transforming complex infrastructure
-                            challenges into elegant, scalable solutions. Where technical expertise meets strategic
-                            thinking.
+                            DevOps practitioner and technical enthusiast transforming complex infrastructure challenges
+                            into elegant, scalable solutions. Where technical expertise meets strategic thinking.
                         </p>
                     </div>
 
@@ -129,20 +134,16 @@
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="projects.html"
                             class="btn-primary inline-flex items-center justify-center space-x-2 group">
-                            <span>View My Work</span>
+                            <span>Explore Projects</span>
                             <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
-                        <a href="pdf/CV_ISAAC ZACHARY_2025.pdf"
-                            class="btn-outline inline-flex items-center justify-center space-x-2" download>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            <span>Download CV</span>
+                        <a href="resume.html" class="btn-outline inline-flex items-center justify-center space-x-2">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Interactive Resume</span>
                         </a>
                     </div>
 
@@ -206,51 +207,53 @@
         </div>
     </section>
 
-    <!-- Featured Projects Carousel -->
+    <!-- Featured Projects Section -->
     <section id="featured-projects" class="section-padding bg-surface">
         <div class="container-custom">
             <div class="text-center mb-12 space-y-4">
                 <h2 class="font-headline text-display-sm text-text-primary">Featured Projects</h2>
                 <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
-                    Transforming complex infrastructure challenges into elegant, scalable solutions
+                    Solving real-world business challenges through resilient software systems.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1: ZakaFlow -->
-                <article class="card-interactive group">
+                <!-- Project Card 1: ZakaFlow (Primary Feature) -->
+                <article class="card-interactive group border-2 border-primary/20">
                     <div
-                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-primary-200">
-                        <img src="./assets/ZakaFlow1.png" alt="ZakaFlow - Containerized data pipeline architecture"
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-600 to-primary-800 relative">
+                        <img src="./assets/ZakaFlow1.png" alt="ZakaFlow - Data Pipeline"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             loading="lazy">
+                        <div class="absolute top-4 right-4">
+                            <span
+                                class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Featured</span>
+                        </div>
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <span class="tech-badge">Docker</span>
                             <span class="tech-badge">Kafka</span>
-                            <span class="tech-badge">Spark</span>
+                            <span class="tech-badge">ELK</span>
                         </div>
                         <h3
                             class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
                             ZakaFlow
                         </h3>
-                        <p class="text-body text-text-secondary">
-                            Containerized data pipeline exploring Kafka, Spark, and Airflow integration for real-time
-                            data processing and workflow orchestration.
+                        <p class="text-body-sm text-text-secondary italic">
+                            Scalable Financial Data Pipeline.
                         </p>
-                        <div class="flex items-center space-x-4">
-                            <a href="projects.html#zakaflow"
-                                class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
+                        <p class="text-body-sm text-text-secondary">
+                            <strong>The Story:</strong> A deep-tech project built to demonstrate high-throughput data
+                            processing using containerized microservices and distributed messaging.
+                        </p>
+                        <div class="flex items-center space-x-4 pt-2">
                             <a href="https://github.com/IsaacZachary/zaka-flow" target="_blank"
-                                class="text-text-tertiary hover:text-primary transition-colors duration-300">
-                                <i class="fab fa-github text-xl"></i>
+                                class="btn-primary text-xs px-4 py-2">
+                                <span>View Code</span>
+                            </a>
+                            <a href="projects.html#zakaflow" class="text-primary text-sm font-medium hover:underline">
+                                Details
                             </a>
                         </div>
                     </div>
@@ -260,8 +263,7 @@
                 <article class="card-interactive group">
                     <div
                         class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-secondary-100 to-secondary-200">
-                        <img src="./assets/CoffeeKiosk1.png"
-                            alt="Coffee Kiosk - E-commerce platform with M-Pesa integration"
+                        <img src="./assets/CoffeeKiosk1.png" alt="Coffee Kiosk - E-commerce platform"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             loading="lazy">
                     </div>
@@ -269,67 +271,53 @@
                         <div class="flex items-center space-x-2">
                             <span class="tech-badge">React</span>
                             <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">M-PESA</span>
                         </div>
                         <h3
                             class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
                             Coffee Kiosk
                         </h3>
-                        <p class="text-body text-text-secondary">
-                            Full-stack e-commerce platform with M-Pesa payment integration, featuring Dockerized
-                            deployment and modern React frontend.
+                        <p class="text-body-sm text-text-secondary">
+                            <strong>The Story:</strong> Modernizing local coffee shop operations with a streamlined
+                            digital ordering and payment system.
                         </p>
                         <div class="flex items-center space-x-4">
-                            <a href="projects.html#coffee-kiosk"
-                                class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
                             <a href="https://github.com/IsaacZachary/CoffeeKiosk" target="_blank"
-                                class="text-text-tertiary hover:text-primary transition-colors duration-300">
-                                <i class="fab fa-github text-xl"></i>
+                                class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700">
+                                <i class="fab fa-github"></i>
+                                <span>Code</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Project Card 3: Drowsy Driver Detection -->
+                <!-- Project Card 3: Driver Safety AI -->
                 <article class="card-interactive group">
                     <div
                         class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-accent-100 to-accent-200">
-                        <img src="./assets/drowsyy.png" alt="Drowsy Driver Detection - ML-powered safety system"
+                        <img src="./assets/drowsyy.png" alt="Drowsy Driver Detection"
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             loading="lazy">
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <span class="tech-badge">Python</span>
-                            <span class="tech-badge">TensorFlow</span>
                             <span class="tech-badge">OpenCV</span>
+                            <span class="tech-badge">AI</span>
                         </div>
                         <h3
                             class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
-                            Drowsy Driver Detection
+                            Driver Safety AI
                         </h3>
-                        <p class="text-body text-text-secondary">
-                            Real-time webcam inference system with alert, microsleep, and yawning detection using
-                            machine learning and computer vision.
+                        <p class="text-body-sm text-text-secondary">
+                            <strong>The Story:</strong> Leveraging computer vision to prevent accidents by detecting
+                            driver fatigue in real-time.
                         </p>
                         <div class="flex items-center space-x-4">
-                            <a href="projects.html#drowsy-driver"
-                                class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
                             <a href="https://github.com/IsaacZachary/DrowsyDriverDetection" target="_blank"
-                                class="text-text-tertiary hover:text-primary transition-colors duration-300">
-                                <i class="fab fa-github text-xl"></i>
+                                class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700">
+                                <i class="fab fa-github"></i>
+                                <span>Code</span>
                             </a>
                         </div>
                     </div>
@@ -338,7 +326,7 @@
 
             <div class="text-center mt-12">
                 <a href="projects.html" class="btn-outline inline-flex items-center space-x-2">
-                    <span>View All Projects</span>
+                    <span>Explore Full Portfolio</span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -348,154 +336,156 @@
         </div>
     </section>
 
-    <!-- Services/Expertise Section -->
-    <section id="expertise" class="section-padding bg-gradient-to-br from-background via-primary-50 to-background">
+    <!-- Services / What I Do Section -->
+    <section id="services" class="section-padding bg-gradient-to-br from-background via-primary-50 to-background">
         <div class="container-custom">
             <div class="text-center mb-12 space-y-4">
-                <h2 class="font-headline text-display-sm text-text-primary">Technical Expertise</h2>
+                <h2 class="font-headline text-display-sm text-text-primary">Services / What I Do</h2>
                 <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
-                    Comprehensive DevOps solutions from architecture to deployment
+                    From idea to implementation – with AI as my co‑pilot.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Expertise Card 1 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
                 <div class="card group hover:shadow-interactive">
                     <div
                         class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                        </svg>
+                        <i class="fas fa-code text-primary text-xl"></i>
                     </div>
-                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Cloud & Infrastructure</h3>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Custom Web Applications</h3>
                     <p class="text-body-sm text-text-secondary">
-                        Containerization with Docker, Linux system administration, and cloud deployment strategies
+                        Robust full-stack solutions using React, Node.js, and PostgreSQL with seamless M-PESA payment
+                        integration.
                     </p>
                 </div>
 
-                <!-- Expertise Card 2 -->
+                <!-- Service 2 -->
                 <div class="card group hover:shadow-interactive">
                     <div
                         class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center mb-4 group-hover:bg-secondary-200 transition-colors duration-300">
-                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-                        </svg>
+                        <i class="fas fa-briefcase text-secondary text-xl"></i>
                     </div>
-                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Data Engineering</h3>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Business Operating Systems
+                    </h3>
                     <p class="text-body-sm text-text-secondary">
-                        Real-time data pipelines with Kafka, Spark, and Airflow for scalable data processing
+                        Scalable POS, inventory, and multi-branch systems designed for offline-first and
+                        low-connectivity environments.
                     </p>
                 </div>
 
-                <!-- Expertise Card 3 -->
+                <!-- Service 3 -->
                 <div class="card group hover:shadow-interactive">
                     <div
                         class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center mb-4 group-hover:bg-accent-200 transition-colors duration-300">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                        <i class="fas fa-laptop-code text-accent text-xl"></i>
                     </div>
-                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">CI/CD Automation</h3>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Website Development</h3>
                     <p class="text-body-sm text-text-secondary">
-                        Streamlined deployment pipelines with GitHub Actions and automated testing workflows
+                        Modern, responsive, and SEO-friendly websites that communicate your brand's value effectively.
                     </p>
                 </div>
 
-                <!-- Expertise Card 4 -->
+                <!-- Service 4 -->
                 <div class="card group hover:shadow-interactive">
                     <div
                         class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
+                        <i class="fas fa-sync text-primary text-xl"></i>
                     </div>
-                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Full-Stack Development</h3>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">System Integration &
+                        Automation</h3>
                     <p class="text-body-sm text-text-secondary">
-                        Modern web applications with React, Node.js, and database management
+                        Connecting your tools and automating workflows to increase efficiency and reduce manual
+                        overhead.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="card group hover:shadow-interactive">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center mb-4 group-hover:bg-secondary-200 transition-colors duration-300">
+                        <i class="fas fa-chalkboard-teacher text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-2">Tech Training & Guides</h3>
+                    <p class="text-body-sm text-text-secondary">
+                        Empowering others through courses on building with AI, computer essentials, and technical deep
+                        dives.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Currently Learning Section -->
-    <section id="learning" class="section-padding bg-surface">
+    <!-- Learning Portal Section -->
+    <section id="learn" class="section-padding bg-surface">
         <div class="container-custom">
-            <div class="text-center mb-12 space-y-4">
-                <h2 class="font-headline text-display-sm text-text-primary">Continuous Learning</h2>
-                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
-                    Always expanding my technical skillset and staying current with industry trends
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="card">
-                    <div class="flex items-start space-x-4">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center flex-shrink-0">
-                            <span class="text-2xl">🚀</span>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Kubernetes
-                                Fundamentals</h4>
-                            <p class="text-body-sm text-text-secondary mb-3">Learning pod management, services, and
-                                cluster orchestration basics</p>
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-700">In
-                                Progress</span>
-                        </div>
-                    </div>
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl space-y-4">
+                    <h2 class="font-headline text-display-sm text-text-primary">Learning Hub</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Comprehensive tutorials, interactive courses, and step-by-step technical guides designed to
+                        empower engineers.
+                    </p>
                 </div>
-
-                <div class="card">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
-                            <span class="text-2xl">⚡</span>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Terraform & IaC</h4>
-                            <p class="text-body-sm text-text-secondary mb-3">Exploring AWS resource provisioning with
-                                Terraform basics</p>
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">Started</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center flex-shrink-0">
-                            <span class="text-2xl">☁️</span>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">AWS Cloud
-                                Practitioner</h4>
-                            <p class="text-body-sm text-text-secondary mb-3">Preparing for certification with focus on
-                                core services</p>
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-700">Planning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-8">
-                <a href="writing.html#roadmap" class="btn-outline inline-flex items-center space-x-2">
-                    <span>View Full Roadmap</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                <a href="learning.html" class="btn-outline inline-flex items-center space-x-2">
+                    <span>Explore Hub</span>
+                    <i class="fas fa-graduation-cap"></i>
                 </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="card group portal-card">
+                    <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-book-open text-primary text-xl"></i>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">Computer Packages Guide</h3>
+                    <p class="text-body-sm text-text-secondary mb-6">
+                        Master the essentials of desktop applications, networking, and graphics through structured
+                        modules.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-text-tertiary">12 Modules</span>
+                        <a href="learning.html#packages" class="text-primary text-sm font-bold hover:underline">Start
+                            Learning →</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="card group portal-card">
+                    <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-coffee text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">Coffee Kiosk Workflow</h3>
+                    <p class="text-body-sm text-text-secondary mb-6">
+                        Build a production-ready digital order system with M-PESA integration from scratch.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-text-tertiary">8 Modules</span>
+                        <a href="learning.html#coffee" class="text-secondary text-sm font-bold hover:underline">Start
+                            Learning →</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="card group portal-card">
+                    <div class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-headline text-h4 font-semibold text-text-primary mb-3">AI for Infrastructure</h3>
+                    <p class="text-body-sm text-text-secondary mb-6">
+                        Leveraging LLMs and agentic workflows to automate cloud provisioning and maintenance.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-text-tertiary">Upcoming</span>
+                        <span class="text-text-tertiary text-xs italic font-medium">Coming Soon</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
- <!-- Latest Insights Section -->
+    <!-- Latest Insights Section -->
     <section id="latest-writing" class="section-padding bg-surface border-t border-border">
         <div class="container-custom">
             <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
@@ -582,7 +572,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CTA Section -->
     <section id="cta" class="section-padding bg-gradient-to-br from-primary via-primary-600 to-accent text-white">
         <div class="container-custom">
@@ -634,6 +624,9 @@
                 <div>
                     <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        </li>
                         <li><a href="about.html"
                                 class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
                         </li>
@@ -643,8 +636,9 @@
                         <li><a href="experience.html"
                                 class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
                         </li>
-                        <li><a href="writing.html"
-                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a>
+                        <li><a href="learning.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Learning
+                                Portal</a>
                         </li>
                     </ul>
                 </div>
