@@ -9,7 +9,7 @@
     <title>Contact - Isaac Zachary | DevOps Engineer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
 </head>
 
 <body class="bg-background text-text-primary">
@@ -33,6 +33,9 @@
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
@@ -55,6 +58,9 @@
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
                         <a href="experience.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
                         <a href="writing.html"
                             class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
                         <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
@@ -192,17 +198,18 @@
 
                     <!-- Resume Download -->
                     <div class="card bg-gradient-to-br from-primary-50 to-accent-50">
-                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">Download Resume</h3>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary mb-3">View Interactive Resume
+                        </h3>
                         <p class="text-body-sm text-text-secondary mb-4">
-                            Get detailed information about my experience, skills, and education.
+                            Explore my detailed journey, technical skills, and academic background in a clean,
+                            interactive format.
                         </p>
-                        <a href="pdf/CV_ISAAC ZACHARY_2025.pdf" class="btn-primary inline-flex items-center space-x-2"
-                            download>
+                        <a href="resume.html" class="btn-primary inline-flex items-center space-x-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
-                            <span>Download CV</span>
+                            <span>View Resume</span>
                         </a>
                     </div>
                 </div>
@@ -281,27 +288,28 @@
                 <div>
                     <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        </li>
                         <li><a href="about.html"
                                 class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
                         </li>
                         <li><a href="projects.html"
                                 class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
                         </li>
-                        <li><a href="experience.html"
-                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
-                        </li>
-                        <li><a href="writing.html"
-                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a>
+                        <li><a href="learning.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Learning
+                                Portal</a>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
                     <ul class="space-y-2">
-                        <li><span class="text-body-sm text-gray-400">Cloud Infrastructure</span></li>
-                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
-                        <li><span class="text-body-sm text-gray-400">Containerization</span></li>
-                        <li><span class="text-body-sm text-gray-400">Full-Stack Development</span></li>
+                        <li><span class="text-body-sm text-gray-400">Custom Web Apps</span></li>
+                        <li><span class="text-body-sm text-gray-400">Business OS (POS)</span></li>
+                        <li><span class="text-body-sm text-gray-400">System Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Tech Training</span></li>
                     </ul>
                 </div>
                 <div>
@@ -340,8 +348,46 @@
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
                 const submitBtn = this.querySelector('button[type="submit"]');
-                submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg><span>Sending...</span>';
+                const originalContent = submitBtn.innerHTML;
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <svg class="w-5 h-5 animate-spin mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <span>Processing...</span>
+                `;
+
+                // Simulate processing
+                setTimeout(() => {
+                    submitBtn.innerHTML = `
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>Message Sent!</span>
+                    `;
+                    submitBtn.classList.remove('btn-primary');
+                    submitBtn.classList.add('bg-secondary', 'text-white');
+
+                    // Show success toast
+                    const toast = document.createElement('div');
+                    toast.className = 'fixed bottom-8 right-8 bg-text-primary text-white px-6 py-4 rounded-2xl shadow-2xl animate-fade-in flex items-center space-x-3 z-50';
+                    toast.innerHTML = `<i class="fas fa-check-circle text-secondary"></i><span>Thank you! Isaac will respond within 24 hours.</span>`;
+                    document.body.appendChild(toast);
+
+                    this.reset();
+
+                    setTimeout(() => {
+                        toast.classList.replace('animate-fade-in', 'animate-fade-out');
+                        setTimeout(() => toast.remove(), 500);
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalContent;
+                        submitBtn.classList.add('btn-primary');
+                        submitBtn.classList.remove('bg-secondary', 'text-white');
+                    }, 4000);
+                }, 1500);
             });
         }
     </script>
