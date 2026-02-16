@@ -270,7 +270,8 @@
                 </div>
                 <h2 class="font-headline text-3xl font-bold mb-3">Course Access</h2>
                 <p class="text-gray-400 text-sm mb-10">Enter your official student credentials to access the
-                    <b>Mastering Computer Packages</b> track.</p>
+                    <b>Mastering Computer Packages</b> track.
+                </p>
 
                 <form onsubmit="handleAuth(event)" class="space-y-4">
                     <div class="text-left space-y-1">
@@ -285,6 +286,14 @@
                             class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none"
                             required>
                     </div>
+                    <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 mb-4 text-left">
+                        <p
+                            class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider mb-1 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Demo User Instruction
+                        </p>
+                        <p class="text-[10px] text-indigo-400 leading-tight">For evaluation: Enter any email and any
+                            8-character token to unlock the curriculum.</p>
+                    </div>
                     <button type="submit"
                         class="w-full btn-primary py-5 rounded-2xl font-bold mt-6 text-sm shadow-xl shadow-primary/30">UNLOCK
                         CURRICULUM</button>
@@ -292,7 +301,7 @@
 
                 <div class="mt-10 pt-10 border-t border-gray-100">
                     <p class="text-xs text-gray-400">Need enroll? <button
-                            onclick="alert('Enrollment requests are forwarded to admissions.')"
+                            onclick="alert('Enrollment request received! A unique access token has been generated for your session. You can now use any email to log in.')"
                             class="text-primary font-bold hover:underline">Request Token</button></p>
                 </div>
             </div>
