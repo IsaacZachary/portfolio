@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Isaac Zachary's Learning Hub - A modern LMS for mastering Computer Packages and AI Fullstack Development.">
+    <title>Student Portal | Isaac Zachary</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
+    <style>
+        /* Modern LMS Additions */
+        :root {
+            --lms-sidebar-width: 380px;
+        }
+
+        body {
+            background-color: #f8fafc;
+        }
+
+        .lms-sidebar {
+            width: var(--lms-sidebar-width);
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            height: calc(100vh - 80px);
+            position: sticky;
+            top: 80px;
+            z-index: 20;
+        }
+
+        .lesson-node {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lesson-node:hover {
+            background: #f8fafc;
+        }
+
+        .lesson-node.active {
+            background: #eff6ff;
+            border-right: 4px solid var(--primary);
+        }
+
+        .node-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            flex-shrink: 0;
+        }
+
+        .lesson-node.completed .node-number {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .video-player-container {
+            background: #000;
+            border-radius: 24px;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .video-placeholder-ui {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .play-btn-large {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .play-btn-large:hover {
+            transform: scale(1.1);
+        }
+
+        .portal-gate {
+            backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.95);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .portal-gate.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #login-modal {
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Classroom */
+        @media (max-width: 1024px) {
+            .classroom-flex {
+                flex-direction: column;
+            }
+
+            .lms-sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-top: 1px solid #e2e8f0;
+                order: 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="container-custom py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="./assets/profile-pic.png" alt="Logo" class="w-10 h-10 rounded-full">
+                <span class="font-headline font-bold text-xl">Isaac's Academy</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html"
+                    class="text-xs font-bold uppercase tracking-widest text-text-secondary hover:text-primary transition-colors">Website</a>
+                <div class="h-6 w-px bg-slate-200"></div>
+                <div class="flex items-center space-x-3 bg-slate-50 px-4 py-2 rounded-xl">
+                    <div
+                        class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px] font-bold">
+                        ST</div>
+                    <span class="text-xs font-bold text-slate-700">Student Portal</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portal Security Gate (Login) -->
+    <div id="login-overlay" class="fixed inset-0 z-[101] flex items-center justify-center p-6 portal-gate hidden">
+        <div id="login-modal" class="bg-white rounded-[2.5rem] shadow-2xl max-w-md w-full p-12 text-center">
+            <div class="w-20 h-20 bg-primary-50 text-primary rounded-3xl flex items-center justify-center mx-auto mb-8">
+                <i class="fas fa-lock-open text-3xl"></i>
+            </div>
+            <h2 class="font-headline text-3xl font-bold mb-4">Course Access</h2>
+            <p class="text-text-secondary mb-10 text-sm leading-relaxed">Please enter your student credentials to access
+                the <b>Computer Packages</b> intensive course content.</p>
+            <form id="login-form" onsubmit="unlockPortal(event)" class="space-y-4">
+                <input type="email" placeholder="Student Email"
+                    class="input-field py-4 bg-slate-50 border-none rounded-2xl" id="student-email" required>
+                <input type="password" placeholder="Access Token"
+                    class="input-field py-4 bg-slate-50 border-none rounded-2xl" id="access-token" required>
+                <button type="submit"
+                    class="btn-primary w-full py-5 rounded-2xl font-bold mt-4 shadow-xl shadow-primary/20">ENTER
+                    CLASSROOM</button>
+            </form>
+            <p class="mt-8 text-[10px] uppercase font-bold text-text-tertiary tracking-widest">Educational
+                Infrastructure by Isaac Zachary</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Main View -->
+    <main id="dashboard" class="pt-32 pb-20">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h1 class="font-headline text-4xl md:text-5xl font-bold mb-2 text-slate-900">Education Portal</h1>
+                    <p class="text-text-secondary text-lg">Master the tools of modern documentation and data analysis.
+                    </p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center space-x-6 min-w-[300px]">
+                    <div class="flex-grow">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Your Progress</span>
+                            <span id="header-progress" class="text-xs font-bold text-primary">0%</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div id="header-progress-fill" class="h-full bg-primary transition-all duration-1000"
+                                style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-primary-100 text-primary rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Course Card -->
+                <div class="lg:col-span-2 group">
+                    <div
+                        class="bg-white rounded-[3rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2">
+                        <div class="aspect-[21/9] bg-slate-900 relative p-12 flex flex-col justify-end text-white">
+                            <div
+                                class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80')] bg-cover">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent">
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="flex items-center space-x-2 text-primary font-bold text-[10px] uppercase tracking-widest mb-4">
+                                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                    <span>Actively Teaching</span>
+                                </div>
+                                <h3 class="text-4xl font-bold font-headline mb-4">The Computer Packages <br>Masterclass
+                                </h3>
+                                <p class="text-slate-300 text-sm max-w-md line-clamp-2">Complete 10-Unit guide covering
+                                    MS Office Suite, Operating Systems, and Networking Foundations.</p>
+                            </div>
+                        </div>
+                        <div class="p-10 flex items-center justify-between">
+                            <div class="flex items-center space-x-12">
+                                <div>
+                                    <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">Duration</div>
+                                    <div class="text-sm font-bold">12 Hours</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">Modules</div>
+                                    <div class="text-sm font-bold">10 Units</div>
+                                </div>
+                            </div>
+                            <button onclick="startCourse()"
+                                class="btn-primary px-10 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-primary/20 group-hover:scale-105 transition-transform">RESUME
+                                LEARNING</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Roadmap Card -->
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-gradient-to-br from-indigo-900 to-purple-900 rounded-[3rem] p-10 h-full flex flex-col justify-between text-white relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md">
+                                <i class="fas fa-microchip text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold font-headline mb-4">Coming Soon: <br>AI Fullstack Mastery</h3>
+                            <p class="text-indigo-200 text-sm leading-relaxed mb-8">Vibe coding, Agentic workflows, and
+                                LLM production pipelines. Join the waitlist for the experimental pilot.</p>
+                        </div>
+                        <button
+                            class="w-full bg-white text-indigo-900 py-4 rounded-2xl font-bold text-xs hover:bg-slate-100 transition-colors">NOTIFY
+                            ME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Classroom View -->
+    <div id="classroom" class="hidden min-h-screen bg-[#fcfdfe] pt-20">
+        <div class="flex classroom-flex">
+            <!-- Navigation Sidebar -->
+            <aside class="lms-sidebar overflow-y-auto">
+                <div class="p-8 border-b border-slate-100">
+                    <h3 class="font-headline font-bold text-xl mb-2">Curriculum</h3>
+                    <div class="flex items-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                        <span id="sidebar-count">0/10 Lessons Completed</span>
+                    </div>
+                </div>
+                <div id="curriculum-list">
+                    <!-- Iterated via JS -->
+                </div>
+            </aside>
+
+            <!-- Content Main -->
+            <main class="flex-grow p-8 lg:p-16">
+                <div class="max-w-5xl mx-auto">
+                    <!-- Lesson Header -->
+                    <div class="flex items-center justify-between mb-10">
+                        <button onclick="exitClassroom()"
+                            class="flex items-center space-x-2 text-slate-400 hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-left text-[10px]"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Back to Courses</span>
+                        </button>
+                        <div class="flex items-center space-x-4">
+                            <span
+                                class="text-[10px] font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full uppercase">Professional
+                                Track</span>
+                        </div>
+                    </div>
+
+                    <!-- Video Section -->
+                    <div class="video-player-container mb-12">
+                        <div class="video-placeholder-ui">
+                            <button class="play-btn-large">
+                                <i class="fas fa-play text-white ml-1"></i>
+                            </button>
+                            <div class="absolute bottom-8 left-8 right-8 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span id="player-title" class="font-headline text-lg font-bold">Unit 1: Introduction
+                                        to Computing</span>
+                                    <span class="text-xs text-slate-300">HD 1080P • Isaac Zachary Learning System</span>
+                                </div>
+                                <div class="flex items-center space-x-4 text-xs opacity-60">
+                                    <span>24:15</span>
+                                    <div class="w-24 h-1 bg-white/20 rounded-full relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-primary w-2/3"></div>
+                                    </div>
+                                    <span>38:50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabs & Description -->
+                    <div class="grid lg:grid-cols-3 gap-12">
+                        <div class="lg:col-span-2 space-y-10">
+                            <div class="border-b border-slate-200 flex space-x-10">
+                                <button
+                                    class="pb-4 text-sm font-bold border-b-2 border-primary text-primary">Overview</button>
+                                <button
+                                    class="pb-4 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-600">Resources</button>
+                                <button
+                                    class="pb-4 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-600">Discussion</button>
+                            </div>
+                            <div id="lesson-html-content" class="prose max-w-none">
+                                <!-- Populated via JS -->
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-1">
+                            <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm sticky top-32">
+                                <h4 class="font-bold text-sm mb-6 uppercase tracking-widest text-slate-400">Assignment
+                                    Area</h4>
+                                <div class="space-y-4 mb-8">
+                                    <div
+                                        class="flex items-center p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-primary/20 transition-all cursor-pointer">
+                                        <i class="fas fa-file-pdf text-red-500 mr-4 text-xl"></i>
+                                        <div class="flex-grow">
+                                            <div class="text-[10px] font-bold text-slate-400 uppercase">Handout</div>
+                                            <div class="text-xs font-bold">Module Summary.pdf</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button onclick="markComplete()"
+                                    class="w-full btn-primary py-4 rounded-2xl font-bold text-sm shadow-xl shadow-primary/20">MARK
+                                    AS COMPLETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Global Site Footer -->
+    <footer class="bg-slate-900 text-white section-padding pt-32">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-16 mb-20">
+                <div class="col-span-2 space-y-8">
+                    <div class="flex items-center space-x-3">
+                        <img src="./assets/profile-pic.png" alt="Logo"
+                            class="w-12 h-12 rounded-full ring-4 ring-white/10">
+                        <div>
+                            <span class="font-headline font-bold text-2xl block">Isaac Zachary</span>
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">Technical
+                                Educator</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 max-w-md leading-relaxed">Pioneering high-end educational experiences in
+                        DevOps, Software Architecture, and Fundamental Computing. Built on the principles of technical
+                        excellence.</p>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="font-bold text-xs uppercase tracking-widest text-white/50">Curriculum</h4>
+                    <ul class="space-y-4 text-sm font-medium text-slate-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">Computer Packages</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">AI Fullstack (Coming Soon)</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Career Mentorship</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="font-bold text-xs uppercase tracking-widest text-white/50">Connect</h4>
+                    <ul class="space-y-4 text-sm font-medium text-slate-400">
+                        <li><a href="#" class="flex items-center space-x-3 hover:text-primary transition-colors">
+                                <i class="fab fa-linkedin text-lg"></i><span>Professional Network</span>
+                            </a></li>
+                        <li><a href="#" class="flex items-center space-x-3 hover:text-primary transition-colors">
+                                <i class="fab fa-github text-lg"></i><span>Open Source</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">© 2026 Isaac Zachary. All
+                    Knowledge Bases Secured.</p>
+                <div class="flex items-center space-x-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Status</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const modules = [
+            { id: 1, title: "Foundations of Computing", duration: "1h 15m", completed: false, content: `<h2>Welcome to Unit 1</h2><p>This unit covers the essential history and architecture of modern computers. We explore how bits and bytes form the language of the digital world.</p>` },
+            { id: 2, title: "Operating Systems Mastery", duration: "2h 30m", completed: false, content: `<h2>The OS Layer</h2><p>Deep dive into process management, file systems, and the Windows NT kernel history.</p>` },
+            { id: 3, title: "Document Engineering (Word)", duration: "3h 45m", completed: false, content: `<h2>Professional Documentation</h2><p>Beyond typing. Master styles, automation, and industrial formatting standards.</p>` },
+            { id: 4, title: "Quantitative Intel (Excel)", duration: "4h 20m", completed: false, content: `<h2>Data Orchestration</h2><p>Formula architecture, logic gates in spreadsheets, and data visualization primitives.</p>` },
+            { id: 5, title: "Visual Storytelling (PPT)", duration: "1h 50m", completed: false, content: `<h2>The Art of Presentation</h2><p>Cognitive load theory applied to slide design. Visual hierarchy and narrative flow.</p>` },
+            { id: 6, title: "Relational Logic (Access)", duration: "2h 10m", completed: false, content: `<h2>Database Core</h2><p>Entity relationships, SQL fundamentals, and efficient schema design.</p>` },
+            { id: 7, title: "Print Architecture (Publisher)", duration: "1h 30m", completed: false, content: `<h2>Digital Publishing</h2><p>Layout engine fundamentals, typography scales, and print-ready production.</p>` },
+            { id: 8, title: "The Global Grid (Networking)", duration: "2h 15m", completed: false, content: `<h2>Infrastructure Foundations</h2><p>IP protocols, DNS resolution, and security handshakes in a connected world.</p>` },
+            { id: 9, title: "Communication Pipelines", duration: "1h 10m", completed: false, content: `<h2>Inter-office Comms</h2><p>Email protocols, secure messaging, and collaboration architecture.</p>` },
+            { id: 10, title: "Final Mastery Assessment", duration: "4h 00m", completed: false, content: `<h2>Excellence Evaluation</h2><p>Practical synthesis of all modules in a real-world infrastructure scenario.</p>` }
+        ];
+
+        let currentModuleIndex = 0;
+        let userProgress = JSON.parse(localStorage.getItem('student_mastery')) || { packages: 0 };
+        let isAuthorized = false;
+
+        function updateGlobalProgress() {
+            const total = modules.length;
+            const completed = userProgress.packages;
+            const percent = Math.round((completed / total) * 100);
+
+            document.getElementById('header-progress').innerText = `${percent}%`;
+            document.getElementById('header-progress-fill').style.width = `${percent}%`;
+
+            if (document.getElementById('sidebar-count')) {
+                document.getElementById('sidebar-count').innerText = `${completed}/${total} Lessons Completed`;
+            }
+        }
+
+        function unlockPortal(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> AUTHORIZING...';
+
+            setTimeout(() => {
+                isAuthorized = true;
+                document.getElementById('login-overlay').classList.remove('active');
+                setTimeout(() => {
+                    document.getElementById('login-overlay').classList.add('hidden');
+                    enterClassroom();
+                }, 400);
+            }, 1200);
+        }
+
+        function startCourse() {
+            if (!isAuthorized) {
+                document.getElementById('login-overlay').classList.remove('hidden');
+                // Force a reflow to trigger transition
+                void document.getElementById('login-overlay').offsetWidth;
+                document.getElementById('login-overlay').classList.add('active');
+            } else {
+                enterClassroom();
+            }
+        }
+
+        function enterClassroom() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('classroom').classList.remove('hidden');
+            renderCurriculum();
+            loadLesson(userProgress.packages < modules.length ? userProgress.packages : 0);
+        }
+
+        function exitClassroom() {
+            document.getElementById('classroom').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+            updateGlobalProgress();
+        }
+
+        function renderCurriculum() {
+            const list = document.getElementById('curriculum-list');
+            list.innerHTML = modules.map((m, i) => {
+                const isCompleted = i < userProgress.packages;
+                const isActive = i === currentModuleIndex;
+
+                return `
+                <div onclick="loadLesson(${i})" class="lesson-node ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}">
+                    <div class="node-number">
+                        ${isCompleted ? '<i class="fas fa-check"></i>' : (i + 1)}
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-[11px] font-bold ${isActive ? 'text-primary' : 'text-slate-700'} leading-tight">${m.title}</div>
+                        <div class="flex items-center space-x-2 mt-1">
+                            <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">${m.duration}</span>
+                            <span class="text-[9px] text-slate-300">•</span>
+                            <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">${isCompleted ? 'Completed' : 'Study'}</span>
+                        </div>
+                    </div>
+                    ${isActive ? '<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>' : ''}
+                </div>
+            `}).join('');
+        }
+
+        function loadLesson(index) {
+            currentModuleIndex = index;
+            const m = modules[index];
+            document.getElementById('player-title').innerText = `Unit ${index + 1}: ${m.title}`;
+            document.getElementById('lesson-html-content').innerHTML = `
+                <h1 class="font-headline text-3xl font-bold mb-6">${m.title}</h1>
+                <div class="prose text-slate-600 leading-relaxed">
+                    ${m.content}
+                </div>
+            `;
+            renderCurriculum();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function markComplete() {
+            if (currentModuleIndex >= userProgress.packages) {
+                userProgress.packages = currentModuleIndex + 1;
+                localStorage.setItem('student_mastery', JSON.stringify(userProgress));
+            }
+
+            if (currentModuleIndex < modules.length - 1) {
+                loadLesson(currentModuleIndex + 1);
+            } else {
+                alert("✨ Congratulations! You've successfully completed the Professional Computer Packages Track.");
+                exitClassroom();
+            }
+        }
+
+        window.onload = () => {
+            updateGlobalProgress();
+            document.getElementById('year').textContent = new Date().getFullYear();
+        };
+    </script>
+</body>
+
+</html>
