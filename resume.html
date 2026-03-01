@@ -57,9 +57,8 @@
             font-weight: bold;
             color: #2c3e50; /* dark gray */
             text-transform: uppercase;
-            border-bottom: 1px solid #cccccc;
-            padding-bottom: 3px;
             margin-bottom: 10px;
+            /* border-bottom removed */
         }
         .job {
             margin-bottom: 15px;
@@ -81,7 +80,7 @@
             font-weight: normal;
         }
         .company {
-            font-weight: 600;
+            font-weight: normal;  /* changed from 600 to normal */
             margin-bottom: 2px;
             color: #2c3e50; /* dark gray */
         }
@@ -93,23 +92,16 @@
         li {
             margin-bottom: 2px;
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+        /* Simplified tools & platforms styling */
+        .tools-list {
+            margin-top: 2px;
         }
-        .skill-group {
+        .tools-category {
             margin-bottom: 5px;
         }
-        .skill-group strong {
-            display: block;
+        .tools-category strong {
+            color: #2c3e50;
             font-weight: bold;
-            margin-bottom: 2px;
-            color: #2c3e50; /* dark gray */
-        }
-        .skill-group ul {
-            margin: 0;
-            padding-left: 20px;
         }
         .referees {
             display: flex;
@@ -122,6 +114,14 @@
         }
         .referee strong {
             color: #2c3e50; /* dark gray */
+        }
+        /* Projects section: remove bold from project titles */
+        .projects-list li {
+            list-style-type: disc;
+        }
+        .projects-list li strong {
+            font-weight: normal;
+            color: #2c3e50; /* keep color but not bold */
         }
         @media print {
             body {
@@ -170,7 +170,7 @@
     <section id="experience">
         <h2>Professional Experience</h2>
 
-        <!-- Software Systems Architect - MobKazi (shortened) -->
+        <!-- Software Systems Architect - MobKazi (shortened to 3 bullets) -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Software Systems Architect - MobKazi Business OS</span>
@@ -178,9 +178,8 @@
             </div>
             <div class="company">Freelance Product Development</div>
             <ul>
-                <li>Design and develop MobKazi, a cloud-based Business OS for African SMEs, with multi-tenant Django backend and containerized deployments.</li>
-                <li>Manage Linux server infrastructure, Docker environments, and application deployments.</li>
-                <li>Integrate M-PESA payments, billing systems, and business automation modules.</li>
+                <li>Design and develop MobKazi, a cloud-based Business OS for African SMEs, using Django REST and containerized deployments.</li>
+                <li>Manage Linux server infrastructure, Docker environments, and integrate M-PESA payments and business automation modules.</li>
                 <li>Collaborate with businesses to translate operational workflows into deployed software systems.</li>
             </ul>
         </div>
@@ -282,7 +281,7 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <ul>
+        <ul class="projects-list">
             <li><strong>MobKazi Business Operating System</strong> - Multi-tenant business platform for SMEs</li>
             <li><strong>Coffee Kiosk Application</strong> - React, Node.js, Safaricom M-PESA API integration</li>
             <li><strong>ZakaFlow</strong> - Real-time data analytics platform (Kafka, Spark, Docker)</li>
@@ -316,43 +315,13 @@
 
     <section id="skills">
         <h2>Tools & Platforms</h2>
-        <div class="skills-grid">
-            <div class="skill-group">
-                <strong>Infrastructure & Cloud</strong>
-                <ul>
-                    <li>Linux (Ubuntu), Docker, Docker Compose, AWS, Contabo VPS, Cloudflare, Coolify</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <strong>Backend & Development</strong>
-                <ul>
-                    <li>Python, Django REST Framework, REST APIs, Git, GitHub</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <strong>Frontend & Web</strong>
-                <ul>
-                    <li>React, TypeScript, Next.js, WordPress</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <strong>Databases & Data</strong>
-                <ul>
-                    <li>PostgreSQL, Supabase, MySQL</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <strong>Systems & Operations</strong>
-                <ul>
-                    <li>DNS, SSL/TLS, Network Monitoring, PowerShell, ITSM Tools, Jira</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <strong>Engineering & Productivity</strong>
-                <ul>
-                    <li>VS Code, Google Workspace, Google Antigravity</li>
-                </ul>
-            </div>
+        <div class="tools-list">
+            <div class="tools-category"><strong>Infrastructure & Cloud:</strong> Linux (Ubuntu), Docker, Docker Compose, AWS, Contabo VPS, Cloudflare, Coolify</div>
+            <div class="tools-category"><strong>Backend & Development:</strong> Python, Django REST Framework, REST APIs, Git, GitHub</div>
+            <div class="tools-category"><strong>Frontend & Web:</strong> React, TypeScript, Next.js, WordPress</div>
+            <div class="tools-category"><strong>Databases & Data:</strong> PostgreSQL, Supabase, MySQL</div>
+            <div class="tools-category"><strong>Systems & Operations:</strong> DNS, SSL/TLS, Network Monitoring, PowerShell, ITSM Tools, Jira</div>
+            <div class="tools-category"><strong>Engineering & Productivity:</strong> VS Code, Google Workspace, Google Antigravity</div>
         </div>
     </section>
 
