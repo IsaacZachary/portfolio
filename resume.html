@@ -14,20 +14,20 @@
         body {
             font-family: 'Calibri', 'Arial', sans-serif;
             font-size: 12pt;
-            line-height: 1.15;
+            line-height: 1.2; /* slightly tighter than 1.15 */
             color: #000000;
             max-width: 800px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 20px 20px; /* reduced top/bottom padding */
             background: #ffffff;
         }
         header {
-            border-bottom: 1px solid #e0e0e0;  /* lighter, thinner-looking */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;      /* reduced from 10px */
+            margin-bottom: 15px;       /* reduced from 20px */
         }
         h1 {
-            margin: 0 0 5px 0;
+            margin: 0 0 4px 0;         /* reduced bottom margin */
             font-size: 12pt;
             font-weight: bold;
             color: #222222;
@@ -48,18 +48,18 @@
             text-decoration: underline;
         }
         section {
-            margin-bottom: 20px;
+            margin-bottom: 15px;        /* reduced from 20px */
         }
         h2 {
             font-size: 12pt;
             font-weight: bold;
             color: #222222;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 6px;          /* reduced from 10px */
         }
         .job {
-            margin-bottom: 15px;
-            margin-top: 2px;  /* small top margin for spacing at page breaks */
+            margin-bottom: 12px;          /* reduced from 15px */
+            margin-top: 2px;
         }
         .job-header {
             display: flex;
@@ -110,11 +110,14 @@
             color: #555555;
             font-weight: normal;
         }
+        /* Referees side by side using flex with equal width */
         .referees {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;                  /* reduced from 30px */
             margin-top: 5px;
+        }
+        .referee {
+            flex: 1;                     /* each takes half width */
         }
         .referee p {
             margin: 2px 0;
@@ -125,12 +128,18 @@
         .referee .contact-line {
             color: #333333;
         }
+        /* Print optimization */
         @media print {
             body {
-                padding: 0.5in;
+                padding: 0.3in;          /* reduced from 0.5in */
+                font-size: 11.5pt;        /* slightly smaller to help fit */
+                line-height: 1.18;
             }
             .no-print {
                 display: none;
+            }
+            h2, .job-title, .company, .contact-line {
+                font-size: 11.5pt;
             }
         }
         .btn-download {
@@ -153,8 +162,9 @@
 
     <header>
         <h1>Isaac Siko Zachary</h1>
+        <!-- Removed second phone number to keep first line from wrapping -->
         <div class="contact-line">
-            Nairobi, Kenya | Phone: +254 759 325 915 | +254 101 029 951 | Email: <a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a>
+            Nairobi, Kenya | Phone: +254 759 325 915 | Email: <a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a>
         </div>
         <div class="contact-line">
             LinkedIn: <a href="https://linkedin.com/in/isaaczachary">linkedin.com/in/isaaczachary</a> | Portfolio: <a href="https://izach.netlify.app/">izach.netlify.app</a>
@@ -310,7 +320,7 @@
             <li>Career Essentials in Generative AI - Microsoft & LinkedIn (2024)</li>
             <li>Software Development Fundamentals - Power Learn Project (2024)</li>
             <li>ICT Support & Network Administration - Defense Forces Technical College (2023)</li>
-            <li> IT Support Technician - Alison (2022) </li>
+            <li>IT Support Technician - Alison (2022)</li>
             <li>Frontend Fundamentals - Pirple (2020)</li>
         </ul>
     </section>
@@ -333,12 +343,14 @@
             <div class="referee">
                 <p><strong>Mr. Micah Gesimba</strong></p>
                 <p>Technical Manager, SSL Security Ltd</p>
-                <p class="contact-line">+254 725 028 203 | <a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
+                <p class="contact-line">+254 725 028 203 </p> 
+                <p <a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
             </div>
             <div class="referee">
                 <p><strong>Mr. Vincent Okemwa</strong></p>
                 <p>Project Manager, First Basics Technologies Ltd</p>
-                <p class="contact-line">+254 726 052 752 | <a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
+                <p class="contact-line">+254 726 052 752 </p>
+                <p <a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
             </div>
         </div>
     </section>
