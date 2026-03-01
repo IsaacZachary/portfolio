@@ -6,7 +6,6 @@
     <title>Isaac Zachary - Professional Resume</title>
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
     <style>
-        /* Reset & base */
         * {
             margin: 0;
             padding: 0;
@@ -91,7 +90,7 @@
         li {
             margin-bottom: 2px;
         }
-        /* Tools & platforms – categories now normal weight, medium gray */
+        /* Tools & platforms – categories normal weight, medium gray */
         .tools-list {
             margin-top: 2px;
         }
@@ -99,10 +98,21 @@
             margin-bottom: 5px;
         }
         .tools-item strong {
-            color: #555555;        /* medium gray */
-            font-weight: normal;    /* not bold */
+            color: #555555;
+            font-weight: normal;
         }
-        /* Referees – compact layout */
+        /* Projects – same style as tools (no bullets) */
+        .projects-list {
+            margin-top: 2px;
+        }
+        .project-item {
+            margin-bottom: 5px;
+        }
+        .project-item strong {
+            color: #555555;
+            font-weight: normal;
+        }
+        /* Referees – compact */
         .referees {
             display: flex;
             flex-wrap: wrap;
@@ -117,14 +127,6 @@
         }
         .referee .contact-line {
             color: #333333;
-        }
-        /* Projects section: remove bold from project titles */
-        .projects-list li {
-            list-style-type: disc;
-        }
-        .projects-list li strong {
-            font-weight: normal;
-            color: #222222;
         }
         @media print {
             body {
@@ -173,13 +175,13 @@
     <section id="experience">
         <h2>Professional Experience</h2>
 
-        <!-- Software Systems Architect - MobKazi -->
+        <!-- Software Systems Architect - MobKazi (reformatted) -->
         <div class="job">
             <div class="job-header">
-                <span class="job-title">Software Systems Architect - MobKazi Business OS</span>
+                <span class="job-title">Software Systems Architect</span>
                 <span class="job-date">2024 – Present</span>
             </div>
-            <div class="company">Freelance Product Development</div>
+            <div class="company">MobKazi Business OS (Freelance Product Development)</div>
             <ul>
                 <li>Design and develop MobKazi, a cloud-based Business OS for African SMEs, using Django REST and containerized deployments.</li>
                 <li>Manage Linux server infrastructure, Docker environments, and integrate M-PESA payments and business automation modules.</li>
@@ -267,31 +269,31 @@
             </ul>
         </div>
 
-        <!-- Industrial Attachment - Defense Forces Technical College (already bold) -->
+        <!-- Industrial Attachment - Defense Forces Technical College (all caps) -->
         <div class="job">
             <div class="job-header">
-                <span class="job-title">Industrial Attachment</span>
+                <span class="job-title">INDUSTRIAL ATTACHMENT</span>
                 <span class="job-date">May 2023 – Aug 2023</span>
             </div>
             <div class="company">Defense Forces Technical College (Nairobi)</div>
             <ul>
                 <li>Supported IT operations including server administration and Active Directory environments.</li>
                 <li>Participated in software development and internal systems maintenance.</li>
-                <li>Developed IT Workshop Computer Maintenance System (Laravel).</li>
+                <li>Developed IT Workshop Computer Maintenance System prototype (Laravel).</li>
             </ul>
         </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
-        <ul class="projects-list">
-            <li><strong>MobKazi Business Operating System</strong> - Multi-tenant business platform for SMEs</li>
-            <li><strong>Coffee Kiosk Application</strong> - React, Node.js, Safaricom M-PESA API integration</li>
-            <li><strong>ZakaFlow</strong> - Real-time data analytics platform (Kafka, Spark, Docker)</li>
-            <li><strong>Drowsy Driver Detection System</strong> - AI computer vision safety system</li>
-            <li><strong>Berry Fibre Hotspot Portal</strong> - Next.js captive portal integration</li>
-            <li><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> - Self-published training manual covering Microsoft Office, graphics, and basic networking concepts.</li>
-        </ul>
+        <div class="projects-list">
+            <div class="project-item"><strong>MobKazi Business Operating System</strong> - Multi-tenant business platform for SMEs</div>
+            <div class="project-item"><strong>Coffee Kiosk Application</strong> - React, Node.js, Safaricom M-PESA API integration</div>
+            <div class="project-item"><strong>ZakaFlow</strong> - Real-time data analytics platform (Kafka, Spark, Docker)</div>
+            <div class="project-item"><strong>Drowsy Driver Detection System</strong> - AI computer vision safety system</div>
+            <div class="project-item"><strong>Berry Fibre Hotspot Portal</strong> - Next.js captive portal integration</div>
+            <div class="project-item"><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> - Self-published training manual covering Microsoft Office, graphics, and basic networking concepts.</div>
+        </div>
     </section>
 
     <section id="education">
