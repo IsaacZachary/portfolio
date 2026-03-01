@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Zachary - Resume</title>
+    <title>Isaac Zachary - Professional Resume</title>
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
     <style>
         * {
@@ -14,27 +14,26 @@
         body {
             font-family: 'Calibri', 'Arial', sans-serif;
             font-size: 12pt;
-            line-height: 1.2; /* slightly tighter than 1.15 */
+            line-height: 1.2;
             color: #000000;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px 20px; /* reduced top/bottom padding */
+            padding: 20px 20px;
             background: #ffffff;
         }
         header {
             border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;      /* reduced from 10px */
-            margin-bottom: 15px;       /* reduced from 20px */
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
         h1 {
-            margin: 0 0 4px 0;         /* reduced bottom margin */
+            margin: 0 0 4px 0;
             font-size: 12pt;
             font-weight: bold;
             color: #222222;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        /* Two-line contact info */
         .contact-line {
             font-size: 12pt;
             color: #333333;
@@ -48,17 +47,17 @@
             text-decoration: underline;
         }
         section {
-            margin-bottom: 15px;        /* reduced from 20px */
+            margin-bottom: 15px;
         }
         h2 {
             font-size: 12pt;
             font-weight: bold;
             color: #222222;
             text-transform: uppercase;
-            margin-bottom: 6px;          /* reduced from 10px */
+            margin-bottom: 6px;
         }
         .job {
-            margin-bottom: 12px;          /* reduced from 15px */
+            margin-bottom: 12px;
             margin-top: 2px;
         }
         .job-header {
@@ -110,14 +109,13 @@
             color: #555555;
             font-weight: normal;
         }
-        /* Referees side by side using flex with equal width */
         .referees {
             display: flex;
-            gap: 20px;                  /* reduced from 30px */
+            gap: 20px;
             margin-top: 5px;
         }
         .referee {
-            flex: 1;                     /* each takes half width */
+            flex: 1;
         }
         .referee p {
             margin: 2px 0;
@@ -128,11 +126,15 @@
         .referee .contact-line {
             color: #333333;
         }
-        /* Print optimization */
+        /* Core competencies styling */
+        .competencies-line {
+            color: #333333;
+            margin-bottom: 3px;
+        }
         @media print {
             body {
-                padding: 0.3in;          /* reduced from 0.5in */
-                font-size: 11.5pt;        /* slightly smaller to help fit */
+                padding: 0.3in;
+                font-size: 11.5pt;
                 line-height: 1.18;
             }
             .no-print {
@@ -162,7 +164,6 @@
 
     <header>
         <h1>Isaac Siko Zachary</h1>
-        <!-- Removed second phone number to keep first line from wrapping -->
         <div class="contact-line">
             Nairobi, Kenya | Phone: +254 759 325 915 | Email: <a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a>
         </div>
@@ -176,6 +177,14 @@
         <p>
             IT and Software Systems professional with experience spanning software development, enterprise IT support, and production systems operations. Skilled in deploying and supporting business platforms, troubleshooting infrastructure and network environments, and delivering reliable technology solutions from concept through deployment. Experienced working across system architecture, technical support, and operational environments with a strong focus on reliability, security awareness, and practical implementation.
         </p>
+    </section>
+
+    <!-- CORE COMPETENCIES section added -->
+    <section id="competencies">
+        <h2>Core Competencies</h2>
+        <div class="competencies-line">• Systems Administration    • Software Systems Development • Infrastructure Deployment</div>
+        <div class="competencies-line">• Networking & Connectivity • Incident Management          • Secure Configuration</div>
+        <div class="competencies-line">• Technical Documentation   • Client & Stakeholder Support</div>
     </section>
 
     <section id="experience">
@@ -343,14 +352,12 @@
             <div class="referee">
                 <p><strong>Mr. Micah Gesimba</strong></p>
                 <p>Technical Manager, SSL Security Ltd</p>
-                <p class="contact-line">+254 725 028 203 </p> 
-                <p <a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
+                <p class="contact-line">+254 725 028 203 | <a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
             </div>
             <div class="referee">
                 <p><strong>Mr. Vincent Okemwa</strong></p>
                 <p>Project Manager, First Basics Technologies Ltd</p>
-                <p class="contact-line">+254 726 052 752 </p>
-                <p <a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
+                <p class="contact-line">+254 726 052 752 | <a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
             </div>
         </div>
     </section>
