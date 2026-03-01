@@ -22,7 +22,7 @@
             background: #ffffff;
         }
         header {
-            border-bottom: 1px solid #cccccc;
+            border-bottom: 1px solid #e0e0e0;  /* lighter, thinner-looking */
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
@@ -34,18 +34,17 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+        /* Two-line contact info */
+        .contact-line {
             font-size: 12pt;
             color: #333333;
+            margin-bottom: 2px;
         }
-        .contact-info a {
+        .contact-line a {
             color: #333333;
             text-decoration: none;
         }
-        .contact-info a:hover {
+        .contact-line a:hover {
             text-decoration: underline;
         }
         section {
@@ -60,6 +59,7 @@
         }
         .job {
             margin-bottom: 15px;
+            margin-top: 2px;  /* small top margin for spacing at page breaks */
         }
         .job-header {
             display: flex;
@@ -90,7 +90,6 @@
         li {
             margin-bottom: 2px;
         }
-        /* Tools & platforms – categories normal weight, medium gray */
         .tools-list {
             margin-top: 2px;
         }
@@ -101,7 +100,6 @@
             color: #555555;
             font-weight: normal;
         }
-        /* Projects – same style as tools (no bullets) */
         .projects-list {
             margin-top: 2px;
         }
@@ -112,7 +110,6 @@
             color: #555555;
             font-weight: normal;
         }
-        /* Referees – compact */
         .referees {
             display: flex;
             flex-wrap: wrap;
@@ -130,7 +127,7 @@
         }
         @media print {
             body {
-                padding: 0;
+                padding: 0.5in;
             }
             .no-print {
                 display: none;
@@ -156,12 +153,11 @@
 
     <header>
         <h1>Isaac Siko Zachary</h1>
-        <div class="contact-info">
-            <span>Nairobi, Kenya</span>
-            <span>+254 759 325 915</span>
-            <a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a>
-            <a href="https://linkedin.com/in/isaaczachary">linkedin.com/in/isaaczachary</a>
-            <a href="https://izach.netlify.app/">izach.netlify.app</a>
+        <div class="contact-line">
+            Nairobi, Kenya | Phone: +254 759 325 915 | +254 101 029 951 | Email: <a href="mailto:isaaczachary18@gmail.com">isaaczachary18@gmail.com</a>
+        </div>
+        <div class="contact-line">
+            LinkedIn: <a href="https://linkedin.com/in/isaaczachary">linkedin.com/in/isaaczachary</a> | Portfolio: <a href="https://izach.netlify.app/">izach.netlify.app</a>
         </div>
     </header>
 
@@ -175,7 +171,7 @@
     <section id="experience">
         <h2>Professional Experience</h2>
 
-        <!-- Software Systems Architect - MobKazi (reformatted) -->
+        <!-- Software Systems Architect - MobKazi -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Software Systems Architect</span>
@@ -279,7 +275,7 @@
             <ul>
                 <li>Supported IT operations including server administration and Active Directory environments.</li>
                 <li>Participated in software development and internal systems maintenance.</li>
-                <li>Developed IT Workshop Computer Maintenance System prototype (Laravel).</li>
+                <li>Developed IT Workshop Computer Maintenance System Prototype (Laravel).</li>
             </ul>
         </div>
     </section>
@@ -287,12 +283,12 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects-list">
-            <div class="project-item"><strong>MobKazi Business Operating System</strong> - Multi-tenant business platform for SMEs (mobkazi.com)</div>
+            <div class="project-item"><strong>MobKazi Business Operating System</strong> - Multi-tenant business platform for SMEs</div>
             <div class="project-item"><strong>Coffee Kiosk Application</strong> - React, Node.js, Safaricom M-PESA API integration</div>
             <div class="project-item"><strong>ZakaFlow</strong> - Real-time data analytics platform (Kafka, Spark, Docker)</div>
             <div class="project-item"><strong>Drowsy Driver Detection System</strong> - AI computer vision safety system</div>
             <div class="project-item"><strong>Berry Fibre Hotspot Portal</strong> - Next.js captive portal integration</div>
-            <div class="project-item"><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> - Self-published training manual covering Microsoft Office, graphics, and basic networking concepts.</div>
+            <div class="project-item"><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> - Training manual covering Microsoft Office, graphics, and basic networking concepts.</div>
         </div>
     </section>
 
@@ -312,8 +308,9 @@
         <ul>
             <li>Decoding DevOps - Udemy (2025)</li>
             <li>Career Essentials in Generative AI - Microsoft & LinkedIn (2024)</li>
-            <li>ICT Support & Network Administration - Defense Forces Technical College (2024)</li>
-            <li>Software Development Fundamentals - Power Learn Project (2023)</li>
+            <li>Software Development Fundamentals - Power Learn Project (2024)</li>
+            <li>ICT Support & Network Administration - Defense Forces Technical College (2023)</li>
+            <li> IT Support Technician - Alison (2022) </li>
             <li>Frontend Fundamentals - Pirple (2020)</li>
         </ul>
     </section>
