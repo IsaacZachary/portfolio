@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Zachary - Developer Resume</title>
+    <title>Isaac Zachary - Professional Resume</title>
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
     <style>
-        :root {
-            --primary: #2563eb;
-            --text-main: #1f2937;
-            --text-light: #6b7280;
-            --bg: #ffffff;
+        /* Reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.5;
-            color: var(--text-main);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.15;
+            color: #000000;
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background: var(--bg);
+            padding: 30px 20px;
+            background: #ffffff;
         }
         header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--primary);
+            margin: 0 0 5px 0;
+            font-size: 24pt;
+            font-weight: bold;
+            color: #000000;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -37,68 +39,71 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: var(--text-light);
+            font-size: 11pt;
+            color: #333333;
         }
         .contact-info a {
-            color: var(--text-light);
+            color: #333333;
             text-decoration: none;
         }
         .contact-info a:hover {
-            color: var(--primary);
+            text-decoration: underline;
         }
         section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         h2 {
-            font-size: 1.25rem;
-            color: var(--primary);
+            font-size: 14pt;
+            font-weight: bold;
+            color: #000000;
             text-transform: uppercase;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
         }
         .job {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             font-weight: bold;
+            margin-bottom: 2px;
         }
         .job-title {
-            font-size: 1.1rem;
+            font-size: 12pt;
         }
         .job-date {
-            color: var(--text-light);
-            font-size: 0.9rem;
+            color: #555555;
+            font-size: 11pt;
+            font-weight: normal;
         }
         .company {
-            color: var(--primary);
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
+            color: #000000;
         }
         ul {
-            margin-top: 5px;
+            margin-top: 2px;
+            margin-bottom: 5px;
             padding-left: 20px;
         }
         li {
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 10px;
         }
         .skill-group {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .skill-group strong {
             display: block;
-            margin-bottom: 5px;
-            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 2px;
         }
         .skill-group ul {
             margin: 0;
@@ -108,12 +113,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-        }
-        .referee {
-            flex: 1 1 200px;
+            margin-top: 5px;
         }
         .referee p {
-            margin: 5px 0;
+            margin: 2px 0;
         }
         @media print {
             body {
@@ -125,13 +128,14 @@
         }
         .btn-download {
             display: inline-block;
-            background: var(--primary);
+            background: #333333;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 3px;
             text-decoration: none;
-            margin-bottom: 20px;
-            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 11pt;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -161,19 +165,18 @@
     <section id="experience">
         <h2>Professional Experience</h2>
 
-        <!-- Software Systems Architect - MobKazi -->
+        <!-- Software Systems Architect - MobKazi (shortened) -->
         <div class="job">
             <div class="job-header">
-                <span class="job-title">Software Systems Architect — MobKazi Business OS</span>
+                <span class="job-title">Software Systems Architect - MobKazi Business OS</span>
                 <span class="job-date">2024 – Present</span>
             </div>
             <div class="company">Freelance Product Development</div>
             <ul>
-                <li>Designing and developing MobKazi (mobkazi.com), a cloud-based Business Operating System supporting businesses.</li>
-                <li>Designing multi-tenant backend architecture using Django REST and containerized deployments.</li>
-                <li>Managing Linux server infrastructure, Docker environments, and application deployments.</li>
-                <li>Implementing integrations including M-PESA payments, billing systems, and business automation modules.</li>
-                <li>Working directly with businesses to translate operational workflows into deployed software systems.</li>
+                <li>Design and develop MobKazi, a cloud-based Business OS for African SMEs, with multi-tenant Django backend and containerized deployments.</li>
+                <li>Manage Linux server infrastructure, Docker environments, and application deployments.</li>
+                <li>Integrate M-PESA payments, billing systems, and business automation modules.</li>
+                <li>Collaborate with businesses to translate operational workflows into deployed software systems.</li>
             </ul>
         </div>
 
@@ -275,12 +278,12 @@
     <section id="projects">
         <h2>Projects</h2>
         <ul>
-            <li><strong>MobKazi Business Operating System</strong> — Multi-tenant business platform for SMEs</li>
-            <li><strong>Coffee Kiosk Application</strong> — React, Node.js, Safaricom M-PESA API integration</li>
-            <li><strong>ZakaFlow</strong> — Real-time data analytics platform (Kafka, Spark, Docker)</li>
-            <li><strong>Drowsy Driver Detection System</strong> — AI computer vision safety system</li>
-            <li><strong>Berry Fibre Hotspot Portal</strong> — Next.js captive portal integration</li>
-            <li><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> — Self-published training manual covering Microsoft Office, graphics, and basic networking concepts.</li>
+            <li><strong>MobKazi Business Operating System</strong> - Multi-tenant business platform for SMEs</li>
+            <li><strong>Coffee Kiosk Application</strong> - React, Node.js, Safaricom M-PESA API integration</li>
+            <li><strong>ZakaFlow</strong> - Real-time data analytics platform (Kafka, Spark, Docker)</li>
+            <li><strong>Drowsy Driver Detection System</strong> - AI computer vision safety system</li>
+            <li><strong>Berry Fibre Hotspot Portal</strong> - Next.js captive portal integration</li>
+            <li><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> - Self-published training manual covering Microsoft Office, graphics, and basic networking concepts.</li>
         </ul>
     </section>
 
@@ -291,18 +294,18 @@
                 <span class="job-title">Bachelor of Science in Software Development</span>
                 <span class="job-date">2019 – 2023</span>
             </div>
-            <div class="company">KCA University — Nairobi, Kenya</div>
+            <div class="company">KCA University - Nairobi, Kenya</div>
         </div>
     </section>
 
     <section id="certifications">
         <h2>Certifications & Training</h2>
         <ul>
-            <li>Decoding DevOps — Udemy (2025)</li>
-            <li>Career Essentials in Generative AI — Microsoft & LinkedIn (2024)</li>
-            <li>ICT Support & Network Administration — Defense Forces Technical College (2024)</li>
-            <li>Software Development Fundamentals — Power Learn Project (2023)</li>
-            <li>Frontend Fundamentals — Pirple (2020)</li>
+            <li>Decoding DevOps - Udemy (2025)</li>
+            <li>Career Essentials in Generative AI - Microsoft & LinkedIn (2024)</li>
+            <li>ICT Support & Network Administration - Defense Forces Technical College (2024)</li>
+            <li>Software Development Fundamentals - Power Learn Project (2023)</li>
+            <li>Frontend Fundamentals - Pirple (2020)</li>
         </ul>
     </section>
 
