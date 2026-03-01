@@ -31,7 +31,7 @@
             margin: 0 0 5px 0;
             font-size: 12pt;
             font-weight: bold;
-            color: #2c3e50; /* dark gray for name */
+            color: #222222;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -55,10 +55,9 @@
         h2 {
             font-size: 12pt;
             font-weight: bold;
-            color: #2c3e50; /* dark gray */
+            color: #222222;
             text-transform: uppercase;
             margin-bottom: 10px;
-            /* border-bottom removed */
         }
         .job {
             margin-bottom: 15px;
@@ -72,7 +71,7 @@
         }
         .job-title {
             font-size: 12pt;
-            color: #2c3e50; /* dark gray */
+            color: #222222;
         }
         .job-date {
             color: #555555;
@@ -80,9 +79,9 @@
             font-weight: normal;
         }
         .company {
-            font-weight: normal;  /* changed from 600 to normal */
+            font-weight: normal;
             margin-bottom: 2px;
-            color: #2c3e50; /* dark gray */
+            color: #222222;
         }
         ul {
             margin-top: 2px;
@@ -92,17 +91,18 @@
         li {
             margin-bottom: 2px;
         }
-        /* Simplified tools & platforms styling */
+        /* Tools & platforms – categories now normal weight, medium gray */
         .tools-list {
             margin-top: 2px;
         }
-        .tools-category {
+        .tools-item {
             margin-bottom: 5px;
         }
-        .tools-category strong {
-            color: #2c3e50;
-            font-weight: bold;
+        .tools-item strong {
+            color: #555555;        /* medium gray */
+            font-weight: normal;    /* not bold */
         }
+        /* Referees – compact layout */
         .referees {
             display: flex;
             flex-wrap: wrap;
@@ -113,7 +113,10 @@
             margin: 2px 0;
         }
         .referee strong {
-            color: #2c3e50; /* dark gray */
+            color: #222222;
+        }
+        .referee .contact-line {
+            color: #333333;
         }
         /* Projects section: remove bold from project titles */
         .projects-list li {
@@ -121,7 +124,7 @@
         }
         .projects-list li strong {
             font-weight: normal;
-            color: #2c3e50; /* keep color but not bold */
+            color: #222222;
         }
         @media print {
             body {
@@ -133,7 +136,7 @@
         }
         .btn-download {
             display: inline-block;
-            background: #2c3e50;
+            background: #222222;
             color: white;
             padding: 6px 12px;
             border-radius: 3px;
@@ -170,7 +173,7 @@
     <section id="experience">
         <h2>Professional Experience</h2>
 
-        <!-- Software Systems Architect - MobKazi (shortened to 3 bullets) -->
+        <!-- Software Systems Architect - MobKazi -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Software Systems Architect - MobKazi Business OS</span>
@@ -264,7 +267,7 @@
             </ul>
         </div>
 
-        <!-- Industrial Attachment - Defense Forces Technical College -->
+        <!-- Industrial Attachment - Defense Forces Technical College (already bold) -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Industrial Attachment</span>
@@ -316,12 +319,12 @@
     <section id="skills">
         <h2>Tools & Platforms</h2>
         <div class="tools-list">
-            <div class="tools-category"><strong>Infrastructure & Cloud:</strong> Linux (Ubuntu), Docker, Docker Compose, AWS, Contabo VPS, Cloudflare, Coolify</div>
-            <div class="tools-category"><strong>Backend & Development:</strong> Python, Django REST Framework, REST APIs, Git, GitHub</div>
-            <div class="tools-category"><strong>Frontend & Web:</strong> React, TypeScript, Next.js, WordPress</div>
-            <div class="tools-category"><strong>Databases & Data:</strong> PostgreSQL, Supabase, MySQL</div>
-            <div class="tools-category"><strong>Systems & Operations:</strong> DNS, SSL/TLS, Network Monitoring, PowerShell, ITSM Tools, Jira</div>
-            <div class="tools-category"><strong>Engineering & Productivity:</strong> VS Code, Google Workspace, Google Antigravity</div>
+            <div class="tools-item"><strong>Infrastructure & Cloud:</strong> Linux (Ubuntu), Docker, Docker Compose, AWS, VPS, Cloudflare, Coolify</div>
+            <div class="tools-item"><strong>Backend & Development:</strong> Python, Django REST Framework, REST APIs, Git, GitHub</div>
+            <div class="tools-item"><strong>Frontend & Web:</strong> React, TypeScript, Next.js, WordPress</div>
+            <div class="tools-item"><strong>Databases & Data:</strong> PostgreSQL, Supabase, MySQL</div>
+            <div class="tools-item"><strong>Systems & Operations:</strong> DNS, SSL/TLS, Network Monitoring, PowerShell, ITSM Tools, Jira</div>
+            <div class="tools-item"><strong>Engineering & Productivity:</strong> VS Code, Google Workspace, Google Antigravity</div>
         </div>
     </section>
 
@@ -331,14 +334,12 @@
             <div class="referee">
                 <p><strong>Mr. Micah Gesimba</strong></p>
                 <p>Technical Manager, SSL Security Ltd</p>
-                <p>+254 725 028 203</p>
-                <p><a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
+                <p class="contact-line">+254 725 028 203 | <a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
             </div>
             <div class="referee">
                 <p><strong>Mr. Vincent Okemwa</strong></p>
                 <p>Project Manager, First Basics Technologies Ltd</p>
-                <p>+254 726 052 752</p>
-                <p><a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
+                <p class="contact-line">+254 726 052 752 | <a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
             </div>
         </div>
     </section>
