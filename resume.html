@@ -109,10 +109,22 @@
             color: #555555;
             font-weight: normal;
         }
-        /* Core competencies – three lines with bullet separators */
-        .competencies-line {
-            color: #333333;
+        /* Core competencies – aligned columns */
+        .competencies {
+            margin-top: 2px;
+        }
+        .competency-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
             margin-bottom: 3px;
+        }
+        .competency-item {
+            color: #333333;
+        }
+        .bullet {
+            color: #333333;
+            margin: 0 5px;
         }
         /* Referees side by side */
         .referees {
@@ -180,12 +192,32 @@
         </p>
     </section>
 
-    <!-- Core Competencies – three lines with bullet separators -->
+    <!-- Core Competencies – perfectly aligned columns -->
     <section id="competencies">
         <h2>Core Competencies</h2>
-        <div class="competencies-line">Systems Administration • Software Systems Development • Infrastructure Deployment</div>
-        <div class="competencies-line">Networking & Connectivity • Incident Management • Secure Configuration</div>
-        <div class="competencies-line">Technical Documentation • Client & Stakeholder Support</div>
+        <div class="competencies">
+            <div class="competency-row">
+                <span class="competency-item">Systems Administration</span>
+                <span class="bullet">•</span>
+                <span class="competency-item">Software Systems Development</span>
+                <span class="bullet">•</span>
+                <span class="competency-item">Infrastructure Deployment</span>
+            </div>
+            <div class="competency-row">
+                <span class="competency-item">Networking & Connectivity</span>
+                <span class="bullet">•</span>
+                <span class="competency-item">Incident Management</span>
+                <span class="bullet">•</span>
+                <span class="competency-item">Secure Configuration</span>
+            </div>
+            <div class="competency-row">
+                <span class="competency-item">Technical Documentation</span>
+                <span class="bullet">•</span>
+                <span class="competency-item">Client & Stakeholder Support</span>
+                <span class="bullet"></span> <!-- empty bullet to preserve column alignment -->
+                <span class="competency-item"></span> <!-- empty third item -->
+            </div>
+        </div>
     </section>
 
     <section id="experience">
