@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
             --text-light: #6b7280;
             --bg: #ffffff;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.5;
@@ -23,13 +21,11 @@
             padding: 40px 20px;
             background: var(--bg);
         }
-
         header {
             border-bottom: 2px solid var(--primary);
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
-
         h1 {
             margin: 0;
             font-size: 2.5rem;
@@ -37,7 +33,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -46,20 +41,16 @@
             font-size: 0.9rem;
             color: var(--text-light);
         }
-
         .contact-info a {
             color: var(--text-light);
             text-decoration: none;
         }
-
         .contact-info a:hover {
             color: var(--primary);
         }
-
         section {
             margin-bottom: 30px;
         }
-
         h2 {
             font-size: 1.25rem;
             color: var(--primary);
@@ -68,67 +59,70 @@
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
-
         .job {
             margin-bottom: 20px;
         }
-
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             font-weight: bold;
         }
-
         .job-title {
             font-size: 1.1rem;
         }
-
         .job-date {
             color: var(--text-light);
             font-size: 0.9rem;
         }
-
         .company {
             color: var(--primary);
             font-weight: 600;
             margin-bottom: 5px;
         }
-
         ul {
             margin-top: 5px;
             padding-left: 20px;
         }
-
         li {
             margin-bottom: 5px;
         }
-
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 15px;
         }
-
         .skill-group {
             margin-bottom: 10px;
         }
-
         .skill-group strong {
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
+            color: var(--primary);
         }
-
+        .skill-group ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .referees {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .referee {
+            flex: 1 1 200px;
+        }
+        .referee p {
+            margin: 5px 0;
+        }
         @media print {
             body {
                 padding: 0;
             }
-
             .no-print {
                 display: none;
             }
         }
-
         .btn-download {
             display: inline-block;
             background: var(--primary);
@@ -141,7 +135,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="no-print" style="text-align: right;">
         <a href="javascript:window.print()" class="btn-download">Print to PDF</a>
@@ -161,92 +154,134 @@
     <section id="summary">
         <h2>Professional Summary</h2>
         <p>
-            IT and Software Systems professional with progressive experience in software systems development, enterprise
-            IT support, and security-aware operations. Experienced in taking ideas from concept through implementation
-            and deployment, supporting production systems, and improving reliability, security, and operational
-            efficiency. Strong background in incident management, infrastructure deployment, and technical documentation
-            with a focus on AI-assisted development (Vibe Coding).
+            IT and Software Systems professional with experience spanning software development, enterprise IT support, and production systems operations. Skilled in deploying and supporting business platforms, troubleshooting infrastructure and network environments, and delivering reliable technology solutions from concept through deployment. Experienced working across system architecture, technical support, and operational environments with a strong focus on reliability, security awareness, and practical implementation.
         </p>
     </section>
 
     <section id="experience">
         <h2>Professional Experience</h2>
 
+        <!-- Software Systems Architect - MobKazi -->
         <div class="job">
             <div class="job-header">
-                <span class="job-title">Software Systems Architect</span>
-                <span class="job-date">2024 - Present</span>
+                <span class="job-title">Software Systems Architect — MobKazi Business OS</span>
+                <span class="job-date">2024 – Present</span>
             </div>
-            <div class="company">MobKazii Business Operating System (Freelance)</div>
+            <div class="company">Freelance Product Development</div>
             <ul>
-                <li>Developing a business operating system for African enterprises in mobile-first and low-connectivity
-                    environments.</li>
-                <li>Leading system design, backend architecture, and deployment of core business modules with data
-                    protection.</li>
-                <li>Implementing scalable infrastructure and integrations including M-PESA payments and offline-tolerant
-                    workflows.</li>
-                <li>Driving product direction from idea validation through implementation and live deployment.</li>
+                <li>Designing and developing MobKazi (mobkazi.com), a cloud-based Business Operating System supporting businesses.</li>
+                <li>Designing multi-tenant backend architecture using Django REST and containerized deployments.</li>
+                <li>Managing Linux server infrastructure, Docker environments, and application deployments.</li>
+                <li>Implementing integrations including M-PESA payments, billing systems, and business automation modules.</li>
+                <li>Working directly with businesses to translate operational workflows into deployed software systems.</li>
             </ul>
         </div>
 
+        <!-- Technical Architect - Tapscott -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Technical Architect</span>
-                <span class="job-date">Jul 2025 - Dec 2025</span>
+                <span class="job-date">Jul 2025 – Dec 2025</span>
             </div>
             <div class="company">Tapscott Digital Solutions (Remote)</div>
             <ul>
-                <li>Designed and deployed a secure, containerized multi-tenant ERP system in a live production
-                    environment.</li>
-                <li>Implemented environment isolation, database separation, and role-based access controls.</li>
-                <li>Established CI/CD pipelines, automated backups, and controlled deployment workflows.</li>
-                <li>Improved system reliability through incident resolution, system hardening, and operational risk
-                    documentation.</li>
+                <li>Designed and deployed a containerized multi-tenant ERP platform in a live production environment.</li>
+                <li>Implemented access control models, database separation, and secure deployment workflows.</li>
+                <li>Established CI/CD processes, backups, and operational documentation improving system stability.</li>
             </ul>
         </div>
 
+        <!-- Technical Support Engineer - First Basics -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Technical Support Engineer</span>
-                <span class="job-date">Jun 2025 - Dec 2025</span>
+                <span class="job-date">Jun 2025 – Dec 2025</span>
             </div>
-            <div class="company">First Basics Technologies Ltd</div>
+            <div class="company">First Basics Technologies Ltd (Nairobi)</div>
             <ul>
-                <li>Led investigation and escalation of complex network, server, and application incidents in SLA-driven
-                    ISP environments.</li>
-                <li>Improved system stability through coordinated patching, secure DNS/SSL configuration, and server
-                    management.</li>
-                <li>Designed and maintained incident records and operational documentation for audit compliance.</li>
+                <li>Investigated and resolved network, server, and application incidents across ISP and enterprise environments.</li>
+                <li>Improved service stability through patching, DNS/SSL configuration, and infrastructure monitoring.</li>
+                <li>Maintained incident documentation supporting operational tracking and service reliability.</li>
             </ul>
         </div>
 
+        <!-- Internet Customer Technical Support Engineer -->
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Internet Customer Technical Support Engineer</span>
+                <span class="job-date">Feb 2024 – Jun 2025</span>
+            </div>
+            <div class="company">First Basics Technologies Ltd (Nairobi)</div>
+            <ul>
+                <li>Provided front-line internet technical support including router configuration and fault resolution.</li>
+                <li>Monitored network performance and coordinated escalation of service disruptions.</li>
+            </ul>
+        </div>
+
+        <!-- Platform Support Engineer - PLP -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Platform Support Engineer</span>
-                <span class="job-date">Mar 2025 - Jul 2025</span>
+                <span class="job-date">Mar 2025 – Jul 2025</span>
             </div>
             <div class="company">Power Learn Project (Remote)</div>
             <ul>
-                <li>Enhanced learners' engagement through structured ticketing and issue resolution.</li>
-                <li>Reviewed backend logic, APIs, and data handling during guided builds and hackathons.</li>
-                <li>Improved platform reliability by tracking and escalating recurring system issues.</li>
+                <li>Supported learners through platform troubleshooting and technical guidance.</li>
+                <li>Reviewed project implementations during hackathons and guided build sessions.</li>
             </ul>
         </div>
 
+        <!-- IT Support Technician - Humble Crib -->
         <div class="job">
             <div class="job-header">
                 <span class="job-title">IT Support Technician</span>
-                <span class="job-date">Feb 2022 - Dec 2023</span>
+                <span class="job-date">Feb 2022 – Dec 2023</span>
             </div>
-            <div class="company">Humble Crib Investment</div>
+            <div class="company">Humble Crib Investment (Nairobi)</div>
             <ul>
-                <li>Installed and configured operating systems, applications, and network components following security
-                    baselines.</li>
-                <li>Implemented data backup processes, access control management, and risk mitigation.</li>
-                <li>Conducted user sensitization on secure computing practices and acceptable IT usage.</li>
-                <li>Authored technical guides for training staff and students on computer systems.</li>
+                <li>Delivered end-to-end IT support including system setup, CCTV installation, and network configuration.</li>
+                <li>Implemented backups, access controls, and routine system maintenance.</li>
             </ul>
         </div>
+
+        <!-- Network & Security Systems Technician - GES -->
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Network & Security Systems Technician</span>
+                <span class="job-date">Jan 2019 – Feb 2020</span>
+            </div>
+            <div class="company">GES Telecommunications Ltd (Nairobi)</div>
+            <ul>
+                <li>Installed CCTV surveillance and IP-based security systems.</li>
+                <li>Performed maintenance and troubleshooting to maintain system uptime.</li>
+            </ul>
+        </div>
+
+        <!-- Industrial Attachment - Defense Forces Technical College -->
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Industrial Attachment</span>
+                <span class="job-date">May 2023 – Aug 2023</span>
+            </div>
+            <div class="company">Defense Forces Technical College (Nairobi)</div>
+            <ul>
+                <li>Supported IT operations including server administration and Active Directory environments.</li>
+                <li>Participated in software development and internal systems maintenance.</li>
+                <li>Developed IT Workshop Computer Maintenance System (Laravel).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>MobKazi Business Operating System</strong> — Multi-tenant business platform for SMEs</li>
+            <li><strong>Coffee Kiosk Application</strong> — React, Node.js, Safaricom M-PESA API integration</li>
+            <li><strong>ZakaFlow</strong> — Real-time data analytics platform (Kafka, Spark, Docker)</li>
+            <li><strong>Drowsy Driver Detection System</strong> — AI computer vision safety system</li>
+            <li><strong>Berry Fibre Hotspot Portal</strong> — Next.js captive portal integration</li>
+            <li><strong>Computer Packages Practical Tutorial Guide (Publication)</strong> — Self-published training manual covering Microsoft Office, graphics, and basic networking concepts.</li>
+        </ul>
     </section>
 
     <section id="education">
@@ -254,41 +289,81 @@
         <div class="job">
             <div class="job-header">
                 <span class="job-title">Bachelor of Science in Software Development</span>
-                <span class="job-date">2023</span>
+                <span class="job-date">2019 – 2023</span>
             </div>
-            <div class="company">KCA University - Nairobi, Kenya</div>
+            <div class="company">KCA University — Nairobi, Kenya</div>
         </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications & Training</h2>
+        <ul>
+            <li>Decoding DevOps — Udemy (2025)</li>
+            <li>Career Essentials in Generative AI — Microsoft & LinkedIn (2024)</li>
+            <li>ICT Support & Network Administration — Defense Forces Technical College (2024)</li>
+            <li>Software Development Fundamentals — Power Learn Project (2023)</li>
+            <li>Frontend Fundamentals — Pirple (2020)</li>
+        </ul>
     </section>
 
     <section id="skills">
         <h2>Tools & Platforms</h2>
         <div class="skills-grid">
             <div class="skill-group">
-                <strong>Core Tech:</strong> Linux & Windows, Docker, MySQL, aaPanel, AWS.
+                <strong>Infrastructure & Cloud</strong>
+                <ul>
+                    <li>Linux (Ubuntu), Docker, Docker Compose, AWS, Contabo VPS, Cloudflare, Coolify</li>
+                </ul>
             </div>
             <div class="skill-group">
-                <strong>Dev Stack:</strong> Git, VS Code, Next.js, Node.js, Python, M-PESA API.
+                <strong>Backend & Development</strong>
+                <ul>
+                    <li>Python, Django REST Framework, REST APIs, Git, GitHub</li>
+                </ul>
             </div>
             <div class="skill-group">
-                <strong>IT Ops:</strong> ITSM, Jira, UV Desk, WordPress, PowerShell.
+                <strong>Frontend & Web</strong>
+                <ul>
+                    <li>React, TypeScript, Next.js, WordPress</li>
+                </ul>
             </div>
             <div class="skill-group">
-                <strong>Data & Design:</strong> Power BI, Excel, Canva, Google Docs.
+                <strong>Databases & Data</strong>
+                <ul>
+                    <li>PostgreSQL, Supabase, MySQL</li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <strong>Systems & Operations</strong>
+                <ul>
+                    <li>DNS, SSL/TLS, Network Monitoring, PowerShell, ITSM Tools, Jira</li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <strong>Engineering & Productivity</strong>
+                <ul>
+                    <li>VS Code, Google Workspace, Google Antigravity</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Decoding DevOps - Udemy (2025)</li>
-            <li>EF SET English Certificate (C1 Advanced) (2025)</li>
-            <li>ICT Support & Network Administration - Defense Forces Technical College (2024)</li>
-            <li>Generative AI Career Essentials - Microsoft / LinkedIn (2024)</li>
-            <li>Software Development Fundamentals - Power Learn Project (2023)</li>
-        </ul>
+    <section id="referees">
+        <h2>Referees</h2>
+        <div class="referees">
+            <div class="referee">
+                <p><strong>Mr. Micah Gesimba</strong></p>
+                <p>Technical Manager, SSL Security Ltd</p>
+                <p>+254 725 028 203</p>
+                <p><a href="mailto:mikegesimba1@gmail.com">mikegesimba1@gmail.com</a></p>
+            </div>
+            <div class="referee">
+                <p><strong>Mr. Vincent Okemwa</strong></p>
+                <p>Project Manager, First Basics Technologies Ltd</p>
+                <p>+254 726 052 752</p>
+                <p><a href="mailto:vincentokemwa096@gmail.com">vincentokemwa096@gmail.com</a></p>
+            </div>
+        </div>
     </section>
-
 </body>
-
 </html>
