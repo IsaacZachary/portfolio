@@ -1,9 +1,5 @@
-/**
- * Isaac Zachary Portfolio - Creative Designs Gallery
- * Dynamically loads and manages the creative designs showcase
- */
-
 const creativeDesigns = [
+    { title: "Berry Fibre Hotspot Landing", path: "assets/creative-designs/Berry Fibre Hotspot Landing.jpg", category: "Web Design", story: "A high-conversion landing page designed for a local ISP to simplify user onboarding." },
     { title: "Adventurer Day 2023", path: "assets/creative-designs/Adventurer Day 2023 Poster speaker Fidel lelei.jpg", category: "Poster", story: "Elevating event visibility through striking typography and layout." },
     { title: "Afrobeat Mix Vol 2", path: "assets/creative-designs/Afrobeat Mix Vol 2 Poster.JPG", category: "Poster", story: "Capturing the rhythm and energy of African music in a single frame." },
     { title: "Funeral Program Design", path: "assets/creative-designs/Benson ontweka Omari Funeral poster image.jpg", category: "Poster", story: "A dignified tribute celebrating a life well-lived through respectful design." },
@@ -40,58 +36,52 @@ const creativeDesigns = [
 ];
 
 let currentIndex = 0;
-const increment = 9;
+const galleryIncrement = 6;
+const galleryGrid = document.getElementById('creative-designs-grid');
+const loadMoreBtn = document.getElementById('load-more-designs');
 
 function renderDesigns(limit) {
-    const grid = document.getElementById('creative-designs-grid');
-    if (!grid) return;
+    if (!galleryGrid) return;
 
     const toRender = creativeDesigns.slice(currentIndex, currentIndex + limit);
     
     toRender.forEach(design => {
         const item = document.createElement('div');
-        item.className = 'break-inside-avoid mb-6 group cursor-pointer';
+        item.className = 'break-inside-avoid mb-6 group cursor-pointer animate-fade-in';
         item.innerHTML = `
-            <div class="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-surface">
+            <div class="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-surface border border-border/50">
                 <img src="${design.path}" alt="${design.title}" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-primary-400 text-xs font-bold uppercase tracking-widest mb-1">${design.category}</span>
-                    <h3 class="text-white font-headline text-lg font-semibold mb-2">${design.title}</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">${design.story}</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <i class="fas fa-expand-alt text-white text-xs"></i>
+                    <span class="text-primary-400 text-[10px] font-bold uppercase tracking-widest mb-1">${design.category}</span>
+                    <h3 class="text-white font-headline text-base font-semibold mb-1">${design.title}</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">${design.story}</p>
                 </div>
             </div>
         `;
         
-        // Add click event for full-screen view
-        item.addEventListener('click', () => {
-            window.open(design.path, '_blank');
-        });
-        
-        grid.appendChild(item);
+        item.addEventListener('click', () => window.open(design.path, '_blank'));
+        galleryGrid.appendChild(item);
     });
 
     currentIndex += toRender.length;
     
-    // Hide button if no more designs
-    const loadMoreBtn = document.getElementById('load-more-designs');
     if (currentIndex >= creativeDesigns.length && loadMoreBtn) {
-        loadMoreBtn.style.display = 'none';
+        const btnText = loadMoreBtn.querySelector('span');
+        if (btnText) btnText.textContent = "Gallery Complete";
+        loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        loadMoreBtn.disabled = true;
     }
 }
 
-// Featured projects for the main grid (the one with filters)
 function injectFeaturedCreative() {
     const mainGrid = document.querySelector('#projects-grid .grid');
     if (!mainGrid) return;
 
     // Pick 3 high-quality ones for the main grid
     const featured = [
-        creativeDesigns[19], // PLP Coding Safari
-        creativeDesigns[31], // Huntsman Motors
-        creativeDesigns[17]  // KW Kenya Awards UI
+        creativeDesigns[0],  // Berry Fibre Hotspot Landing
+        creativeDesigns[20], // PLP Coding Safari
+        creativeDesigns[32]  // Huntsman Motors
     ];
 
     featured.forEach(design => {
@@ -99,7 +89,7 @@ function injectFeaturedCreative() {
         article.className = 'card-interactive group';
         article.dataset.category = 'creative';
         article.innerHTML = `
-            <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-50 to-primary-100">
+            <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-50 to-primary-100 border border-border/50">
                 <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="space-y-3">
@@ -112,8 +102,8 @@ function injectFeaturedCreative() {
                 <p class="text-body-sm text-text-secondary leading-relaxed">
                     ${design.story}
                 </p>
-                <a href="#creative-gallery" class="text-primary hover:underline inline-flex items-center space-x-1">
-                    <span>View Full Gallery</span><i class="fas fa-arrow-right"></i>
+                <a href="#creative-gallery" class="text-primary hover:underline inline-flex items-center space-x-1 font-medium text-sm">
+                    <span>View Showcase</span><i class="fas fa-arrow-right text-xs"></i>
                 </a>
             </div>
         `;
@@ -122,15 +112,19 @@ function injectFeaturedCreative() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial render for gallery
-    renderDesigns(increment);
+    // Initial render for gallery (limited to 6)
+    renderDesigns(galleryIncrement);
     
     // Inject into main grid
     injectFeaturedCreative();
 
     // Load more listener
-    const loadMoreBtn = document.getElementById('load-more-designs');
     if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', () => renderDesigns(increment));
+        loadMoreBtn.addEventListener('click', () => renderDesigns(galleryIncrement));
+    }
+    
+    // Ensure "Creative" filter works by triggering a re-check of cards
+    if (typeof filterProjects === 'function') {
+        filterProjects();
     }
 });

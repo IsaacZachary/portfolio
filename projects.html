@@ -12,9 +12,21 @@
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
     <style>
         /* Creative Gallery Masonry Tweaks */
+        #creative-designs-grid {
+            column-fill: balance;
+        }
+        
         #creative-designs-grid .break-inside-avoid {
-            display: inline-block;
+            break-inside: avoid;
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        #creative-designs-grid img {
+            display: block;
             width: 100%;
+            height: auto;
+            border-radius: 1rem;
         }
         
         /* Video Preview Styles */
@@ -568,7 +580,7 @@
                 <!-- Project 7: Huntsman Drive Hub -->
                 <article class="card-interactive group" data-category="websites">
                     <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-black relative">
-                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()">
+                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline autoplay preload="auto">
                             <source src="./assets/videos/Huntsman Motors.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
@@ -596,7 +608,7 @@
                 <!-- Project 8: Go Book and Explore -->
                 <article class="card-interactive group" data-category="websites">
                     <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-black relative">
-                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()">
+                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline autoplay preload="auto">
                             <source src="./assets/videos/Go Book and Explore.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
@@ -624,7 +636,7 @@
                 <!-- Project 9: Spectrum Network Recruitment -->
                 <article class="card-interactive group" data-category="websites">
                     <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-black relative">
-                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()">
+                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline autoplay preload="auto">
                             <source src="./assets/videos/Spectrum Network Recruitment Portal.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
@@ -653,21 +665,26 @@
     </section>
 
     <!-- Creative Designs Gallery -->
-    <section id="creative-gallery" class="section-padding bg-background border-t border-border">
+    <section id="creative-gallery" class="section-padding bg-background border-t border-border overflow-hidden">
         <div class="container-custom">
-            <div class="mb-12 text-center">
-                <h2 class="font-headline text-display-sm text-text-primary mb-4">Creative Design Studio</h2>
-                <p class="text-body-lg text-text-secondary max-w-3xl mx-auto">
-                    A collection of posters, flyers, banners, and digital assets crafted for various brands and events.
+            <div class="mb-16 text-center max-w-3xl mx-auto space-y-4">
+                <span class="tech-badge bg-primary/10 text-primary px-4 py-1.5">Creative Portfolio</span>
+                <h2 class="font-headline text-display-sm text-text-primary">Creative Design Studio</h2>
+                <p class="text-body-lg text-text-secondary leading-relaxed">
+                    A curated collection of visual storytelling across brand identities, digital marketing, and event promotions.
                 </p>
             </div>
 
-            <div id="creative-designs-grid" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                <!-- Dynamically populated by js/creative-designs.js -->
+            <!-- Masonry Grid with Improved Spacing -->
+            <div id="creative-designs-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8 pb-12">
+                <!-- Dynamically populated by creative-designs.js -->
             </div>
 
-            <div class="mt-12 text-center">
-                <button id="load-more-designs" class="btn-outline px-8 py-3">View More Designs</button>
+            <div class="text-center mt-12">
+                <button id="load-more-designs" class="btn-outline group inline-flex items-center space-x-3 px-8 py-4">
+                    <span>Load More Creative Arts</span>
+                    <i class="fas fa-chevron-down group-hover:translate-y-1 transition-transform"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -833,8 +850,11 @@
         const gridContainer = document.querySelector('#projects-grid .grid');
         const resetBtn = document.getElementById('reset-filters');
 
-        function filterProjects() {
-            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        window.filterProjects = function() {
+            const activeFilterBtn = document.querySelector('.filter-btn.active');
+            if (!activeFilterBtn) return;
+            
+            const activeFilter = activeFilterBtn.dataset.filter;
             const query = searchInput.value.toLowerCase();
             let visibleCount = 0;
             
