@@ -219,13 +219,7 @@
                     <div class="card">
                         <h2 class="font-headline text-h2 font-semibold text-text-primary mb-6">Send a Message</h2>
 
-                        <form id="contact-form" name="contact" method="POST" data-netlify="true"
-                            netlify-honeypot="bot-field" class="space-y-6">
-                            <input type="hidden" name="form-name" value="contact">
-                            <p class="hidden">
-                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                            </p>
-
+                        <form id="contact-form" action="https://formspree.io/f/mqakvnpq" method="POST" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-body-sm font-medium text-text-primary mb-2">Name
                                     *</label>
@@ -344,50 +338,80 @@
             mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         }
 
-        // Form submission feedback
+        // Form submission logic with Formspree AJAX
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
+            contactForm.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalContent = submitBtn.innerHTML;
+                const status = document.createElement('div');
 
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = `
                     <svg class="w-5 h-5 animate-spin mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                     </svg>
-                    <span>Processing...</span>
+                    <span>Sending...</span>
                 `;
 
-                // Simulate processing
-                setTimeout(() => {
-                    submitBtn.innerHTML = `
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        <span>Message Sent!</span>
-                    `;
-                    submitBtn.classList.remove('btn-primary');
-                    submitBtn.classList.add('bg-secondary', 'text-white');
+                try {
+                    const response = await fetch(this.action, {
+                        method: this.method,
+                        body: new FormData(this),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
 
-                    // Show success toast
+                    if (response.ok) {
+                        submitBtn.innerHTML = `
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Message Sent!</span>
+                        `;
+                        submitBtn.classList.remove('btn-primary');
+                        submitBtn.classList.add('bg-secondary', 'text-white');
+
+                        // Show success toast
+                        const toast = document.createElement('div');
+                        toast.className = 'fixed bottom-8 right-8 bg-text-primary text-white px-6 py-4 rounded-2xl shadow-2xl animate-fade-in flex items-center space-x-3 z-50';
+                        toast.innerHTML = `<i class="fas fa-check-circle text-secondary"></i><span>Thank you! Your message has been sent.</span>`;
+                        document.body.appendChild(toast);
+
+                        this.reset();
+
+                        setTimeout(() => {
+                            toast.classList.replace('animate-fade-in', 'animate-fade-out');
+                            setTimeout(() => {
+                                toast.remove();
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = originalContent;
+                                submitBtn.classList.add('btn-primary');
+                                submitBtn.classList.remove('bg-secondary', 'text-white');
+                            }, 500);
+                        }, 4000);
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    submitBtn.classList.add('bg-error', 'text-white');
+                    submitBtn.innerHTML = `<span>Error Sending</span>`;
+                    
                     const toast = document.createElement('div');
-                    toast.className = 'fixed bottom-8 right-8 bg-text-primary text-white px-6 py-4 rounded-2xl shadow-2xl animate-fade-in flex items-center space-x-3 z-50';
-                    toast.innerHTML = `<i class="fas fa-check-circle text-secondary"></i><span>Thank you! Isaac will respond within 24 hours.</span>`;
+                    toast.className = 'fixed bottom-8 right-8 bg-red-600 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 z-50';
+                    toast.innerHTML = `<i class="fas fa-exclamation-circle"></i><span>Failed to send. Please try again or use direct email.</span>`;
                     document.body.appendChild(toast);
-
-                    this.reset();
-
+                    
                     setTimeout(() => {
-                        toast.classList.replace('animate-fade-in', 'animate-fade-out');
-                        setTimeout(() => toast.remove(), 500);
+                        toast.remove();
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = originalContent;
-                        submitBtn.classList.add('btn-primary');
-                        submitBtn.classList.remove('bg-secondary', 'text-white');
-                    }, 4000);
-                }, 1500);
+                        submitBtn.classList.remove('bg-error', 'text-white');
+                    }, 5000);
+                }
             });
         }
     </script>
