@@ -10,6 +10,34 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
+    <style>
+        /* Creative Gallery Masonry Tweaks */
+        #creative-designs-grid .break-inside-avoid {
+            display: inline-block;
+            width: 100%;
+        }
+        
+        /* Video Preview Styles */
+        .card-interactive video {
+            transition: transform 0.5s ease;
+        }
+        
+        .card-interactive:hover video {
+            transform: scale(1.05);
+        }
+
+        /* Filter button enhancement */
+        .filter-btn.active {
+            box-shadow: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -1px var(--tw-shadow-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section shadow */
+        #creative-gallery {
+            position: relative;
+            box-shadow: inset 0 20px 40px -20px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 
 <body class="bg-background text-text-primary">
@@ -305,7 +333,7 @@
                     <button class="filter-btn active" data-filter="all">
                         <span>All Projects</span>
                         <span
-                            class="ml-2 px-2 py-0.5 bg-primary-100 text-primary-700 rounded-lg text-xs font-semibold">12</span>
+                            class="ml-2 px-2 py-0.5 bg-primary-100 text-primary-700 rounded-lg text-xs font-semibold">15+</span>
                     </button>
                     <button class="filter-btn" data-filter="cloud">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -336,6 +364,20 @@
                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                         <span>Automation</span>
+                    </button>
+                    <button class="filter-btn" data-filter="websites">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                        <span>Websites</span>
+                    </button>
+                    <button class="filter-btn" data-filter="creative">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Creative</span>
                     </button>
                     <button id="reset-filters"
                         class="text-text-tertiary hover:text-primary transition-colors duration-300 text-sm font-medium">
@@ -379,8 +421,8 @@
                         <h3
                             class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
                             ZakaFlow</h3>
-                        <p class="text-body-sm text-text-secondary">
-                            A robust data pipeline architecture for real-time processing and workflow orchestration.
+                        <p class="text-body-sm text-text-secondary leading-relaxed">
+                            The heartbeat of modern data: architecting resilient pipelines that turn raw information into real-time financial intelligence.
                         </p>
                         <a href="https://github.com/IsaacZachary/zaka-flow" target="_blank"
                             class="text-primary hover:underline inline-flex items-center space-x-1">
@@ -405,8 +447,8 @@
                         <h3
                             class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
                             Smart Coffee Kiosk</h3>
-                        <p class="text-body-sm text-text-secondary">
-                            E-commerce platform with automated M-PESA payment flows and real-time order tracking.
+                        <p class="text-body-sm text-text-secondary leading-relaxed">
+                            Reimagining the daily brew: a seamless digital journey from craving to cup, powered by automated local payment integrations.
                         </p>
                         <a href="https://coffee-kiosk-frontend.onrender.com" target="_blank"
                             class="text-primary hover:underline inline-flex items-center space-x-1">
@@ -431,8 +473,8 @@
                         <h3
                             class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
                             Berry Fibre Hotspot</h3>
-                        <p class="text-body-sm text-text-secondary">
-                            ISP Management system with automated billing, user vouchers, and bandwidth control.
+                        <p class="text-body-sm text-text-secondary leading-relaxed">
+                            Democratizing the internet: an all-in-one ISP solution that connects communities through automated billing and smart network control.
                         </p>
                         <a href="https://github.com/IsaacZachary" target="_blank"
                             class="text-primary hover:underline inline-flex items-center space-x-1">
@@ -522,6 +564,110 @@
                         </a>
                     </div>
                 </article>
+
+                <!-- Project 7: Huntsman Drive Hub -->
+                <article class="card-interactive group" data-category="websites">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-black relative">
+                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()">
+                            <source src="./assets/videos/Huntsman Motors.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
+                            <i class="fas fa-play text-white text-3xl opacity-50"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge">Vite</span>
+                            <span class="tech-badge">Tailwind</span>
+                            <span class="tech-badge">React</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
+                            Huntsman Drive Hub</h3>
+                        <p class="text-body-sm text-text-secondary leading-relaxed">
+                            A story of engineering luxury: bridging the gap between premium automotive care and digital convenience for car enthusiasts.
+                        </p>
+                        <a href="https://huntsman-drive-hub.vercel.app/" target="_blank"
+                            class="text-primary hover:underline inline-flex items-center space-x-1">
+                            <span>Live Site</span><i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 8: Go Book and Explore -->
+                <article class="card-interactive group" data-category="websites">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-black relative">
+                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()">
+                            <source src="./assets/videos/Go Book and Explore.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
+                            <i class="fas fa-play text-white text-3xl opacity-50"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Mapbox</span>
+                            <span class="tech-badge">API</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
+                            Go Book and Explore</h3>
+                        <p class="text-body-sm text-text-secondary leading-relaxed">
+                            Inspiring the spirit of adventure through a seamless portal that turns wanderlust into reality with a single click.
+                        </p>
+                        <a href="https://go-book-and-explore.vercel.app/" target="_blank"
+                            class="text-primary hover:underline inline-flex items-center space-x-1">
+                            <span>Live Site</span><i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 9: Spectrum Network Recruitment -->
+                <article class="card-interactive group" data-category="websites">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-black relative">
+                        <video class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()">
+                            <source src="./assets/videos/Spectrum Network Recruitment Portal.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:hidden">
+                            <i class="fas fa-play text-white text-3xl opacity-50"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">HR Tech</span>
+                        </div>
+                        <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
+                            Spectrum Recruitment</h3>
+                        <p class="text-body-sm text-text-secondary leading-relaxed">
+                            Empowering human potential by connecting the right talent to the right mission through a sophisticated enterprise portal.
+                        </p>
+                        <a href="https://www.spectrumnetworkpi.com/recruitment/" target="_blank"
+                            class="text-primary hover:underline inline-flex items-center space-x-1">
+                            <span>Live Site</span><i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Designs Gallery -->
+    <section id="creative-gallery" class="section-padding bg-background border-t border-border">
+        <div class="container-custom">
+            <div class="mb-12 text-center">
+                <h2 class="font-headline text-display-sm text-text-primary mb-4">Creative Design Studio</h2>
+                <p class="text-body-lg text-text-secondary max-w-3xl mx-auto">
+                    A collection of posters, flyers, banners, and digital assets crafted for various brands and events.
+                </p>
+            </div>
+
+            <div id="creative-designs-grid" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                <!-- Dynamically populated by js/creative-designs.js -->
+            </div>
+
+            <div class="mt-12 text-center">
+                <button id="load-more-designs" class="btn-outline px-8 py-3">View More Designs</button>
             </div>
         </div>
     </section>
@@ -672,6 +818,7 @@
         </div>
     </footer>
 
+    <script src="js/creative-designs.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -682,7 +829,6 @@
 
         // Filtering Logic
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.card-interactive');
         const searchInput = document.getElementById('search-input');
         const gridContainer = document.querySelector('#projects-grid .grid');
         const resetBtn = document.getElementById('reset-filters');
@@ -691,8 +837,11 @@
             const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
             const query = searchInput.value.toLowerCase();
             let visibleCount = 0;
+            
+            // Re-query cards to include dynamically injected ones
+            const currentCards = document.querySelectorAll('.card-interactive');
 
-            projectCards.forEach(card => {
+            currentCards.forEach(card => {
                 const category = card.dataset.category;
                 const title = card.querySelector('h3').innerText.toLowerCase();
                 const desc = card.querySelector('p').innerText.toLowerCase();
