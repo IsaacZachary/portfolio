@@ -106,8 +106,17 @@
     <!-- Full Gallery Grid -->
     <section id="gallery" class="section-padding bg-surface">
         <div class="container-custom">
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16" id="creative-filters">
+                <button class="filter-btn active px-8 py-3 rounded-full border border-primary/20 text-text-secondary hover:text-primary hover:border-primary transition-all font-bold" data-filter="all">All Designs</button>
+                <button class="filter-btn px-8 py-3 rounded-full border border-primary/20 text-text-secondary hover:text-primary hover:border-primary transition-all font-bold" data-filter="Poster">Posters</button>
+                <button class="filter-btn px-8 py-3 rounded-full border border-primary/20 text-text-secondary hover:text-primary hover:border-primary transition-all font-bold" data-filter="Branding">Branding</button>
+                <button class="filter-btn px-8 py-3 rounded-full border border-primary/20 text-text-secondary hover:text-primary hover:border-primary transition-all font-bold" data-filter="Web Design">Web & UI</button>
+                <button class="filter-btn px-8 py-3 rounded-full border border-primary/20 text-text-secondary hover:text-primary hover:border-primary transition-all font-bold" data-filter="Flyer">Marketing</button>
+            </div>
+
             <!-- Grid Container -->
-            <div id="creative-designs-grid">
+            <div id="creative-designs-grid" class="animate-fade-in">
                 <!-- Dynamically populated by creative-designs.js -->
             </div>
 

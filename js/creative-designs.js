@@ -81,23 +81,45 @@ function openPreview(design) {
     document.body.style.overflow = 'hidden';
 }
 
-function renderDesigns(limit) {
+function renderDesigns(limit, filter = 'all') {
     if (!galleryGrid) return;
 
-    const toRender = creativeDesigns.slice(currentIndex, currentIndex + limit);
+    if (filter !== 'current') {
+        galleryGrid.innerHTML = '';
+        currentIndex = 0;
+    }
+
+    const currentFilter = filter === 'current' ? (document.querySelector('#creative-filters .filter-btn.active')?.dataset.filter || 'all') : filter;
+    
+    const filtered = currentFilter === 'all' 
+        ? creativeDesigns 
+        : creativeDesigns.filter(d => d.category.includes(currentFilter) || d.title.includes(currentFilter));
+
+    const toRender = filtered.slice(currentIndex, currentIndex + limit);
     
     toRender.forEach(design => {
         const item = document.createElement('div');
-        item.className = 'creative-card group cursor-pointer animate-fade-in translate-y-4';
+        item.className = 'creative-card group cursor-pointer animate-fade-in opacity-0 translate-y-4';
         item.innerHTML = `
-            <div class="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 bg-surface border border-border/40 hover:border-primary/30 h-full">
-                <div class="aspect-[1/1] overflow-hidden">
+            <div class="relative overflow-hidden rounded-[2rem] shadow-sm transition-all duration-700 bg-surface border border-border/10 hover:shadow-2xl hover:-translate-y-2 h-full">
+                <div class="aspect-square overflow-hidden bg-gray-100">
                     <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                    <span class="text-primary-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-2">${design.category}</span>
-                    <h3 class="text-white font-headline text-lg font-bold mb-2">${design.title}</h3>
-                    <p class="text-gray-200 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">${design.story}</p>
+                
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
+                    <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
+                            ${design.category}
+                        </span>
+                        <h3 class="text-white font-headline text-2xl font-bold mb-2">${design.title}</h3>
+                        <p class="text-white/80 text-xs leading-relaxed line-clamp-2">${design.story}</p>
+                    </div>
+                </div>
+
+                <!-- Zoom Icon -->
+                <div class="absolute top-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100 shadow-xl">
+                    <i class="fas fa-plus text-primary"></i>
                 </div>
             </div>
         `;
@@ -105,52 +127,61 @@ function renderDesigns(limit) {
         item.addEventListener('click', () => openPreview(design));
         galleryGrid.appendChild(item);
         
-        setTimeout(() => item.classList.remove('translate-y-4'), 10);
+        setTimeout(() => {
+            item.classList.remove('opacity-0', 'translate-y-4');
+        }, 50 * (galleryGrid.children.length % limit));
     });
 
     currentIndex += toRender.length;
     
-    if (currentIndex >= creativeDesigns.length && loadMoreBtn) {
-        const btnText = loadMoreBtn.querySelector('span');
-        if (btnText) btnText.textContent = "All Artworks Loaded";
-        loadMoreBtn.classList.replace('btn-primary', 'btn-outline');
-        loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        loadMoreBtn.disabled = true;
+    if (loadMoreBtn) {
+        if (currentIndex >= filtered.length) {
+            loadMoreBtn.classList.add('hidden');
+        } else {
+            loadMoreBtn.classList.remove('hidden');
+        }
     }
+}
+
+function initFilters() {
+    const filterBtns = document.querySelectorAll('#creative-filters .filter-btn');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white'));
+            btn.classList.add('active', 'bg-primary', 'text-white');
+            renderDesigns(galleryIncrement, btn.dataset.filter);
+        });
+    });
 }
 
 function injectFeaturedCreative() {
     const mainGrid = document.querySelector('#projects-grid .grid');
     if (!mainGrid) return;
 
-    // Fixed 3 featured items as requested
-    const featuredTitles = [
-        "KW Kenya Awards UI",
-        "Beauty College Flyer",
-        "Photo Studio Branding"
-    ];
-
+    const featuredTitles = ["KW Kenya Awards UI", "Beauty College Flyer", "Photo Studio Branding"];
     const featured = creativeDesigns.filter(d => featuredTitles.some(t => d.title.includes(t)));
 
     featured.forEach(design => {
         const article = document.createElement('article');
-        article.className = 'card-interactive group bg-surface border border-border/50 hover:border-primary/30 transition-all duration-500';
+        article.className = 'card-interactive group bg-surface border border-border/50 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl rounded-[2rem] overflow-hidden';
         article.dataset.category = 'creative';
         article.innerHTML = `
-            <div class="aspect-video rounded-2xl overflow-hidden mb-6 bg-primary-50 relative cursor-pointer" onclick="window.location.href='creative-designs.html'">
+            <div class="aspect-video overflow-hidden bg-primary-50 relative cursor-pointer" onclick="window.location.href='creative-designs.html'">
                 <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <div class="space-y-4 p-2">
+            <div class="p-8 space-y-4">
                 <div class="flex items-center justify-between">
                     <span class="tech-badge bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider px-3 py-1">${design.category}</span>
                 </div>
-                <h3 class="font-headline text-2xl font-bold text-text-primary group-hover:text-primary transition-colors decoration-primary/30 group-hover:underline underline-offset-8">
+                <h3 class="font-headline text-2xl font-bold text-text-primary group-hover:text-primary transition-colors">
                     ${design.title}</h3>
                 <p class="text-body-sm text-text-secondary leading-relaxed line-clamp-3">
                     ${design.story}
                 </p>
-                <div class="pt-4 border-t border-border/50">
+                <div class="pt-6 border-t border-border/50">
                     <a href="creative-designs.html" class="inline-flex items-center space-x-2 text-primary font-bold text-sm tracking-wide group/link">
                         <span>more</span>
                         <i class="fas fa-arrow-right text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
@@ -163,19 +194,11 @@ function injectFeaturedCreative() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial render for gallery (limited to 6)
-    renderDesigns(galleryIncrement);
-    
-    // Inject into main grid
+    initFilters();
+    renderDesigns(galleryIncrement, 'all');
     injectFeaturedCreative();
 
-    // Load more listener
     if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', () => renderDesigns(galleryIncrement));
-    }
-    
-    // Ensure "Creative" filter works by triggering a re-check of cards
-    if (typeof filterProjects === 'function') {
-        filterProjects();
+        loadMoreBtn.addEventListener('click', () => renderDesigns(galleryIncrement, 'current'));
     }
 });
