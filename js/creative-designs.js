@@ -36,35 +36,38 @@ let currentIndex = 0;
 const galleryIncrement = 8;
 const galleryGrid = document.getElementById('creative-designs-grid');
 const loadMoreBtn = document.getElementById('load-more-designs');
-
-// Simple Lightbox Modal
+// Improved Lightbox Modal
 const createLightbox = () => {
-    if (document.getElementById('lightbox-modal')) return document.getElementById('lightbox-modal');
+    let modal = document.getElementById('lightbox-modal');
+    if (modal) return modal;
     
-    const modal = document.createElement('div');
+    modal = document.createElement('div');
     modal.id = 'lightbox-modal';
-    modal.className = 'fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out';
+    modal.className = 'fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 cursor-zoom-out';
     modal.innerHTML = `
-        <div class="relative max-w-5xl w-full h-full flex flex-col items-center justify-center">
-            <button class="absolute top-4 right-4 text-white text-4xl hover:text-primary transition-colors cursor-pointer">&times;</button>
-            <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300">
-            <div id="lightbox-caption" class="mt-6 text-center">
-                <h3 class="text-white font-headline text-2xl font-bold mb-2"></h3>
-                <p class="text-gray-400 text-sm max-w-2xl mx-auto"></p>
+        <div class="relative w-full h-full flex flex-col items-center justify-center pointer-events-none">
+            <button class="absolute top-4 right-4 text-white text-4xl hover:text-primary transition-colors cursor-pointer pointer-events-auto z-[110]">&times;</button>
+            <div class="max-w-[95vw] max-h-[85vh] flex flex-col items-center justify-center pointer-events-auto">
+                <img id="lightbox-img" src="" alt="" class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300">
+                <div id="lightbox-caption" class="mt-6 text-center text-white bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h3 class="font-headline text-xl md:text-2xl font-bold mb-2"></h3>
+                    <p class="text-gray-300 text-sm max-w-xl mx-auto"></p>
+                </div>
             </div>
         </div>
     `;
     document.body.appendChild(modal);
     
     modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+        if (e.target.id === 'lightbox-modal' || e.target.tagName === 'BUTTON') {
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
     });
-
+    
     return modal;
 };
+
 
 const modal = createLightbox();
 
@@ -205,8 +208,62 @@ function injectFeaturedCreative() {
     });
 }
 
+// Interactive Hero Logic (Typing & Slider)
+function initHeroInteractivity() {
+    const typingElement = document.getElementById('typing-text');
+    if (!typingElement) return;
+
+    const phrases = ["Digital Dreams", "Brand Identities", "Visual Mastery", "High-Impact Ads", "Creative Futures"];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 2000; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    type();
+
+    // Background Slider
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.add('opacity-0');
+            slides[currentSlide].classList.remove('active', 'opacity-100');
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].classList.remove('opacity-0');
+            slides[currentSlide].classList.add('active', 'opacity-100');
+        }, 5000);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initFilters();
+    initHeroInteractivity();
     renderDesigns(galleryIncrement, 'all');
     injectFeaturedCreative();
 
