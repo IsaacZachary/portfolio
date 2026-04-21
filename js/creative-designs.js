@@ -138,8 +138,8 @@ function renderDesigns(limit, filter = 'all') {
         item.className = 'creative-card group cursor-pointer animate-fade-in opacity-0 translate-y-8 h-full';
         item.innerHTML = `
             <div class="relative h-full flex flex-col bg-white rounded-[1.5rem] shadow-sm hover:shadow-xl border border-border/40 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                <!-- Image Container -->
-                <div class="aspect-square w-full overflow-hidden bg-black relative">
+                <!-- Image Container - Changed to Rectangular 4:3 -->
+                <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                     <div class="absolute inset-0 opacity-30 blur-lg scale-110">
                         <img src="${design.path}" alt="" class="w-full h-full object-cover">
                     </div>
