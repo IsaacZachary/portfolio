@@ -80,7 +80,6 @@ function openPreview(design) {
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
-
 function renderDesigns(limit, filter = 'all') {
     if (!galleryGrid) return;
 
@@ -99,27 +98,37 @@ function renderDesigns(limit, filter = 'all') {
     
     toRender.forEach(design => {
         const item = document.createElement('div');
-        item.className = 'creative-card group cursor-pointer animate-fade-in opacity-0 translate-y-4';
+        item.className = 'creative-card group cursor-pointer animate-fade-in opacity-0 translate-y-8 h-full';
         item.innerHTML = `
-            <div class="relative overflow-hidden rounded-[2rem] shadow-sm transition-all duration-700 bg-surface border border-border/10 hover:shadow-2xl hover:-translate-y-2 h-full">
-                <div class="aspect-square overflow-hidden bg-gray-100">
-                    <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
+            <div class="relative w-full aspect-square overflow-hidden rounded-[2.5rem] shadow-md transition-all duration-700 bg-black border border-border/10 hover:shadow-2xl hover:-translate-y-3">
+                
+                <!-- Blurred Surroundings (Frame) -->
+                <div class="absolute inset-0 opacity-40 blur-xl scale-110">
+                    <img src="${design.path}" alt="" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Main Image - Contained to show everything -->
+                <div class="relative w-full h-full flex items-center justify-center p-2">
+                    <img src="${design.path}" alt="${design.title}" class="max-w-full max-h-full object-contain transition-transform duration-1000 group-hover:scale-105" loading="lazy">
                 </div>
                 
-                <!-- Hover Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
-                    <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
+                <!-- High-Visibility Solid Overlay -->
+                <div class="absolute inset-0 bg-primary/95 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 z-20">
+                    <div class="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                        <span class="inline-block px-4 py-1.5 bg-white text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-4">
                             ${design.category}
                         </span>
-                        <h3 class="text-white font-headline text-2xl font-bold mb-2">${design.title}</h3>
-                        <p class="text-white/80 text-xs leading-relaxed line-clamp-2">${design.story}</p>
+                        <h3 class="text-white font-headline text-2xl font-bold mb-3 leading-tight underline decoration-white/30 underline-offset-8">
+                            ${design.title}
+                        </h3>
+                        <p class="text-white/90 text-sm leading-relaxed line-clamp-3 font-medium">
+                            ${design.story}
+                        </p>
                     </div>
                 </div>
 
-                <!-- Zoom Icon -->
-                <div class="absolute top-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100 shadow-xl">
-                    <i class="fas fa-plus text-primary"></i>
+                <div class="absolute top-8 right-8 w-14 h-14 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100 shadow-2xl z-30">
+                    <i class="fas fa-search-plus text-primary text-lg"></i>
                 </div>
             </div>
         `;
@@ -128,8 +137,8 @@ function renderDesigns(limit, filter = 'all') {
         galleryGrid.appendChild(item);
         
         setTimeout(() => {
-            item.classList.remove('opacity-0', 'translate-y-4');
-        }, 50 * (galleryGrid.children.length % limit));
+            item.classList.remove('opacity-0', 'translate-y-8');
+        }, (galleryGrid.children.length % limit) * 100);
     });
 
     currentIndex += toRender.length;
@@ -160,19 +169,23 @@ function injectFeaturedCreative() {
     const mainGrid = document.querySelector('#projects-grid .grid');
     if (!mainGrid) return;
 
-    const featuredTitles = ["KW Kenya Awards UI", "Beauty College Flyer", "Photo Studio Branding"];
-    const featured = creativeDesigns.filter(d => featuredTitles.some(t => d.title.includes(t)));
+    // Fixed 3 featured items as requested, with robust matching
+    const featuredTitles = ["KW Kenya Awards UI", "Tetra Beauty College Flyer", "Photo Studio Branding"];
+    const featured = creativeDesigns.filter(d => featuredTitles.some(t => d.title.toLowerCase().includes(t.toLowerCase())));
 
     featured.forEach(design => {
         const article = document.createElement('article');
-        article.className = 'card-interactive group bg-surface border border-border/50 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl rounded-[2rem] overflow-hidden';
+        article.className = 'card-interactive group bg-surface border border-border/50 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl rounded-[2rem] overflow-hidden flex flex-col';
         article.dataset.category = 'creative';
         article.innerHTML = `
-            <div class="aspect-video overflow-hidden bg-primary-50 relative cursor-pointer" onclick="window.location.href='creative-designs.html'">
-                <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="aspect-video overflow-hidden bg-black relative cursor-pointer" onclick="window.location.href='creative-designs.html'">
+                <div class="absolute inset-0 opacity-40 blur-lg scale-110">
+                    <img src="${design.path}" alt="" class="w-full h-full object-cover">
+                </div>
+                <img src="${design.path}" alt="${design.title}" class="relative w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 p-4">
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
             </div>
-            <div class="p-8 space-y-4">
+            <div class="p-8 space-y-4 flex-grow flex flex-col">
                 <div class="flex items-center justify-between">
                     <span class="tech-badge bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider px-3 py-1">${design.category}</span>
                 </div>
@@ -181,7 +194,7 @@ function injectFeaturedCreative() {
                 <p class="text-body-sm text-text-secondary leading-relaxed line-clamp-3">
                     ${design.story}
                 </p>
-                <div class="pt-6 border-t border-border/50">
+                <div class="pt-6 mt-auto border-t border-border/50">
                     <a href="creative-designs.html" class="inline-flex items-center space-x-2 text-primary font-bold text-sm tracking-wide group/link">
                         <span>more</span>
                         <i class="fas fa-arrow-right text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
@@ -202,3 +215,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMoreBtn.addEventListener('click', () => renderDesigns(galleryIncrement, 'current'));
     }
 });
+
