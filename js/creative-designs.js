@@ -36,38 +36,41 @@ let currentIndex = 0;
 const galleryIncrement = 8;
 const galleryGrid = document.getElementById('creative-designs-grid');
 const loadMoreBtn = document.getElementById('load-more-designs');
-// Improved Lightbox Modal
+// Improved Lightbox Modal — images always fit screen
 const createLightbox = () => {
     let modal = document.getElementById('lightbox-modal');
     if (modal) return modal;
     
     modal = document.createElement('div');
     modal.id = 'lightbox-modal';
-    modal.className = 'fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 cursor-zoom-out';
+    modal.className = 'fixed inset-0 z-[200] hidden bg-black/95 backdrop-blur-md cursor-zoom-out';
+    modal.style.cssText = 'display:none; align-items:center; justify-content:center; flex-direction:column;';
     modal.innerHTML = `
-        <div class="relative w-full h-full flex flex-col items-center justify-center pointer-events-none">
-            <button class="absolute top-4 right-4 text-white text-4xl hover:text-primary transition-colors cursor-pointer pointer-events-auto z-[110]">&times;</button>
-            <div class="max-w-[95vw] max-h-[85vh] flex flex-col items-center justify-center pointer-events-auto">
-                <img id="lightbox-img" src="" alt="" class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300">
-                <div id="lightbox-caption" class="mt-6 text-center text-white bg-black/50 p-4 rounded-xl backdrop-blur-sm">
-                    <h3 class="font-headline text-xl md:text-2xl font-bold mb-2"></h3>
-                    <p class="text-gray-300 text-sm max-w-xl mx-auto"></p>
-                </div>
+        <button id="lightbox-close" style="position:absolute;top:1.5rem;right:1.5rem;color:white;font-size:2.5rem;line-height:1;background:none;border:none;cursor:pointer;z-index:10;">&times;</button>
+        <div style="display:flex;flex-direction:column;align-items:center;max-width:95vw;max-height:90vh;">
+            <img id="lightbox-img" src="" alt=""
+                style="max-width:90vw;max-height:75vh;width:auto;height:auto;object-fit:contain;border-radius:0.75rem;box-shadow:0 25px 50px rgba(0,0,0,0.5);display:block;">
+            <div id="lightbox-caption" style="margin-top:1.25rem;text-align:center;color:white;padding:0.75rem 1.5rem;background:rgba(0,0,0,0.5);border-radius:0.75rem;backdrop-filter:blur(8px);max-width:600px;">
+                <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.375rem;"></h3>
+                <p style="font-size:0.875rem;color:rgba(255,255,255,0.75);"></p>
             </div>
         </div>
     `;
     document.body.appendChild(modal);
     
     modal.addEventListener('click', (e) => {
-        if (e.target.id === 'lightbox-modal' || e.target.tagName === 'BUTTON') {
-            modal.classList.add('hidden');
+        if (e.target.id === 'lightbox-modal' || e.target.id === 'lightbox-close') {
+            modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+    });
+    document.getElementById('lightbox-close').addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     });
     
     return modal;
 };
-
 
 const modal = createLightbox();
 
@@ -77,12 +80,15 @@ function openPreview(design) {
     const desc = modal.querySelector('#lightbox-caption p');
     
     img.src = design.path;
+    img.alt = design.title;
     title.textContent = design.title;
     desc.textContent = design.story;
     
-    modal.classList.remove('hidden');
+    modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-}function renderDesigns(limit, filter = 'all') {
+}
+
+function renderDesigns(limit, filter = 'all') {
     if (!galleryGrid) return;
 
     if (filter !== 'current') {
@@ -245,19 +251,29 @@ function initHeroInteractivity() {
 
     type();
 
-    // Background Slider
+    // Background Slider with dot updates
     const slides = document.querySelectorAll('.hero-slider .slide');
+    const dots = document.querySelectorAll('.slide-dot');
     if (slides.length > 0) {
         let currentSlide = 0;
-        setInterval(() => {
+
+        const goToSlide = (index) => {
             slides[currentSlide].classList.add('opacity-0');
-            slides[currentSlide].classList.remove('active', 'opacity-100');
-            
-            currentSlide = (currentSlide + 1) % slides.length;
-            
+            slides[currentSlide].classList.remove('opacity-100');
+            if (dots[currentSlide]) dots[currentSlide].classList.replace('bg-white', 'bg-white/40');
+
+            currentSlide = index % slides.length;
+
             slides[currentSlide].classList.remove('opacity-0');
-            slides[currentSlide].classList.add('active', 'opacity-100');
-        }, 5000);
+            slides[currentSlide].classList.add('opacity-100');
+            if (dots[currentSlide]) dots[currentSlide].classList.replace('bg-white/40', 'bg-white');
+        };
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index)));
+        });
+
+        setInterval(() => goToSlide(currentSlide + 1), 5000);
     }
 }
 
