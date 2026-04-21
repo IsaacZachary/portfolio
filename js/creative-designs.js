@@ -90,13 +90,22 @@ function openPreview(design) {
         const item = document.createElement('div');
         item.className = 'group cursor-pointer animate-fade-in transition-all duration-700';
         item.innerHTML = `
-            <div class="relative w-full aspect-video md:aspect-[4/5] lg:aspect-square overflow-hidden rounded-[2.5rem] shadow-xl bg-black border border-white/5">
-                <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
-                    <div class="glass-card p-6 rounded-2xl transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="text-white text-[10px] font-bold uppercase tracking-widest mb-2 block">${design.category}</span>
-                        <h3 class="text-white font-headline text-xl font-bold mb-2">${design.title}</h3>
-                        <p class="text-white/80 text-xs line-clamp-2">${design.story}</p>
+            <div class="relative h-full flex flex-col bg-white rounded-[1.5rem] shadow-sm hover:shadow-xl border border-border/40 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-black relative">
+                    <div class="absolute inset-0 opacity-30 blur-lg scale-110">
+                        <img src="${design.path}" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <img src="${design.path}" alt="${design.title}" class="relative w-full h-full object-contain p-4 transition-transform duration-1000 group-hover:scale-105">
+                </div>
+                <div class="p-8 flex flex-col flex-grow space-y-3">
+                    <span class="text-primary text-[10px] font-bold uppercase tracking-widest block">${design.category}</span>
+                    <h3 class="text-text-primary font-headline text-xl font-bold group-hover:text-primary transition-colors">${design.title}</h3>
+                    <p class="text-text-secondary text-xs line-clamp-2">${design.story}</p>
+                    <div class="pt-4 mt-auto border-t border-border/10">
+                        <span class="inline-flex items-center text-primary font-bold text-sm group/link">
+                            <span>more</span>
+                            <i class="fas fa-arrow-right text-[10px] ml-2 group-hover/link:translate-x-1 transition-transform"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -115,10 +124,9 @@ function renderDesigns(limit, filter = 'all') {
     }
 
     const wideTitles = ["Humble Crib Investment Services Banner", "Berry Fibre Hotspot Landing", "Class of 2023"];
-    
     const currentFilter = filter === 'current' ? (document.querySelector('#creative-filters .filter-btn.active')?.dataset.filter || 'all') : filter;
     
-    // Exclude wide ones from general grid unless specific filter is applied or if user wants them there (usually better to exclude if they are featured special)
+    // Exclude wide ones from general grid
     const filtered = currentFilter === 'all' 
         ? creativeDesigns.filter(d => !wideTitles.includes(d.title))
         : creativeDesigns.filter(d => d.category.includes(currentFilter) || d.title.includes(currentFilter));
@@ -129,33 +137,36 @@ function renderDesigns(limit, filter = 'all') {
         const item = document.createElement('div');
         item.className = 'creative-card group cursor-pointer animate-fade-in opacity-0 translate-y-8 h-full';
         item.innerHTML = `
-            <div class="relative w-full aspect-square overflow-hidden rounded-[2.5rem] shadow-sm transition-all duration-700 bg-black border border-border/10 hover:shadow-2xl hover:-translate-y-3">
-                
-                <div class="absolute inset-0 opacity-30 blur-xl scale-110">
-                    <img src="${design.path}" alt="" class="w-full h-full object-cover">
+            <div class="relative h-full flex flex-col bg-white rounded-[1.5rem] shadow-sm hover:shadow-xl border border-border/40 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <!-- Image Container -->
+                <div class="aspect-square w-full overflow-hidden bg-black relative">
+                    <div class="absolute inset-0 opacity-30 blur-lg scale-110">
+                        <img src="${design.path}" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <img src="${design.path}" alt="${design.title}" class="relative w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110" loading="lazy">
                 </div>
 
-                <div class="relative w-full h-full flex items-center justify-center p-4">
-                    <img src="${design.path}" alt="${design.title}" class="max-w-full max-h-full object-contain transition-transform duration-1000 group-hover:scale-105" loading="lazy">
-                </div>
-                
-                <!-- Vibrant Creative Hover Color Overlay -->
-                <div class="absolute inset-0 bg-primary/95 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 z-20">
-                    <div class="glass-card p-6 rounded-3xl transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-100 border-white/20">
-                        <span class="inline-block px-3 py-1 bg-white text-primary text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
+                <!-- Card Content -->
+                <div class="p-8 flex flex-col flex-grow space-y-4">
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-widest rounded-md mb-3 border border-primary/10">
                             ${design.category}
                         </span>
-                        <h3 class="text-white font-headline text-xl font-bold mb-2 leading-tight">
+                        <h3 class="font-headline text-2xl font-bold text-text-primary group-hover:text-primary transition-colors leading-tight">
                             ${design.title}
                         </h3>
-                        <p class="text-white/80 text-xs leading-relaxed line-clamp-3">
-                            ${design.story}
-                        </p>
                     </div>
-                </div>
+                    
+                    <p class="text-text-secondary text-sm leading-relaxed line-clamp-3">
+                        ${design.story}
+                    </p>
 
-                <div class="absolute top-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100 shadow-2xl z-30">
-                    <i class="fas fa-expand text-primary"></i>
+                    <div class="pt-6 mt-auto border-t border-border/10 flex items-center">
+                        <span class="inline-flex items-center text-primary font-bold text-sm tracking-wide group/link">
+                            <span>more</span>
+                            <i class="fas fa-arrow-right text-[10px] ml-2 group-hover/link:translate-x-1 transition-transform"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
         `;
@@ -201,7 +212,7 @@ function injectFeaturedCreative() {
 
     featured.forEach(design => {
         const article = document.createElement('article');
-        article.className = 'card-interactive group bg-surface border border-border/50 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl rounded-[2rem] overflow-hidden flex flex-col';
+        article.className = 'group bg-white border border-border/40 shadow-sm hover:shadow-xl rounded-[2rem] transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col';
         article.dataset.category = 'creative';
         article.innerHTML = `
             <div class="aspect-video overflow-hidden bg-black relative cursor-pointer" onclick="window.location.href='creative-designs.html'">
@@ -209,7 +220,6 @@ function injectFeaturedCreative() {
                     <img src="${design.path}" alt="" class="w-full h-full object-cover">
                 </div>
                 <img src="${design.path}" alt="${design.title}" class="relative w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 p-4">
-                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
             </div>
             <div class="p-8 space-y-4 flex-grow flex flex-col">
                 <div class="flex items-center justify-between">
@@ -220,10 +230,10 @@ function injectFeaturedCreative() {
                 <p class="text-body-sm text-text-secondary leading-relaxed line-clamp-3">
                     ${design.story}
                 </p>
-                <div class="pt-6 mt-auto border-t border-border/50">
+                <div class="pt-6 mt-auto border-t border-border/10">
                     <a href="creative-designs.html" class="inline-flex items-center space-x-2 text-primary font-bold text-sm tracking-wide group/link">
                         <span>more</span>
-                        <i class="fas fa-arrow-right text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
+                        <i class="fas fa-arrow-right text-[10px] ml-2 group-hover/link:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
             </div>
