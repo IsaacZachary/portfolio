@@ -47,27 +47,36 @@ function renderDesigns(limit) {
     
     toRender.forEach(design => {
         const item = document.createElement('div');
-        item.className = 'break-inside-avoid mb-6 group cursor-pointer animate-fade-in';
+        item.className = 'creative-card group cursor-pointer animate-fade-in translate-y-4';
         item.innerHTML = `
-            <div class="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-surface border border-border/50">
-                <img src="${design.path}" alt="${design.title}" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-primary-400 text-[10px] font-bold uppercase tracking-widest mb-1">${design.category}</span>
-                    <h3 class="text-white font-headline text-base font-semibold mb-1">${design.title}</h3>
-                    <p class="text-gray-300 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">${design.story}</p>
+            <div class="relative overflow-hidden rounded-3xl shadow-lg transition-all duration-500 bg-surface border border-border/40 hover:border-primary/30">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-primary-400 text-xs font-bold uppercase tracking-[0.2em] mb-2">${design.category}</span>
+                    <h3 class="text-white font-headline text-xl font-bold mb-3">${design.title}</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">${design.story}</p>
+                </div>
+                <div class="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100">
+                    <i class="fas fa-expand-alt text-white text-sm"></i>
                 </div>
             </div>
         `;
         
         item.addEventListener('click', () => window.open(design.path, '_blank'));
         galleryGrid.appendChild(item);
+        
+        // Trigger reflow for animation
+        setTimeout(() => item.classList.remove('translate-y-4'), 10);
     });
 
     currentIndex += toRender.length;
     
     if (currentIndex >= creativeDesigns.length && loadMoreBtn) {
         const btnText = loadMoreBtn.querySelector('span');
-        if (btnText) btnText.textContent = "Gallery Complete";
+        if (btnText) btnText.textContent = "All Artworks Loaded";
+        loadMoreBtn.classList.replace('btn-primary', 'btn-outline');
         loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
         loadMoreBtn.disabled = true;
     }
@@ -86,25 +95,29 @@ function injectFeaturedCreative() {
 
     featured.forEach(design => {
         const article = document.createElement('article');
-        article.className = 'card-interactive group';
+        article.className = 'card-interactive group bg-surface border border-border/50 hover:border-primary/30 transition-all duration-500';
         article.dataset.category = 'creative';
         article.innerHTML = `
-            <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-50 to-primary-100 border border-border/50">
-                <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 bg-primary-50 relative">
+                <img src="${design.path}" alt="${design.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <div class="space-y-3">
-                <div class="flex flex-wrap gap-2">
-                    <span class="tech-badge">Creative</span>
-                    <span class="tech-badge">${design.category}</span>
+            <div class="space-y-4 p-2">
+                <div class="flex items-center justify-between">
+                    <span class="tech-badge bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider px-3 py-1">${design.category}</span>
+                    <span class="text-[10px] text-text-tertiary uppercase font-bold tracking-widest italic">Digital Art</span>
                 </div>
-                <h3 class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors">
+                <h3 class="font-headline text-2xl font-bold text-text-primary group-hover:text-primary transition-colors decoration-primary/30 group-hover:underline underline-offset-8">
                     ${design.title}</h3>
-                <p class="text-body-sm text-text-secondary leading-relaxed">
+                <p class="text-body-sm text-text-secondary leading-relaxed line-clamp-3">
                     ${design.story}
                 </p>
-                <a href="#creative-gallery" class="text-primary hover:underline inline-flex items-center space-x-1 font-medium text-sm">
-                    <span>View Showcase</span><i class="fas fa-arrow-right text-xs"></i>
-                </a>
+                <div class="pt-4 border-t border-border/50">
+                    <a href="#creative-gallery" class="inline-flex items-center space-x-2 text-primary font-bold text-sm tracking-wide group/link">
+                        <span>Showroom Details</span>
+                        <i class="fas fa-chevron-right text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         `;
         mainGrid.appendChild(article);
