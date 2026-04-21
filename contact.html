@@ -219,7 +219,7 @@
                     <div class="card">
                         <h2 class="font-headline text-h2 font-semibold text-text-primary mb-6">Send a Message</h2>
 
-                        <form id="contact-form" action="https://formspree.io/f/mqakvnpq" method="POST" class="space-y-6">
+                        <form id="contact-form" action="https://formspree.io/f/xnjlgjze" method="POST" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-body-sm font-medium text-text-primary mb-2">Name
                                     *</label>
@@ -397,24 +397,22 @@
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    submitBtn.classList.add('bg-error', 'text-white');
-                    submitBtn.innerHTML = `<span>Error Sending</span>`;
-                    
-                    const toast = document.createElement('div');
-                    toast.className = 'fixed bottom-8 right-8 bg-red-600 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 z-50';
-                    toast.innerHTML = `<i class="fas fa-exclamation-circle"></i><span>Failed to send. Please try again or use direct email.</span>`;
-                    document.body.appendChild(toast);
-                    
-                    setTimeout(() => {
-                        toast.remove();
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalContent;
-                        submitBtn.classList.remove('bg-error', 'text-white');
-                    }, 5000);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalContent;
+
+                    // Show friendly fallback message
+                    const errorToast = document.createElement('div');
+                    errorToast.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#1e293b;color:white;padding:1rem 1.5rem;border-radius:1rem;box-shadow:0 20px 40px rgba(0,0,0,0.3);z-index:9999;max-width:360px;line-height:1.5;';
+                    errorToast.innerHTML = `
+                        <p style="font-weight:700;margin-bottom:0.4rem;">&#9888; Form temporarily unavailable</p>
+                        <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);">Please email me directly at <a href="mailto:isaaczachary18@gmail.com" style="color:#60a5fa;text-decoration:underline;">isaaczachary18@gmail.com</a></p>
+                        <button onclick="this.parentElement.remove()" style="margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.5);background:none;border:none;cursor:pointer;">Dismiss</button>
+                    `;
+                    document.body.appendChild(errorToast);
+                    setTimeout(() => errorToast.remove(), 10000);
                 }
             });
         }
     </script>
 </body>
-
 </html>
