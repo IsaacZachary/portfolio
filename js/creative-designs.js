@@ -86,12 +86,14 @@ function injectFeaturedCreative() {
     const mainGrid = document.querySelector('#projects-grid .grid');
     if (!mainGrid) return;
 
-    // Pick 3 high-quality ones for the main grid
-    const featured = [
-        creativeDesigns[0],  // Berry Fibre Hotspot Landing
-        creativeDesigns[20], // PLP Coding Safari
-        creativeDesigns[32]  // Huntsman Motors
+    // User selected specific 3 featured items
+    const featuredTitles = [
+        "KW Kenya Awards UI",
+        "Tetra Beauty College Flyer",
+        "Photo Studio Branding" // Matches Hi2 Photo Studio poster title in data
     ];
+
+    const featured = creativeDesigns.filter(d => featuredTitles.includes(d.title));
 
     featured.forEach(design => {
         const article = document.createElement('article');
@@ -105,7 +107,7 @@ function injectFeaturedCreative() {
             <div class="space-y-4 p-2">
                 <div class="flex items-center justify-between">
                     <span class="tech-badge bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider px-3 py-1">${design.category}</span>
-                    <span class="text-[10px] text-text-tertiary uppercase font-bold tracking-widest italic">Digital Art</span>
+                    <span class="text-[10px] text-text-tertiary uppercase font-bold tracking-widest italic">Featured Design</span>
                 </div>
                 <h3 class="font-headline text-2xl font-bold text-text-primary group-hover:text-primary transition-colors decoration-primary/30 group-hover:underline underline-offset-8">
                     ${design.title}</h3>
@@ -113,9 +115,9 @@ function injectFeaturedCreative() {
                     ${design.story}
                 </p>
                 <div class="pt-4 border-t border-border/50">
-                    <a href="#creative-gallery" class="inline-flex items-center space-x-2 text-primary font-bold text-sm tracking-wide group/link">
-                        <span>Showroom Details</span>
-                        <i class="fas fa-chevron-right text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
+                    <a href="creative-gallery.html" class="inline-flex items-center space-x-2 text-primary font-bold text-sm tracking-wide group/link">
+                        <span>See more of my designs</span>
+                        <i class="fas fa-arrow-right text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
             </div>
