@@ -82,7 +82,7 @@
     </header>
 
     <!-- Interactive Hero Section -->
-    <section class="relative min-h-screen flex items-end pb-24 overflow-hidden">
+    <section class="relative overflow-hidden" style="height:100vh;display:flex;align-items:center;">
         <!-- Full-Screen Background Slider -->
         <div class="absolute inset-0 z-0">
             <div class="hero-slider absolute inset-0">
@@ -96,38 +96,38 @@
                     <img src="https://images.unsplash.com/photo-1604871000636-074fa5117945?w=1920&q=80" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
-            <!-- Solid gradient overlay covering full section including behind nav -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+            <!-- Dark overlay — text must be clearly legible -->
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.70) 50%, rgba(0,0,0,0.85) 100%);"></div>
         </div>
 
-        <!-- Hero Content - anchored to bottom of section -->
-        <div class="container-custom relative z-10 w-full">
-            <div class="max-w-3xl space-y-6">
-                <span class="inline-block px-5 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-[0.4em]">
-                    Visual Storytelling
+        <!-- Content — padded below fixed navbar -->
+        <div class="container-custom relative z-10 w-full pt-24">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-block px-4 py-1.5 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-widest">
+                    Creative Portfolio
                 </span>
-                <h1 class="font-headline text-display-md md:text-display-lg text-white font-black leading-tight">
+                <h1 class="font-headline text-display-md md:text-display-lg text-white font-black leading-tight" style="text-shadow:0 2px 16px rgba(0,0,0,0.5);">
                     Designing<br>
-                    <span id="typing-text" class="text-gradient"></span><span class="text-white animate-pulse">|</span>
+                    <span id="typing-text" class="text-gradient"></span><span class="text-white">|</span>
                 </h1>
-                <p class="text-body-lg text-white/80 max-w-xl leading-relaxed">
-                    Engineering precision meets visual artistry. A curated vault of brand identities, marketing layouts, and digital experiences.
+                <p class="text-lg text-white/85 max-w-lg leading-relaxed" style="text-shadow:0 1px 6px rgba(0,0,0,0.4);">
+                    Visual art that works. Posters, brand identities, and marketing designs built to make an impression.
                 </p>
-                <div class="flex items-center space-x-6 pt-4">
+                <div class="flex items-center space-x-6 pt-2">
                     <a href="#gallery" class="btn-primary px-8 py-3.5 rounded-full font-bold">Browse Gallery</a>
-                    <a href="#gallery" class="text-white/70 hover:text-white flex items-center space-x-2 transition-colors">
-                        <i class="fas fa-arrow-down text-sm animate-bounce"></i>
-                        <span class="text-sm">Scroll down</span>
+                    <a href="#gallery" class="text-white/70 hover:text-white flex items-center space-x-2 transition-colors text-sm">
+                        <i class="fas fa-arrow-down animate-bounce text-xs"></i>
+                        <span>Scroll down</span>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Dot Indicators -->
+        <!-- Slide Dot Indicators -->
         <div class="absolute bottom-8 right-8 z-10 flex space-x-2" id="slide-dots">
-            <span class="slide-dot w-2 h-2 rounded-full bg-white cursor-pointer" data-index="0"></span>
-            <span class="slide-dot w-2 h-2 rounded-full bg-white/40 cursor-pointer" data-index="1"></span>
-            <span class="slide-dot w-2 h-2 rounded-full bg-white/40 cursor-pointer" data-index="2"></span>
+            <span class="slide-dot w-2.5 h-2.5 rounded-full bg-white cursor-pointer transition-all" data-index="0"></span>
+            <span class="slide-dot w-2.5 h-2.5 rounded-full bg-white/30 cursor-pointer transition-all" data-index="1"></span>
+            <span class="slide-dot w-2.5 h-2.5 rounded-full bg-white/30 cursor-pointer transition-all" data-index="2"></span>
         </div>
     </section>
 
