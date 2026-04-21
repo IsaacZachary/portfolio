@@ -36,54 +36,40 @@ let currentIndex = 0;
 const galleryIncrement = 8;
 const galleryGrid = document.getElementById('creative-designs-grid');
 const loadMoreBtn = document.getElementById('load-more-designs');
-// Improved Lightbox Modal — images always fit screen
+// Lightbox — z-index above navbar (9999), fully opaque
 const createLightbox = () => {
     let modal = document.getElementById('lightbox-modal');
     if (modal) return modal;
-    
     modal = document.createElement('div');
     modal.id = 'lightbox-modal';
-    modal.className = 'fixed inset-0 z-[200] hidden bg-black/95 backdrop-blur-md cursor-zoom-out';
-    modal.style.cssText = 'display:none; align-items:center; justify-content:center; flex-direction:column;';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.97);display:none;align-items:center;justify-content:center;flex-direction:column;padding:1rem;cursor:zoom-out;';
     modal.innerHTML = `
-        <button id="lightbox-close" style="position:absolute;top:1.5rem;right:1.5rem;color:white;font-size:2.5rem;line-height:1;background:none;border:none;cursor:pointer;z-index:10;">&times;</button>
-        <div style="display:flex;flex-direction:column;align-items:center;max-width:95vw;max-height:90vh;">
-            <img id="lightbox-img" src="" alt=""
-                style="max-width:90vw;max-height:75vh;width:auto;height:auto;object-fit:contain;border-radius:0.75rem;box-shadow:0 25px 50px rgba(0,0,0,0.5);display:block;">
-            <div id="lightbox-caption" style="margin-top:1.25rem;text-align:center;color:white;padding:0.75rem 1.5rem;background:rgba(0,0,0,0.5);border-radius:0.75rem;backdrop-filter:blur(8px);max-width:600px;">
-                <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.375rem;"></h3>
-                <p style="font-size:0.875rem;color:rgba(255,255,255,0.75);"></p>
+        <button id="lb-close" style="position:fixed;top:1rem;right:1.25rem;color:#fff;font-size:2.5rem;line-height:1;background:rgba(255,255,255,0.1);border:none;border-radius:50%;width:2.75rem;height:2.75rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10000;">&times;</button>
+        <div style="display:flex;flex-direction:column;align-items:center;max-width:94vw;">
+            <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:76vh;width:auto;height:auto;object-fit:contain;border-radius:0.5rem;box-shadow:0 30px 70px rgba(0,0,0,0.8);display:block;">
+            <div id="lb-cap" style="margin-top:1rem;padding:0.6rem 1.25rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:0.75rem;text-align:center;max-width:560px;">
+                <h3 id="lb-title" style="color:#fff;font-size:1.05rem;font-weight:700;margin:0 0 0.25rem;"></h3>
+                <p id="lb-desc" style="color:rgba(255,255,255,0.65);font-size:0.8rem;margin:0;"></p>
             </div>
         </div>
     `;
     document.body.appendChild(modal);
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target.id === 'lightbox-modal' || e.target.id === 'lightbox-close') {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-    document.getElementById('lightbox-close').addEventListener('click', () => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-    
+    modal.addEventListener('click', e => { if (e.target === modal) closeLightbox(); });
+    modal.querySelector('#lb-close').addEventListener('click', closeLightbox);
     return modal;
 };
 
 const modal = createLightbox();
 
+function closeLightbox() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
 function openPreview(design) {
-    const img = modal.querySelector('#lightbox-img');
-    const title = modal.querySelector('#lightbox-caption h3');
-    const desc = modal.querySelector('#lightbox-caption p');
-    
-    img.src = design.path;
-    img.alt = design.title;
-    title.textContent = design.title;
-    desc.textContent = design.story;
-    
+    document.getElementById('lb-img').src = design.path;
+    document.getElementById('lb-title').textContent = design.title;
+    document.getElementById('lb-desc').textContent = design.story;
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
