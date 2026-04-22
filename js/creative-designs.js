@@ -1,4 +1,9 @@
 const creativeDesigns = [
+    { title: "Safari Wheels Poster", path: "assets/creative-designs/SAFARI WHEELs poSTER.png", category: "Poster", story: "Showcasing robust off-road spirit with bold typography and dynamic layout." },
+    { title: "Willinge Technologies CCTV", path: "assets/creative-designs/WILLINGE TECHNOLOGIEs poSTER CCTV.jpg", category: "Poster", story: "Highlighting security solutions with sleek, modern technology displays." },
+    { title: "Mobkazi Flyer V12", path: "assets/creative-designs/MOBKAZI FLYER V12.png", category: "Flyer", story: "Marketing the comprehensive business management OS in a clean corporate format." },
+    { title: "Sifa Net Flyer", path: "assets/creative-designs/Sifa Net flyer 2.png", category: "Flyer", story: "Promoting high-speed connectivity solutions tailored for home and business users." },
+    { title: "Graphics Training Poster", path: "assets/creative-designs/gRAPHICs training poSTER   .png", category: "Poster", story: "An engaging call-to-action for aspiring designers to join intensive creative training." },
     { title: "Tetra Beauty College Flyer", path: "assets/creative-designs/Tetra Beauty College Flyer.png", category: "Flyer", story: "Recruiting future stylists with a touch of elegance and professionalism." },
     { title: "SWAHILI BITES WEEKLY MENU", path: "assets/creative-designs/SWAHILI BITES WEEKLY MENU poster.jpg", category: "Menu", story: "Making every bite look delicious through appetising layout design." },
     { title: "Jumia Agent Poster", path: "assets/creative-designs/Rajab Said Jumia Black Friday poster sales officer.jpg", category: "Flyer", story: "Empowering local agents with professional e-commerce marketing tools." },
@@ -272,6 +277,106 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => renderDesigns(galleryIncrement, 'current'));
     }
+    
+    // Hidden internal Tool for updating Array Data
+    initHiddenAdminUI();
 });
+
+function initHiddenAdminUI() {
+    let keyBuffer = '';
+    const secretCode = 'galleryadmin';
+
+    document.addEventListener('keydown', (e) => {
+        keyBuffer += e.key.toLowerCase();
+        if (keyBuffer.length > secretCode.length) {
+            keyBuffer = keyBuffer.slice(1);
+        }
+        if (keyBuffer === secretCode) {
+            openAdminPanel();
+            keyBuffer = '';
+        }
+    });
+}
+
+function openAdminPanel() {
+    let panel = document.getElementById('admin-panel');
+    if (!panel) {
+        panel = document.createElement('div');
+        panel.id = 'admin-panel';
+        panel.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:99999;color:white;padding:2rem;overflow-y:auto;font-family:monospace;';
+        
+        panel.innerHTML = `
+            <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-2xl relative shadow-2xl border border-gray-700">
+                <button id="close-admin" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">&times;</button>
+                <h2 class="text-2xl font-bold mb-4 text-primary">Hidden Gallery Admin Panel</h2>
+                <p class="mb-6 text-gray-400">Because there is no database, use this tool to easily generate your new Code for <span class="bg-black px-2 py-1 rounded text-green-400">c:\\Users\\Ba3eh\\Documents\\MyWebsite\\portfolio\\js\\creative-designs.js</span></p>
+                
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs uppercase text-gray-500 mb-1">Title</label>
+                        <input id="new-item-title" class="w-full bg-black border border-gray-700 p-3 rounded text-white" placeholder="e.g. New Event Poster">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase text-gray-500 mb-1">Category</label>
+                        <select id="new-item-cat" class="w-full bg-black border border-gray-700 p-3 rounded text-white">
+                            <option value="Poster">Poster</option>
+                            <option value="Flyer">Flyer</option>
+                            <option value="Branding">Branding</option>
+                            <option value="Menu">Menu</option>
+                            <option value="Web Design">Web Design</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs uppercase text-gray-500 mb-1">Image Filename (Assuming you put it in assets/creative-designs/)</label>
+                        <div class="flex">
+                            <span class="bg-gray-800 border border-gray-700 border-r-0 p-3 rounded-l text-gray-400">assets/creative-designs/</span>
+                            <input id="new-item-file" class="flex-1 bg-black border border-gray-700 p-3 rounded-r text-white" placeholder="e.g. event-poster.jpg">
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs uppercase text-gray-500 mb-1">Story / Subtext</label>
+                        <textarea id="new-item-story" class="w-full bg-black border border-gray-700 p-3 rounded text-white" rows="2" placeholder="Briefly describe the design concept..."></textarea>
+                    </div>
+                </div>
+                
+                <button id="generate-code" class="btn-primary px-6 py-3 rounded font-bold w-full mb-8">Generate Code</button>
+
+                <label class="block text-xs uppercase text-gray-500 mb-1">Copy & Paste This Output Replacing Your Existing Array in 'creative-designs.js'</label>
+                <textarea id="admin-output" class="w-full h-64 bg-black border border-gray-700 rounded p-4 text-green-400 font-mono text-sm" readonly></textarea>
+            </div>
+        `;
+        document.body.appendChild(panel);
+
+        document.getElementById('close-admin').addEventListener('click', () => panel.style.display = 'none');
+        document.getElementById('generate-code').addEventListener('click', () => {
+            const title = document.getElementById('new-item-title').value;
+            const category = document.getElementById('new-item-cat').value;
+            const file = document.getElementById('new-item-file').value;
+            const story = document.getElementById('new-item-story').value;
+
+            if(!title || !file) {
+                 alert("Title and filename are required");
+                 return;
+            }
+
+            const newObj = {
+                title: title,
+                path: 'assets/creative-designs/' + file,
+                category: category,
+                story: story
+            };
+
+            const newArray = [newObj, ...creativeDesigns];
+            document.getElementById('admin-output').value = `const creativeDesigns = [\n` + newArray.map(m => `    { title: "${m.title}", path: "${m.path}", category: "${m.category}", story: "${m.story.replace(/"/g, '\\"')}" }`).join(',\n') + `\n];`;
+            
+            // clear form
+            document.getElementById('new-item-title').value = '';
+            document.getElementById('new-item-file').value = '';
+            document.getElementById('new-item-story').value = '';
+        });
+    } else {
+        panel.style.display = 'block';
+    }
+}
 
 
