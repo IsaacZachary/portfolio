@@ -1,0 +1,14 @@
+/assets/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/docs/*
+  Cache-Control: public, max-age=604800
+  Content-Disposition: inline
+/pdf/*
+  Cache-Control: public, max-age=604800
+  Content-Disposition: inline
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate

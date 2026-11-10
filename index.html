@@ -305,14 +305,47 @@ h2{font-size:clamp(26px,3.2vw,40px);margin:10px 0 10px}
 .tile:hover .cap,.tile:focus-visible .cap{opacity:1;transform:none}
 .tile .cap b{display:block;font-size:14px}
 .tile .cap small{font-family:var(--mono);font-size:11px;opacity:.75}
-.lb{position:fixed;inset:0;z-index:120;background:rgba(2,6,23,.9);backdrop-filter:blur(8px);display:none;place-items:center;padding:4vh 4vw}
-.lb.open{display:grid}
-.lb img{max-width:100%;max-height:82vh;border-radius:12px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
-.lb .meta{color:#fff;text-align:center;margin-top:14px}
-.lb .meta small{font-family:var(--mono);color:#94a3b8;font-size:12px}
-.lb .x,.lb .pv,.lb .nx{position:absolute;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;font-size:22px}
-.lb .x{top:20px;right:20px}.lb .pv{left:20px;top:50%}.lb .nx{right:20px;top:50%}
-.lb button:hover{background:rgba(255,255,255,.2)}
+.lb{position:fixed;inset:0;z-index:140;background:rgba(2,6,23,.88);backdrop-filter:blur(14px) saturate(120%);display:none;flex-direction:column;perspective:1600px}
+.lb.open{display:flex;animation:lbin .25s ease}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));color:#fff;background:linear-gradient(rgba(2,6,23,.7),transparent);position:relative;z-index:3}
+.lb-meta{min-width:0}.lb-meta b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lb-meta small{font-family:var(--mono);font-size:11.5px;color:#94a3b8}
+.lb-act{display:flex;gap:6px;flex:none}
+.lb-act button,.lb-act a{height:40px;min-width:40px;padding:0 12px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-size:13px;font-weight:600;transition:.2s}
+.lb-act button:hover,.lb-act a:hover{background:rgba(255,255,255,.2);transform:translateY(-1px)}
+.lb-act .pri{background:var(--teal);border-color:transparent}
+.lb-act svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lb-act .x{font-size:20px}
+.lb-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:6px 64px 24px;position:relative}
+.lb-stage>img,.lb-stage>video{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 50px 120px -20px rgba(0,0,0,.8);animation:pop .45s cubic-bezier(.2,.9,.25,1.1);background:#0b1018}
+@keyframes pop{from{opacity:0;transform:translateZ(-140px) rotateX(8deg) scale(.94)}to{opacity:1;transform:none}}
+.pdfwrap{width:100%;height:100%;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:14px;padding:4px 0 40px;animation:pop .45s cubic-bezier(.2,.9,.25,1.1)}
+.pdfwrap canvas{background:#fff;border-radius:6px;box-shadow:0 20px 60px -10px rgba(0,0,0,.7);max-width:100%;height:auto}
+.pdfwrap iframe{width:min(900px,100%);height:100%;border:0;border-radius:8px;background:#fff}
+.lb-card{background:#0f1620;border:1px solid #263243;border-radius:20px;padding:30px;max-width:460px;color:#e6edf3;text-align:center;animation:pop .45s cubic-bezier(.2,.9,.25,1.1)}
+.lb-card .seal{width:74px;height:74px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#0d9488,#d97706);font-size:32px}
+.lb-card h3{font-size:20px;letter-spacing:-.02em}.lb-card p{color:#94a3b8;font-size:14px;margin:8px 0 18px}.lb-card a{color:#2dd4bf;word-break:break-all;font-family:var(--mono);font-size:12px}
+.lb .pv,.lb .nx{position:absolute;top:50%;z-index:3;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:24px;display:grid;place-items:center;transform:translateY(-50%)}
+.lb .pv{left:12px}.lb .nx{right:12px}.lb .pv:hover,.lb .nx:hover{background:rgba(255,255,255,.22)}
+.lb.single .pv,.lb.single .nx{display:none}
+.lb:not(.is-pdf) .pdf-only{display:none!important}
+.spin{width:40px;height:40px;border-radius:50%;border:3px solid rgba(255,255,255,.15);border-top-color:#2dd4bf;animation:spin .8s linear infinite;position:absolute}
+.lb-toast{position:absolute;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#fff;color:#0b1220;padding:10px 16px;border-radius:12px;font-size:13px;font-weight:600;opacity:0;transition:.3s;z-index:4;pointer-events:none}
+.lb-toast.on{opacity:1;transform:translateX(-50%)}
+@media (max-width:640px){.lb-act .lbl{display:none}.lb-act button,.lb-act a{padding:0 10px}.lb-stage{padding:4px 8px 16px}.lb .pv,.lb .nx{top:auto;bottom:18px;transform:none}.lb-meta small{display:none}}
+/* instant-feel loading */
+.tile,.dthumb,.pc .shot,.reel,.strip figure,.feat-img,.ph-card,.slides{background-image:linear-gradient(100deg,transparent 30%,rgba(148,163,184,.14) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.4s linear infinite}
+@keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
+.tile img,.dthumb img,.pc .shot img,.strip img{opacity:0;transition:opacity .45s ease,transform .6s}
+.tile img.ld,.dthumb img.ld,.pc .shot img.ld,.strip img.ld{opacity:1}
+.reel{position:relative}
+.reel .rx{position:absolute;top:8px;right:8px;z-index:2;display:flex;gap:6px;opacity:0;transition:.2s}
+.reel:hover .rx,.reel:focus-within .rx{opacity:1}
+@media (hover:none){.reel .rx{opacity:1}}
+.reel .rx button{width:34px;height:34px;border-radius:10px;background:rgba(2,6,23,.65);backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center}
+.reel .rx svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile .zoom{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:10px;background:rgba(2,6,23,.6);color:#fff;display:grid;place-items:center;opacity:0;transition:.2s}
+.tile:hover .zoom{opacity:1}
 
 /* learning */
 .academy{display:grid;grid-template-columns:1.2fr .8fr;gap:0;padding:0;background:var(--term);color:#e6edf3;border-color:#1e2836}
@@ -646,7 +679,7 @@ footer a:hover{color:var(--teal)}
     </div>
     <div class="stage" id="stage">
       <div class="stage-inner" id="stageInner">
-        <div class="ph-card"><img src="assets/v2/projects/mobkazi-workspace.webp" alt="Isaac building the MobKazi dashboard"></div>
+        <div class="ph-card"><img fetchpriority="high" src="assets/v2/projects/mobkazi-workspace.webp" alt="Isaac building the MobKazi dashboard"></div>
         <div class="term">
           <div class="term-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span>isaac@mobkazi: ~/prod</span></div>
           <div class="term-body" id="termBody"></div>
@@ -726,7 +759,7 @@ footer a:hover{color:var(--teal)}
   <div class="ph"><span class="eyebrow">cat about.md</span><h1>Hi, I'm Isaac. I take ideas all the way to production.</h1></div>
   <div class="about">
     <div class="card portrait rv">
-      <div class="slides" id="slides"><img class="on" src="assets/v2/projects/me-portrait.webp" alt="Isaac Zachary in a black suit"><img src="assets/v2/projects/about-pic.webp" alt="Isaac Zachary seated outdoors" loading="lazy"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary portrait" loading="lazy"><img src="assets/v2/life/ai-portrait.webp" alt="Isaac Zachary studio portrait" loading="lazy"><img src="assets/v2/life/nairobi-cbd.webp" alt="Isaac in Nairobi CBD" loading="lazy"><div class="sdots"></div></div>
+      <div class="slides" id="slides"><img class="on" src="assets/v2/projects/me-portrait.webp" alt="Isaac Zachary in a black suit"><img src="assets/v2/projects/about-pic.webp" alt="Isaac Zachary seated outdoors" loading="lazy" decoding="async"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary portrait" loading="lazy" decoding="async"><img src="assets/v2/life/ai-portrait.webp" alt="Isaac Zachary studio portrait" loading="lazy" decoding="async"><img src="assets/v2/life/nairobi-cbd.webp" alt="Isaac in Nairobi CBD" loading="lazy" decoding="async"><div class="sdots"></div></div>
       <div class="cap">
         <div class="facts">
           <div><span>name</span><b>Isaac Siko Zachary</b></div>
@@ -756,10 +789,10 @@ footer a:hover{color:var(--teal)}
       <div class="chips rv"><span>⛰️ Mountain hiking</span><span>👨‍👧 Fatherhood</span><span>📸 City & landscape photography</span><span>🎧 DJ Bazeh music</span><span>🧑‍🏫 Mentoring</span><span>📚 Learning in public</span></div>
       <h3 class="rv" style="margin:30px 0 12px;font-size:16px">Off the clock</h3>
       <div class="strip">
-        <figure class="card tilt rv"><img src="assets/v2/projects/me-thinking-full.webp" alt="Isaac in a suit, looking sideways in thought" loading="lazy"><figcaption><b>Thinking in systems</b><small>// always the next build</small></figcaption></figure>
-        <figure class="card tilt rv"><img src="assets/v2/projects/me-peace2.webp" alt="Isaac smiling with a peace sign" loading="lazy"><figcaption><b>Peace & clean code</b><small>// shipped, tested, live</small></figcaption></figure>
-        <figure class="card tilt rv"><img src="assets/v2/projects/me-smile.webp" alt="Isaac smiling in a suit" loading="lazy"><figcaption><b>Suited for the client call</b><small>// then back to the terminal</small></figcaption></figure>
-        <figure class="card tilt rv"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary in a vest and tie" loading="lazy"><figcaption><b>Where it started</b><small>// the v1 portfolio photo</small></figcaption></figure>
+        <figure class="card tilt rv"><img src="assets/v2/projects/me-thinking-full.webp" alt="Isaac in a suit, looking sideways in thought" loading="lazy" decoding="async"><figcaption><b>Thinking in systems</b><small>// always the next build</small></figcaption></figure>
+        <figure class="card tilt rv"><img src="assets/v2/projects/me-peace2.webp" alt="Isaac smiling with a peace sign" loading="lazy" decoding="async"><figcaption><b>Peace & clean code</b><small>// shipped, tested, live</small></figcaption></figure>
+        <figure class="card tilt rv"><img src="assets/v2/projects/me-smile.webp" alt="Isaac smiling in a suit" loading="lazy" decoding="async"><figcaption><b>Suited for the client call</b><small>// then back to the terminal</small></figcaption></figure>
+        <figure class="card tilt rv"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary in a vest and tie" loading="lazy" decoding="async"><figcaption><b>Where it started</b><small>// the v1 portfolio photo</small></figcaption></figure>
       </div>
     </div>
   </div>
@@ -838,10 +871,10 @@ footer a:hover{color:var(--teal)}
   <div class="sec">
     <div class="sec-head rv"><div><span class="eyebrow">ls ~/field</span><h2>In the field</h2><p class="sub">The products are built in the terminal and proven on site.</p></div><a class="link" href="#life">More photos →</a></div>
     <div class="strip field">
-      <figure class="card tilt rv"><img src="assets/v2/life/nova-dashboard-sm.webp" alt="Isaac shipping the Nova Salon dashboard" loading="lazy"><figcaption><b>Nova Salon dashboard</b><small>// Business OS, beauty edition</small></figcaption></figure>
-      <figure class="card tilt rv"><img src="assets/v2/life/pos-shop-sm.webp" alt="MobKazi POS at a client shop" loading="lazy"><figcaption><b>POS live at a client shop</b><small>// stock, sales, M-PESA</small></figcaption></figure>
-      <figure class="card tilt rv"><img src="assets/v2/life/waqforce-onboarding-sm.webp" alt="Onboarding a guard on WaqForce" loading="lazy"><figcaption><b>WaqForce onboarding</b><small>// SSL Security, night shift</small></figcaption></figure>
-      <figure class="card tilt rv"><img src="assets/v2/life/meat-expo-sm.webp" alt="Isaac at Kenya Meat Expo 2026" loading="lazy"><figcaption><b>Kenya Meat Expo 2026</b><small>// networking for MobKazi</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/nova-dashboard-sm.webp" alt="Isaac shipping the Nova Salon dashboard" loading="lazy" decoding="async"><figcaption><b>Nova Salon dashboard</b><small>// Business OS, beauty edition</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/pos-shop-sm.webp" alt="MobKazi POS at a client shop" loading="lazy" decoding="async"><figcaption><b>POS live at a client shop</b><small>// stock, sales, M-PESA</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/waqforce-onboarding-sm.webp" alt="Onboarding a guard on WaqForce" loading="lazy" decoding="async"><figcaption><b>WaqForce onboarding</b><small>// SSL Security, night shift</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/meat-expo-sm.webp" alt="Isaac at Kenya Meat Expo 2026" loading="lazy" decoding="async"><figcaption><b>Kenya Meat Expo 2026</b><small>// networking for MobKazi</small></figcaption></figure>
     </div>
   </div>
 
@@ -1015,12 +1048,27 @@ footer a:hover{color:var(--teal)}
 </div>
 
 <!-- lightbox -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Design preview"><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button><div><img id="lbImg" alt=""><div class="meta"><b id="lbT"></b><br><small id="lbC"></small></div></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Preview">
+  <div class="lb-bar"><div class="lb-meta"><b id="lbT"></b><small id="lbC"></small></div>
+    <div class="lb-act">
+      <button class="pdf-only" id="lbZo" aria-label="Zoom out">−</button><button class="pdf-only" id="lbZi" aria-label="Zoom in">+</button>
+      <button id="lbPrint" aria-label="Print"><svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg><span class="lbl">Print</span></button>
+      <a id="lbDl" download aria-label="Download"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><span class="lbl">Download</span></a>
+      <button id="lbShare" class="pri" aria-label="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg><span class="lbl">Share</span></button>
+      <a id="lbOpen" target="_blank" rel="noopener" aria-label="Open in new tab"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg></a>
+      <button class="x" id="lbX" aria-label="Close">×</button>
+    </div></div>
+  <button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button>
+  <div class="lb-stage" id="lbStage"></div>
+  <div class="lb-toast" id="lbToast"></div>
+</div>
 
 <!-- command palette -->
 <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette"><div class="cmdk-box"><div class="cmdk-in"><b>isaac@iz ~ $</b><input id="cmdIn" autocomplete="off" spellcheck="false" placeholder="type a page or command, or 'help'"></div><div class="cmdk-out" id="cmdOut"></div></div></div>
 
 <script>
+document.addEventListener('load',e=>{ if(e.target.tagName==='IMG') e.target.classList.add('ld'); },true);
+document.addEventListener('error',e=>{ if(e.target.tagName==='IMG') e.target.classList.add('ld'); },true);
 const FORMSPREE_ID = "xnjlgjze";
 let pipeOn = false;
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
@@ -1209,7 +1257,7 @@ const docs = [
 const life = [["Doha nights, deep in thought", "Doha", "doha-thinking"], ["Kazi, the MobKazi mascot", "MobKazi brand", "kazi-mascot"], ["MobKazi OS poster, branded and on the wall", "MobKazi brand", "mobkazi-poster"], ["Installing UNV CCTV signage in MobKazi gear", "MobKazi brand", "mobkazi-cctv-sign"], ["In the MobKazi polo", "MobKazi brand", "mobkazi-hoodie"], ["Framing the next chapter", "Doha", "doha-frame"], ["Warehouse CCTV install, way up high", "In the field", "warehouse-cctv"], ["DJ Bazeh on the decks", "Music", "dj-bazeh"], ["DJ Bazeh, live set", "Music", "dj-bazeh-set"], ["Shipping the Nova Salon dashboard", "Building", "nova-dashboard"], ["Building the MobKazi Command Center with my little co-pilot", "Building", "building-with-family"], ["Fibre splicing day, fusion splicer on standby", "In the field", "fibre-splicing"], ["MobKazi POS, live at a client shop", "In the field", "pos-shop"], ["Onboarding a guard on WaqForce", "In the field", "waqforce-onboarding"], ["Hand-painting the signage for a salon client", "In the field", "salon-sign"], ["At the MobKazi office with my little one", "Family", "mobkazi-office-family"], ["Grateful for the journey", "Doha", "doha-grateful"], ["Anaya turns one, little coder in progress", "Family", "anaya-birthday"], ["Shop makeover, door to till", "In the field", "shop-paint"], ["CCTV install, checking the feed from the ladder", "In the field", "cctv-ladder"], ["Engineer mode", "Portraits", "ai-portrait"], ["Stock check on the POS app", "In the field", "pos-shop-2"], ["Quiet moment, Doha", "Doha", "doha-stairs"], ["Setting up patrol accounts, live on site", "In the field", "waqforce-setup"], ["Kenya Meat Expo 2026, networking for MobKazi", "Events", "meat-expo"], ["DJ Bazeh, mic in hand", "Music", "dj-bazeh-mic"], ["Hands in pockets, eyes on the horizon", "Doha", "doha-road"], ["On the tarmac, heading out", "Travel", "airport-tarmac"], ["Digitising client records", "In the field", "client-records"], ["Mounting cameras along the roof beam", "In the field", "warehouse-cctv-2"], ["Nairobi CBD", "Portraits", "nairobi-cbd"], ["Running camera cable at sunset", "In the field", "cctv-sunset"], ["Mounting a camera under the eaves", "In the field", "cctv-ladder-2"], ["Fixing a camera under a car-wash canopy", "In the field", "canopy-install"], ["Up on a crate, cabling the canopy", "In the field", "canopy-install-2"], ["Client call from the village, KEPF polo on", "Building", "kepf-remote"], ["Remote support, focused", "Building", "kepf-remote-2"], ["Night shift, Doha", "Doha", "doha-villas"], ["Daddy duty", "Family", "family-pink"], ["Fundi mode: carpentry", "Off the clock", "carpentry"], ["On-site client support", "In the field", "client-office"], ["Boarding for the next chapter", "Travel", "boarding"], ["Window seat, thinking about the next build", "Travel", "window-seat"], ["Professional headshot", "Portraits", "headshot"], ["Testing in-flight UX, unofficially", "Travel", "inflight-game"], ["Good company, good counsel", "Off the clock", "garden-elder"], ["Best co-worker", "Off the clock", "dog"], ["Long flight, short levels", "Travel", "inflight-game-2"], ["Weekend mode", "Off the clock", "casual-jersey"], ["Good vibes only", "Off the clock", "dog-2"], ["Wherever there is power, there is a workstation", "Building", "kepf-remote-3"], ["Building at home, the literal kind", "Off the clock", "home-build"], ["Site check at home", "Off the clock", "home-build-2"], ["Hands-on with furniture repair", "Off the clock", "upholstery"], ["Fixing what is broken, wood edition", "Off the clock", "upholstery-2"], ["Varsity season", "Portraits", "varsity"], ["Taking the call", "Portraits", "varsity-2"], ["Suit, cap, skyline", "Doha", "doha-cap"], ["White cap, clear head", "Portraits", "white-cap"], ["Measure twice, nail once", "Off the clock", "carpentry-2"]];
 /* ===== RENDER ===== */
 const projCard = p => `<article class="card hov pc tilt rv" data-c="${p.c}"><span class="glow"></span>
-  ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : p.logo ? `<div class="shot art plogo"><img src="${p.logo}" alt="${p.t} logo" loading="lazy"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
+  ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy" decoding="async"></div>` : p.logo ? `<div class="shot art plogo"><img src="${p.logo}" alt="${p.t} logo" loading="lazy" decoding="async"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
   <div class="bd"><span class="k">${p.k}</span><h3>${p.t}</h3><p>${p.d}</p><div class="tags">${p.tags.map(t=>`<span class="tag t">${t}</span>`).join('')}</div>
   ${p.l.length?`<div class="links">${p.l.map(([a,u])=>`<a href="${u}" target="_blank" rel="noopener">${a} ↗</a>`).join('')}</div>`:''}</div></article>`;
 
@@ -1230,7 +1278,7 @@ rotator('#iqText','#iqWho','#iqDots');
 
 const dcat=['All','CV','Publication','Recommendation','Certificate','Education'];
 function renderDocs(c='All'){
-  $('#docs').innerHTML = docs.filter(d=>c==='All'||d[2]===c).map(([sl,t,cat,m])=>`<article class="card hov doc rv"><a class="dthumb" href="${D}${sl}.pdf" target="_blank" rel="noopener"><img src="${D}thumbs/${sl}.webp" alt="${t}" loading="lazy"><span class="dtype">${cat}</span></a><div class="dbody"><h3>${t}</h3><p>${m}</p><div class="dact"><a class="btn btn-g btn-sm" href="${D}${sl}.pdf" target="_blank" rel="noopener">View</a><a class="btn btn-p btn-sm" href="${D}${sl}.pdf" download>Download PDF</a></div></div></article>`).join('');
+  $('#docs').innerHTML = docs.filter(d=>c==='All'||d[2]===c).map(([sl,t,cat,m])=>`<article class="card hov doc rv"><a class="dthumb" href="${D}${sl}.pdf" target="_blank" rel="noopener"><img src="${D}thumbs/${sl}.webp" alt="${t}" loading="lazy" decoding="async"><span class="dtype">${cat}</span></a><div class="dbody"><h3>${t}</h3><p>${m}</p><div class="dact"><a class="btn btn-p btn-sm" href="${D}${sl}.pdf">Preview</a><a class="btn btn-g btn-sm" href="${D}${sl}.pdf" download>Download</a></div></div></article>`).join('');
   $$('#docf button').forEach(b=>b.classList.toggle('on',b.dataset.c===c)); afterRender('#docs');
 }
 $('#docf').innerHTML = dcat.map(c=>`<button data-c="${c}">${c==='All'?'All':c+'s'}<span>${c==='All'?docs.length:docs.filter(d=>d[2]===c).length}</span></button>`).join('');
@@ -1270,27 +1318,87 @@ let gList = designs;
 $('#df').innerHTML = dcats.map(c=>`<button data-c="${c}">${c}<span>${c==='All'?designs.length:designs.filter(d=>dgroup(d[1])===c).length}</span></button>`).join('');
 function renderGal(c='All'){
   gList = designs.filter(d=>c==='All'||dgroup(d[1])===c);
-  $('#gal').innerHTML = gList.map(([t,cat,s],i)=>`<button class="tile rv" data-i="${i}"><img src="assets/v2/designs/${s}-sm.webp" alt="${t}" loading="lazy"><span class="cap"><b>${t}</b><small>${cat}</small></span></button>`).join('');
+  $('#gal').innerHTML = gList.map(([t,cat,s],i)=>`<button class="tile rv" data-i="${i}"><img src="assets/v2/designs/${s}-sm.webp" alt="${t}" loading="lazy" decoding="async"><span class="zoom">⤢</span><span class="cap"><b>${t}</b><small>${cat}</small></span></button>`).join('');
   $$('#df button').forEach(b=>b.classList.toggle('on', b.dataset.c===c)); afterRender('#gal');
 }
-const reelHTML=(n,w)=>`<div class="reel rv ${w?'wide':''}"><video src="assets/v2/motion/kazi-ad-${n}.mp4" poster="assets/v2/motion/kazi-ad-${n}.webp" controls playsinline preload="none"></video></div>`;
-$('#reelsV').innerHTML=[32,31,29,30,27,28,26,1,2,3,11,8,9,10,12,22,23,24,21,25,17].map(n=>reelHTML(n,0)).join(''); $('#reelsH').innerHTML=[5,6,7,20,13,14,15,16,19,18,4].map(n=>reelHTML(n,1)).join('');
+const RV=[32,31,29,30,27,28,26,1,2,3,11,8,9,10,12,22,23,24,21,25,17], RH=[5,6,7,20,13,14,15,16,19,18,4], REELS=RV.concat(RH);
+const reelItems=()=>REELS.map((n,k)=>({t:'MobKazi ad film '+(k+1), c:'Motion & ads', src:`assets/v2/motion/kazi-ad-${n}.mp4`, poster:`assets/v2/motion/kazi-ad-${n}.webp`}));
+const reelHTML=(n,w)=>`<div class="reel rv ${w?'wide':''}"><div class="rx"><button data-act="open" data-n="${n}" aria-label="Open full screen"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><button data-act="share" data-n="${n}" aria-label="Share or download"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></button></div><video src="assets/v2/motion/kazi-ad-${n}.mp4" poster="assets/v2/motion/kazi-ad-${n}.webp" controls playsinline preload="none"></video></div>`;
+$('#reelsV').innerHTML=RV.map(n=>reelHTML(n,0)).join(''); $('#reelsH').innerHTML=RH.map(n=>reelHTML(n,1)).join('');
+document.querySelectorAll('.reels-v,.reels-h').forEach(r=>r.addEventListener('click',e=>{ const b=e.target.closest('.rx button'); if(!b) return; const k=REELS.indexOf(+b.dataset.n); openViewer(reelItems(),k); if(b.dataset.act==='share') setTimeout(()=>$('#lbShare').click(),50); }));
 $('#df').onclick = e => { const b=e.target.closest('button'); if(b) renderGal(b.dataset.c); };
 renderGal();
-let li = 0, lbList = []; const lb = $('#lb');
-function showLB(i){ li=(i+lbList.length)%lbList.length; const [t,c,src]=lbList[li]; $('#lbImg').src=src; $('#lbImg').alt=t; $('#lbT').textContent=t; $('#lbC').textContent=c+' · '+(li+1)+'/'+lbList.length; lb.classList.add('open'); }
-$('#gal').onclick = e => { const t=e.target.closest('.tile'); if(t){ lbList=gList.map(([a,b,s])=>[a,b,`assets/v2/designs/${s}.webp`]); showLB(+t.dataset.i); } };
+let li = 0, lbList = []; const lb = $('#lb'); let pdfZoom = 1, pdfJob = 0;
+const kindOf = u => /\.pdf(\?|#|$)/i.test(u) ? 'pdf' : /\.(mp4|webm|mov)(\?|$)/i.test(u) ? 'video' : /^https?:/i.test(u) ? 'link' : 'image';
+function norm(x){ if(Array.isArray(x)) return {t:x[0], c:x[1], src:x[2], type:kindOf(x[2]), poster:x[3]}; return {type:kindOf(x.src), ...x}; }
+function openViewer(list, i=0){ lbList = list.map(norm); showLB(i); }
+function abs(u){ try{ return new URL(u, location.href).href; }catch(e){ return u; } }
+function toast(m){ const t=$('#lbToast'); t.textContent=m; t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on'),2200); }
+function loadPdfJs(){ if(window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+  return new Promise((res,rej)=>{ const sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+    sc.onload=()=>{ try{ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; res(pdfjsLib);}catch(e){rej(e)} }; sc.onerror=rej; document.head.appendChild(sc); setTimeout(()=>rej('timeout'),9000); }); }
+async function renderPdf(src){
+  const job=++pdfJob, st=$('#lbStage'); st.innerHTML='<div class="pdfwrap" id="pdfw"><span class="spin"></span></div>'; const w=$('#pdfw');
+  try{ const lib=await loadPdfJs(); const doc=await lib.getDocument(src).promise; if(job!==pdfJob) return; w.innerHTML='';
+    $('#lbC').textContent=(lbList[li].c||'Document')+' · '+doc.numPages+' page'+(doc.numPages>1?'s':'');
+    const base=Math.min(w.clientWidth-8, 900);
+    for(let p=1;p<=doc.numPages;p++){ if(job!==pdfJob) return; const page=await doc.getPage(p); const v0=page.getViewport({scale:1});
+      const css=base*pdfZoom, sc=css/v0.width, dpr=Math.min(devicePixelRatio||1,2), vp=page.getViewport({scale:sc*dpr});
+      const cv=document.createElement('canvas'); cv.width=vp.width; cv.height=vp.height; cv.style.width=css+'px'; w.appendChild(cv);
+      await page.render({canvasContext:cv.getContext('2d'), viewport:vp}).promise; }
+  }catch(e){ if(job!==pdfJob) return; w.innerHTML=`<iframe src="${src}#view=FitH" title="Document preview"></iframe>`; }
+}
+function showLB(i){
+  if(!lbList.length) return; li=(i+lbList.length)%lbList.length; const it=lbList[li], st=$('#lbStage');
+  lb.classList.toggle('single', lbList.length<2); lb.classList.toggle('is-pdf', it.type==='pdf');
+  $('#lbT').textContent=it.t||''; $('#lbC').textContent=(it.c||'')+(lbList.length>1?' · '+(li+1)+'/'+lbList.length:'');
+  const dl=$('#lbDl'), op=$('#lbOpen'); op.href=it.src;
+  if(it.type==='link'){ dl.style.display='none'; } else { dl.style.display=''; dl.href=it.src; dl.setAttribute('download', (it.t||'file').replace(/[^\w\- ]+/g,'').trim().replace(/\s+/g,'-')+'.'+(it.src.split('.').pop().split(/[?#]/)[0])); }
+  $('#lbPrint').style.display = it.type==='video' ? 'none' : '';
+  st.querySelectorAll('video').forEach(v=>v.pause());
+  if(it.type==='image'){ st.innerHTML='<span class="spin"></span>'; const im=new Image(); im.alt=it.t||''; im.decoding='async'; im.onload=()=>{ st.innerHTML=''; st.appendChild(im); }; im.src=it.src;
+    [li+1,li-1].forEach(k=>{ const n=lbList[(k+lbList.length)%lbList.length]; if(n&&n.type==='image'){ const p=new Image(); p.src=n.src; } }); }
+  else if(it.type==='video'){ st.innerHTML=`<video src="${it.src}" ${it.poster?`poster="${it.poster}"`:''} controls autoplay playsinline></video>`; }
+  else if(it.type==='pdf'){ pdfZoom=1; renderPdf(it.src); }
+  else { st.innerHTML=`<div class="lb-card"><div class="seal">🎓</div><h3>${it.t}</h3><p>${it.c||'Online certificate'} · verified by the issuer</p><a class="btn btn-p" style="color:#0b1220;font-family:var(--sans);font-size:14px" href="${it.src}" target="_blank" rel="noopener">Open certificate ↗</a><p style="margin:16px 0 0"><a href="${it.src}" target="_blank" rel="noopener">${it.src.replace(/^https?:\/\//,'').slice(0,60)}…</a></p></div>`; }
+  if(!lb.classList.contains('open')){ lb.classList.add('open'); document.body.style.overflow='hidden'; }
+}
+function closeLB(){ lb.classList.remove('open'); document.body.style.overflow=''; pdfJob++; $('#lbStage').innerHTML=''; }
+$('#lbX').onclick=closeLB;
+$('#lbZi').onclick=()=>{ pdfZoom=Math.min(pdfZoom+.25,3); renderPdf(lbList[li].src); };
+$('#lbZo').onclick=()=>{ pdfZoom=Math.max(pdfZoom-.25,.5); renderPdf(lbList[li].src); };
+$('#lbShare').onclick=async()=>{ const it=lbList[li], url=abs(it.src), data={title:it.t+' · Isaac Zachary', text:it.t, url};
+  try{ if(it.type!=='link' && navigator.canShare){ const b=await (await fetch(it.src)).blob(); const f=new File([b], $('#lbDl').getAttribute('download')||'file', {type:b.type}); if(navigator.canShare({files:[f]})){ await navigator.share({files:[f], title:data.title, text:data.text}); return; } } }catch(e){ if(e&&e.name==='AbortError') return; }
+  try{ if(navigator.share){ await navigator.share(data); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
+  try{ await navigator.clipboard.writeText(url); toast('Link copied to clipboard'); }catch(e){ toast(url); } };
+$('#lbPrint').onclick=()=>{ const it=lbList[li]; if(it.type==='link'){ window.open(it.src,'_blank','noopener'); return; }
+  const f=document.createElement('iframe'); f.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';
+  if(it.type==='pdf') f.src=it.src; else f.srcdoc=`<html><body style="margin:0;display:grid;place-items:center"><img src="${abs(it.src)}" style="max-width:100%;max-height:100vh" onload="setTimeout(()=>{print()},200)"></body></html>`;
+  document.body.appendChild(f);
+  if(it.type==='pdf') f.onload=()=>{ try{ f.contentWindow.focus(); f.contentWindow.print(); }catch(e){ window.open(it.src,'_blank'); } };
+  setTimeout(()=>f.remove(),60000); };
+$('#gal').onclick = e => { const t=e.target.closest('.tile'); if(t){ openViewer(gList.map(([a,b,s])=>[a,b,`assets/v2/designs/${s}.webp`]),+t.dataset.i); } };
 const lcats=['All','MobKazi brand','Building','In the field','Events','Doha','Travel','Music','Family','Portraits','Off the clock']; let lList=life;
 function renderLife(c='All'){ lList=life.filter(d=>c==='All'||d[1]===c);
-  $('#lgal').innerHTML=lList.map(([t,cat,s],i)=>`<button class="tile rv" data-i="${i}"><img src="assets/v2/life/${s}-sm.webp" alt="${t}" loading="lazy"><span class="cap"><b>${t}</b><small>${cat}</small></span></button>`).join('');
+  $('#lgal').innerHTML=lList.map(([t,cat,s],i)=>`<button class="tile rv" data-i="${i}"><img src="assets/v2/life/${s}-sm.webp" alt="${t}" loading="lazy" decoding="async"><span class="zoom">⤢</span><span class="cap"><b>${t}</b><small>${cat}</small></span></button>`).join('');
   $$('#lf button').forEach(b=>b.classList.toggle('on',b.dataset.c===c)); afterRender('#lgal'); }
 $('#lf').innerHTML=lcats.map(c=>`<button data-c="${c}">${c}<span>${c==='All'?life.length:life.filter(d=>d[1]===c).length}</span></button>`).join('');
 $('#lf').onclick=e=>{ const b=e.target.closest('button'); if(b) renderLife(b.dataset.c); };
 renderLife();
-$('#lgal').onclick = e => { const t=e.target.closest('.tile'); if(t){ lbList=lList.map(([a,b,s])=>[a,b,`assets/v2/life/${s}.webp`]); showLB(+t.dataset.i); } };
-lb.onclick = e => { if(e.target.closest('.x')||e.target===lb) lb.classList.remove('open'); if(e.target.closest('.pv')) showLB(li-1); if(e.target.closest('.nx')) showLB(li+1); };
+$('#lgal').onclick = e => { const t=e.target.closest('.tile'); if(t){ openViewer(lList.map(([a,b,s])=>[a,b,`assets/v2/life/${s}.webp`]),+t.dataset.i); } };
+lb.onclick = e => { if(e.target===lb||e.target.id==='lbStage') closeLB(); if(e.target.closest('.pv')) showLB(li-1); if(e.target.closest('.nx')) showLB(li+1); };
+let tx=0; lb.addEventListener('touchstart',e=>{ tx=e.touches[0].clientX; },{passive:true});
+lb.addEventListener('touchend',e=>{ const d=e.changedTouches[0].clientX-tx; if(lbList.length>1 && !lb.classList.contains('is-pdf') && Math.abs(d)>60) showLB(li+(d<0?1:-1)); },{passive:true});
+// any PDF link anywhere opens in the viewer
+const docList = () => docs.map(([sl,t,cat,m])=>[t,cat+' · '+m,D+sl+'.pdf']);
+document.addEventListener('click', e => { const a=e.target.closest('a[href]'); if(!a || a.hasAttribute('download') || a.closest('#lb')) return;
+  const h=a.getAttribute('href');
+  if(/\.pdf(\?|#|$)/i.test(h)){ e.preventDefault(); const L=docList(), hh=/Isaac_Zachary_CV\.pdf/.test(h)?D+'isaac-zachary-cv.pdf':h, k=L.findIndex(x=>x[2]===hh); if(k>-1) openViewer(L,k); else openViewer([[a.textContent.trim()||'Document','Document',h]]); }
+  else if(a.classList.contains('vlink') && /^https?:/.test(h)){ e.preventDefault(); const row=a.closest('div'); const t=row?row.querySelector('b').textContent:'Certificate'; openViewer([{t, c:row?row.querySelector('span').childNodes[0].textContent.replace(' · ',''):'', src:h, type:'link'}]); }
+});
 
 afterRender();
+document.querySelectorAll('img').forEach(i=>{ if(i.complete) i.classList.add('ld'); });
 /* ===== THEME ===== */
 function setTheme(t){ document.documentElement.dataset.theme=t; try{localStorage.setItem('iz-theme',t);}catch(e){} }
 $$('[data-theme-toggle]').forEach(b=>b.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
@@ -1383,7 +1491,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
     const typing=/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
     if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){ e.preventDefault(); box.classList.contains('open')?close():open(); }
     else if(e.key==='/'&&!typing){ e.preventDefault(); open(); }
-    else if(e.key==='Escape'){ close(); lb.classList.remove('open'); document.body.classList.remove('nav-open'); }
+    else if(e.key==='Escape'){ close(); if(lb.classList.contains('open')) closeLB(); document.body.classList.remove('nav-open'); }
     else if(lb.classList.contains('open')&&e.key==='ArrowRight') showLB(li+1);
     else if(lb.classList.contains('open')&&e.key==='ArrowLeft') showLB(li-1);
     else if(!typing&&e.key==='g'){ g=Date.now(); }

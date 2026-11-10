@@ -26,7 +26,7 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Keyboard shortcuts:** `g` then `h`/`a`/`i`/`e`/`p`/`m`/`d`/`l`/`w`/`r`/`c` jumps to a page
 - **Life & Work** photo journal (building, in the field, events, travel, portraits) with filters and lightbox
 - **Inspiration** page: Newton, Tesla, Garvey, Musk, Zuckerberg, Jobs, Marcus Aurelius and Kafka, with sourced quotes, short stories and why each matters, plus a rotating "daily fuel" quote on the home page
-- **Design gallery** with 32 MobKazi ad videos (Motion & ads) and 101 print/digital designs, including the MobKazi marketing set,, category filters and a keyboard-friendly lightbox
+- **Design gallery** with 32 MobKazi ad videos (Motion & ads) and 101 print/digital designs, including the MobKazi marketing set, with category filters
 - **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress (the overall % is calculated from the stages)
 - **Documents** page: CV, degree, KCSE/KCPE, certificates and recommendation letters to view or download (IDs and referees' private contacts redacted), stored in `docs/`
 - **Floating WhatsApp button** with personal (Kenya), Qatar and MobKazi lines
@@ -35,6 +35,15 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Contact form** through Formspree, with WhatsApp, phone and email links
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support
 - No build step and no framework. One `index.html` with inline CSS and JS, plus optimised WebP assets
+
+## Media & document viewer
+
+Every image, ad film, PDF and certificate opens in one in-page viewer instead of downloading:
+
+- **Images & videos**: full-screen preview with prev/next (arrow keys, swipe on mobile), plus **Download**, **Share** (native share sheet with the file on mobile, copy-link fallback), **Print** and open-in-new-tab
+- **PDFs** (CV, degree, letters, certificates, booklet, business profile): rendered inline with pdf.js (zoom in/out, all pages), falling back to the browser's PDF viewer; Print / Download / Share from the toolbar
+- **Online certificates** (Coursera, Google, LinkedIn…): open as a verification card linking to the issuer's page
+- Shimmer placeholders, lazy/async image decoding, preloading of neighbouring items, and long-lived cache headers (`_headers`) so media appears near-instantly on repeat visits; PDFs are served `Content-Disposition: inline`
 
 ## Walkthrough video
 
