@@ -137,7 +137,7 @@ h2{font-size:clamp(26px,3.2vw,40px);margin:10px 0 10px}
 .lead strong{color:var(--text);font-weight:600}
 .cta{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
 .cta .btn{height:46px;padding:0 20px}
-.stats{display:grid;grid-template-columns:repeat(4,auto);gap:28px;margin-top:40px;justify-content:start}
+.stats{display:grid;grid-template-columns:repeat(5,auto);gap:24px;margin-top:40px;justify-content:start}
 .stats div{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
 .stats strong{display:block;font-family:var(--sans);font-size:28px;color:var(--text);letter-spacing:-.04em;font-weight:750;line-height:1.1}
 
@@ -427,6 +427,10 @@ h2{font-size:clamp(26px,3.2vw,40px);margin:10px 0 10px}
 .visits{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:3px}
 .visits svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}.visits b{color:var(--text);font-weight:600}
 footer .visits{display:inline;font-size:inherit;margin:0}footer .visits[hidden]{display:none}.visits[hidden]{display:none}
+.vstat strong{display:flex!important;align-items:center;gap:8px}
+.live{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:livep 1.8s infinite;flex:none}
+@keyframes livep{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.aviews[hidden]{display:none}
 /* instant-feel loading */
 .tile,.dthumb,.pc .shot,.reel,.strip figure,.feat-img,.ph-card,.slides{background-image:linear-gradient(100deg,transparent 30%,rgba(148,163,184,.14) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.4s linear infinite}
 @keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
@@ -769,6 +773,7 @@ footer a:hover{color:var(--teal)}
         <div><strong>10+</strong>businesses served</div>
         <div><strong>2019</strong>in tech since</div>
         <div><strong>15</strong>devs mentored (PLP)</div>
+        <div class="vstat" hidden><strong><i class="live"></i><span class="vnum">–</span></strong>site visitors</div>
       </div>
     </div>
     <div class="stage" id="stage">
@@ -1195,9 +1200,14 @@ const GOAT_CODE = "izach";
   const hit = () => { const p = page(); if(p===last || !window.goatcounter || !goatcounter.count) return; last = p; goatcounter.count({ path: p, title: document.title }); };
   gc.onload = () => { hit(); addEventListener('hashchange', () => setTimeout(hit, 50)); };
   document.head.appendChild(gc);
-  fetch(`https://${GOAT_CODE}.goatcounter.com/counter/TOTAL.json`).then(r => r.ok ? r.json() : Promise.reject()).then(d => {
-    if(!d || !d.count) return; document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = d.count; v.hidden = false; });
+  const gcCount = p => fetch(`https://${GOAT_CODE}.goatcounter.com/counter/${encodeURIComponent(p)}.json`).then(r => r.ok ? r.json() : Promise.reject()).then(d => d && d.count ? d.count : Promise.reject());
+  const countUp = (el, txt) => { const n = parseInt(String(txt).replace(/\D/g,''),10); if(!n || reduce){ el.textContent = txt; return; } const t0 = performance.now(), D = 1400;
+    const f = t => { const k = Math.min((t-t0)/D,1), e = 1-Math.pow(1-k,3); el.textContent = Math.round(n*e).toLocaleString('en-US'); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
+  gcCount('TOTAL').then(c => {
+    document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = c; v.hidden = false; });
+    document.querySelectorAll('.vstat').forEach(v => { v.hidden = false; countUp(v.querySelector('.vnum'), c); });
   }).catch(()=>{});
+  window.articleViews = slug => { const el = document.querySelector('#artMount .aviews'); if(!el) return; gcCount('/article/'+slug).then(c => { el.querySelector('.vn').textContent = c; el.hidden = false; }).catch(()=>{}); };
 })();
 let pipeOn = false;
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
@@ -1332,7 +1342,7 @@ function renderArticle(slug){
   const heads=[...tmp.querySelectorAll('h2')]; heads.forEach(h=>h.id='s-'+slugify(h.textContent));
   tmp.querySelectorAll('pre').forEach(p=>{ const b=document.createElement('button'); b.className='cp'; b.textContent='copy'; p.appendChild(b); });
   const prev=ARTICLES[(k-1+ARTICLES.length)%ARTICLES.length], next=ARTICLES[(k+1)%ARTICLES.length];
-  $('#artMount').innerHTML=`<header class="arthead"><div class="k"><span class="tag t">${esc(a.cat)}</span><span>${a.read} read</span><span>·</span><span>${a.year}</span></div>
+  $('#artMount').innerHTML=`<header class="arthead"><div class="k"><span class="tag t">${esc(a.cat)}</span><span>${a.read} read</span><span>·</span><span>${a.year}</span><span class="aviews" hidden>· <b class="vn">–</b> views</span></div>
     <h1>${esc(a.title)}</h1><p class="lead">${esc(a.lead)}</p></header>
     <div class="byline" style="max-width:780px"><img src="assets/v2/life/headshot-sm.webp" alt="" onerror="this.src='assets/v2/brand/iz-glyph.webp'"><div class="who"><b>Isaac Zachary</b><small>Founder & lead engineer, MobKazi</small></div>
       <button class="btn btn-g btn-sm" id="artShare"><svg class="i"><use href="#i-share"/></svg>Share</button><button class="btn btn-g btn-sm" id="artPrint">Print</button></div>
@@ -1343,6 +1353,7 @@ function renderArticle(slug){
   $$('#artDoc pre .cp').forEach(b=>b.onclick=async()=>{ const code=b.parentElement.querySelector('code').innerText; try{ await navigator.clipboard.writeText(code); b.textContent='copied ✓'; }catch(e){ b.textContent='select & copy'; } setTimeout(()=>b.textContent='copy',1600); });
   $('#artShare').onclick=async()=>{ const url=location.href; try{ if(navigator.share){ await navigator.share({title:a.title,text:a.lead,url}); return; } }catch(e){ if(e.name==='AbortError') return; } try{ await navigator.clipboard.writeText(url); $('#artShare').lastChild.textContent='Link copied'; setTimeout(()=>$('#artShare').lastChild.textContent='Share',1800);}catch(e){} };
   $('#artPrint').onclick=()=>window.print();
+  if(window.articleViews) articleViews(a.slug);
   return a;
 }
 addEventListener('scroll',()=>{ const v=$('#v-article'); if(v.hidden) return; const d=$('#artDoc'); if(!d) return;
