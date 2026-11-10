@@ -465,6 +465,12 @@ footer a:hover{color:var(--teal)}
 .wa-menu a b{display:block;font-size:14px}.wa-menu a small{font-family:var(--mono);font-size:11px;color:var(--dim)}
 @media (max-width:640px){.wa{right:14px;bottom:14px}.wa-btn{width:52px;height:52px}}
 @media print{.wa{display:none}}
+.book{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
+.bcover{display:block}.bcover img{width:100%;border-radius:10px;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+.pub{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
+.pub img{width:100%;border-radius:8px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.pub h3{font-size:17px;letter-spacing:-.02em;margin:8px 0 4px}.pub p{color:var(--muted);font-size:13.5px}.pub .go{display:block;margin-top:8px;font-size:13px;font-weight:600;color:var(--teal)}
+@media (max-width:640px){.book{grid-template-columns:1fr}.bcover{max-width:200px}.pub{grid-template-columns:90px 1fr}}
 /* command palette */
 .cmdk{position:fixed;inset:0;z-index:130;display:none;place-items:start center;padding-top:13vh;background:rgba(2,6,23,.45);backdrop-filter:blur(6px)}
 .cmdk.open{display:grid}
@@ -825,7 +831,7 @@ footer a:hover{color:var(--teal)}
   </div>
   <div class="sec"><div class="sec-head rv"><div><span class="eyebrow">cat clients.log</span><h2>Trusted by</h2></div></div></div>
   <div class="marquee rv"><div class="track" id="t3"></div></div>
-  <div class="card cta-band rv"><div><h2>Run your business on MobKazi</h2><p>POS, ERP, security workforce, school and ISP platforms, or something custom.</p></div><div class="cta" style="margin:0"><a class="btn btn-p" href="https://mobkazi.com" target="_blank" rel="noopener">Visit mobkazi.com ↗</a><a class="btn btn-g" href="#contact">Talk to me</a></div></div>
+  <div class="card cta-band rv"><div><h2>Run your business on MobKazi</h2><p>POS, ERP, security workforce, school and ISP platforms, or something custom.</p></div><div class="cta" style="margin:0"><a class="btn btn-p" href="https://mobkazi.com" target="_blank" rel="noopener">Visit mobkazi.com ↗</a><a class="btn btn-g" href="docs/mobkazi-business-profile.pdf" target="_blank" rel="noopener">Company profile (PDF)</a><a class="btn btn-g" href="#contact">Talk to me</a></div></div>
 </section>
 
 <!-- ============ DESIGNS ============ -->
@@ -847,6 +853,16 @@ footer a:hover{color:var(--teal)}
       <a class="btn btn-p" href="learning.html">Enter the Academy →</a>
     </div>
     <div class="r"><img src="assets/v2/brand/iz-glyph.webp" alt=""></div>
+  </div>
+  <div class="card book rv" style="margin-top:16px">
+    <a class="bcover tilt" href="docs/computer-packages-booklet.pdf" target="_blank" rel="noopener"><img src="docs/thumbs/computer-packages-booklet.webp" alt="Computer Packages: Practical Tutorial Booklet cover"></a>
+    <div>
+      <span class="eyebrow">published book · 2022</span>
+      <h2 style="font-size:clamp(24px,2.6vw,32px)">Computer Packages: A Practical Tutorial Guide</h2>
+      <p style="color:var(--muted)">My 85-page booklet for learners and professionals. It covers computer fundamentals, Windows, Word, Excel, PowerPoint, Publisher, Access, internet, email and networking basics, with step-by-step exercises, quizzes and troubleshooting tips. I wrote it while teaching computer packages at Humble Crib Investment.</p>
+      <div class="meta-row"><span><b>85</b> pages</span><span><b>10</b> modules</span><span>quizzes included</span><span>© 2022</span></div>
+      <div class="cta" style="margin-top:6px"><a class="btn btn-p" href="docs/computer-packages-booklet.pdf" target="_blank" rel="noopener">Read the book</a><a class="btn btn-g" href="docs/computer-packages-booklet.pdf" download><svg class="i"><use href="#i-down"/></svg>Download PDF</a><a class="btn btn-g" href="https://www.canva.com/design/DAGF9WminMs/qXudYFY1YbY1PnLvAfvBQw/view" target="_blank" rel="noopener">View on Canva ↗</a></div>
+    </div>
   </div>
   <div class="grid g3" style="margin-top:16px">
     <div class="card hov course rv"><span class="tag t">Flagship certification</span><h3>Professional Computer Packages Mastery</h3><p>OS fundamentals, MS Office workflows and digital networking basics.</p><div class="meta-row"><span><b>10</b> mastery units</span><span><b>12.5</b> contact hrs</span></div><a class="link" href="learning.html">Start track →</a></div>
@@ -886,6 +902,10 @@ footer a:hover{color:var(--teal)}
 <!-- ============ WRITING ============ -->
 <section class="view" id="v-writing" data-title="Writing" hidden>
   <div class="ph"><span class="eyebrow">cat ~/writing/*.md</span><h1>Writing</h1><p class="sub">Notes from the field on DevOps, AI-assisted development, payments and careers in tech.</p></div>
+  <div class="grid g2" style="margin-bottom:16px">
+    <a class="card hov pub rv" href="docs/computer-packages-booklet.pdf" target="_blank" rel="noopener"><img src="docs/thumbs/computer-packages-booklet.webp" alt=""><div><span class="tag t">Book · 85 pages</span><h3>Computer Packages: A Practical Tutorial Guide</h3><p>From word processing and spreadsheets to graphics design and system administration.</p><span class="go">Read the book →</span></div></a>
+    <a class="card hov pub rv" href="docs/mobkazi-business-profile.pdf" target="_blank" rel="noopener"><img src="docs/thumbs/mobkazi-business-profile.webp" alt=""><div><span class="tag t">Company profile · 24 pages</span><h3>MobKazi Business Profile</h3><p>Mob = many. Kazi = work. Many business needs, one technology and creative partner.</p><span class="go">Read the profile →</span></div></a>
+  </div>
   <div class="grid g3" id="arts"></div>
   <div class="card cta-band rv" style="margin-top:40px"><div><h2>Read the full articles</h2><p>All articles, the interactive code playground and the full roadmap are on the writing page.</p></div><div class="cta" style="margin:0"><a class="btn btn-p" href="writing.html">Open writing →</a></div></div>
 </section>
@@ -1050,7 +1070,7 @@ const recog = [
   ['users','Class Representative','Elected class rep at KCA University'],
   ['grad','Workshop mentor, AI Safari / Coffee & Code','Mentored ~15 developers at TUK, at an event with 120+ attendees (PLP)'],
   ['shield','Delivered WaqForce for SSL Security','Cited in SSL\'s recommendation letter as turning operational needs into working software'],
-  ['book','Author: Computer Packages guide','Wrote a practical IT essentials guide for new learners'],
+  ['book','Author: <a class="link" href="docs/computer-packages-booklet.pdf" target="_blank" rel="noopener">Computer Packages ↗</a>','85-page practical tutorial booklet for learners, 2022'],
   ['globe','C1 Advanced English','EF SET 66/100; Listening at C2 Proficient'],
   ['in','1,000+ LinkedIn followers','500+ connections across tech, telecoms and security'],
   ['rocket','8 products shipped solo','Business OS, Shauri, WaqForce, SomaSteps, ISP, Jambo and more'],
@@ -1141,6 +1161,8 @@ const icons = [
 const D='docs/';
 const docs = [
   ['isaac-zachary-cv','Curriculum Vitae','CV','2 pages · 2026'],
+  ['computer-packages-booklet','Computer Packages: Practical Tutorial Booklet','Publication','By Isaac Zachary · 85 pages · 2022'],
+  ['mobkazi-business-profile','MobKazi Business Profile','Publication','MobKazi Technologies · 24 pages · 2026'],
   ['kca-degree-certificate','BSc Software Development degree','Education','KCA University · 2023'],
   ['kca-confirmation-letter','Graduation confirmation letter','Recommendation','KCA University, School of Technology · 2025'],
   ['ssl-security-recommendation','Professional recommendation','Recommendation','SSL Security Ltd · Micah Gesimba'],
@@ -1175,7 +1197,7 @@ rotator('#iqText','#iqWho','#iqDots');
   d.onclick=e=>{ const x=e.target.closest('i'); if(x) show(+x.dataset.i); };
   if(!reduce) setInterval(()=>show(k+1),4500); })(); rotator('#dfText','#dfWho','#dfDots');
 
-const dcat=['All','CV','Recommendation','Certificate','Education'];
+const dcat=['All','CV','Publication','Recommendation','Certificate','Education'];
 function renderDocs(c='All'){
   $('#docs').innerHTML = docs.filter(d=>c==='All'||d[2]===c).map(([sl,t,cat,m])=>`<article class="card hov doc rv"><a class="dthumb" href="${D}${sl}.pdf" target="_blank" rel="noopener"><img src="${D}thumbs/${sl}.webp" alt="${t}" loading="lazy"><span class="dtype">${cat}</span></a><div class="dbody"><h3>${t}</h3><p>${m}</p><div class="dact"><a class="btn btn-g btn-sm" href="${D}${sl}.pdf" target="_blank" rel="noopener">View</a><a class="btn btn-p btn-sm" href="${D}${sl}.pdf" download>Download PDF</a></div></div></article>`).join('');
   $$('#docf button').forEach(b=>b.classList.toggle('on',b.dataset.c===c)); afterRender('#docs');

@@ -29,6 +29,7 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress (the overall % is calculated from the stages)
 - **Documents** page: CV, degree, KCSE/KCPE, certificates and recommendation letters to view or download (IDs and referees' private contacts redacted), stored in `docs/`
 - **Floating WhatsApp button** with personal (Kenya), Qatar and MobKazi lines
+- **Publications**: the Computer Packages tutorial booklet (85 pages) and the MobKazi Business Profile, readable and downloadable
 - **Printable resume** view, plus a downloadable PDF CV
 - **Contact form** through Formspree, with WhatsApp, phone and email links
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support
