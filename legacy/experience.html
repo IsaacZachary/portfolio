@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Isaac Zachary's Professional Experience - Technical support, full-stack development, and DevOps responsibilities from 2019 to present.">
+    <title>Experience - Isaac Zachary | DevOps Engineer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
+</head>
+
+<body class="bg-background text-text-primary">
+
+    <!-- Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary"
+                            class="w-10 h-10 rounded-full transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac Zachary</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="experience-hero"
+        class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Professional
+                    <span class="text-gradient">Experience</span>
+                </h1>
+                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    A journey from technical support through full-stack development to DevOps engineering, building
+                    reliable systems and solving real-world infrastructure challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (Stacked Deck Layout) -->
+    <section id="timeline" class="section-padding bg-surface pt-72 pb-32">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto relative transition-all duration-500 ease-in-out mt-12 mb-20"
+                id="experience-deck">
+                <!-- Navigation Triggers -->
+                <div class="absolute -left-4 md:-left-24 top-1/2 -translate-y-1/2 z-50">
+                    <button onclick="prevCard()"
+                        class="w-14 h-14 rounded-full bg-white shadow-2xl flex items-center justify-center text-primary hover:scale-110 transition-transform border border-border-light">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div class="absolute -right-4 md:-right-24 top-1/2 -translate-y-1/2 z-50">
+                    <button onclick="nextCard()"
+                        class="w-14 h-14 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Experience Cards Stack -->
+                <div class="deck-container relative w-full h-full">
+
+                    <!-- Experience 1 -->
+                    <div class="deck-card active" data-index="0">
+                        <article class="card flex flex-col border-l-4 border-primary shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Software Systems
+                                        Architect</h3>
+                                    <p class="text-body font-medium text-primary">MobKazii Business OS</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-primary-100 text-primary px-3 py-1 rounded-full whitespace-nowrap">2024
+                                    – Present</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Developing a mobile-first business operating system for African enterprises in
+                                        low-connectivity environments.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Leading system design and M-PESA payment integrations with offline-tolerant
+                                        workflows.</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 pt-6 border-t border-border-light">
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">M-PESA G2</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="deck-card" data-index="1">
+                        <article class="card flex flex-col border-l-4 border-secondary shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Technical Architect
+                                    </h3>
+                                    <p class="text-body font-medium text-secondary">Tapscott Digital Solutions</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-secondary-100 text-secondary px-3 py-1 rounded-full whitespace-nowrap">2023
+                                    – 2024</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-secondary mt-1"></i>
+                                    <span>Deployed secure, containerized multi-tenant ERP systems in live
+                                        production.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-secondary mt-1"></i>
+                                    <span>Established CI/CD pipelines and automated backup workflows.</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 pt-6 border-t border-border-light">
+                                <span class="tech-badge">ERP Architecture</span>
+                                <span class="tech-badge">CI/CD</span>
+                                <span class="tech-badge">Docker Swarm</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="deck-card" data-index="2">
+                        <article class="card flex flex-col border-l-4 border-accent shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Technical Support
+                                        Engineer</h3>
+                                    <p class="text-body font-medium text-accent">First Basics Technologies</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-accent-100 text-accent px-3 py-1 rounded-full whitespace-nowrap">Jun
+                                    - Dec 2025</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-accent mt-1"></i>
+                                    <span>Led investigation of complex network, server, and application
+                                        incidents.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-accent mt-1"></i>
+                                    <span>Managed secure DNS/SSL and proactive server stability.</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 pt-6 border-t border-border-light">
+                                <span class="tech-badge">ISP Ops</span>
+                                <span class="tech-badge">SysAdmin</span>
+                                <span class="tech-badge">MikroTik</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="deck-card" data-index="3">
+                        <article class="card flex flex-col border-l-4 border-primary shadow-2xl bg-white">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="font-headline text-h3 font-bold text-text-primary">Platform Support
+                                        Engineer</h3>
+                                    <p class="text-body font-medium text-primary">Power Learn Project</p>
+                                </div>
+                                <span
+                                    class="text-xs font-bold bg-primary-100 text-primary px-3 py-1 rounded-full whitespace-nowrap">Mar
+                                    - Jul 2025</span>
+                            </div>
+                            <ul class="space-y-4 text-body text-text-secondary mb-8 flex-grow">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Enhanced engagement through ticketing and issue resolution on learning
+                                        platforms.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-primary mt-1"></i>
+                                    <span>Reviewed backend logic, APIs, and data handling for mentored projects.</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Stack Indicator -->
+            <div class="flex justify-center mt-12 space-x-3" id="deck-indicators">
+                <!-- JS Populates -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- CTA Section -->
+    <section id="cta" class="section-padding bg-gradient-to-br from-primary via-primary-600 to-accent text-white">
+        <div class="container-custom">
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <h2 class="font-headline text-display-sm">Ready to Build Great Infrastructure?</h2>
+                <p class="text-body-lg opacity-90">
+                    Let's leverage my years of experience to transform your infrastructure into a reliable, automated
+                    powerhouse.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                        class="bg-white text-primary font-cta font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-interactive">
+                        <span>Schedule a Consultation</span>
+                    </a>
+                    <a href="projects.html"
+                        class="border-2 border-white text-white font-cta font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                        <span>View Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary" class="w-10 h-10 rounded-full">
+                        <span class="font-headline font-bold text-xl">Isaac Zachary</span>
+                    </div>
+                    <p class="text-body-sm text-gray-400">DevOps engineer transforming infrastructure challenges into
+                        elegant solutions.</p>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                        </li>
+                        <li><a href="learning.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Learning
+                                Portal</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Custom Web Apps</span></li>
+                        <li><span class="text-body-sm text-gray-400">Business OS (POS)</span></li>
+                        <li><span class="text-body-sm text-gray-400">System Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Tech Training</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:isaaczachary18@gmail.com"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fas fa-envelope"></i><span>Email</span></a></li>
+                        <li><a href="https://linkedin.com/in/isaaczachary/" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/IsaacZachary" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-github"></i><span>GitHub</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">© <span id="year"></span> Isaac Zachary. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Experience Deck Logic
+        let currentCardIndex = 0;
+        const experienceDeck = document.getElementById('experience-deck');
+        const deckCards = document.querySelectorAll('.deck-card');
+        const indicatorsContainer = document.getElementById('deck-indicators');
+
+        if (deckCards.length > 0) {
+            function initDeck() {
+                // Create indicators
+                deckCards.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.className = `h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-12 bg-primary' : 'w-4 bg-gray-200'}`;
+                    dot.onclick = () => goToCard(i);
+                    indicatorsContainer.appendChild(dot);
+                });
+                updateDeck();
+            }
+
+            function updateDeck() {
+                deckCards.forEach((card, i) => {
+                    const offset = i - currentCardIndex;
+
+                    if (offset === 0) {
+                        card.style.transform = 'translateY(0) scale(1) rotateX(0)';
+                        card.style.opacity = '1';
+                        card.style.visibility = 'visible';
+                        card.style.pointerEvents = 'auto';
+                        card.style.zIndex = '40';
+                    } else if (offset > 0 && offset <= 3) {
+                        // Fan behind cards UPWARDS so they peak from the top
+                        // Offset 1 at -60px, Offset 2 at -120px, etc.
+                        const displacement = -offset * 65;
+                        card.style.transform = `translateY(${displacement}px) scale(${1 - offset * 0.05}) rotateX(1deg)`;
+                        card.style.opacity = 0.9 - (offset * 0.2);
+                        card.style.visibility = 'visible';
+                        card.style.pointerEvents = 'none';
+                        card.style.zIndex = (30 - offset).toString();
+                    } else {
+                        // Wide transition
+                        card.style.transform = offset < 0 ? 'translateY(500px) scale(0.9) rotateX(-5deg)' : 'translateY(-300px) scale(0.9) rotateX(5deg)';
+                        card.style.opacity = '0';
+                        card.style.visibility = 'hidden';
+                        card.style.pointerEvents = 'none';
+                        card.style.zIndex = '0';
+                    }
+                });
+
+                // Sync parent height with active card content
+                const activeCard = deckCards[currentCardIndex];
+                if (activeCard) {
+                    const article = activeCard.querySelector('article');
+                    const height = article.offsetHeight;
+                    experienceDeck.style.height = (height + 100) + 'px'; // +100 for fan space
+                }
+
+                // Update indicators
+                const dots = indicatorsContainer.children;
+                if (dots.length > 0) {
+                    for (let i = 0; i < dots.length; i++) {
+                        dots[i].className = `h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === currentCardIndex ? 'w-12 bg-primary' : 'w-4 bg-gray-300'}`;
+                    }
+                }
+            }
+
+            window.nextCard = function () {
+                if (currentCardIndex < deckCards.length - 1) {
+                    currentCardIndex++;
+                } else {
+                    currentCardIndex = 0;
+                }
+                updateDeck();
+            }
+
+            window.prevCard = function () {
+                if (currentCardIndex > 0) {
+                    currentCardIndex--;
+                } else {
+                    currentCardIndex = deckCards.length - 1;
+                }
+                updateDeck();
+            }
+
+            window.goToCard = function (index) {
+                currentCardIndex = index;
+                updateDeck();
+            }
+
+            initDeck();
+            window.addEventListener('resize', updateDeck);
+        }
+    </script>
+</body>
+
+</html>
