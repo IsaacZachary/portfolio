@@ -18,12 +18,13 @@
 
 The site is a fast, single-file app with a corporate light theme by default and a dark mode toggle.
 
-- **Sidebar navigation** with hash routes for every section: `#home`, `#about`, `#experience`, `#projects`, `#mobkazi`, `#designs`, `#learning`, `#writing`, `#resume`, `#contact`
+- **Sidebar navigation** with hash routes for every section: `#home`, `#about`, `#inspiration`, `#experience`, `#projects`, `#mobkazi`, `#designs`, `#learning`, `#writing`, `#resume`, `#contact`
 - **Light / dark theme**, remembered per visitor
 - **3D hero:** a perspective stage that combines the MobKazi workspace photo, a live typing terminal and floating status cards, with mouse parallax
 - **Animated CI/CD pipeline** showing commit → build → test → scan → deploy → monitor
 - **Command palette:** press `⌘K`, `Ctrl+K` or `/`. Try `projects`, `theme`, `cv` or `sudo hire isaac`
-- **Keyboard shortcuts:** `g` then `h`/`a`/`e`/`p`/`m`/`d`/`l`/`w`/`r`/`c` jumps to a page
+- **Keyboard shortcuts:** `g` then `h`/`a`/`i`/`e`/`p`/`m`/`d`/`l`/`w`/`r`/`c` jumps to a page
+- **Inspiration** page: Newton, Tesla, Garvey, Musk, Zuckerberg, Jobs, Marcus Aurelius and Kafka, with sourced quotes, short stories and why each matters, plus a rotating "daily fuel" quote on the home page
 - **Design gallery** with 32 designs, category filters and a keyboard-friendly lightbox
 - **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress
 - **Printable resume** view, plus a downloadable PDF CV
@@ -80,6 +81,7 @@ All content lives in the data arrays at the top of the `<script>` in `index.html
 | Client logos | `clients` |
 | Design gallery | `designs` (images in `assets/v2/designs/`) |
 | Articles | `articles` |
+| Inspiration (quotes, stories) | `icons` |
 | DevOps roadmap | `road` |
 
 Brand colours are CSS variables at the top of the stylesheet (`--teal`, `--blue`, `--amber`), with a `[data-theme="dark"]` block for dark mode.

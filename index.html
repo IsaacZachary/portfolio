@@ -384,6 +384,27 @@ textarea{min-height:130px;resize:vertical}
 footer{margin-top:60px;padding:24px clamp(18px,3.4vw,56px) 36px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dim)}
 footer a:hover{color:var(--teal)}
 
+
+/* inspiration */
+.hero-q{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--term);color:#e6edf3;border-color:#1e2836;padding:clamp(24px,4vw,44px);background-image:radial-gradient(520px circle at 0 0,rgba(45,212,191,.2),transparent 60%),radial-gradient(420px circle at 100% 100%,rgba(251,191,36,.16),transparent 60%)}
+.hero-q blockquote{font-size:clamp(22px,2.6vw,34px);letter-spacing:-.03em;line-height:1.25;font-weight:650;color:#fff;transition:opacity .4s}
+.hero-q cite{display:block;margin-top:14px;font-style:normal;font-family:var(--mono);font-size:13px;color:#2dd4bf}
+.hero-q .dots{display:flex;gap:6px}.hero-q .dots i{width:8px;height:8px;border-radius:50%;background:#334155;cursor:pointer;transition:.3s}.hero-q .dots i.on{background:#2dd4bf;width:22px;border-radius:5px}
+.icon-card{display:flex;flex-direction:column;gap:14px}
+.icon-top{display:flex;gap:14px;align-items:center}
+.mono-av{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-weight:800;font-size:22px;letter-spacing:-.03em;color:#fff;flex:none;position:relative;box-shadow:0 14px 30px -12px var(--c1);background:linear-gradient(135deg,var(--c1),var(--c2))}
+.mono-av::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,255,255,.35),transparent 45%)}
+.icon-top b{display:block;font-size:18px;letter-spacing:-.02em}
+.icon-top small{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.icon-card blockquote{font-size:17px;line-height:1.45;letter-spacing:-.01em;font-weight:600;padding-left:14px;border-left:3px solid var(--teal)}
+.icon-card .src{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:-6px}
+.icon-card p{color:var(--muted);font-size:14px}
+.icon-card .me{margin-top:auto;padding:12px 14px;border-radius:12px;background:var(--teal-soft);font-size:13.5px;color:var(--text)}
+.icon-card .me b{color:var(--teal-2);font-family:var(--mono);font-size:11px;font-weight:500;display:block;margin-bottom:2px;letter-spacing:.04em;text-transform:uppercase}
+[data-theme="dark"] .icon-card .me b{color:var(--teal)}
+.eco4 .prod p{font-size:14px}
+@media (max-width:640px){.hero-q{grid-template-columns:1fr}}
+
 /* command palette */
 .cmdk{position:fixed;inset:0;z-index:130;display:none;place-items:start center;padding-top:13vh;background:rgba(2,6,23,.45);backdrop-filter:blur(6px)}
 .cmdk.open{display:grid}
@@ -477,6 +498,8 @@ footer a:hover{color:var(--teal)}
   <symbol id="i-commit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M1 12h7M16 12h7"/></symbol>
   <symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5H3v8h4c0 4-2 5-4 5Zm11 0c3 0 7-1 7-8V5h-7v8h4c0 4-2 5-4 5Z"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.4 1.2 1.3 2.7 2.5 2.7Z"/></symbol>
   <symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V4M8 4h8M9 14h.01M15 14h.01"/></symbol>
 </svg>
 
@@ -494,10 +517,11 @@ footer a:hover{color:var(--teal)}
     <h6>Overview</h6>
     <a href="#home" data-v="home"><svg class="i"><use href="#i-home"/></svg>Home<span class="k">g h</span></a>
     <a href="#about" data-v="about"><svg class="i"><use href="#i-user"/></svg>About<span class="k">g a</span></a>
+    <a href="#inspiration" data-v="inspiration"><svg class="i"><use href="#i-flame"/></svg>Inspiration<span class="k">g i</span></a>
     <h6>Work</h6>
     <a href="#experience" data-v="experience"><svg class="i"><use href="#i-brief"/></svg>Experience</a>
     <a href="#projects" data-v="projects"><svg class="i"><use href="#i-code"/></svg>Projects</a>
-    <a href="#mobkazi" data-v="mobkazi"><svg class="i"><use href="#i-layers"/></svg>MobKazi<span class="new">7 apps</span></a>
+    <a href="#mobkazi" data-v="mobkazi"><svg class="i"><use href="#i-layers"/></svg>MobKazi<span class="new">8 apps</span></a>
     <a href="#designs" data-v="designs"><svg class="i"><use href="#i-image"/></svg>Design Gallery</a>
     <h6>Knowledge</h6>
     <a href="#learning" data-v="learning"><svg class="i"><use href="#i-grad"/></svg>Learning Hub</a>
@@ -540,7 +564,7 @@ footer a:hover{color:var(--teal)}
         <a class="btn btn-g" href="pdf/Isaac_Zachary_CV.pdf" target="_blank" rel="noopener"><svg class="i"><use href="#i-down"/></svg>CV</a>
       </div>
       <div class="stats">
-        <div><strong>7</strong>live products</div>
+        <div><strong>8</strong>live products</div>
         <div><strong>10+</strong>businesses served</div>
         <div><strong>2019</strong>in tech since</div>
         <div><strong>15</strong>devs mentored (PLP)</div>
@@ -574,11 +598,12 @@ footer a:hover{color:var(--teal)}
   </div>
 
   <div class="sec">
-    <div class="sec-head rv"><div><span class="eyebrow">ls ~/mobkazi</span><h2>The MobKazi ecosystem</h2><p class="sub">Seven cloud products share one Business OS core and ship through one pipeline.</p></div><a class="link" href="#mobkazi">See all products →</a></div>
-    <div class="grid g3">
+    <div class="sec-head rv"><div><span class="eyebrow">ls ~/mobkazi</span><h2>The MobKazi ecosystem</h2><p class="sub">Eight cloud products share one Business OS core and ship through one pipeline.</p></div><a class="link" href="#mobkazi">See all products →</a></div>
+    <div class="grid g4 eco4">
       <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/mobkazi.webp" alt=""><b>Business OS</b></div><span class="up">● live</span></div><p>POS, ERP, inventory and a custom app builder with M-PESA built in.</p><div class="dom"><span>pos</span><span>erp</span><span>app</span></div></a>
       <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/sentinel.webp" alt=""><b>Sentinel · WaqForce</b></div><span class="up">● live</span></div><p>Patrols, checkpoints and incident records for security companies. Delivered to SSL Security in 2026.</p><div class="dom"><span>waqforce.com</span></div></a>
       <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/somasteps.webp" alt="SomaSteps" style="height:32px"></div><span class="up">● live</span></div><p>A homework and learning platform for schools, learners and parents.</p><div class="dom"><span>stepsoma.com</span></div></a>
+      <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:32px;height:32px;color:var(--teal)"><use href="#i-scale"/></svg><b>Shauri</b></div><span class="up">● live</span></div><p>Multi-tenant case management for law firms. Each firm gets its own secure instance.</p><div class="dom"><span>shauri.co.ke</span></div></a>
     </div>
   </div>
 
@@ -614,6 +639,11 @@ footer a:hover{color:var(--teal)}
     <div class="grid g3" id="quotes"></div>
   </div>
 
+  <div class="sec">
+    <div class="sec-head rv"><div><span class="eyebrow">cat daily-fuel.txt</span><h2>What keeps me building</h2></div><a class="link" href="#inspiration">My inspiration →</a></div>
+    <div class="card hero-q rv"><div><blockquote id="dfText"></blockquote><cite id="dfWho"></cite></div><div class="dots" id="dfDots"></div></div>
+  </div>
+
   <div class="card cta-band rv"><div><h2>Got a system that needs the whole mob?</h2><p>Platforms, infrastructure, websites, networks or a full business OS rollout. Let's talk.</p></div><div class="cta" style="margin:0"><a class="btn btn-p" href="#contact">Start a project</a><a class="btn btn-g" href="https://wa.me/254759325915" target="_blank" rel="noopener">WhatsApp</a></div></div>
 </section>
 
@@ -639,7 +669,7 @@ footer a:hover{color:var(--teal)}
       <div class="motto rv">"Everything is possible. We just need to put in the work."</div>
       <div class="prose rv">
         <p>I'm a <strong>software engineer and DevOps practitioner</strong> with a BSc in Software Development from KCA University. I started in the field: from 2019 I installed CCTV and IP surveillance, configured networks and fixed whatever broke at client sites. That work taught me what production really means. It's a system somebody's business depends on at 2am.</p>
-        <p>I took that reliability mindset into software. Today I'm the founder and lead engineer of <strong>MobKazi</strong>, a business operating system for African enterprise. I design the architecture, write the code, run the CI/CD and the servers, and work with clients day to day. Products include the Business OS (POS, ERP, apps), <strong>Sentinel/WaqForce</strong> for security patrols, <strong>SomaSteps</strong> for schools, an ISP platform and MobKazi AI.</p>
+        <p>I took that reliability mindset into software. Today I'm the founder and lead engineer of <strong>MobKazi</strong>, a business operating system for African enterprise. I design the architecture, write the code, run the CI/CD and the servers, and work with clients day to day. Products include the Business OS (POS, ERP, apps), <strong>Shauri</strong> for law firms, <strong>Sentinel/WaqForce</strong> for security patrols, <strong>SomaSteps</strong> for schools, an ISP platform and MobKazi AI.</p>
         <p>I build with AI co-pilots and agentic workflows. That's how one engineer ships at the pace of a team. I'm a father, and my family is why I care so much about quality and building things that last.</p>
       </div>
       <div class="grid g2" style="margin-top:22px">
@@ -652,6 +682,15 @@ footer a:hover{color:var(--teal)}
       <div class="chips rv"><span>⛰️ Mountain hiking</span><span>👨‍👧 Fatherhood</span><span>📸 City & landscape photography</span><span>🎧 DJ Bazeh music</span><span>🧑‍🏫 Mentoring</span><span>📚 Learning in public</span></div>
     </div>
   </div>
+</section>
+
+
+<!-- ============ INSPIRATION ============ -->
+<section class="view" id="v-inspiration" data-title="Inspiration" hidden>
+  <div class="ph"><span class="eyebrow">cat ~/inspiration.md</span><h1>Standing on the shoulders <span class="grad">of giants.</span></h1><p class="sub">The thinkers, builders and visionaries who keep me going: on late nights, on hard deploys, and on the long road to building for all of Africa.</p></div>
+  <div class="card hero-q rv" id="iqHero"><div><blockquote id="iqText"></blockquote><cite id="iqWho"></cite></div><div class="dots" id="iqDots"></div></div>
+  <div class="grid g2" id="icons" style="margin-top:16px"></div>
+  <p class="rv" style="margin-top:28px;color:var(--dim);font-size:13px;font-family:var(--mono)">Quotes are taken from their original sources where known: letters, books, speeches and interviews. The stories are my own summaries.</p>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
@@ -694,8 +733,9 @@ footer a:hover{color:var(--teal)}
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/sentinel.webp" alt=""><b>Sentinel</b></div><span class="up">● operational</span></div><h3>Security workforce OS</h3><p>Patrols, checkpoints, attendance and incident records. Shipped to SSL Security as WaqForce.</p><div class="dom"><a href="https://waqforce.com" target="_blank" rel="noopener">waqforce.com ↗</a><span>security.mobkazi.com</span></div></div>
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/somasteps.webp" alt="SomaSteps" style="height:30px"></div><span class="up">● operational</span></div><h3>School homework platform</h3><p>Assignments, progress tracking and parent-friendly reporting for schools and learners.</p><div class="dom"><a href="https://stepsoma.com" target="_blank" rel="noopener">stepsoma.com ↗</a></div></div>
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--teal)"><use href="#i-wifi"/></svg><b>MobKazi ISP</b></div><span class="up">● operational</span></div><h3>ISP & hotspot management</h3><p>Multi-tenant subscriber billing, RADIUS concepts, captive portals and time-based vouchers.</p><div class="dom"><span>isp.mobkazi.com</span></div></div>
-    <div class="card hov c6 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--amber)"><use href="#i-box"/></svg><b>MobKazi Jambo</b></div><span class="up">● operational</span></div><h3>Commerce storefronts</h3><p>Online shops for MobKazi merchants. Inventory syncs with the POS both ways.</p><div class="dom"><span>shop.mobkazi.com</span></div></div>
-    <div class="card hov c6 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--blue)"><use href="#i-bot"/></svg><b>MobKazi AI</b></div><span class="up soon">◐ in build</span></div><h3>AI across the stack</h3><p>LLM-assisted insights, automation and support across the OS, plus agentic infrastructure tooling.</p><div class="dom"><span>LLMs</span><span>Agents</span><span>Automation</span></div></div>
+    <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--amber)"><use href="#i-box"/></svg><b>MobKazi Jambo</b></div><span class="up">● operational</span></div><h3>Commerce storefronts</h3><p>Online shops for MobKazi merchants. Inventory syncs with the POS both ways.</p><div class="dom"><span>shop.mobkazi.com</span></div></div>
+    <div class="card hov c4 prod rv" style="background:linear-gradient(160deg,var(--amber-soft),var(--panel) 60%)"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--teal)"><use href="#i-scale"/></svg><b>Shauri</b></div><span class="up">● operational</span></div><h3>Law firm case management</h3><p>Multi-tenant legal SaaS: cases, clients, documents and deadlines. Each firm signs up for its own isolated instance, running on separate containers, database and workers.</p><div class="dom"><a href="https://shauri.co.ke" target="_blank" rel="noopener">shauri.co.ke ↗</a><span>Django</span><span>Docker</span></div></div>
+    <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--blue)"><use href="#i-bot"/></svg><b>MobKazi AI</b></div><span class="up soon">◐ in build</span></div><h3>AI across the stack</h3><p>LLM-assisted insights, automation and support across the OS, plus agentic infrastructure tooling.</p><div class="dom"><span>LLMs</span><span>Agents</span><span>Automation</span></div></div>
   </div>
   <div class="sec">
     <div class="sec-head rv"><div><span class="eyebrow">services --list</span><h2>Beyond software</h2></div></div>
@@ -843,10 +883,15 @@ const ICON = n => `<svg class="i"><use href="#i-${n}"/></svg>`;
 const projects = [
   {t:'MobKazi Business OS', k:'Product · SaaS', c:'product', f:1, img:P+'mobkazii.webp', d:'Multi-tenant SME platform: POS, ERP, inventory, user access, automation and M-PESA, offline-first.', tags:['React','Django','PostgreSQL','M-PESA'], l:[['Live','https://mobkazi.com'],['POS demo','https://mobkazi-pos-frontend.vercel.app']]},
   {t:'Sentinel · WaqForce', k:'Product · Security', c:'product', f:1, icon:'shield', d:'Patrol management for security companies, with checkpoints, incidents and records. Delivered to SSL Security Ltd in Oct 2026.', tags:['Web app','Mobile','PWA'], l:[['waqforce.com','https://waqforce.com']]},
+  {t:'Shauri', k:'Product · LegalTech', c:'product', f:1, icon:'scale', d:'Multi-tenant case management SaaS for law firms. Each firm signs up for its own isolated instance, like obadiah.shauri.co.ke for its first firm, M. Obadiah & Co. Advocates.', tags:['Django','PostgreSQL','Docker','Multi-tenant'], l:[['shauri.co.ke','https://shauri.co.ke']]},
   {t:'SomaSteps', k:'Product · EdTech', c:'product', icon:'grad', d:'Homework and learning platform for schools, learners and parents.', tags:['SaaS','Education'], l:[['stepsoma.com','https://stepsoma.com']]},
-  {t:'ZakaFlow', k:'Data · Infrastructure', c:'infra', f:1, img:P+'zakaflow.webp', d:'A real-time big data analytics pipeline: Kafka ingestion, Spark processing, Airflow orchestration and dashboards, all containerised.', tags:['Kafka','Spark','Airflow','Docker','Terraform'], l:[['Code','https://github.com/IsaacZachary/zaka-flow']]},
+  {t:'ZakaFlow', k:'Data · Infrastructure', c:'infra', img:P+'zakaflow.webp', d:'A real-time big data analytics pipeline: Kafka ingestion, Spark processing, Airflow orchestration and dashboards, all containerised.', tags:['Kafka','Spark','Airflow','Docker','Terraform'], l:[['Code','https://github.com/IsaacZachary/zaka-flow']]},
   {t:'ISP Management System', k:'Infrastructure', c:'infra', icon:'wifi', d:'Containerised multi-tenant ISP ERP with RADIUS concepts and time-based accounting.', tags:['Docker','Django REST','PostgreSQL','Redis','Nginx'], l:[]},
   {t:'Berry Fibre Hotspot Portal', k:'Infrastructure · Web', c:'infra', img:P+'project-1.webp', d:'Captive portal and hotspot authentication for internet access management, with pay-and-surf packages.', tags:['Captive portal','Hotspot','Payments'], l:[]},
+  {t:'Swift Sport', k:'Client · E-commerce', c:'web', icon:'box', d:'Online shop for an Embakasi sports and tactical-gear store, with WhatsApp ordering and a phone-friendly admin so the owner updates products and prices himself.', tags:['Django','PostgreSQL','Docker','Traefik'], l:[['swiftsport.co.ke','https://swiftsport.co.ke']]},
+  {t:'Macvey Travel & Job Agency', k:'Client · Web platform', c:'web', icon:'globe', d:'Recruitment and travel platform for Gulf job placements: vacancies, online applications with CV upload, a document checklist and an admin dashboard.', tags:['Django','PostgreSQL','Docker'], l:[['macvey.mobkazi.com','https://macvey.mobkazi.com']]},
+  {t:'Ecomax Technology', k:'Client · Web', c:'web', icon:'flame', d:'Website for a Kajiado solar company, with a product price list, solar pump packages, a quote form and WhatsApp enquiries.', tags:['Web','Quote form','WhatsApp'], l:[]},
+  {t:'Malqueens & Safe Bags Retail', k:'Product · Retail POS', c:'product', icon:'box', d:'Retail system with inventory, stocktaking and POS, branded for each shop and built on shared retail components.', tags:['POS','Inventory','Stocktaking'], l:[]},
   {t:'Coffee Kiosk', k:'Commerce · Payments', c:'web', img:P+'coffeekiosk1.webp', d:'E-commerce ordering with M-PESA STK push and a Dockerised deployment.', tags:['React','TypeScript','Node','Supabase'], l:[['Code','https://github.com/IsaacZachary/CoffeeKiosk'],['Live','https://coffee-kiosk-frontend.onrender.com']]},
   {t:'Drowsy Driver Detection', k:'AI · Computer vision', c:'ai', img:P+'drowsyy.webp', d:'Real-time webcam inference that detects microsleep and yawning and raises alerts.', tags:['Python','TensorFlow','OpenCV'], l:[['Code','https://github.com/IsaacZachary/DrowsyDriverDetection']]},
   {t:'Smart AI Recommender', k:'AI · Product', c:'ai', icon:'bot', d:'Terminal-style UX with multilingual queries and AI-assisted product recommendations.', tags:['FastAPI','React','OpenAI','Docker'], l:[]},
@@ -861,7 +906,7 @@ const projects = [
 const pcats = [['all','All'],['product','Products'],['infra','Infrastructure'],['ai','AI'],['web','Web'],['field','Field']];
 
 const jobs = [
-  {now:1, t:'Founder & Lead Engineer', o:'MobKazi', w:'2024 – Present', b:['Architect, build and run MobKazi: Business OS (POS, ERP, apps), Sentinel/WaqForce, SomaSteps, ISP and Jambo','Own CI/CD, Docker deployments, the VPS, Nginx, Cloudflare DNS and SSL for all products and client sites','Lead client discovery, onboarding and training; supply and configure business hardware'], tags:['React','Django','Docker','CI/CD','M-PESA']},
+  {now:1, t:'Founder & Lead Engineer', o:'MobKazi', w:'2024 – Present', b:['Architect, build and run MobKazi: Business OS (POS, ERP, apps), Shauri, Sentinel/WaqForce, SomaSteps, ISP and Jambo','Own CI/CD, Docker deployments, the VPS, Nginx, Cloudflare DNS and SSL for all products and client sites','Deliver client platforms such as swiftsport.co.ke, the Macvey agency site and Ecomax; lead onboarding, training and hardware supply'], tags:['React','Django','Docker','CI/CD','M-PESA']},
   {t:'Software & Security Systems Consultant', o:'SSL Security Ltd', w:'Ongoing engagements', b:['Delivered the WaqForce patrol application for patrols, checkpoints and incident records (Oct 2026)','Relief support in SSL-managed control rooms at Pharo School and Starehe Boys for CCTV monitoring and networking','Network infrastructure, POS configuration and troubleshooting at Koma Gardens; visual camera and Wi-Fi layouts for a Ruaka site'], tags:['WaqForce','CCTV','Networking']},
   {t:'Support Staff Volunteer & Mentor', o:'Power Learn Project (PLP)', w:'Mar 2025 – Jun 2025', b:['Resolved LMS issues through email and ticketing; assisted learners and reviewed hackathon code','Mentored ~15 developers at the TUK Coffee & Code / AI Safari workshop using agentic workflows'], tags:['Mentoring','Support']},
   {t:'Technical Support Engineer', o:'First Basics Technologies Ltd', w:'Feb 2024 – Dec 2025', b:['Diagnosed network faults and configured routers for home, office and business clients','Gave remote and on-site troubleshooting by phone and remote tools','Kept CRM records, documented issues and monitored systems; handled WordPress and Canva updates'], tags:['Networking','CRM','Remote support']},
@@ -896,7 +941,7 @@ const clients = [
   ['SSL Security Ltd','Security · WaqForce',C+'ssl-security-logo-480.webp','#1e3a8a'],['Mabrin 3 Enterprise','Distribution',C+'mabrin-3-enterprise-logo-384.webp','#b45309'],
   ['Nova Salon','Beauty · Web',C+'nova-salon-logo-192.webp','#7c3aed'],['Epren','Client','','#0369a1'],['Asilia Water','Water · Business OS','','#0284c7'],
   ['Crown Cuts','Grooming','','#a16207'],['Crown Minimart','Retail · POS','','#15803d'],['Rhumba','Hospitality','','#be123c'],
-  ['Berry Fibre','ISP · Hotspot','','#dc2626'],['First Basics','ISP · Support','','#2563eb'],['Humble Crib','ICT services','','#0891b2'],
+  ['Swift Sport','Sports & tactical gear','','#ea580c'],['Macvey Agency','Travel & recruitment','','#7c2d12'],['M. Obadiah & Co.','Legal · Shauri','','#334155'],['Ecomax Technology','Solar energy','','#ca8a04'],['Berry Fibre','ISP · Hotspot','','#dc2626'],['First Basics','ISP · Support','','#2563eb'],['Humble Crib','ICT services','','#0891b2'],
 ];
 const designs = [["Safari Wheels Poster","Poster","safari-wheels-poster"],["Willinge Technologies CCTV","Poster","willinge-technologies-cctv"],["Mobkazi Flyer V12","Flyer","mobkazi-flyer-v12"],["Sifa Net Flyer","Flyer","sifa-net-flyer"],["Graphics Training Poster","Poster","graphics-training-poster"],["Tetra Beauty College Flyer","Flyer","tetra-beauty-college-flyer"],["Swahili Bites Weekly Menu","Menu","swahili-bites-weekly-menu"],["Jumia Agent Poster","Flyer","jumia-agent-poster"],["Cyber Services Flyer","Poster","cyber-services-flyer"],["Global Youth Day","Poster","global-youth-day"],["Mazingira Day","Poster","mazingira-day"],["Music Cover Design","Music Cover","music-cover-design"],["KW Kenya Awards UI","UI Design","kw-kenya-awards-ui"],["Photo Studio Branding","Branding","photo-studio-branding"],["Cocktail Celebration","Social Media","cocktail-celebration"],["Berry Fibre Hotspot Landing","Web Design","berry-fibre-hotspot-landing"],["Humble Crib Services Banner","Banner","humble-crib-investment-services-banner"],["Adventurer Day 2023","Poster","adventurer-day-2023"],["Afrobeat Mix Vol 2","Poster","afrobeat-mix-vol-2"],["Chronixx Mixtape","Mixtape Cover","chronixx-mixtape"],["Computer Packages Book Cover","Book Cover","computer-packages-book-cover"],["Garrison Development Day","Event Branding","garrison-development-day"],["Internet Packages Flyer","Flyer","internet-packages-flyer"],["Customer Service Week","Flyer","customer-service-week"],["Tech Services Banner","Banner","tech-services-banner"],["PLP Coding Safari","Poster","plp-coding-safari"],["TechCare Africa Poster","Poster","techcare-africa-poster"],["Flash Sale Poster","Poster","flash-sale-poster"],["Sifa Internet Branding","Branding","sifa-internet-branding"],["Day Care Services","Poster","day-care-services"],["Women's Day Special","Poster","women-s-day-special"],["Huntsman Motors Poster","Branding","huntsman-motors-poster"]];
 const dgroup = c => ({'Poster':'Posters','Flyer':'Flyers','Branding':'Branding','Banner':'Branding','Event Branding':'Branding','Music Cover':'Covers','Mixtape Cover':'Covers','Book Cover':'Covers'}[c] || 'Digital');
@@ -924,11 +969,48 @@ function afterRender(scope='body'){
       el.style.transform=`perspective(900px) rotateX(${(.5-y)*5}deg) rotateY(${(x-.5)*5}deg) translateY(-3px)`; el.style.setProperty('--mx',x*100+'%'); el.style.setProperty('--my',y*100+'%'); });
     el.addEventListener('pointerleave',()=>el.style.transform=''); });
 }
+
+const icons = [
+  {n:'Isaac Newton', y:'1643 – 1727', r:'Physicist & mathematician', i:'IN', c:['#0d9488','#0284c7'], q:'If I have seen further it is by standing on the shoulders of Giants.', s:'Letter to Robert Hooke, 1675',
+   st:'When plague closed Cambridge in 1665–66, a young Newton went home and, mostly alone, laid the foundations of calculus, optics and gravity.',
+   me:'My namesake. I build alone too, but never from scratch: open source, AI and the engineers before me are the giants I stand on.'},
+  {n:'Nikola Tesla', y:'1856 – 1943', r:'Inventor & electrical engineer', i:'NT', c:['#1e3a8a','#38bdf8'], q:'The present is theirs; the future, for which I have really worked, is mine.', s:'My Inventions, 1919',
+   st:'He arrived in New York in 1884 with little more than his ideas. His alternating-current system still carries electricity to most of the world.',
+   me:'I started in the field with cables, cameras and power. Tesla reminds me that infrastructure is invisible until it changes everything.'},
+  {n:'Marcus Garvey', y:'1887 – 1940', r:'Pan-Africanist & organiser', i:'MG', c:['#15803d','#d97706'], q:'Up, you mighty race, you can accomplish what you will!', s:'Speeches, 1920s',
+   st:'A Jamaican printer who founded the UNIA in 1914 and grew it into a global movement for African self-reliance, enterprise and pride.',
+   me:'MobKazi exists to power African businesses, starting with Kenya and then the continent. Garvey is the reason I think in continents.'},
+  {n:'Elon Musk', y:'b. 1971', r:'Engineer & entrepreneur', i:'EM', c:['#0f172a','#64748b'], q:'If something\'s important enough you should try. Even if the probable outcome is failure.', s:'60 Minutes interview, 2014',
+   st:'He put his early winnings into rockets and electric cars. In 2008 both SpaceX and Tesla came close to collapse, and he kept going.',
+   me:'First principles over fear. When the odds look bad and the work matters, I ship anyway.'},
+  {n:'Mark Zuckerberg', y:'b. 1984', r:'Founder, Facebook / Meta', i:'MZ', c:['#1d4ed8','#60a5fa'], q:'In a world that\'s changing really quickly, the only strategy that is guaranteed to fail is not taking risks.', s:'Y Combinator Startup School, 2011',
+   st:'He wrote the first version of Facebook in a university dorm in 2004. It grew into a platform used by billions.',
+   me:'Proof that software written by one person in a small room can grow to serve the whole world.'},
+  {n:'Steve Jobs', y:'1955 – 2011', r:'Co-founder, Apple', i:'SJ', c:['#334155','#94a3b8'], q:'Your time is limited, so don\'t waste it living someone else\'s life. Stay hungry. Stay foolish.', s:'Stanford commencement, 2005',
+   st:'He started Apple in a garage in 1976, was pushed out in 1985, and came back in 1997 to lead one of the greatest turnarounds in business.',
+   me:'Design and engineering are one craft. It\'s why I care how a POS screen feels, not just whether it works.'},
+  {n:'Marcus Aurelius', y:'121 – 180', r:'Roman emperor & Stoic', i:'MA', c:['#7c2d12','#f59e0b'], q:'No longer talk at all about the kind of man that a good man ought to be, but be such.', s:'Meditations, Book X',
+   st:'The most powerful man in the world wrote private notes to himself on duty, discipline and self-control, often from military camps.',
+   me:'Discipline over motivation. Do the work in front of you well, whatever the hour.'},
+  {n:'Franz Kafka', y:'1883 – 1924', r:'Writer', i:'FK', c:['#4c1d95','#a78bfa'], q:'A book must be the axe for the frozen sea within us.', s:'Letter to Oskar Pollak, 1904',
+   st:'By day he worked at an insurance institute in Prague. By night he wrote the stories that reshaped modern literature.',
+   me:'Some of the most important work happens after hours, beside the day job. Most of MobKazi was built that way.'},
+];
 /* ===== RENDER ===== */
 const projCard = p => `<article class="card hov pc tilt rv" data-c="${p.c}"><span class="glow"></span>
   ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
   <div class="bd"><span class="k">${p.k}</span><h3>${p.t}</h3><p>${p.d}</p><div class="tags">${p.tags.map(t=>`<span class="tag t">${t}</span>`).join('')}</div>
   ${p.l.length?`<div class="links">${p.l.map(([a,u])=>`<a href="${u}" target="_blank" rel="noopener">${a} ↗</a>`).join('')}</div>`:''}</div></article>`;
+
+$('#icons').innerHTML = icons.map(p=>`<article class="card hov tilt icon-card rv"><span class="glow"></span><div class="icon-top"><span class="mono-av" style="--c1:${p.c[0]};--c2:${p.c[1]}">${p.i}</span><div><b>${p.n}</b><small>${p.r} · ${p.y}</small></div></div><blockquote>"${p.q}"</blockquote><div class="src">${p.s}</div><p>${p.st}</p><div class="me"><b>why it moves me</b>${p.me}</div></article>`).join('');
+function rotator(tid, wid, did){
+  let k=0; const T=$(tid), W=$(wid), D=$(did);
+  D.innerHTML = icons.map((_,i)=>`<i data-i="${i}"></i>`).join('');
+  const show = i => { k=(i+icons.length)%icons.length; T.style.opacity=0; setTimeout(()=>{ T.textContent='"'+icons[k].q+'"'; W.textContent='— '+icons[k].n+', '+icons[k].s; T.style.opacity=1; },reduce?0:250); D.querySelectorAll('i').forEach((d,j)=>d.classList.toggle('on',j===k)); };
+  D.onclick = e => { const d=e.target.closest('i'); if(d) show(+d.dataset.i); };
+  show(Math.floor(Math.random()*icons.length)); if(!reduce) setInterval(()=>show(k+1), 6500);
+}
+rotator('#iqText','#iqWho','#iqDots'); rotator('#dfText','#dfWho','#dfDots');
 $('#featured').innerHTML = projects.filter(p=>p.f).map(projCard).join('');
 function renderProjects(c='all'){
   $('#plist').innerHTML = projects.filter(p=>c==='all'||p.c===c).map(projCard).join('');
@@ -951,7 +1033,7 @@ $('#road').innerHTML = road.map(([t,s,p,d])=>`<div class="row"><b>${t}</b><span 
 const clientHTML = ([n,t,src,c]) => { const ini=n.split(/\s+/).filter(w=>/[A-Za-z]/.test(w)).slice(0,2).map(w=>w[0]).join('').toUpperCase();
   return `<div class="client"><div class="lg" style="--c:${c}"><span class="mn">${ini}</span>${src?`<img src="${src}" alt="${n} logo" loading="lazy" onerror="this.remove()">`:''}</div><div><b>${n}</b><span>${t}</span></div></div>`; };
 const fill = (id, list) => { const h=list.map(clientHTML).join(''); $(id).innerHTML = h+h; };
-fill('#t1', clients.slice(0,7)); fill('#t2', clients.slice(6)); fill('#t3', clients);
+fill('#t1', clients.slice(0,9)); fill('#t2', clients.slice(8)); fill('#t3', clients);
 
 // gallery
 const dcats = ['All','Posters','Flyers','Branding','Covers','Digital'];
@@ -1001,7 +1083,7 @@ $('#scrim').onclick = () => document.body.classList.remove('nav-open');
 (async () => {
   const body=$('#termBody'), sleep=ms=>new Promise(r=>setTimeout(r,reduce?0:ms)), caret='<span class="caret"></span>';
   const S=[['c','whoami'],['o','isaac zachary · founder & lead engineer @ <span class="am">mobkazi</span>'],['c','docker ps --format "{{.Names}} {{.Status}}"'],
-    ['o','mobkazi-pos    <span class="ok">Up · healthy</span>\nmobkazi-erp    <span class="ok">Up · healthy</span>\nsentinel-api   <span class="ok">Up · healthy</span>\nsomasteps-web  <span class="ok">Up · healthy</span>\nmobkazi-isp    <span class="ok">Up · healthy</span>'],
+    ['o','mobkazi-pos    <span class="ok">Up · healthy</span>\nmobkazi-erp    <span class="ok">Up · healthy</span>\nsentinel-api   <span class="ok">Up · healthy</span>\nsomasteps-web  <span class="ok">Up · healthy</span>\nmobkazi-isp    <span class="ok">Up · healthy</span>\nshauri-web     <span class="ok">Up · healthy</span>'],
     ['c','echo $MISSION'],['o','<span class="am">power every African business 🇰🇪 → 🌍</span>']];
   let h='';
   for(const [t,x] of S){ if(t==='c'){ const pre=h+'<span class="p">➜ ~</span> '; for(let k=1;k<=x.length;k++){ body.innerHTML=pre+x.slice(0,k).replace(/</g,'&lt;')+caret; await sleep(24+Math.random()*34);} h=pre+x.replace(/</g,'&lt;')+'\n'; await sleep(260);} else { h+='<span class="o">'+x+'</span>\n'; body.innerHTML=h+caret; await sleep(480);} }
@@ -1041,7 +1123,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
   const go = v => () => { close(); location.hash = v; };
   const ext = u => () => { close(); window.open(u,'_blank','noopener'); };
   const say = t => { out.innerHTML='<div class="msg">'+t.replace(/</g,'&lt;')+'</div>'; };
-  const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['contact','get in touch',go('contact')],
+  const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['inspiration','icons that inspire me',go('inspiration')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['contact','get in touch',go('contact')],
     ['theme','toggle light / dark',()=>{ setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'); close(); }],
     ['cv','download CV (PDF)',ext('pdf/Isaac_Zachary_CV.pdf')],['github','open GitHub ↗',ext('https://github.com/IsaacZachary')],['linkedin','open LinkedIn ↗',ext('https://linkedin.com/in/isaaczachary/')],['whatsapp','chat on WhatsApp ↗',ext('https://wa.me/254759325915')],
     ['whoami','print bio',()=>say('Isaac Zachary. Founder & lead engineer, MobKazi.\nSoftware · DevOps · Networks & security systems.')],
@@ -1064,7 +1146,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
     else if(lb.classList.contains('open')&&e.key==='ArrowRight') showLB(li+1);
     else if(lb.classList.contains('open')&&e.key==='ArrowLeft') showLB(li-1);
     else if(!typing&&e.key==='g'){ g=Date.now(); }
-    else if(!typing&&Date.now()-g<800){ const m={h:'home',a:'about',p:'projects',e:'experience',m:'mobkazi',d:'designs',l:'learning',w:'writing',r:'resume',c:'contact'}[e.key]; if(m){ location.hash=m; g=0; } }
+    else if(!typing&&Date.now()-g<800){ const m={h:'home',a:'about',i:'inspiration',p:'projects',e:'experience',m:'mobkazi',d:'designs',l:'learning',w:'writing',r:'resume',c:'contact'}[e.key]; if(m){ location.hash=m; g=0; } }
   });
 })();
 </script>
