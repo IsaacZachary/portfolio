@@ -424,6 +424,9 @@ h2{font-size:clamp(26px,3.2vw,40px);margin:10px 0 10px}
 .donecard{text-align:center;padding:42px 26px}
 .donecard .seal{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-size:40px;background:linear-gradient(135deg,var(--teal),var(--amber));box-shadow:0 20px 50px -15px rgba(13,148,136,.6);animation:pop .6s cubic-bezier(.2,.9,.25,1.2)}
 @media (max-width:900px){.player{grid-template-columns:minmax(0,1fr)}.pside{position:static}.pside .ul{display:flex;overflow:auto;gap:6px}.pside a{flex:none;max-width:220px}.chero{grid-template-columns:1fr}}
+.visits{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:3px}
+.visits svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}.visits b{color:var(--text);font-weight:600}
+footer .visits{display:inline;font-size:inherit;margin:0}footer .visits[hidden]{display:none}.visits[hidden]{display:none}
 /* instant-feel loading */
 .tile,.dthumb,.pc .shot,.reel,.strip figure,.feat-img,.ph-card,.slides{background-image:linear-gradient(100deg,transparent 30%,rgba(148,163,184,.14) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.4s linear infinite}
 @keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
@@ -707,7 +710,7 @@ footer a:hover{color:var(--teal)}
   </a>
   <div class="profile">
     <img class="avatar" src="assets/v2/projects/me-avatar.webp" alt="Isaac Zachary">
-    <div><b>Founder & Lead Engineer, MobKazi</b><span class="status"><span class="dot"></span>open to opportunities</span></div>
+    <div><b>Founder & Lead Engineer, MobKazi</b><span class="status"><span class="dot"></span>open to opportunities</span><span class="visits" hidden><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>–</b> visits</span></div>
   </div>
   <nav class="navs" id="navs">
     <h6>Overview</h6>
@@ -1139,7 +1142,7 @@ footer a:hover{color:var(--teal)}
 </section>
 
   <footer>
-    <span>© <span id="yr"></span> Isaac Zachary · designed, built & deployed by the same guy</span>
+    <span>© <span id="yr"></span> Isaac Zachary · designed, built & deployed by the same guy<span class="visits" hidden> · <b>–</b> visits</span></span>
     <span><a href="https://mobkazi.com" target="_blank" rel="noopener">mobkazi.com</a> · <a href="https://github.com/IsaacZachary/portfolio" target="_blank" rel="noopener">source</a> · press <kbd>/</kbd> for terminal</span>
   </footer>
 </div>
@@ -1180,6 +1183,22 @@ footer a:hover{color:var(--teal)}
 document.addEventListener('load',e=>{ if(e.target.tagName==='IMG') e.target.classList.add('ld'); },true);
 document.addEventListener('error',e=>{ if(e.target.tagName==='IMG') e.target.classList.add('ld'); },true);
 const FORMSPREE_ID = "xnjlgjze";
+/* ===== VISITOR ANALYTICS (GoatCounter: free, cookie-free, shows countries) =====
+   Dashboard: https://<GOAT_CODE>.goatcounter.com  ·  set "Allow adding visitor counts on your website" on to show the counter */
+const GOAT_CODE = "izach";
+(() => {
+  if(!GOAT_CODE || /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) || location.protocol==='file:') return;
+  const gc = document.createElement('script'); gc.async = true; gc.src = 'https://gc.zgo.at/count.js';
+  gc.dataset.goatcounter = `https://${GOAT_CODE}.goatcounter.com/count`; gc.dataset.goatcounterSettings = '{"no_onload":true}';
+  const page = () => '/' + (location.hash.slice(1).split('/').slice(0,2).join('/') || 'home');
+  let last = '';
+  const hit = () => { const p = page(); if(p===last || !window.goatcounter || !goatcounter.count) return; last = p; goatcounter.count({ path: p, title: document.title }); };
+  gc.onload = () => { hit(); addEventListener('hashchange', () => setTimeout(hit, 50)); };
+  document.head.appendChild(gc);
+  fetch(`https://${GOAT_CODE}.goatcounter.com/counter/TOTAL.json`).then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+    if(!d || !d.count) return; document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = d.count; v.hidden = false; });
+  }).catch(()=>{});
+})();
 let pipeOn = false;
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;

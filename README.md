@@ -36,6 +36,14 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support
 - No build step and no framework. One `index.html` with inline CSS and JS, plus optimised WebP assets
 
+## Visitor analytics
+
+Visits are counted with [GoatCounter](https://www.goatcounter.com) (free, open source, no cookies, no consent banner needed). Every page of the single-page app is counted separately (`/home`, `/writing`, `/article/<slug>`, `/academy/<course>`…).
+
+- Dashboard (visitors, countries, referrers, devices, top pages): `https://izach.goatcounter.com`
+- The site code is `GOAT_CODE` in `index.html`. Tracking is skipped on localhost.
+- The public "visits" counter in the sidebar and footer appears once **Settings → Allow adding visitor counts on your website** is turned on in GoatCounter.
+
 ## Writing & Academy
 
 - **Articles** open inside the site at `#article/<slug>` with a reading-progress bar, table of contents, copy-code buttons, share/print and previous/next. Bodies live in `assets/v2/content-articles.js`.
