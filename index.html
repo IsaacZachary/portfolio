@@ -783,7 +783,7 @@ footer a:hover{color:var(--teal)}
         <div><strong>10+</strong>businesses served</div>
         <div><strong>2019</strong>in tech since</div>
         <div><strong>15</strong>devs mentored (PLP)</div>
-        <div class="vstat" hidden><strong><i class="live"></i><span class="vnum">–</span></strong>site visitors</div>
+        <div class="vstat" hidden><strong><i class="live"></i><span class="vnum">–</span></strong>visitors since 2020</div>
       </div>
       <div class="vmq" id="vmq" hidden><span class="vmq-l"><i class="live"></i>visitors from</span><div class="vmq-w"><div class="vmq-t" id="vmqT"></div></div></div>
     </div>
@@ -1202,6 +1202,8 @@ const FORMSPREE_ID = "xnjlgjze";
 /* ===== VISITOR ANALYTICS (GoatCounter: free, cookie-free, shows countries) =====
    Dashboard: https://<GOAT_CODE>.goatcounter.com  ·  set "Allow adding visitor counts on your website" on to show the counter */
 const GOAT_CODE = "izach";
+/* Visits before GoatCounter tracking started (site live since 2020). Added to the live total. */
+const VISITS_BEFORE_TRACKING = 0;
 (() => {
   if(!GOAT_CODE || /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) || location.protocol==='file:') return;
   const gc = document.createElement('script'); gc.async = true; gc.src = 'https://gc.zgo.at/count.js';
@@ -1214,16 +1216,16 @@ const GOAT_CODE = "izach";
   const gcCount = p => fetch(`https://${GOAT_CODE}.goatcounter.com/counter/${encodeURIComponent(p)}.json`).then(r => r.ok ? r.json() : Promise.reject()).then(d => d && d.count ? d.count : Promise.reject());
   const countUp = (el, txt) => { const n = parseInt(String(txt).replace(/\D/g,''),10); if(!n || reduce){ el.textContent = txt; return; } const t0 = performance.now(), D = 1400;
     const f = t => { const k = Math.min((t-t0)/D,1), e = 1-Math.pow(1-k,3); el.textContent = Math.round(n*e).toLocaleString('en-US'); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
-  gcCount('TOTAL').then(c => {
+  const showTotal = n => { if(!n) return; const c = n.toLocaleString('en-US');
     document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = c; v.hidden = false; });
-    document.querySelectorAll('.vstat').forEach(v => { v.hidden = false; countUp(v.querySelector('.vnum'), c); });
-  }).catch(()=>{});
+    document.querySelectorAll('.vstat').forEach(v => { const was = v.hidden; v.hidden = false; if(was) countUp(v.querySelector('.vnum'), c); else v.querySelector('.vnum').textContent = c; }); };
+  showTotal(VISITS_BEFORE_TRACKING);
+  gcCount('TOTAL').then(c => showTotal(VISITS_BEFORE_TRACKING + (parseInt(String(c).replace(/\D/g,''),10)||0))).catch(()=>{});
   const flag = c => /^[A-Z]{2}$/.test(c) ? String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))) : '🌍';
   fetch('/api/visitors').then(r => r.ok ? r.json() : Promise.reject()).then(d => {
     if(!d || !d.countries || !d.countries.length) return;
     const row = d.countries.map(c => `<span><em>${flag(c.code)}</em>${c.name}<small>${Number(c.count).toLocaleString('en-US')}</small></span>`).join('');
     $('#vmqT').innerHTML = row + row; const t=$('#vmqT'); t.style.animationDuration = Math.max(20, d.countries.length*5)+'s'; $('#vmq').hidden = false;
-    if(d.total) document.querySelectorAll('.vstat').forEach(v => { if(v.hidden){ v.hidden=false; countUp(v.querySelector('.vnum'), Number(d.total).toLocaleString('en-US')); } });
   }).catch(()=>{});
   window.articleViews = slug => { const el = document.querySelector('#artMount .aviews'); if(!el) return; gcCount('/article/'+slug).then(c => { el.querySelector('.vn').textContent = c; el.hidden = false; }).catch(()=>{}); };
 })();
