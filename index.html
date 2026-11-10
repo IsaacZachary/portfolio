@@ -196,10 +196,13 @@ h2{font-size:clamp(26px,3.2vw,40px);margin:10px 0 10px}
 
 /* project cards */
 .pc{padding:0;display:flex;flex-direction:column}
-.pc .shot{aspect-ratio:16/9;overflow:hidden;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.pc .shot{width:100%;flex:none;aspect-ratio:16/9;overflow:hidden;background:var(--bg-soft);border-bottom:1px solid var(--line)}
 .pc .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .pc:hover .shot img{transform:scale(1.04)}
 .pc .shot.art{display:grid;place-items:center;background:linear-gradient(135deg,var(--teal-soft),var(--amber-soft))}
+.pc .shot.art.plogo{display:flex;align-items:center;justify-content:center}
+.pc .shot.art.plogo img{width:auto;height:110px;max-width:70%;object-fit:contain;filter:drop-shadow(0 14px 24px rgba(15,23,42,.18))}
+.pc:hover .shot.art.plogo img{transform:scale(1.06)}
 .pc .shot.art svg{width:56px;height:56px;color:var(--teal);stroke-width:1.3}
 .pc .bd{padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
 .pc .k{font-family:var(--mono);font-size:10.5px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase}
@@ -603,7 +606,7 @@ footer a:hover{color:var(--teal)}
       <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/mobkazi.webp" alt=""><b>Business OS</b></div><span class="up">● live</span></div><p>POS, ERP, inventory and a custom app builder with M-PESA built in.</p><div class="dom"><span>pos</span><span>erp</span><span>app</span></div></a>
       <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/sentinel.webp" alt=""><b>Sentinel · WaqForce</b></div><span class="up">● live</span></div><p>Patrols, checkpoints and incident records for security companies. Delivered to SSL Security in 2026.</p><div class="dom"><span>waqforce.com</span></div></a>
       <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/somasteps.webp" alt="SomaSteps" style="height:32px"></div><span class="up">● live</span></div><p>A homework and learning platform for schools, learners and parents.</p><div class="dom"><span>stepsoma.com</span></div></a>
-      <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:32px;height:32px;color:var(--teal)"><use href="#i-scale"/></svg><b>Shauri</b></div><span class="up">● live</span></div><p>Multi-tenant case management for law firms. Each firm gets its own secure instance.</p><div class="dom"><span>shauri.co.ke</span></div></a>
+      <a href="#mobkazi" class="card hov prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/shauri.webp" alt=""><b>Shauri</b></div><span class="up">● live</span></div><p>Multi-tenant case management for law firms. Each firm gets its own secure instance.</p><div class="dom"><span>shauri.co.ke</span></div></a>
     </div>
   </div>
 
@@ -734,7 +737,7 @@ footer a:hover{color:var(--teal)}
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/somasteps.webp" alt="SomaSteps" style="height:30px"></div><span class="up">● operational</span></div><h3>School homework platform</h3><p>Assignments, progress tracking and parent-friendly reporting for schools and learners.</p><div class="dom"><a href="https://stepsoma.com" target="_blank" rel="noopener">stepsoma.com ↗</a></div></div>
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--teal)"><use href="#i-wifi"/></svg><b>MobKazi ISP</b></div><span class="up">● operational</span></div><h3>ISP & hotspot management</h3><p>Multi-tenant subscriber billing, RADIUS concepts, captive portals and time-based vouchers.</p><div class="dom"><span>isp.mobkazi.com</span></div></div>
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--amber)"><use href="#i-box"/></svg><b>MobKazi Jambo</b></div><span class="up">● operational</span></div><h3>Commerce storefronts</h3><p>Online shops for MobKazi merchants. Inventory syncs with the POS both ways.</p><div class="dom"><span>shop.mobkazi.com</span></div></div>
-    <div class="card hov c4 prod rv" style="background:linear-gradient(160deg,var(--amber-soft),var(--panel) 60%)"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--teal)"><use href="#i-scale"/></svg><b>Shauri</b></div><span class="up">● operational</span></div><h3>Law firm case management</h3><p>Multi-tenant legal SaaS: cases, clients, documents and deadlines. Each firm signs up for its own isolated instance, running on separate containers, database and workers.</p><div class="dom"><a href="https://shauri.co.ke" target="_blank" rel="noopener">shauri.co.ke ↗</a><span>Django</span><span>Docker</span></div></div>
+    <div class="card hov c4 prod rv" style="background:linear-gradient(160deg,var(--amber-soft),var(--panel) 60%)"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/shauri.webp" alt=""><b>Shauri</b></div><span class="up">● operational</span></div><h3>Law firm case management</h3><p>Multi-tenant legal SaaS: cases, clients, documents and deadlines. Each firm signs up for its own isolated instance, running on separate containers, database and workers.</p><div class="dom"><a href="https://shauri.co.ke" target="_blank" rel="noopener">shauri.co.ke ↗</a><span>Django</span><span>Docker</span></div></div>
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--blue)"><use href="#i-bot"/></svg><b>MobKazi AI</b></div><span class="up soon">◐ in build</span></div><h3>AI across the stack</h3><p>LLM-assisted insights, automation and support across the OS, plus agentic infrastructure tooling.</p><div class="dom"><span>LLMs</span><span>Agents</span><span>Automation</span></div></div>
   </div>
   <div class="sec">
@@ -882,9 +885,9 @@ const ICON = n => `<svg class="i"><use href="#i-${n}"/></svg>`;
 /* ===== DATA ===== */
 const projects = [
   {t:'MobKazi Business OS', k:'Product · SaaS', c:'product', f:1, img:P+'mobkazii.webp', d:'Multi-tenant SME platform: POS, ERP, inventory, user access, automation and M-PESA, offline-first.', tags:['React','Django','PostgreSQL','M-PESA'], l:[['Live','https://mobkazi.com'],['POS demo','https://mobkazi-pos-frontend.vercel.app']]},
-  {t:'Sentinel · WaqForce', k:'Product · Security', c:'product', f:1, icon:'shield', d:'Patrol management for security companies, with checkpoints, incidents and records. Delivered to SSL Security Ltd in Oct 2026.', tags:['Web app','Mobile','PWA'], l:[['waqforce.com','https://waqforce.com']]},
-  {t:'Shauri', k:'Product · LegalTech', c:'product', f:1, icon:'scale', d:'Multi-tenant case management SaaS for law firms. Each firm signs up for its own isolated instance, like obadiah.shauri.co.ke for its first firm, M. Obadiah & Co. Advocates.', tags:['Django','PostgreSQL','Docker','Multi-tenant'], l:[['shauri.co.ke','https://shauri.co.ke']]},
-  {t:'SomaSteps', k:'Product · EdTech', c:'product', icon:'grad', d:'Homework and learning platform for schools, learners and parents.', tags:['SaaS','Education'], l:[['stepsoma.com','https://stepsoma.com']]},
+  {t:'Sentinel · WaqForce', k:'Product · Security', c:'product', f:1, logo:'assets/v2/brand/sentinel.webp', d:'Patrol management for security companies, with checkpoints, incidents and records. Delivered to SSL Security Ltd in Oct 2026.', tags:['Web app','Mobile','PWA'], l:[['waqforce.com','https://waqforce.com']]},
+  {t:'Shauri', k:'Product · LegalTech', c:'product', f:1, logo:'assets/v2/brand/shauri.webp', d:'Multi-tenant case management SaaS for law firms. Each firm signs up for its own isolated instance, like obadiah.shauri.co.ke for its first firm, M. Obadiah & Co. Advocates.', tags:['Django','PostgreSQL','Docker','Multi-tenant'], l:[['shauri.co.ke','https://shauri.co.ke']]},
+  {t:'SomaSteps', k:'Product · EdTech', c:'product', logo:'assets/v2/brand/somasteps.webp', d:'Homework and learning platform for schools, learners and parents.', tags:['SaaS','Education'], l:[['stepsoma.com','https://stepsoma.com']]},
   {t:'ZakaFlow', k:'Data · Infrastructure', c:'infra', img:P+'zakaflow.webp', d:'A real-time big data analytics pipeline: Kafka ingestion, Spark processing, Airflow orchestration and dashboards, all containerised.', tags:['Kafka','Spark','Airflow','Docker','Terraform'], l:[['Code','https://github.com/IsaacZachary/zaka-flow']]},
   {t:'ISP Management System', k:'Infrastructure', c:'infra', icon:'wifi', d:'Containerised multi-tenant ISP ERP with RADIUS concepts and time-based accounting.', tags:['Docker','Django REST','PostgreSQL','Redis','Nginx'], l:[]},
   {t:'Berry Fibre Hotspot Portal', k:'Infrastructure · Web', c:'infra', img:P+'project-1.webp', d:'Captive portal and hotspot authentication for internet access management, with pay-and-surf packages.', tags:['Captive portal','Hotspot','Payments'], l:[]},
@@ -998,7 +1001,7 @@ const icons = [
 ];
 /* ===== RENDER ===== */
 const projCard = p => `<article class="card hov pc tilt rv" data-c="${p.c}"><span class="glow"></span>
-  ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
+  ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : p.logo ? `<div class="shot art plogo"><img src="${p.logo}" alt="${p.t} logo" loading="lazy"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
   <div class="bd"><span class="k">${p.k}</span><h3>${p.t}</h3><p>${p.d}</p><div class="tags">${p.tags.map(t=>`<span class="tag t">${t}</span>`).join('')}</div>
   ${p.l.length?`<div class="links">${p.l.map(([a,u])=>`<a href="${u}" target="_blank" rel="noopener">${a} ↗</a>`).join('')}</div>`:''}</div></article>`;
 
