@@ -1214,7 +1214,7 @@ const VISITS_BEFORE_TRACKING = 860;
   gc.onload = () => { hit(); addEventListener('hashchange', () => setTimeout(hit, 50)); };
   document.head.appendChild(gc);
   const gcCount = p => fetch(`https://${GOAT_CODE}.goatcounter.com/counter/${encodeURIComponent(p)}.json`).then(r => r.ok ? r.json() : Promise.reject()).then(d => d && d.count ? d.count : Promise.reject());
-  const countUp = (el, txt) => { const n = parseInt(String(txt).replace(/\D/g,''),10); if(!n || reduce){ el.textContent = txt; return; } const t0 = performance.now(), D = 1400;
+  const countUp = (el, txt) => { const n = parseInt(String(txt).replace(/\D/g,''),10); if(!n || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = txt; return; } const t0 = performance.now(), D = 1400;
     const f = t => { const k = Math.min((t-t0)/D,1), e = 1-Math.pow(1-k,3); el.textContent = Math.round(n*e).toLocaleString('en-US'); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
   const showTotal = n => { if(!n) return; const c = n.toLocaleString('en-US');
     document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = c; v.hidden = false; });
