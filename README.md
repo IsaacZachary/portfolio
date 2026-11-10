@@ -26,7 +26,7 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Keyboard shortcuts:** `g` then `h`/`a`/`i`/`e`/`p`/`m`/`d`/`l`/`w`/`r`/`c` jumps to a page
 - **Inspiration** page: Newton, Tesla, Garvey, Musk, Zuckerberg, Jobs, Marcus Aurelius and Kafka, with sourced quotes, short stories and why each matters, plus a rotating "daily fuel" quote on the home page
 - **Design gallery** with 32 designs, category filters and a keyboard-friendly lightbox
-- **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress
+- **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress (the overall % is calculated from the stages)
 - **Printable resume** view, plus a downloadable PDF CV
 - **Contact form** through Formspree, with WhatsApp, phone and email links
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support

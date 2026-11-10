@@ -831,7 +831,7 @@ footer a:hover{color:var(--teal)}
       </div>
       <div class="card rv">
         <span class="eyebrow">roadmap.sh/devops</span>
-        <h2 style="font-size:26px">My DevOps roadmap · <span class="grad" id="roadPct">65%</span></h2>
+        <h2 style="font-size:26px">My DevOps roadmap · <span class="grad" id="roadPct"></span></h2>
         <div class="road" style="margin-top:16px" id="road"></div>
       </div>
     </div>
@@ -1000,7 +1000,7 @@ const articles = [
   ['Reliability','12 min','Designing for Reliability: A Systems Perspective','Building resilience through architecture, support systems and proactive maintenance.'],
   ['Operations','10 min','The Human Side of Systems: More Than Just Code','How leadership and communication shape infrastructure projects.'],
 ];
-const road = [['Linux Fundamentals','done',100,'Command line, file systems, permissions, package management'],['Networking Basics','done',100,'TCP/IP, DNS, HTTP, firewalls, troubleshooting'],['Containerisation with Docker','prog',85,'Dockerfiles, Compose, container networking, volumes'],['Kubernetes','next',15,'Pods, services, deployments, Helm basics'],['Terraform (IaC)','plan',5,'AWS provisioning, modules, state management'],['Monitoring & Observability','plan',5,'Prometheus, Grafana, logging, alerting']];
+const road = [['Linux Fundamentals','done',100,'Command line, file systems, permissions, package management, servers'],['Networking','done',100,'TCP/IP, DNS, VLANs, firewalls, Wi-Fi, troubleshooting in the field'],['Containers: Docker & Compose','done',100,'Production stacks on the MobKazi VPS: multi-container apps, networks, volumes'],['Reverse proxies & TLS','done',100,'Nginx, Traefik, Coolify, Cloudflare DNS, Let\'s Encrypt'],['CI/CD','prog',90,'GitHub Actions, automated builds, tests and zero-downtime deploys'],['Infrastructure as Code (Terraform)','prog',55,'Used on ZakaFlow; modules, state, AWS provisioning'],['Monitoring & Observability','prog',45,'Health checks, logs and alerts; next up: Prometheus and Grafana'],['Kubernetes','next',30,'Pods, services, deployments, Helm basics']];
 
 /* ===== REVEAL / TILT ===== */
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);
@@ -1080,6 +1080,7 @@ $('#skills').innerHTML = skills.map(([h,l])=>`<div class="card skill rv"><h4>${h
 const qhtml = quotes.map(([q,n,r,i])=>`<div class="card quote rv"><svg class="i q" style="fill:currentColor;stroke:none"><use href="#i-quote"/></svg><p>${q}</p><div class="who"><i>${i}</i><div><b>${n}</b><small>${r}</small></div></div></div>`).join('');
 $('#quotes').innerHTML = qhtml; $('#quotes2').innerHTML = qhtml;
 $('#arts').innerHTML = articles.map(([c,m,t,d])=>`<a class="card hov art rv" href="writing.html"><div class="k"><b>${c}</b><span>${m}</span></div><h3>${t}</h3><p>${d}</p><span class="go">Read article →</span></a>`).join('');
+$('#roadPct').textContent = Math.round(road.reduce((t,r)=>t+r[2],0)/road.length)+'%';
 $('#road').innerHTML = road.map(([t,s,p,d])=>`<div class="row"><b>${t}</b><span class="st ${s}">${{done:'completed',prog:'in progress '+p+'%',next:'next up',plan:'planned'}[s]}</span><small>${d}</small><div class="bar"><i data-w="${p}"></i></div></div>`).join('');
 
 // clients
