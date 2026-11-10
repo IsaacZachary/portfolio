@@ -24,6 +24,7 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Animated CI/CD pipeline** showing commit → build → test → scan → deploy → monitor
 - **Command palette:** press `⌘K`, `Ctrl+K` or `/`. Try `projects`, `theme`, `cv` or `sudo hire isaac`
 - **Keyboard shortcuts:** `g` then `h`/`a`/`i`/`e`/`p`/`m`/`d`/`l`/`w`/`r`/`c` jumps to a page
+- **Life & Work** photo journal (building, in the field, events, travel, portraits) with filters and lightbox
 - **Inspiration** page: Newton, Tesla, Garvey, Musk, Zuckerberg, Jobs, Marcus Aurelius and Kafka, with sourced quotes, short stories and why each matters, plus a rotating "daily fuel" quote on the home page
 - **Design gallery** with 32 designs, category filters and a keyboard-friendly lightbox
 - **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress (the overall % is calculated from the stages)
@@ -88,6 +89,7 @@ All content lives in the data arrays at the top of the `<script>` in `index.html
 | Client logos | `clients` |
 | Documents (PDFs in `docs/`, thumbnails in `docs/thumbs/`) | `docs` |
 | Design gallery | `designs` (images in `assets/v2/designs/`) |
+| Life & Work photos | `life` (images in `assets/v2/life/`) |
 | Articles | `articles` |
 | Inspiration (quotes, stories) | `icons` |
 | DevOps roadmap | `road` |

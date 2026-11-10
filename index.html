@@ -584,6 +584,7 @@ footer a:hover{color:var(--teal)}
     <a href="#home" data-v="home"><svg class="i"><use href="#i-home"/></svg>Home<span class="k">g h</span></a>
     <a href="#about" data-v="about"><svg class="i"><use href="#i-user"/></svg>About<span class="k">g a</span></a>
     <a href="#inspiration" data-v="inspiration"><svg class="i"><use href="#i-flame"/></svg>Inspiration<span class="k">g i</span></a>
+    <a href="#life" data-v="life"><svg class="i"><use href="#i-image"/></svg>Life & Work<span class="k">g j</span></a>
     <h6>Work</h6>
     <a href="#experience" data-v="experience"><svg class="i"><use href="#i-brief"/></svg>Experience</a>
     <a href="#projects" data-v="projects"><svg class="i"><use href="#i-code"/></svg>Projects</a>
@@ -719,7 +720,7 @@ footer a:hover{color:var(--teal)}
   <div class="ph"><span class="eyebrow">cat about.md</span><h1>Hi, I'm Isaac. I take ideas all the way to production.</h1></div>
   <div class="about">
     <div class="card portrait rv">
-      <div class="slides" id="slides"><img class="on" src="assets/v2/projects/me-portrait.webp" alt="Isaac Zachary in a black suit"><img src="assets/v2/projects/about-pic.webp" alt="Isaac Zachary seated outdoors" loading="lazy"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary portrait" loading="lazy"><div class="sdots"></div></div>
+      <div class="slides" id="slides"><img class="on" src="assets/v2/projects/me-portrait.webp" alt="Isaac Zachary in a black suit"><img src="assets/v2/projects/about-pic.webp" alt="Isaac Zachary seated outdoors" loading="lazy"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary portrait" loading="lazy"><img src="assets/v2/life/ai-portrait.webp" alt="Isaac Zachary studio portrait" loading="lazy"><img src="assets/v2/life/nairobi-cbd.webp" alt="Isaac in Nairobi CBD" loading="lazy"><div class="sdots"></div></div>
       <div class="cap">
         <div class="facts">
           <div><span>name</span><b>Isaac Siko Zachary</b></div>
@@ -768,6 +769,14 @@ footer a:hover{color:var(--teal)}
   </div>
   <div class="grid g2" id="icons" style="margin-top:16px"></div>
   <p class="rv" style="margin-top:28px;color:var(--dim);font-size:13px;font-family:var(--mono)">Quotes are taken from their original sources where known: letters, books, speeches and interviews. The stories are my own summaries.</p>
+</section>
+
+
+<!-- ============ LIFE ============ -->
+<section class="view" id="v-life" data-title="Life & Work" hidden>
+  <div class="ph"><span class="eyebrow">ls ~/photos</span><h1>Life & work, <span class="grad">behind the build.</span></h1><p class="sub">Shipping dashboards at night, onboarding guards on site, setting up POS in client shops, events, travel and the people who keep me going.</p></div>
+  <div class="filters" id="lf"></div>
+  <div class="masonry" id="lgal"></div>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
@@ -820,6 +829,16 @@ footer a:hover{color:var(--teal)}
     <div class="card hov c4 prod rv" style="background:linear-gradient(160deg,var(--amber-soft),var(--panel) 60%)"><div class="prod-top"><div class="prod-logo"><img src="assets/v2/brand/shauri.webp" alt=""><b>Shauri</b></div><span class="up">● operational</span></div><h3>Law firm case management</h3><p>Multi-tenant legal SaaS: cases, clients, documents and deadlines. Each firm signs up for its own isolated instance, running on separate containers, database and workers.</p><div class="dom"><a href="https://shauri.co.ke" target="_blank" rel="noopener">shauri.co.ke ↗</a><span>Django</span><span>Docker</span></div></div>
     <div class="card hov c4 prod rv"><div class="prod-top"><div class="prod-logo"><svg class="i" style="width:30px;height:30px;color:var(--blue)"><use href="#i-bot"/></svg><b>MobKazi AI</b></div><span class="up soon">◐ in build</span></div><h3>AI across the stack</h3><p>LLM-assisted insights, automation and support across the OS, plus agentic infrastructure tooling.</p><div class="dom"><span>LLMs</span><span>Agents</span><span>Automation</span></div></div>
   </div>
+  <div class="sec">
+    <div class="sec-head rv"><div><span class="eyebrow">ls ~/field</span><h2>In the field</h2><p class="sub">The products are built in the terminal and proven on site.</p></div><a class="link" href="#life">More photos →</a></div>
+    <div class="strip field">
+      <figure class="card tilt rv"><img src="assets/v2/life/nova-dashboard-sm.webp" alt="Isaac shipping the Nova Salon dashboard" loading="lazy"><figcaption><b>Nova Salon dashboard</b><small>// Business OS, beauty edition</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/pos-shop-sm.webp" alt="MobKazi POS at a client shop" loading="lazy"><figcaption><b>POS live at a client shop</b><small>// stock, sales, M-PESA</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/waqforce-onboarding-sm.webp" alt="Onboarding a guard on WaqForce" loading="lazy"><figcaption><b>WaqForce onboarding</b><small>// SSL Security, night shift</small></figcaption></figure>
+      <figure class="card tilt rv"><img src="assets/v2/life/meat-expo-sm.webp" alt="Isaac at Kenya Meat Expo 2026" loading="lazy"><figcaption><b>Kenya Meat Expo 2026</b><small>// networking for MobKazi</small></figcaption></figure>
+    </div>
+  </div>
+
   <div class="sec">
     <div class="sec-head rv"><div><span class="eyebrow">services --list</span><h2>Beyond software</h2></div></div>
     <div class="grid g4">
@@ -914,7 +933,7 @@ footer a:hover{color:var(--teal)}
 <section class="view" id="v-resume" data-title="Resume" hidden>
   <div class="ph no-print" style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap"><div><span class="eyebrow">cat resume.md</span><h1>Resume</h1></div><div class="cta" style="margin:0"><a class="btn btn-p" href="pdf/Isaac_Zachary_CV.pdf" target="_blank" rel="noopener"><svg class="i"><use href="#i-down"/></svg>Download PDF</a><button class="btn btn-g" id="printBtn">Print</button></div></div>
   <article class="card resume rv">
-    <header><div><h1>Isaac Siko Zachary</h1><div class="ttl">Software Engineer · DevOps · Network & Security Systems</div></div><div class="ct">izachdev@gmail.com<br>+254 759 325 915<br>linkedin.com/in/isaaczachary<br>github.com/IsaacZachary</div></header>
+    <header><div style="display:flex;gap:18px;align-items:center"><img src="assets/v2/life/headshot-sm.webp" alt="Isaac Zachary headshot" style="width:86px;height:104px;object-fit:cover;object-position:50% 25%;border-radius:12px;border:1px solid var(--line)"><div><h1>Isaac Siko Zachary</h1><div class="ttl">Software Engineer · DevOps · Network & Security Systems</div></div></div><div class="ct">izachdev@gmail.com<br>+254 759 325 915<br>linkedin.com/in/isaaczachary<br>github.com/IsaacZachary</div></header>
     <h5>Profile</h5>
     <p>Founder and lead engineer of MobKazi with a BSc in Software Development and seven years across software, IT support, CCTV and networking. I design, build, deploy and support multi-tenant business platforms end to end. My strengths are hands-on troubleshooting, clear documentation and user training.</p>
     <h5>Experience</h5>
@@ -1176,6 +1195,7 @@ const docs = [
   ['school-leaving-certificate','School leaving certificate','Education','Mwongori Secondary School · 2019'],
   ['kcpe-certificate','KCPE certificate','Education','KNEC · 2014'],
 ];
+const life = [["Shipping the Nova Salon dashboard", "Building", "nova-dashboard"], ["Building the MobKazi Command Center with my little co-pilot", "Building", "building-with-family"], ["MobKazi POS, live at a client shop", "In the field", "pos-shop"], ["Onboarding a guard on WaqForce", "In the field", "waqforce-onboarding"], ["Engineer mode", "Portraits", "ai-portrait"], ["Stock check on the POS app", "In the field", "pos-shop-2"], ["Setting up patrol accounts, live on site", "In the field", "waqforce-setup"], ["Kenya Meat Expo 2026, networking for MobKazi", "Events", "meat-expo"], ["Digitising client records", "In the field", "client-records"], ["Nairobi CBD", "Portraits", "nairobi-cbd"], ["On-site client support", "In the field", "client-office"], ["Boarding for the next chapter", "Travel", "boarding"], ["Window seat, thinking about the next build", "Travel", "window-seat"], ["Professional headshot", "Portraits", "headshot"], ["Testing in-flight UX, unofficially", "Travel", "inflight-game"], ["Good company, good counsel", "Off the clock", "garden-elder"], ["Best co-worker", "Off the clock", "dog"], ["Long flight, short levels", "Travel", "inflight-game-2"], ["Weekend mode", "Off the clock", "casual-jersey"], ["Good vibes only", "Off the clock", "dog-2"]];
 /* ===== RENDER ===== */
 const projCard = p => `<article class="card hov pc tilt rv" data-c="${p.c}"><span class="glow"></span>
   ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : p.logo ? `<div class="shot art plogo"><img src="${p.logo}" alt="${p.t} logo" loading="lazy"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
@@ -1244,9 +1264,17 @@ function renderGal(c='All'){
 }
 $('#df').onclick = e => { const b=e.target.closest('button'); if(b) renderGal(b.dataset.c); };
 renderGal();
-let li = 0; const lb = $('#lb');
-function showLB(i){ li=(i+gList.length)%gList.length; const [t,c,s]=gList[li]; $('#lbImg').src=`assets/v2/designs/${s}.webp`; $('#lbImg').alt=t; $('#lbT').textContent=t; $('#lbC').textContent=c+' · '+(li+1)+'/'+gList.length; lb.classList.add('open'); }
-$('#gal').onclick = e => { const t=e.target.closest('.tile'); if(t) showLB(+t.dataset.i); };
+let li = 0, lbList = []; const lb = $('#lb');
+function showLB(i){ li=(i+lbList.length)%lbList.length; const [t,c,src]=lbList[li]; $('#lbImg').src=src; $('#lbImg').alt=t; $('#lbT').textContent=t; $('#lbC').textContent=c+' · '+(li+1)+'/'+lbList.length; lb.classList.add('open'); }
+$('#gal').onclick = e => { const t=e.target.closest('.tile'); if(t){ lbList=gList.map(([a,b,s])=>[a,b,`assets/v2/designs/${s}.webp`]); showLB(+t.dataset.i); } };
+const lcats=['All','Building','In the field','Events','Travel','Portraits','Off the clock']; let lList=life;
+function renderLife(c='All'){ lList=life.filter(d=>c==='All'||d[1]===c);
+  $('#lgal').innerHTML=lList.map(([t,cat,s],i)=>`<button class="tile rv" data-i="${i}"><img src="assets/v2/life/${s}-sm.webp" alt="${t}" loading="lazy"><span class="cap"><b>${t}</b><small>${cat}</small></span></button>`).join('');
+  $$('#lf button').forEach(b=>b.classList.toggle('on',b.dataset.c===c)); afterRender('#lgal'); }
+$('#lf').innerHTML=lcats.map(c=>`<button data-c="${c}">${c}<span>${c==='All'?life.length:life.filter(d=>d[1]===c).length}</span></button>`).join('');
+$('#lf').onclick=e=>{ const b=e.target.closest('button'); if(b) renderLife(b.dataset.c); };
+renderLife();
+$('#lgal').onclick = e => { const t=e.target.closest('.tile'); if(t){ lbList=lList.map(([a,b,s])=>[a,b,`assets/v2/life/${s}.webp`]); showLB(+t.dataset.i); } };
 lb.onclick = e => { if(e.target.closest('.x')||e.target===lb) lb.classList.remove('open'); if(e.target.closest('.pv')) showLB(li-1); if(e.target.closest('.nx')) showLB(li+1); };
 
 afterRender();
@@ -1323,7 +1351,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
   const go = v => () => { close(); location.hash = v; };
   const ext = u => () => { close(); window.open(u,'_blank','noopener'); };
   const say = t => { out.innerHTML='<div class="msg">'+t.replace(/</g,'&lt;')+'</div>'; };
-  const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['inspiration','icons that inspire me',go('inspiration')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['documents','certificates & letters',go('documents')],['contact','get in touch',go('contact')],
+  const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['inspiration','icons that inspire me',go('inspiration')],['life','photos: life & work',go('life')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['documents','certificates & letters',go('documents')],['contact','get in touch',go('contact')],
     ['theme','toggle light / dark',()=>{ setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'); close(); }],
     ['cv','download CV (PDF)',ext('pdf/Isaac_Zachary_CV.pdf')],['github','open GitHub ↗',ext('https://github.com/IsaacZachary')],['linkedin','open LinkedIn ↗',ext('https://linkedin.com/in/isaaczachary/')],['whatsapp','chat on WhatsApp ↗',ext('https://wa.me/254759325915')],
     ['whoami','print bio',()=>say('Isaac Zachary. Founder & lead engineer, MobKazi.\nSoftware · DevOps · Networks & security systems.')],
@@ -1346,7 +1374,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
     else if(lb.classList.contains('open')&&e.key==='ArrowRight') showLB(li+1);
     else if(lb.classList.contains('open')&&e.key==='ArrowLeft') showLB(li-1);
     else if(!typing&&e.key==='g'){ g=Date.now(); }
-    else if(!typing&&Date.now()-g<800){ const m={h:'home',a:'about',i:'inspiration',p:'projects',e:'experience',m:'mobkazi',d:'designs',l:'learning',w:'writing',r:'resume',o:'documents',c:'contact'}[e.key]; if(m){ location.hash=m; g=0; } }
+    else if(!typing&&Date.now()-g<800){ const m={h:'home',a:'about',i:'inspiration',j:'life',p:'projects',e:'experience',m:'mobkazi',d:'designs',l:'learning',w:'writing',r:'resume',o:'documents',c:'contact'}[e.key]; if(m){ location.hash=m; g=0; } }
   });
 })();
 </script>
