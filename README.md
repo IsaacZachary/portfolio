@@ -103,7 +103,7 @@ The `>iz` mark combines a terminal prompt with Isaac's initials, in the teal →
 
 ## Contact
 
-- Email: izachdev@gmail.com · mobkazitechnologies@gmail.com · isaaczachary18@gmail.com
+- Email: izachdev@gmail.com · mobkazitechnologies@gmail.com · dev.mobkazi@gmail.com · isaaczachary18@gmail.com
 - WhatsApp: +254 759 325 915 (Kenya) · +974 3315 3663 (Qatar) · +254 101 029 951 (MobKazi support)
 - LinkedIn: [in/isaaczachary](https://linkedin.com/in/isaaczachary)
 
