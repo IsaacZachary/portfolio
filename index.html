@@ -409,7 +409,7 @@ footer a:hover{color:var(--teal)}
 @media (max-width:640px){.hero-q{grid-template-columns:1fr}}
 
 
-.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .strip figure{padding:0;margin:0}
 .strip img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;transition:transform .6s}
 .strip figure:hover img{transform:scale(1.04)}
@@ -424,12 +424,18 @@ footer a:hover{color:var(--teal)}
 .c-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:22px;border:6px solid var(--panel);box-shadow:var(--shadow-lg)}
 .c-badge{position:absolute;left:-26px;bottom:26px;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow-lg);padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;transform:rotate(-2.5deg);white-space:nowrap}
 @media (max-width:980px){.ins-top{grid-template-columns:1fr}.ins-photo{min-height:420px}.c-head{grid-template-columns:1fr}.c-photo{width:min(300px,80vw);margin:8px auto 0}}
-@media (max-width:640px){.strip{grid-template-columns:1fr 1fr}.strip figure:last-child{display:none}.c-badge{left:8px}}
+@media (max-width:640px){.strip{grid-template-columns:1fr 1fr}.c-badge{left:8px}}
 
 .qgrid{grid-template-columns:repeat(6,1fr)}
 .qgrid>.quote{grid-column:span 2}
 .qgrid>.quote:nth-child(4),.qgrid>.quote:nth-child(5){grid-column:span 3}
 @media (max-width:980px){.qgrid>.quote,.qgrid>.quote:nth-child(4),.qgrid>.quote:nth-child(5){grid-column:span 6}}
+.slides{position:relative;aspect-ratio:4/5;overflow:hidden}
+.portrait .slides img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 20%;opacity:0;transform:scale(1.04);transition:opacity 1s,transform 6s}
+.portrait .slides img.on{opacity:1;transform:scale(1)}
+.sdots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;z-index:2}
+.sdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.3s}.sdots i.on{width:22px;border-radius:5px;background:#fff}
+@media (max-width:980px){.strip{grid-template-columns:repeat(2,1fr)}}
 /* command palette */
 .cmdk{position:fixed;inset:0;z-index:130;display:none;place-items:start center;padding-top:13vh;background:rgba(2,6,23,.45);backdrop-filter:blur(6px)}
 .cmdk.open{display:grid}
@@ -677,7 +683,7 @@ footer a:hover{color:var(--teal)}
   <div class="ph"><span class="eyebrow">cat about.md</span><h1>Hi, I'm Isaac. I take ideas all the way to production.</h1></div>
   <div class="about">
     <div class="card portrait rv">
-      <img src="assets/v2/projects/me-portrait.webp" alt="Portrait of Isaac Zachary">
+      <div class="slides" id="slides"><img class="on" src="assets/v2/projects/me-portrait.webp" alt="Isaac Zachary in a black suit"><img src="assets/v2/projects/about-pic.webp" alt="Isaac Zachary seated outdoors" loading="lazy"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary portrait" loading="lazy"><div class="sdots"></div></div>
       <div class="cap">
         <div class="facts">
           <div><span>name</span><b>Isaac Siko Zachary</b></div>
@@ -710,6 +716,7 @@ footer a:hover{color:var(--teal)}
         <figure class="card tilt rv"><img src="assets/v2/projects/me-thinking-full.webp" alt="Isaac in a suit, looking sideways in thought" loading="lazy"><figcaption><b>Thinking in systems</b><small>// always the next build</small></figcaption></figure>
         <figure class="card tilt rv"><img src="assets/v2/projects/me-peace2.webp" alt="Isaac smiling with a peace sign" loading="lazy"><figcaption><b>Peace & clean code</b><small>// shipped, tested, live</small></figcaption></figure>
         <figure class="card tilt rv"><img src="assets/v2/projects/me-smile.webp" alt="Isaac smiling in a suit" loading="lazy"><figcaption><b>Suited for the client call</b><small>// then back to the terminal</small></figcaption></figure>
+        <figure class="card tilt rv"><img src="assets/v2/projects/profile-pic.webp" alt="Isaac Zachary in a vest and tie" loading="lazy"><figcaption><b>Where it started</b><small>// the v1 portfolio photo</small></figcaption></figure>
       </div>
     </div>
   </div>
@@ -1018,6 +1025,9 @@ const icons = [
   {n:'Marcus Garvey', y:'1887 – 1940', r:'Pan-Africanist & organiser', i:'MG', c:['#15803d','#d97706'], q:'Up, you mighty race, you can accomplish what you will!', s:'Speeches, 1920s',
    st:'A Jamaican printer who founded the UNIA in 1914 and grew it into a global movement for African self-reliance, enterprise and pride.',
    me:'MobKazi exists to power African businesses, starting with Kenya and then the continent. Garvey is the reason I think in continents.'},
+  {n:'Barack Obama', y:'b. 1961', r:'44th President of the United States', i:'BO', c:['#1e40af','#dc2626'], q:'Change will not come if we wait for some other person or some other time. We are the ones we\'ve been waiting for.', s:'Super Tuesday speech, 2008',
+   st:'The son of a Kenyan father from Kogelo, he worked as a community organiser in Chicago and in 2009 became the first African American president of the United States.',
+   me:'Kenyan roots, global impact. He reminds me not to wait for permission or for someone else to build what Africa needs.'},
   {n:'Elon Musk', y:'b. 1971', r:'Engineer & entrepreneur', i:'EM', c:['#0f172a','#64748b'], q:'If something\'s important enough you should try. Even if the probable outcome is failure.', s:'60 Minutes interview, 2014',
    st:'He put his early winnings into rockets and electric cars. In 2008 both SpaceX and Tesla came close to collapse, and he kept going.',
    me:'First principles over fear. When the odds look bad and the work matters, I ship anyway.'},
@@ -1048,7 +1058,12 @@ function rotator(tid, wid, did){
   D.onclick = e => { const d=e.target.closest('i'); if(d) show(+d.dataset.i); };
   show(Math.floor(Math.random()*icons.length)); if(!reduce) setInterval(()=>show(k+1), 6500);
 }
-rotator('#iqText','#iqWho','#iqDots'); rotator('#dfText','#dfWho','#dfDots');
+rotator('#iqText','#iqWho','#iqDots');
+(() => { const box=$('#slides'), imgs=[...box.querySelectorAll('img')], d=box.querySelector('.sdots'); let k=0;
+  d.innerHTML=imgs.map((_,i)=>`<i data-i="${i}" class="${i?'':'on'}"></i>`).join('');
+  const show=i=>{ k=(i+imgs.length)%imgs.length; imgs.forEach((im,j)=>im.classList.toggle('on',j===k)); d.querySelectorAll('i').forEach((x,j)=>x.classList.toggle('on',j===k)); };
+  d.onclick=e=>{ const x=e.target.closest('i'); if(x) show(+x.dataset.i); };
+  if(!reduce) setInterval(()=>show(k+1),4500); })(); rotator('#dfText','#dfWho','#dfDots');
 $('#featured').innerHTML = projects.filter(p=>p.f).map(projCard).join('');
 function renderProjects(c='all'){
   $('#plist').innerHTML = projects.filter(p=>c==='all'||p.c===c).map(projCard).join('');
