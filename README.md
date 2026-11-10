@@ -43,6 +43,7 @@ Visits are counted with [GoatCounter](https://www.goatcounter.com) (free, open s
 - Dashboard (visitors, countries, referrers, devices, top pages): `https://izach.goatcounter.com`
 - The site code is `GOAT_CODE` in `index.html`. Tracking is skipped on localhost.
 - The public "visits" counter in the sidebar and footer appears once **Settings → Allow adding visitor counts on your website** is turned on in GoatCounter.
+- The **"visitors from" marquee** on Home (countries with flags) is served by the Netlify Function `netlify/functions/visitors.mjs` at `/api/visitors`, which reads GoatCounter's API with the `GOATCOUNTER_TOKEN` environment variable (set in Netlify → Site configuration → Environment variables). The token never reaches the browser; responses are cached for 10 minutes.
 
 ## Writing & Academy
 

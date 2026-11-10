@@ -431,6 +431,16 @@ footer .visits{display:inline;font-size:inherit;margin:0}footer .visits[hidden]{
 .live{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:livep 1.8s infinite;flex:none}
 @keyframes livep{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 .aviews[hidden]{display:none}
+.vmq{display:flex;align-items:center;gap:14px;margin-top:26px;max-width:640px;min-width:0;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:9px 0 9px 14px;box-shadow:var(--sh-1,0 1px 2px rgba(0,0,0,.04))}
+.vmq[hidden]{display:none}
+.vmq-l{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--dim);white-space:nowrap;flex:none}
+.vmq-w{flex:1 1 0;width:0;min-width:0;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.vmq-t{display:flex;gap:22px;width:max-content;animation:vmq 40s linear infinite}
+.vmq:hover .vmq-t{animation-play-state:paused}
+.vmq-t span{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;white-space:nowrap;color:var(--text)}
+.vmq-t em{font-style:normal;font-size:17px;line-height:1}.vmq-t small{font-family:var(--mono);font-size:11px;color:var(--dim)}
+@keyframes vmq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.vmq-t{animation:none}}
 /* instant-feel loading */
 .tile,.dthumb,.pc .shot,.reel,.strip figure,.feat-img,.ph-card,.slides{background-image:linear-gradient(100deg,transparent 30%,rgba(148,163,184,.14) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.4s linear infinite}
 @keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
@@ -775,6 +785,7 @@ footer a:hover{color:var(--teal)}
         <div><strong>15</strong>devs mentored (PLP)</div>
         <div class="vstat" hidden><strong><i class="live"></i><span class="vnum">–</span></strong>site visitors</div>
       </div>
+      <div class="vmq" id="vmq" hidden><span class="vmq-l"><i class="live"></i>visitors from</span><div class="vmq-w"><div class="vmq-t" id="vmqT"></div></div></div>
     </div>
     <div class="stage" id="stage">
       <div class="stage-inner" id="stageInner">
@@ -1206,6 +1217,13 @@ const GOAT_CODE = "izach";
   gcCount('TOTAL').then(c => {
     document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = c; v.hidden = false; });
     document.querySelectorAll('.vstat').forEach(v => { v.hidden = false; countUp(v.querySelector('.vnum'), c); });
+  }).catch(()=>{});
+  const flag = c => /^[A-Z]{2}$/.test(c) ? String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))) : '🌍';
+  fetch('/api/visitors').then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+    if(!d || !d.countries || !d.countries.length) return;
+    const row = d.countries.map(c => `<span><em>${flag(c.code)}</em>${c.name}<small>${Number(c.count).toLocaleString('en-US')}</small></span>`).join('');
+    $('#vmqT').innerHTML = row + row; const t=$('#vmqT'); t.style.animationDuration = Math.max(20, d.countries.length*5)+'s'; $('#vmq').hidden = false;
+    if(d.total) document.querySelectorAll('.vstat').forEach(v => { if(v.hidden){ v.hidden=false; countUp(v.querySelector('.vnum'), Number(d.total).toLocaleString('en-US')); } });
   }).catch(()=>{});
   window.articleViews = slug => { const el = document.querySelector('#artMount .aviews'); if(!el) return; gcCount('/article/'+slug).then(c => { el.querySelector('.vn').textContent = c; el.hidden = false; }).catch(()=>{}); };
 })();
