@@ -426,10 +426,14 @@ footer a:hover{color:var(--teal)}
 @media (max-width:980px){.ins-top{grid-template-columns:1fr}.ins-photo{min-height:420px}.c-head{grid-template-columns:1fr}.c-photo{width:min(300px,80vw);margin:8px auto 0}}
 @media (max-width:640px){.strip{grid-template-columns:1fr 1fr}.c-badge{left:8px}}
 
-.qgrid{grid-template-columns:repeat(6,1fr)}
-.qgrid>.quote{grid-column:span 2}
-.qgrid>.quote:nth-child(4),.qgrid>.quote:nth-child(5){grid-column:span 3}
-@media (max-width:980px){.qgrid>.quote,.qgrid>.quote:nth-child(4),.qgrid>.quote:nth-child(5){grid-column:span 6}}
+.qgrid{display:block;columns:3 300px;column-gap:16px}
+.qgrid>.quote{break-inside:avoid;margin-bottom:16px;display:flex}
+.recog{display:flex;gap:14px;align-items:flex-start}.recog .ico{margin:0;flex:none}.recog h4{font-size:15px;line-height:1.35}.recog p{font-size:13px;color:var(--muted)}
+.certlist{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 24px}
+.certlist div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.certlist span{font-family:var(--mono);font-size:11.5px;color:var(--dim);text-align:right;white-space:nowrap}
+@media (max-width:760px){.certlist{grid-template-columns:1fr}}
+.roles-open{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .slides{position:relative;aspect-ratio:4/5;overflow:hidden}
 .portrait .slides img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 20%;opacity:0;transform:scale(1.04);transition:opacity 1s,transform 6s}
 .portrait .slides img.on{opacity:1;transform:scale(1)}
@@ -736,12 +740,18 @@ footer a:hover{color:var(--teal)}
 
 <!-- ============ EXPERIENCE ============ -->
 <section class="view" id="v-experience" data-title="Experience" hidden>
-  <div class="ph"><span class="eyebrow">git log --career</span><h1>Experience</h1><p class="sub">Seven years across software, DevOps, IT support and security systems, from fixing cameras on site to designing the platform.</p></div>
+  <div class="ph"><span class="eyebrow">git log --career</span><h1>Experience</h1><p class="sub">Seven years across software, DevOps, ISP support, IT and security systems, and business, from fixing cameras on site to leading a support desk to designing the platform.</p></div>
   <div class="tl" id="jobs"></div>
 
   <div class="sec">
     <div class="sec-head rv"><div><span class="eyebrow">ls ~/certs</span><h2>Education & certifications</h2></div></div>
     <div class="grid g3" id="certs"></div>
+    <div class="card rv" style="margin-top:16px"><h3 style="font-size:16px;margin-bottom:8px">All certifications <span class="tag t" id="certCount"></span></h3><div class="certlist" id="certlist"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head rv"><div><span class="eyebrow">cat recognition.log</span><h2>Recognition & achievements</h2></div></div>
+    <div class="grid g4" id="recog"></div>
   </div>
 
   <div class="sec">
@@ -867,7 +877,7 @@ footer a:hover{color:var(--teal)}
     <div class="ent"><div><b>BSc Software Development, KCA University</b><span>2019 – 2023</span></div><em>Second Class Upper Division · class representative</em></div>
     <div class="ent"><div><b>KCSE, Mwongori High School</b><span>2015 – 2018</span></div></div>
     <h5>Certifications</h5>
-    <p>Software Development Fundamentals, Power Learn Project (Sep 2024) · Decoding DevOps, Udemy (2025) · EF SET English C1 Advanced (May 2025) · IT Support Technician, Alison (2022) · Frontend Fundamentals (2020)</p>
+    <p>Career Essentials in Generative AI, Microsoft & LinkedIn · Software Development Fundamentals, Power Learn Project · Decoding DevOps, Udemy · EF SET English C1 Advanced · IT for Business Success, HP LIFE · Working as an IT Support Technician, Alison · Power BI, MindLuster · WordPress, Sage 50 & QuickBooks, AQskill · Frontend Fundamentals, Pirple · Student English Program, Global Mentorship Initiative</p>
     <h5>Skills</h5>
     <p><b>Development:</b> Python, Django REST, FastAPI, PHP/Laravel, React, Node.js, MySQL, PostgreSQL, M-PESA API · <b>DevOps:</b> Docker, CI/CD, GitHub Actions, Nginx, Linux, Cloudflare, SSL/TLS · <b>Networks & security:</b> CCTV/IP, Hikvision, VLANs, mesh Wi-Fi, routers, Active Directory · <b>Support:</b> Jira, CRM/ticketing, TeamViewer, AnyDesk, WordPress, Canva</p>
   </article>
@@ -875,7 +885,7 @@ footer a:hover{color:var(--teal)}
 
 <!-- ============ CONTACT ============ -->
 <section class="view" id="v-contact" data-title="Contact" hidden>
-  <div class="ph c-head"><div><span class="eyebrow">./contact.sh</span><h1>Let's build something <span class="grad">that lasts.</span></h1><p class="sub">Hiring, a project or a MobKazi rollout? Pick a channel. I usually reply within a day.</p><div class="cta"><a class="btn btn-p" href="https://wa.me/254759325915" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>WhatsApp me</a><a class="btn btn-g" href="mailto:izachdev@gmail.com"><svg class="i"><use href="#i-mail"/></svg>Email</a></div></div>
+  <div class="ph c-head"><div><span class="eyebrow">./contact.sh</span><h1>Let's build something <span class="grad">that lasts.</span></h1><p class="sub">Hiring, a project or a MobKazi rollout? Pick a channel. I usually reply within a day.</p><div class="roles-open"><span class="tag t">Open to: DevOps Engineer</span><span class="tag t">System Administrator</span><span class="tag t">Technical Support Engineer</span><span class="tag t">IT Support Specialist</span><span class="tag t">Network Support Engineer</span><span class="tag">remote-friendly</span></div><div class="cta"><a class="btn btn-p" href="https://wa.me/254759325915" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>WhatsApp me</a><a class="btn btn-g" href="mailto:izachdev@gmail.com"><svg class="i"><use href="#i-mail"/></svg>Email</a></div></div>
     <figure class="c-photo tilt rv"><img src="assets/v2/projects/me-peace.webp" alt="Isaac Zachary smiling with a peace sign"><span class="c-badge"><span class="dot"></span>Karibu! Available for projects</span></figure></div>
   <div class="contact">
     <div class="clist">
@@ -948,32 +958,48 @@ const projects = [
 const pcats = [['all','All'],['product','Products'],['infra','Infrastructure'],['ai','AI'],['web','Web'],['field','Field']];
 
 const jobs = [
-  {now:1, t:'Founder & Lead Engineer', o:'MobKazi', w:'2024 – Present', b:['Architect, build and run MobKazi: Business OS (POS, ERP, apps), Shauri, Sentinel/WaqForce, SomaSteps, ISP and Jambo','Own CI/CD, Docker deployments, the VPS, Nginx, Cloudflare DNS and SSL for all products and client sites','Deliver client platforms such as swiftsport.co.ke, the Macvey agency site and Ecomax; lead onboarding, training and hardware supply'], tags:['React','Django','Docker','CI/CD','M-PESA']},
+  {now:1, t:'Founder & Lead Engineer · Software Developer', o:'MobKazi Technologies', w:'Feb 2026 – Present · building since 2024', b:['Architect, build and run MobKazi: Business OS (POS, ERP, apps), Shauri, Sentinel/WaqForce, SomaSteps, ISP and Jambo, on React, TypeScript, Django REST and PostgreSQL','Deploy and maintain apps on cloud and Linux servers with containers, secure routing and domain management; own CI/CD, the VPS, Nginx/Traefik, Cloudflare DNS and SSL','Monitor availability and performance; troubleshoot application, API, database, network and server issues','Deliver client platforms such as swiftsport.co.ke, the Macvey agency site and Ecomax; design and install CCTV, access control and business networks; lead onboarding and training'], tags:['React','TypeScript','Django REST','PostgreSQL','Docker','CI/CD']},
   {t:'Software & Security Systems Consultant', o:'SSL Security Ltd', w:'Ongoing engagements', b:['Delivered the WaqForce patrol application for patrols, checkpoints and incident records (Oct 2026)','Relief support in SSL-managed control rooms at Pharo School and Starehe Boys for CCTV monitoring and networking','Network infrastructure, POS configuration and troubleshooting at Koma Gardens; visual camera and Wi-Fi layouts for a Ruaka site'], tags:['WaqForce','CCTV','Networking']},
-  {t:'Support Staff Volunteer & Mentor', o:'Power Learn Project (PLP)', w:'Mar 2025 – Jun 2025', b:['Resolved LMS issues through email and ticketing; assisted learners and reviewed hackathon code','Mentored ~15 developers at the TUK Coffee & Code / AI Safari workshop using agentic workflows'], tags:['Mentoring','Support']},
-  {t:'Technical Support Engineer', o:'First Basics Technologies Ltd', w:'Feb 2024 – Dec 2025', b:['Diagnosed network faults and configured routers for home, office and business clients','Gave remote and on-site troubleshooting by phone and remote tools','Kept CRM records, documented issues and monitored systems; handled WordPress and Canva updates'], tags:['Networking','CRM','Remote support']},
-  {t:'ICT Support & Network Administration (Attachment)', o:'Defence Forces Technical College (DEFTEC)', w:'Jun 2023 – Aug 2023', b:['Supported server administration, Active Directory and internal ICT maintenance','Built a Computer Maintenance System prototype in Laravel'], tags:['Active Directory','Laravel']},
-  {t:'IT Support Technician', o:'Humble Crib Investment', w:'Feb 2022 – Dec 2023', b:['Installed and configured CCTV systems, office networks and Windows and Linux systems','Troubleshot computers, cameras and connectivity; did routine maintenance and inventory','Trained clients in digital skills and followed up with technical help'], tags:['CCTV','Windows','Linux']},
+  {t:'Technical Support Lead', o:'First Basics Technologies Ltd (ISP)', w:'Jul 2025 – Dec 2025', b:['Supervised support desk operations and resolved escalated technical issues','Oversaw quality assurance, resource allocation and performance tracking','Coordinated with cross-functional teams on service delivery, client communication and reporting'], tags:['Leadership','QA','ISP operations']},
+  {t:'Support Staff Volunteer & Mentor', o:'Power Learn Project (PLP)', w:'Mar 2025 – Jun 2025', b:['Resolved LMS issues through email and ticketing; guided learners through technical challenges and reviewed hackathon code','Helped run AI Safari, Vibe Coding and Coffee & Code (TUK edition); mentored ~15 developers using agentic workflows'], tags:['Mentoring','Support','Pan-African tech']},
+  {t:'Technical Support Engineer (Customer Technical Support)', o:'First Basics Technologies Ltd (ISP)', w:'Feb 2024 – Dec 2025', b:['Troubleshot connectivity, configured routers and optimised FTTH/FTTB solutions','Supported clients by phone, WhatsApp and tickets; monitored the network and escalated critical issues','Kept CRM records and documentation; maintained the company WordPress site and created Canva marketing materials'], tags:['FTTH/FTTB','Routers','CRM','WordPress']},
+  {t:'ICT Support & Network Administration (Attachment)', o:'Defence Forces Technical College (DEFTEC)', w:'Jun 2023 – Aug 2023', b:['User support, hardware and software configuration; wired, wireless and fibre networking','Installed and configured server virtualisation and supported Active Directory','Built a system with HTML, CSS and JavaScript and a Computer Maintenance System prototype in Laravel'], tags:['Virtualisation','Active Directory','Laravel']},
+  {t:'Founder · Software Support Consultant', o:'Humble Crib Investment', w:'Feb 2022 – Dec 2023', b:['Founded an IT solutions startup offering tech consulting, IT support and digital services','Installed and configured CCTV, office networks, Windows and Linux systems; software installation and maintenance','Ran computer packages training and cybersecurity awareness; sold accessories and electronics; designed branding in Canva and Figma'], tags:['Entrepreneurship','CCTV','Training']},
+  {t:'Retail Sales Representative', o:'Mabrin Enterprises', w:'May 2021 – Apr 2022', b:['Customer service, product advice and sales operations for a retail store','Managed stock and tracked sales in Google Sheets'], tags:['Retail','Inventory','Google Sheets']},
+  {t:'Digital Accounts Management', o:'JAK All-Time Tech', w:'Jan 2021 – Jul 2021', b:['Sales management and record keeping; cyber services and e-Citizen online support','Creative design, printing, typesetting, research and surveys'], tags:['Cyber services','Design','Printing']},
   {t:'Network & Security Systems Technician', o:'GES Telecommunications Ltd', w:'Jan 2019 – Feb 2020', b:['Installed and maintained CCTV and IP security systems at client sites','Supported surveillance monitoring, troubleshooting and preventive maintenance; checked cabling and network devices'], tags:['CCTV','IP surveillance','Cabling']},
 ];
 const certs = [
-  ['grad','BSc Software Development','KCA University · Second Class Upper','2019 – 2023'],
-  ['award','Software Development Fundamentals','Power Learn Project · 1M Developers for Africa','Sep 2024'],
+  ['grad','BSc Software Development','KCA University · Second Class Upper Division','2019 – 2023'],
+  ['award','Software Development Fundamentals','Power Learn Project · 1M Developers for Africa','2024'],
+  ['bot','Career Essentials in Generative AI','Microsoft & LinkedIn','2025'],
   ['cycle','Decoding DevOps','Udemy · CI/CD & infrastructure automation','2025'],
   ['globe','EF SET English: C1 Advanced (66/100)','EF Education First · <a class="link" href="https://cert.efset.org/SW2oDq" target="_blank" rel="noopener">verify ↗</a>','May 2025'],
-  ['server','IT Support Technician','Alison','2022'],
-  ['code','Frontend Fundamentals','Verified certificate','May 2020'],
-  ['book','KCSE','Mwongori Secondary School, Sotik','2015 – 2018'],
+  ['server','Working as an IT Support Technician','Alison','2022'],
+];
+const allCerts = [['IT for Business Success','HP LIFE'],['Career Essentials in Generative AI','Microsoft & LinkedIn'],['ChatGPT Mastery Course','AQskill'],['Software Development Fundamentals','Power Learn Project'],['Introduction to Career Skills in Software Development','LinkedIn'],['Frontend Fundamentals','Pirple'],['Website Development with WordPress','AQskill'],['Analyzing & Visualizing Data with Power BI','MindLuster'],['Sage 50 & QuickBooks Accounting Software','AQskill'],['Advanced Social Media Strategy','AQskill'],['Canva Templates for Beginners','MindLuster'],['Working as an IT Support Technician','Alison'],['Decoding DevOps','Udemy'],['EF SET English Certificate: C1 Advanced','EF SET'],['Student English Program','Global Mentorship Initiative'],['What Is Generative AI?','LinkedIn Learning'],['KCSE','Mwongori Secondary School']];
+const recog = [
+  ['award','Second Class Upper Division','BSc Software Development, KCA University, 2023'],
+  ['users','Class Representative','Elected class rep at KCA University'],
+  ['grad','Workshop mentor, AI Safari / Coffee & Code','Mentored ~15 developers at TUK, at an event with 120+ attendees (PLP)'],
+  ['shield','Delivered WaqForce for SSL Security','Cited in SSL\'s recommendation letter as turning operational needs into working software'],
+  ['book','Author: Computer Packages guide','Wrote a practical IT essentials guide for new learners'],
+  ['globe','C1 Advanced English','EF SET 66/100; Listening at C2 Proficient'],
+  ['in','1,000+ LinkedIn followers','500+ connections across tech, telecoms and security'],
+  ['rocket','8 products shipped solo','Business OS, Shauri, WaqForce, SomaSteps, ISP, Jambo and more'],
 ];
 const skills = [
-  ['development',['Python','Django REST','FastAPI','PHP','Laravel','React','Node.js','TypeScript','MySQL','PostgreSQL','M-PESA API']],
+  ['development',['Python','Django REST','FastAPI','PHP','Laravel','React','Node.js','TypeScript','JavaScript','Dart','Tailwind CSS','Bootstrap','MySQL','PostgreSQL','M-PESA API','Git']],
   ['devops · cloud',['Docker','Docker Compose','CI/CD','GitHub Actions','Nginx','Linux','Cloudflare','SSL/TLS','AWS basics','Bash']],
   ['networks · security',['CCTV & IP cameras','Hikvision / SADP','Routers','Mesh Wi-Fi','VLANs','LAN/WAN','DNS','Active Directory','Access control']],
-  ['data · ai',['Kafka','Spark','Airflow','TensorFlow','OpenCV','OpenAI API','Agentic workflows']],
+  ['data · ai',['Kafka','Spark','Airflow','TensorFlow','OpenCV','OpenAI API','Agentic workflows','Power BI','R','Data analysis']],
+  ['business · ops',['Agile project management','Inventory management','Sage 50','QuickBooks','Google Sheets','MS Office','Customer service','Leadership']],
   ['support · ops',['Jira','CRM & ticketing','TeamViewer','AnyDesk','Monitoring','Documentation','User training']],
   ['design · digital',['Branding','Logo design','Canva','WordPress','UI design','Print']],
 ];
 const quotes = [
+  ['A reliable and skilled IT support professional… a strong team player with excellent customer service skills and a calm, solutions-focused approach. Isaac is someone you can count on.','Fred Maina','Telecommunications & IT · worked with Isaac at First Basics (LinkedIn)','FM'],
+  ['He demonstrated strong technical abilities, clear communication and a passion for continuous learning. His problem-solving approach is both thoughtful and innovative.','Suleiman Mashuhuli','Full-Stack Developer (LinkedIn)','SM'],
   ['Combines practical troubleshooting with clear documentation and communication, working effectively with technical and operational teams.','Micah Gesimba','Technical Manager, SSL Security Ltd','MG'],
   ['His leadership, clarity in communication, and ability to simplify complex technical concepts left a lasting impression.','Eric Muriithi','Dean of Students, Power Learn Project','EM'],
   ['Zachary is humble, disciplined and a team player. He relates well with his colleagues.','Dr. Simon Mwendia','Dean, School of Technology, KCA University','SM'],
@@ -1076,6 +1102,8 @@ renderProjects();
 $('#jobs').innerHTML = jobs.map(j=>`<div class="card job rv ${j.now?'now':''}"><div class="job-h"><div><h3>${j.t}</h3><div class="org">${j.o}</div></div><span class="when">${j.w}</span></div><ul>${j.b.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${j.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`).join('');
 $('#rjobs').innerHTML = jobs.map(j=>`<div class="ent"><div><b>${j.t}, ${j.o}</b><span>${j.w}</span></div><ul>${j.b.slice(0,2).map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
 $('#certs').innerHTML = certs.map(([i,t,o,w])=>`<div class="card cert rv"><span class="ico">${ICON(i)}</span><div><h4>${t}</h4><p>${o}</p><small>${w}</small></div></div>`).join('');
+$('#certlist').innerHTML = allCerts.map(([t,o])=>`<div><b style="font-weight:500">${t}</b><span>${o}</span></div>`).join(''); $('#certCount').textContent = allCerts.length;
+$('#recog').innerHTML = recog.map(([i,t,d])=>`<div class="card hov recog rv"><span class="ico">${ICON(i)}</span><div><h4>${t}</h4><p>${d}</p></div></div>`).join('');
 $('#skills').innerHTML = skills.map(([h,l])=>`<div class="card skill rv"><h4>${h} <b>${l.length}</b></h4><div class="chips">${l.map(s=>`<span>${s}</span>`).join('')}</div></div>`).join('');
 const qhtml = quotes.map(([q,n,r,i])=>`<div class="card quote rv"><svg class="i q" style="fill:currentColor;stroke:none"><use href="#i-quote"/></svg><p>${q}</p><div class="who"><i>${i}</i><div><b>${n}</b><small>${r}</small></div></div></div>`).join('');
 $('#quotes').innerHTML = qhtml; $('#quotes2').innerHTML = qhtml;
