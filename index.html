@@ -433,6 +433,7 @@ footer a:hover{color:var(--teal)}
 .certlist div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
 .certlist span{font-family:var(--mono);font-size:11.5px;color:var(--dim);text-align:right;white-space:nowrap}
 @media (max-width:760px){.certlist{grid-template-columns:1fr}}
+.vlink{color:var(--teal);font-weight:600}.vlink:hover{text-decoration:underline}
 .roles-open{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .slides{position:relative;aspect-ratio:4/5;overflow:hidden}
 .portrait .slides img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 20%;opacity:0;transform:scale(1.04);transition:opacity 1s,transform 6s}
@@ -440,6 +441,30 @@ footer a:hover{color:var(--teal)}
 .sdots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;z-index:2}
 .sdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.3s}.sdots i.on{width:22px;border-radius:5px;background:#fff}
 @media (max-width:980px){.strip{grid-template-columns:repeat(2,1fr)}}
+.doc{padding:0;display:flex;flex-direction:column}
+.dthumb{display:block;position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.dthumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s}
+.doc:hover .dthumb img{transform:scale(1.04)}
+.dtype{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:10.5px;padding:3px 8px;border-radius:6px;background:rgba(11,16,24,.85);color:#fff}
+.dbody{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dbody h3{font-size:15.5px;letter-spacing:-.015em;line-height:1.3}.dbody p{font-size:12.5px;color:var(--muted)}
+.dact{display:flex;gap:8px;margin-top:auto;padding-top:8px}.dact .btn{flex:1;padding:0 8px}
+.wa{position:fixed;right:22px;bottom:22px;z-index:90}
+.wa-btn{width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.6);transition:transform .25s}
+.wa-btn:hover{transform:scale(1.07)}
+.wa-btn svg{width:30px;height:30px}
+.wa-btn::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:waping 2.4s infinite}
+@keyframes waping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.wa-menu{position:absolute;right:0;bottom:72px;width:290px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);padding:8px;display:none}
+.wa.open .wa-menu{display:block;animation:vin .25s}
+.wa-menu header{padding:10px 12px 8px;font-size:13px;color:var(--muted)}
+.wa-menu header b{display:block;color:var(--text);font-size:15px}
+.wa-menu a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;transition:.2s}
+.wa-menu a:hover{background:var(--bg-soft)}
+.wa-menu a i{width:36px;height:36px;border-radius:50%;background:#25d366;display:grid;place-items:center;color:#fff;font-style:normal;flex:none;font-size:16px}
+.wa-menu a b{display:block;font-size:14px}.wa-menu a small{font-family:var(--mono);font-size:11px;color:var(--dim)}
+@media (max-width:640px){.wa{right:14px;bottom:14px}.wa-btn{width:52px;height:52px}}
+@media print{.wa{display:none}}
 /* command palette */
 .cmdk{position:fixed;inset:0;z-index:130;display:none;place-items:start center;padding-top:13vh;background:rgba(2,6,23,.45);backdrop-filter:blur(6px)}
 .cmdk.open{display:grid}
@@ -563,6 +588,7 @@ footer a:hover{color:var(--teal)}
     <a href="#writing" data-v="writing"><svg class="i"><use href="#i-pen"/></svg>Writing</a>
     <h6>Connect</h6>
     <a href="#resume" data-v="resume"><svg class="i"><use href="#i-file"/></svg>Resume</a>
+    <a href="#documents" data-v="documents"><svg class="i"><use href="#i-award"/></svg>Documents<span class="k">g o</span></a>
     <a href="#contact" data-v="contact"><svg class="i"><use href="#i-mail"/></svg>Contact</a>
   </nav>
   <div class="side-foot">
@@ -746,7 +772,7 @@ footer a:hover{color:var(--teal)}
   <div class="sec">
     <div class="sec-head rv"><div><span class="eyebrow">ls ~/certs</span><h2>Education & certifications</h2></div></div>
     <div class="grid g3" id="certs"></div>
-    <div class="card rv" style="margin-top:16px"><h3 style="font-size:16px;margin-bottom:8px">All certifications <span class="tag t" id="certCount"></span></h3><div class="certlist" id="certlist"></div></div>
+    <div class="card rv" style="margin-top:16px"><h3 style="font-size:16px;margin-bottom:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">All certifications <span class="tag t" id="certCount"></span><span class="tag" id="certVerified"></span><a class="link" href="#documents" style="margin-left:auto;font-size:13px">All documents →</a></h3><div class="certlist" id="certlist"></div></div>
   </div>
 
   <div class="sec">
@@ -883,6 +909,15 @@ footer a:hover{color:var(--teal)}
   </article>
 </section>
 
+
+<!-- ============ DOCUMENTS ============ -->
+<section class="view" id="v-documents" data-title="Documents" hidden>
+  <div class="ph"><span class="eyebrow">ls ~/documents</span><h1>Documents & credentials</h1><p class="sub">My CV, degree, certificates and recommendation letters, ready to view or download. Personal ID numbers and referees' private contact details have been redacted. Originals are available on request.</p></div>
+  <div class="filters" id="docf"></div>
+  <div class="grid g4" id="docs"></div>
+  <div class="card rv" style="margin-top:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><span class="ico" style="margin:0"><svg class="i"><use href="#i-shield"/></svg></span><div style="flex:1;min-width:240px"><b>Online certificates</b><p style="color:var(--muted);font-size:14px">Another 13 certificates can be verified directly with their issuers (HP LIFE, LinkedIn, Pirple, AQskill, MindLuster, Alison, EF SET, Global Mentorship Initiative).</p></div><a class="btn btn-g" href="#experience" onclick="setTimeout(()=>document.getElementById('certlist').scrollIntoView({behavior:'smooth',block:'center'}),350)">See verify links →</a></div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="view" id="v-contact" data-title="Contact" hidden>
   <div class="ph c-head"><div><span class="eyebrow">./contact.sh</span><h1>Let's build something <span class="grad">that lasts.</span></h1><p class="sub">Hiring, a project or a MobKazi rollout? Pick a channel. I usually reply within a day.</p><div class="roles-open"><span class="tag t">Open to: DevOps Engineer</span><span class="tag t">System Administrator</span><span class="tag t">Technical Support Engineer</span><span class="tag t">IT Support Specialist</span><span class="tag t">Network Support Engineer</span><span class="tag">remote-friendly</span></div><div class="cta"><a class="btn btn-p" href="https://wa.me/254759325915" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>WhatsApp me</a><a class="btn btn-g" href="mailto:izachdev@gmail.com"><svg class="i"><use href="#i-mail"/></svg>Email</a></div></div>
@@ -890,10 +925,12 @@ footer a:hover{color:var(--teal)}
   <div class="contact">
     <div class="clist">
       <a class="rv" href="mailto:izachdev@gmail.com"><span class="ico"><svg class="i"><use href="#i-mail"/></svg></span><div><small>email · work</small><b>izachdev@gmail.com</b></div></a>
-      <a class="rv" href="mailto:izach@mobkazi.com"><span class="ico a"><svg class="i"><use href="#i-mail"/></svg></span><div><small>email · mobkazi</small><b>izach@mobkazi.com</b></div></a>
+      <a class="rv" href="mailto:mobkazitechnologies@gmail.com"><span class="ico a"><svg class="i"><use href="#i-mail"/></svg></span><div><small>email · mobkazi</small><b>mobkazitechnologies@gmail.com</b></div></a>
       <a class="rv" href="mailto:isaaczachary18@gmail.com"><span class="ico"><svg class="i"><use href="#i-mail"/></svg></span><div><small>email · personal</small><b>isaaczachary18@gmail.com</b></div></a>
       <a class="rv" href="tel:+254759325915"><span class="ico a"><svg class="i"><use href="#i-phone"/></svg></span><div><small>phone · kenya</small><b>+254 759 325 915</b></div></a>
-      <a class="rv" href="https://wa.me/254759325915" target="_blank" rel="noopener"><span class="ico"><svg class="i"><use href="#i-chat"/></svg></span><div><small>whatsapp</small><b>Chat on WhatsApp ↗</b></div></a>
+      <a class="rv" href="https://wa.me/254759325915" target="_blank" rel="noopener"><span class="ico"><svg class="i"><use href="#i-chat"/></svg></span><div><small>whatsapp · kenya</small><b>+254 759 325 915 ↗</b></div></a>
+      <a class="rv" href="https://wa.me/97433153663" target="_blank" rel="noopener"><span class="ico a"><svg class="i"><use href="#i-chat"/></svg></span><div><small>whatsapp · qatar</small><b>+974 3315 3663 ↗</b></div></a>
+      <a class="rv" href="https://wa.me/254101029951" target="_blank" rel="noopener"><span class="ico"><svg class="i"><use href="#i-chat"/></svg></span><div><small>whatsapp · mobkazi support</small><b>+254 101 029 951 ↗</b></div></a>
       <a class="rv" href="https://linkedin.com/in/isaaczachary/" target="_blank" rel="noopener"><span class="ico a"><svg class="i"><use href="#i-in"/></svg></span><div><small>linkedin</small><b>in/isaaczachary</b></div></a>
       <a class="rv" href="https://github.com/IsaacZachary" target="_blank" rel="noopener"><span class="ico"><svg class="i"><use href="#i-gh"/></svg></span><div><small>github</small><b>IsaacZachary</b></div></a>
     </div>
@@ -914,6 +951,17 @@ footer a:hover{color:var(--teal)}
     <span>© <span id="yr"></span> Isaac Zachary · designed, built & deployed by the same guy</span>
     <span><a href="https://mobkazi.com" target="_blank" rel="noopener">mobkazi.com</a> · <a href="https://github.com/IsaacZachary/portfolio" target="_blank" rel="noopener">source</a> · press <kbd>/</kbd> for terminal</span>
   </footer>
+</div>
+
+<!-- whatsapp -->
+<div class="wa" id="wa">
+  <div class="wa-menu" role="menu">
+    <header><b>Chat on WhatsApp</b>I usually reply within a few hours.</header>
+    <a href="https://wa.me/254759325915?text=Hi%20Isaac%2C%20I%20found%20you%20through%20your%20portfolio." target="_blank" rel="noopener"><i>🇰🇪</i><div><b>Isaac, personal</b><small>+254 759 325 915</small></div></a>
+    <a href="https://wa.me/97433153663?text=Hi%20Isaac%2C%20I%20found%20you%20through%20your%20portfolio." target="_blank" rel="noopener"><i>🇶🇦</i><div><b>Isaac, Qatar</b><small>+974 3315 3663</small></div></a>
+    <a href="https://wa.me/254101029951?text=Hi%20MobKazi%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener"><i><img src="assets/v2/brand/mobkazi.webp" alt="" style="width:22px;height:22px;object-fit:contain"></i><div><b>MobKazi support</b><small>+254 101 029 951</small></div></a>
+  </div>
+  <button class="wa-btn" id="waBtn" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3Zm0 23.1c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.1 1.3 1.3-4-.3-.4a10.4 10.4 0 0 1-1.6-5.5C5.4 9.8 10.1 5.2 16 5.2s10.5 4.6 10.5 10.4S21.8 26.1 16 26.1Zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4Z"/></svg></button>
 </div>
 
 <!-- lightbox -->
@@ -970,14 +1018,32 @@ const jobs = [
   {t:'Network & Security Systems Technician', o:'GES Telecommunications Ltd', w:'Jan 2019 – Feb 2020', b:['Installed and maintained CCTV and IP security systems at client sites','Supported surveillance monitoring, troubleshooting and preventive maintenance; checked cabling and network devices'], tags:['CCTV','IP surveillance','Cabling']},
 ];
 const certs = [
-  ['grad','BSc Software Development','KCA University · Second Class Upper Division','2019 – 2023'],
-  ['award','Software Development Fundamentals','Power Learn Project · 1M Developers for Africa','2024'],
-  ['bot','Career Essentials in Generative AI','Microsoft & LinkedIn','2025'],
-  ['cycle','Decoding DevOps','Udemy · CI/CD & infrastructure automation','2025'],
-  ['globe','EF SET English: C1 Advanced (66/100)','EF Education First · <a class="link" href="https://cert.efset.org/SW2oDq" target="_blank" rel="noopener">verify ↗</a>','May 2025'],
-  ['server','Working as an IT Support Technician','Alison','2022'],
+  ['grad','BSc Software Development','KCA University · Second Class Upper · <a class="link" href="docs/kca-degree-certificate.pdf" target="_blank" rel="noopener">view ↗</a>','2019 – 2023'],
+  ['award','Software Development Fundamentals','Power Learn Project · <a class="link" href="docs/plp-certificate.pdf" target="_blank" rel="noopener">view ↗</a>','2024'],
+  ['bot','Career Essentials in Generative AI','Microsoft & LinkedIn · <a class="link" href="https://www.linkedin.com/learning/certificates/7a98e2d815e1416731cc1abd9354f113093cd1d3e189eef16413fd80eec84ece/" target="_blank" rel="noopener">verify ↗</a>','2025'],
+  ['cycle','IT for Business Success','HP LIFE · <a class="link" href="https://www.life-global.org/certificate/8e46a8b8-7d7f-4e06-9b54-33fd1fdb8fb4" target="_blank" rel="noopener">verify ↗</a>','HP Foundation'],
+  ['globe','EF SET English: C1 Advanced (66/100)','EF Education First · <a class="link" href="https://cert.efset.org/en/SW2oDq" target="_blank" rel="noopener">verify ↗</a>','May 2025'],
+  ['server','Working as an IT Support Technician','Alison · <a class="link" href="https://alison.com/certification/check/f19170e9bb" target="_blank" rel="noopener">verify ↗</a>','2022'],
 ];
-const allCerts = [['IT for Business Success','HP LIFE'],['Career Essentials in Generative AI','Microsoft & LinkedIn'],['ChatGPT Mastery Course','AQskill'],['Software Development Fundamentals','Power Learn Project'],['Introduction to Career Skills in Software Development','LinkedIn'],['Frontend Fundamentals','Pirple'],['Website Development with WordPress','AQskill'],['Analyzing & Visualizing Data with Power BI','MindLuster'],['Sage 50 & QuickBooks Accounting Software','AQskill'],['Advanced Social Media Strategy','AQskill'],['Canva Templates for Beginners','MindLuster'],['Working as an IT Support Technician','Alison'],['Decoding DevOps','Udemy'],['EF SET English Certificate: C1 Advanced','EF SET'],['Student English Program','Global Mentorship Initiative'],['What Is Generative AI?','LinkedIn Learning'],['KCSE','Mwongori Secondary School']];
+const allCerts = [
+  ['IT for Business Success','HP LIFE','https://www.life-global.org/certificate/8e46a8b8-7d7f-4e06-9b54-33fd1fdb8fb4'],
+  ['Career Essentials in Generative AI','Microsoft & LinkedIn','https://www.linkedin.com/learning/certificates/7a98e2d815e1416731cc1abd9354f113093cd1d3e189eef16413fd80eec84ece/'],
+  ['Introduction to Career Skills in Software Development','LinkedIn Learning','https://www.linkedin.com/learning/certificates/3302fb0eebca7c95292ab85a73c013ed164615dafb4908753f8f6bd0a2e53a0b/'],
+  ['ChatGPT Mastery Course','AQskill','https://www.aqskill.com/certificates/81605214e65a76aa3e1da6b2cd48bc4c/'],
+  ['Software Development Fundamentals','Power Learn Project','docs/plp-certificate.pdf'],
+  ['Frontend Fundamentals','Pirple','https://www.credential.net/f6f6ad29-fd80-418a-bd1f-509edc303218'],
+  ['Website Development with WordPress','AQskill','https://www.aqskill.com/certificates/f5130a3a538eb011b0b7000de631130a/'],
+  ['Analyzing & Visualizing Data with Power BI','MindLuster','https://www.mindluster.com/student/certificate/16286963453'],
+  ['Sage 50 & QuickBooks Accounting Software','AQskill','https://www.aqskill.com/certificates/775a23f06135190f6ee393fe5ae2daa0/'],
+  ['Advanced Social Media Strategy','AQskill','https://www.aqskill.com/certificates/6f6c2da7d5cf01247bc7579df84403e7/'],
+  ['Canva Templates for Beginners','MindLuster','https://www.mindluster.com/student/certificate/89d0b2c9'],
+  ['Working as an IT Support Technician','Alison','https://alison.com/certification/check/f19170e9bb'],
+  ['EF SET English Certificate: C1 Advanced','EF SET','https://cert.efset.org/en/SW2oDq'],
+  ['Student English Program','Global Mentorship Initiative','https://credentials.globalmentorship.org/credentials/96d4ddfe-dc06-4962-ad64-83b711a2bbc8'],
+  ['Decoding DevOps','Udemy',''],
+  ['What Is Generative AI?','LinkedIn Learning','docs/linkedin-what-is-generative-ai.pdf'],
+  ['KCSE','Mwongori Secondary School','docs/kcse-certificate.pdf'],
+];
 const recog = [
   ['award','Second Class Upper Division','BSc Software Development, KCA University, 2023'],
   ['users','Class Representative','Elected class rep at KCA University'],
@@ -1070,6 +1136,23 @@ const icons = [
    st:'By day he worked at an insurance institute in Prague. By night he wrote the stories that reshaped modern literature.',
    me:'Some of the most important work happens after hours, beside the day job. Most of MobKazi was built that way.'},
 ];
+
+const D='docs/';
+const docs = [
+  ['isaac-zachary-cv','Curriculum Vitae','CV','2 pages · 2026'],
+  ['kca-degree-certificate','BSc Software Development degree','Education','KCA University · 2023'],
+  ['kca-confirmation-letter','Graduation confirmation letter','Recommendation','KCA University, School of Technology · 2025'],
+  ['ssl-security-recommendation','Professional recommendation','Recommendation','SSL Security Ltd · Micah Gesimba'],
+  ['deftec-recommendation','Attachment recommendation','Recommendation','Defence Forces Technical College · 2023'],
+  ['plp-recommendation','Graduate & volunteer recommendation','Recommendation','Power Learn Project · 2 pages · 2025'],
+  ['plp-certificate','Software Development certificate of achievement','Certificate','Power Learn Project · 2024'],
+  ['efset-c1-certificate','EF SET English: C1 Advanced','Certificate','EF Education First · 2025'],
+  ['linkedin-what-is-generative-ai','What Is Generative AI?','Certificate','LinkedIn Learning'],
+  ['pirple-frontend-fundamentals','Frontend Fundamentals','Certificate','Pirple · 2020'],
+  ['kcse-certificate','KCSE certificate','Education','KNEC · Mwongori Secondary School · 2018'],
+  ['school-leaving-certificate','School leaving certificate','Education','Mwongori Secondary School · 2019'],
+  ['kcpe-certificate','KCPE certificate','Education','KNEC · 2014'],
+];
 /* ===== RENDER ===== */
 const projCard = p => `<article class="card hov pc tilt rv" data-c="${p.c}"><span class="glow"></span>
   ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : p.logo ? `<div class="shot art plogo"><img src="${p.logo}" alt="${p.t} logo" loading="lazy"></div>` : `<div class="shot art">${ICON(p.icon||'code')}</div>`}
@@ -1090,6 +1173,15 @@ rotator('#iqText','#iqWho','#iqDots');
   const show=i=>{ k=(i+imgs.length)%imgs.length; imgs.forEach((im,j)=>im.classList.toggle('on',j===k)); d.querySelectorAll('i').forEach((x,j)=>x.classList.toggle('on',j===k)); };
   d.onclick=e=>{ const x=e.target.closest('i'); if(x) show(+x.dataset.i); };
   if(!reduce) setInterval(()=>show(k+1),4500); })(); rotator('#dfText','#dfWho','#dfDots');
+
+const dcat=['All','CV','Recommendation','Certificate','Education'];
+function renderDocs(c='All'){
+  $('#docs').innerHTML = docs.filter(d=>c==='All'||d[2]===c).map(([sl,t,cat,m])=>`<article class="card hov doc rv"><a class="dthumb" href="${D}${sl}.pdf" target="_blank" rel="noopener"><img src="${D}thumbs/${sl}.webp" alt="${t}" loading="lazy"><span class="dtype">${cat}</span></a><div class="dbody"><h3>${t}</h3><p>${m}</p><div class="dact"><a class="btn btn-g btn-sm" href="${D}${sl}.pdf" target="_blank" rel="noopener">View</a><a class="btn btn-p btn-sm" href="${D}${sl}.pdf" download>Download PDF</a></div></div></article>`).join('');
+  $$('#docf button').forEach(b=>b.classList.toggle('on',b.dataset.c===c)); afterRender('#docs');
+}
+$('#docf').innerHTML = dcat.map(c=>`<button data-c="${c}">${c==='All'?'All':c+'s'}<span>${c==='All'?docs.length:docs.filter(d=>d[2]===c).length}</span></button>`).join('');
+$('#docf').onclick = e => { const b=e.target.closest('button'); if(b) renderDocs(b.dataset.c); };
+renderDocs();
 $('#featured').innerHTML = projects.filter(p=>p.f).map(projCard).join('');
 function renderProjects(c='all'){
   $('#plist').innerHTML = projects.filter(p=>c==='all'||p.c===c).map(projCard).join('');
@@ -1102,10 +1194,11 @@ renderProjects();
 $('#jobs').innerHTML = jobs.map(j=>`<div class="card job rv ${j.now?'now':''}"><div class="job-h"><div><h3>${j.t}</h3><div class="org">${j.o}</div></div><span class="when">${j.w}</span></div><ul>${j.b.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${j.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`).join('');
 $('#rjobs').innerHTML = jobs.map(j=>`<div class="ent"><div><b>${j.t}, ${j.o}</b><span>${j.w}</span></div><ul>${j.b.slice(0,2).map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
 $('#certs').innerHTML = certs.map(([i,t,o,w])=>`<div class="card cert rv"><span class="ico">${ICON(i)}</span><div><h4>${t}</h4><p>${o}</p><small>${w}</small></div></div>`).join('');
-$('#certlist').innerHTML = allCerts.map(([t,o])=>`<div><b style="font-weight:500">${t}</b><span>${o}</span></div>`).join(''); $('#certCount').textContent = allCerts.length;
+$('#certlist').innerHTML = allCerts.map(([t,o,u])=>`<div><b style="font-weight:500">${t}</b><span>${o}${u?` · <a class="vlink" href="${u}" target="_blank" rel="noopener">${u.startsWith('docs/')?'view':'verify'} ↗</a>`:''}</span></div>`).join(''); $('#certCount').textContent = allCerts.length; $('#certVerified').textContent = allCerts.filter(c=>c[2]).length+' with proof';
 $('#recog').innerHTML = recog.map(([i,t,d])=>`<div class="card hov recog rv"><span class="ico">${ICON(i)}</span><div><h4>${t}</h4><p>${d}</p></div></div>`).join('');
 $('#skills').innerHTML = skills.map(([h,l])=>`<div class="card skill rv"><h4>${h} <b>${l.length}</b></h4><div class="chips">${l.map(s=>`<span>${s}</span>`).join('')}</div></div>`).join('');
-const qhtml = quotes.map(([q,n,r,i])=>`<div class="card quote rv"><svg class="i q" style="fill:currentColor;stroke:none"><use href="#i-quote"/></svg><p>${q}</p><div class="who"><i>${i}</i><div><b>${n}</b><small>${r}</small></div></div></div>`).join('');
+const qdoc={'Micah Gesimba':'ssl-security-recommendation','Eric Muriithi':'plp-recommendation','Dr. Simon Mwendia':'kca-confirmation-letter','Col. (Dr) J. R. Kisilu':'deftec-recommendation','Headteacher\'s report':'school-leaving-certificate','Fred Maina':'https://www.linkedin.com/in/isaaczachary/details/recommendations/','Suleiman Mashuhuli':'https://www.linkedin.com/in/isaaczachary/details/recommendations/'};
+const qhtml = quotes.map(([q,n,r,i])=>{ const d=qdoc[n]; const u=d?(d.startsWith('http')?d:D+d+'.pdf'):''; return `<div class="card quote rv"><svg class="i q" style="fill:currentColor;stroke:none"><use href="#i-quote"/></svg><p>${q}</p><div class="who"><i>${i}</i><div><b>${n}</b><small>${r}</small></div></div>${u?`<a class="link" style="font-size:13px" href="${u}" target="_blank" rel="noopener">${u.startsWith('http')?'View on LinkedIn':'View letter'} ↗</a>`:''}</div>`; }).join('');
 $('#quotes').innerHTML = qhtml; $('#quotes2').innerHTML = qhtml;
 $('#arts').innerHTML = articles.map(([c,m,t,d])=>`<a class="card hov art rv" href="writing.html"><div class="k"><b>${c}</b><span>${m}</span></div><h3>${t}</h3><p>${d}</p><span class="go">Read article →</span></a>`).join('');
 $('#roadPct').textContent = Math.round(road.reduce((t,r)=>t+r[2],0)/road.length)+'%';
@@ -1197,6 +1290,8 @@ $('#cform').addEventListener('submit', async e => {
     if(!r.ok) throw 0; m.innerHTML='<span style="color:var(--green)">✓ 200 OK. Message delivered. I\'ll get back to you soon.</span>'; f.reset();
   }catch{ m.innerHTML='<span style="color:var(--red)">✗ couldn\'t send. Email izachdev@gmail.com or WhatsApp +254 759 325 915.</span>'; }
 });
+$('#waBtn').onclick = e => { e.stopPropagation(); $('#wa').classList.toggle('open'); };
+document.addEventListener('click', e => { if(!e.target.closest('#wa')) $('#wa').classList.remove('open'); });
 $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
 
 /* ===== COMMAND PALETTE ===== */
@@ -1205,7 +1300,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
   const go = v => () => { close(); location.hash = v; };
   const ext = u => () => { close(); window.open(u,'_blank','noopener'); };
   const say = t => { out.innerHTML='<div class="msg">'+t.replace(/</g,'&lt;')+'</div>'; };
-  const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['inspiration','icons that inspire me',go('inspiration')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['contact','get in touch',go('contact')],
+  const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['inspiration','icons that inspire me',go('inspiration')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['documents','certificates & letters',go('documents')],['contact','get in touch',go('contact')],
     ['theme','toggle light / dark',()=>{ setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'); close(); }],
     ['cv','download CV (PDF)',ext('pdf/Isaac_Zachary_CV.pdf')],['github','open GitHub ↗',ext('https://github.com/IsaacZachary')],['linkedin','open LinkedIn ↗',ext('https://linkedin.com/in/isaaczachary/')],['whatsapp','chat on WhatsApp ↗',ext('https://wa.me/254759325915')],
     ['whoami','print bio',()=>say('Isaac Zachary. Founder & lead engineer, MobKazi.\nSoftware · DevOps · Networks & security systems.')],
@@ -1228,7 +1323,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
     else if(lb.classList.contains('open')&&e.key==='ArrowRight') showLB(li+1);
     else if(lb.classList.contains('open')&&e.key==='ArrowLeft') showLB(li-1);
     else if(!typing&&e.key==='g'){ g=Date.now(); }
-    else if(!typing&&Date.now()-g<800){ const m={h:'home',a:'about',i:'inspiration',p:'projects',e:'experience',m:'mobkazi',d:'designs',l:'learning',w:'writing',r:'resume',c:'contact'}[e.key]; if(m){ location.hash=m; g=0; } }
+    else if(!typing&&Date.now()-g<800){ const m={h:'home',a:'about',i:'inspiration',p:'projects',e:'experience',m:'mobkazi',d:'designs',l:'learning',w:'writing',r:'resume',o:'documents',c:'contact'}[e.key]; if(m){ location.hash=m; g=0; } }
   });
 })();
 </script>

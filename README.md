@@ -27,6 +27,8 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Inspiration** page: Newton, Tesla, Garvey, Musk, Zuckerberg, Jobs, Marcus Aurelius and Kafka, with sourced quotes, short stories and why each matters, plus a rotating "daily fuel" quote on the home page
 - **Design gallery** with 32 designs, category filters and a keyboard-friendly lightbox
 - **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress (the overall % is calculated from the stages)
+- **Documents** page: CV, degree, KCSE/KCPE, certificates and recommendation letters to view or download (IDs and referees' private contacts redacted), stored in `docs/`
+- **Floating WhatsApp button** with personal (Kenya), Qatar and MobKazi lines
 - **Printable resume** view, plus a downloadable PDF CV
 - **Contact form** through Formspree, with WhatsApp, phone and email links
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support
@@ -83,6 +85,7 @@ All content lives in the data arrays at the top of the `<script>` in `index.html
 | Skills | `skills` |
 | Recommendations | `quotes` |
 | Client logos | `clients` |
+| Documents (PDFs in `docs/`, thumbnails in `docs/thumbs/`) | `docs` |
 | Design gallery | `designs` (images in `assets/v2/designs/`) |
 | Articles | `articles` |
 | Inspiration (quotes, stories) | `icons` |
@@ -100,8 +103,8 @@ The `>iz` mark combines a terminal prompt with Isaac's initials, in the teal →
 
 ## Contact
 
-- Email: izachdev@gmail.com · izach@mobkazi.com · isaaczachary18@gmail.com
-- Phone / WhatsApp: +254 759 325 915
+- Email: izachdev@gmail.com · mobkazitechnologies@gmail.com · isaaczachary18@gmail.com
+- WhatsApp: +254 759 325 915 (Kenya) · +974 3315 3663 (Qatar) · +254 101 029 951 (MobKazi support)
 - LinkedIn: [in/isaaczachary](https://linkedin.com/in/isaaczachary)
 
 ## License
