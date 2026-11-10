@@ -333,6 +333,97 @@ h2{font-size:clamp(26px,3.2vw,40px);margin:10px 0 10px}
 .lb-toast{position:absolute;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#fff;color:#0b1220;padding:10px 16px;border-radius:12px;font-size:13px;font-weight:600;opacity:0;transition:.3s;z-index:4;pointer-events:none}
 .lb-toast.on{opacity:1;transform:translateX(-50%)}
 @media (max-width:640px){.lb-act .lbl{display:none}.lb-act button,.lb-act a{padding:0 10px}.lb-stage{padding:4px 8px 16px}.lb .pv,.lb .nx{top:auto;bottom:18px;transform:none}.lb-meta small{display:none}}
+
+/* ===== article reader ===== */
+.rprog{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .1s linear}
+.backlink{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:22px}
+.backlink:hover{color:var(--teal)}
+.arthead{max-width:780px}
+.arthead .k{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:14px}
+.arthead h1{font-size:clamp(30px,4.2vw,48px);letter-spacing:-.035em;line-height:1.08}
+.arthead .lead{font-size:clamp(17px,1.6vw,19.5px);color:var(--muted);margin-top:18px;line-height:1.6}
+.byline{display:flex;align-items:center;gap:12px;margin:26px 0 8px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.byline img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.byline .who{flex:1;min-width:160px}.byline .who b{display:block;font-size:14.5px}.byline .who small{color:var(--dim);font-size:12.5px}
+.artgrid{display:grid;grid-template-columns:minmax(0,760px) 240px;gap:56px;margin-top:34px;align-items:start}
+.toc{position:sticky;top:90px;font-size:13.5px;border-left:2px solid var(--line);padding-left:16px}
+.toc b{font-family:var(--mono);font-size:11.5px;color:var(--dim);font-weight:500;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:5px 0;line-height:1.35}.toc a:hover,.toc a.on{color:var(--teal)}
+.doc h2{font-size:clamp(22px,2.2vw,27px);letter-spacing:-.025em;margin:40px 0 12px;scroll-margin-top:90px}
+.doc h3{font-size:18.5px;letter-spacing:-.015em;margin:26px 0 8px}
+.doc p,.doc li{font-size:16.5px;line-height:1.75;color:var(--muted)}
+.doc p{margin-bottom:16px}.doc b,.doc strong{color:var(--text);font-weight:600}
+.doc ul,.doc ol{padding-left:22px;margin:0 0 18px}.doc li{margin:6px 0}
+.doc a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.doc code{font-family:var(--mono);font-size:.88em;background:var(--bg-soft);border:1px solid var(--line);padding:1px 6px;border-radius:6px;color:var(--text)}
+.doc pre{position:relative;background:#0b1018;color:#d6e2ee;border:1px solid #1c2531;border-radius:14px;padding:18px 18px;margin:18px 0 22px;overflow:auto;font-size:13.5px;line-height:1.65;box-shadow:0 20px 50px -30px rgba(2,6,23,.6)}
+.doc pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
+.doc pre .cp{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:11.5px;color:#94a3b8;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:4px 9px;opacity:0;transition:.2s}
+.doc pre:hover .cp{opacity:1}@media (hover:none){.doc pre .cp{opacity:1}}
+.callout{margin:30px 0 8px;padding:18px 20px;border-radius:14px;background:linear-gradient(135deg,var(--teal-soft),var(--amber-soft));border:1px solid var(--line);font-size:16px;line-height:1.65;color:var(--text)}
+.callout a{color:var(--teal-2)}
+.artnav{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
+.artnav a{padding:18px 20px}.artnav small{font-family:var(--mono);font-size:11.5px;color:var(--dim)}.artnav b{display:block;margin-top:6px;font-size:15.5px;line-height:1.35}
+.artnav a.nx{text-align:right}
+@media (max-width:1020px){.artgrid{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+@media (max-width:600px){.artnav{grid-template-columns:1fr}.artnav a.nx{text-align:left}}
+/* ===== playground ===== */
+.pg{display:grid;grid-template-columns:1.25fr 1fr;border:1px solid #1c2531;border-radius:18px;overflow:hidden;background:#0b1018;box-shadow:0 40px 90px -40px rgba(2,6,23,.6)}
+.pg-tabs{display:flex;gap:2px;padding:8px 8px 0;background:#090d13;border-bottom:1px solid #1c2531;overflow:auto}
+.pg-tabs button{font-family:var(--mono);font-size:12.5px;color:#7d8b9c;padding:9px 14px;border-radius:9px 9px 0 0;white-space:nowrap}
+.pg-tabs button.on{background:#0b1018;color:#e6edf3;box-shadow:inset 0 2px 0 #2dd4bf}
+.pg-ed{display:flex;flex-direction:column;min-height:380px}
+.pg-ed textarea{flex:1;width:100%;border:0;outline:0;resize:none;background:#0b1018;color:#d6e2ee;font-family:var(--mono);font-size:13px;line-height:1.7;padding:16px 18px;tab-size:2;margin:0;border-radius:0;box-shadow:none}
+.pg-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-top:1px solid #1c2531;gap:8px}
+.pg-bar small{font-family:var(--mono);font-size:11.5px;color:#64748b}
+.pg-term{border-left:1px solid #1c2531;background:#070a0f;display:flex;flex-direction:column}
+.pg-term .hd{font-family:var(--mono);font-size:12px;color:#64748b;padding:12px 16px;border-bottom:1px solid #1c2531;display:flex;gap:6px;align-items:center}
+.pg-term .hd i{width:10px;height:10px;border-radius:50%;background:#334155}.pg-term .hd i:nth-child(1){background:#ef4444}.pg-term .hd i:nth-child(2){background:#f59e0b}.pg-term .hd i:nth-child(3){background:#22c55e}
+.pg-out{flex:1;padding:14px 16px;font-family:var(--mono);font-size:12.5px;line-height:1.75;color:#94a3b8;white-space:pre-wrap;overflow:auto;max-height:430px}
+.pg-out .ok{color:#22c55e}.pg-out .c{color:#e6edf3}.pg-out .am{color:#fbbf24}.pg-out .er{color:#f87171}
+@media (max-width:900px){.pg{grid-template-columns:minmax(0,1fr)}.pg-term{border-left:0;border-top:1px solid #1c2531}.pg-ed{min-height:300px}}
+/* ===== academy ===== */
+.cprog{height:8px;border-radius:99px;background:var(--bg-soft);overflow:hidden;border:1px solid var(--line)}
+.cprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.course .cprog{margin:14px 0 4px}
+.chero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.chero .stat{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:16px}.chero .stat b{color:var(--text);font-size:15px;font-family:var(--sans)}
+.ulist{display:grid;gap:10px;margin-top:26px}
+.urow{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;padding:16px 18px}
+.urow .n{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-family:var(--mono);font-weight:600;background:var(--bg-soft);border:1px solid var(--line);color:var(--muted)}
+.urow.done .n{background:var(--teal);color:#fff;border-color:transparent}
+.urow b{font-size:16px}.urow small{display:block;color:var(--dim);font-size:12.5px;font-family:var(--mono);margin-top:3px}
+.player{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;align-items:start}
+.pside{position:sticky;top:84px;padding:16px}
+.pside h4{font-size:14px;margin-bottom:4px}.pside .cprog{margin:10px 0 14px}
+.pside a{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:10px;font-size:13.5px;color:var(--muted);line-height:1.35}
+.pside a:hover{background:var(--bg-soft);color:var(--text)}
+.pside a.on{background:var(--teal-soft);color:var(--text);font-weight:600}
+.pside a .d{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;font-size:11px;margin-top:1px}
+.pside a.done .d{background:var(--teal);border-color:var(--teal);color:#fff}
+.lesson{padding:clamp(22px,3vw,38px)}
+.lesson .k{font-family:var(--mono);font-size:12px;color:var(--dim);display:flex;gap:12px;flex-wrap:wrap}
+.lesson h1{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin:10px 0 18px}
+.obj{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-bottom:26px}
+.obj span{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.obj span:before{content:'✓';color:var(--teal);font-weight:700}
+.labcard{margin-top:26px;padding:20px;border-radius:14px;border:1px dashed var(--teal);background:var(--teal-soft)}
+.labcard h3{font-size:16px;margin-bottom:6px;font-family:var(--mono);color:var(--teal-2)}
+.labcard p{color:var(--text);font-size:15px;line-height:1.65}
+.labcard label{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:14px;cursor:pointer}
+.labcard label:before{content:none!important;display:none}.labcard input{width:18px;height:18px;margin:0;accent-color:var(--teal)}
+.quiz{margin-top:26px}.quiz h3{font-size:18px;margin-bottom:12px}
+.qq{padding:16px;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--panel)}
+.qq p{font-weight:600;margin-bottom:10px;font-size:15px}
+.qq button{display:block;width:100%;text-align:left;padding:10px 14px;border-radius:10px;border:1px solid var(--line);margin-top:8px;font-size:14.5px;color:var(--text);background:var(--panel-2);transition:.15s}
+.qq button:hover{border-color:var(--teal)}
+.qq button.right{border-color:var(--green);background:rgba(22,163,74,.1)}
+.qq button.wrong{border-color:var(--red);background:rgba(220,38,38,.08)}
+.qq .fb{font-family:var(--mono);font-size:12.5px;margin-top:10px;min-height:1em}
+.lfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap}
+.donecard{text-align:center;padding:42px 26px}
+.donecard .seal{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-size:40px;background:linear-gradient(135deg,var(--teal),var(--amber));box-shadow:0 20px 50px -15px rgba(13,148,136,.6);animation:pop .6s cubic-bezier(.2,.9,.25,1.2)}
+@media (max-width:900px){.player{grid-template-columns:minmax(0,1fr)}.pside{position:static}.pside .ul{display:flex;overflow:auto;gap:6px}.pside a{flex:none;max-width:220px}.chero{grid-template-columns:1fr}}
 /* instant-feel loading */
 .tile,.dthumb,.pc .shot,.reel,.strip figure,.feat-img,.ph-card,.slides{background-image:linear-gradient(100deg,transparent 30%,rgba(148,163,184,.14) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.4s linear infinite}
 @keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
@@ -605,7 +696,7 @@ footer a:hover{color:var(--teal)}
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
   <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/></symbol>
   <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.4 1.2 1.3 2.7 2.5 2.7Z"/></symbol>
-  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V4M8 4h8M9 14h.01M15 14h.01"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V4M8 4h8M9 14h.01M15 14h.01"/></symbol>
 </svg>
 
 <!-- ============ SIDEBAR ============ -->
@@ -910,9 +1001,9 @@ footer a:hover{color:var(--teal)}
     <div class="l">
       <span class="eyebrow">Isaac's Academy · curriculum hub</span>
       <h2>Learn practical tech the way it's used on the job.</h2>
-      <p>Structured tracks with modules, labs and milestones, from core computer skills to AI engineering.</p>
+      <p>Free, self-paced tracks with lessons, hands-on labs and quick checks. Your progress is saved in your browser.</p>
       <div class="tags" style="margin:18px 0 22px"><span class="tag">Core Foundations</span><span class="tag">Advanced Ops</span><span class="tag">AI Engineering · beta</span><span class="tag">Technical Leadership</span></div>
-      <a class="btn btn-p" href="learning.html">Enter the Academy →</a>
+      <a class="btn btn-p" href="#academy/computer-packages">Start the free track →</a><a class="btn" href="#academy/coffee-kiosk" style="margin-left:8px;background:rgba(255,255,255,.08);color:#e6edf3;border:1px solid rgba(255,255,255,.18)">M-PESA workshop</a>
     </div>
     <div class="r"><img src="assets/v2/brand/iz-glyph.webp" alt=""></div>
   </div>
@@ -926,11 +1017,7 @@ footer a:hover{color:var(--teal)}
       <div class="cta" style="margin-top:6px"><a class="btn btn-p" href="docs/computer-packages-booklet.pdf" target="_blank" rel="noopener">Read the book</a><a class="btn btn-g" href="docs/computer-packages-booklet.pdf" download><svg class="i"><use href="#i-down"/></svg>Download PDF</a><a class="btn btn-g" href="https://www.canva.com/design/DAGF9WminMs/qXudYFY1YbY1PnLvAfvBQw/view" target="_blank" rel="noopener">View on Canva ↗</a></div>
     </div>
   </div>
-  <div class="grid g3" style="margin-top:16px">
-    <div class="card hov course rv"><span class="tag t">Flagship certification</span><h3>Professional Computer Packages Mastery</h3><p>OS fundamentals, MS Office workflows and digital networking basics.</p><div class="meta-row"><span><b>10</b> mastery units</span><span><b>12.5</b> contact hrs</span></div><a class="link" href="learning.html">Start track →</a></div>
-    <div class="card hov course rv"><span class="tag t">Workshop · 8 modules</span><h3>Coffee Kiosk: digital ordering with M-PESA</h3><p>Build a real order system end to end, from frontend to payments to Docker deployment.</p><div class="meta-row"><span><b>8</b> modules</span><span>React · Node · M-PESA</span></div><a class="link" href="learning.html">View workshop →</a></div>
-    <div class="card hov course rv"><span class="tag" style="color:var(--amber);background:var(--amber-soft);border-color:transparent">Waitlist</span><h3>AI Frameworks & Agentic Pipelines</h3><p>LLM orchestration, Python automation and production AI workflows for infrastructure.</p><div class="meta-row"><span>Advanced</span><span>coming soon</span></div><a class="link" href="#contact">Join waitlist →</a></div>
-  </div>
+  <div class="grid g3" style="margin-top:16px" id="courseCards"></div>
   <div class="sec">
     <div class="grid g2">
       <div class="card rv">
@@ -969,7 +1056,28 @@ footer a:hover{color:var(--teal)}
     <a class="card hov pub rv" href="docs/mobkazi-business-profile.pdf" target="_blank" rel="noopener"><img src="docs/thumbs/mobkazi-business-profile.webp" alt=""><div><span class="tag t">Company profile · 24 pages</span><h3>MobKazi Business Profile</h3><p>Mob = many. Kazi = work. Many business needs, one technology and creative partner.</p><span class="go">Read the profile →</span></div></a>
   </div>
   <div class="grid g3" id="arts"></div>
-  <div class="card cta-band rv" style="margin-top:40px"><div><h2>Read the full articles</h2><p>All articles, the interactive code playground and the full roadmap are on the writing page.</p></div><div class="cta" style="margin:0"><a class="btn btn-p" href="writing.html">Open writing →</a></div></div>
+  <div class="sec">
+    <div class="sec-head rv"><div><span class="eyebrow">./playground --interactive</span><h2>Code playground</h2><p class="sub" style="margin-top:8px">Edit a real config from my stack and run a simulated deploy. Nothing leaves your browser.</p></div></div>
+    <div class="pg rv">
+      <div class="pg-ed"><div class="pg-tabs" id="pgTabs"></div><textarea id="pgCode" spellcheck="false" aria-label="Code editor"></textarea>
+        <div class="pg-bar"><small id="pgInfo"></small><div style="display:flex;gap:8px"><button class="btn btn-g btn-sm" id="pgReset">Reset</button><button class="btn btn-p btn-sm" id="pgRun">▶ Simulate deploy</button></div></div></div>
+      <div class="pg-term"><div class="hd"><i></i><i></i><i></i><span style="margin-left:8px">deploy@mobkazi-vps: ~</span></div><div class="pg-out" id="pgOut"><span class="c">$</span> Ready. Pick a file, edit it and press <span class="am">Simulate deploy</span>.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ ARTICLE ============ -->
+<section class="view" id="v-article" data-title="Article" hidden>
+  <div class="rprog" id="rprog"></div>
+  <a class="backlink" href="#writing">← cd ~/writing</a>
+  <div id="artMount"></div>
+</section>
+
+<!-- ============ ACADEMY ============ -->
+<section class="view" id="v-academy" data-title="Academy" hidden>
+  <a class="backlink" id="acBack" href="#learning">← cd ~/academy</a>
+  <div id="acMount"></div>
 </section>
 
 <!-- ============ RESUME ============ -->
@@ -1066,6 +1174,8 @@ footer a:hover{color:var(--teal)}
 <!-- command palette -->
 <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette"><div class="cmdk-box"><div class="cmdk-in"><b>isaac@iz ~ $</b><input id="cmdIn" autocomplete="off" spellcheck="false" placeholder="type a page or command, or 'help'"></div><div class="cmdk-out" id="cmdOut"></div></div></div>
 
+<script src="assets/v2/content-articles.js"></script>
+<script src="assets/v2/content-academy.js"></script>
 <script>
 document.addEventListener('load',e=>{ if(e.target.tagName==='IMG') e.target.classList.add('ld'); },true);
 document.addEventListener('error',e=>{ if(e.target.tagName==='IMG') e.target.classList.add('ld'); },true);
@@ -1193,6 +1303,117 @@ const articles = [
 ];
 const road = [['Linux Fundamentals','done',100,'Command line, file systems, permissions, package management, servers'],['Networking','done',100,'TCP/IP, DNS, VLANs, firewalls, Wi-Fi, troubleshooting in the field'],['Containers: Docker & Compose','done',100,'Production stacks on the MobKazi VPS: multi-container apps, networks, volumes'],['Reverse proxies & TLS','done',100,'Nginx, Traefik, Coolify, Cloudflare DNS, Let\'s Encrypt'],['CI/CD','prog',90,'GitHub Actions, automated builds, tests and zero-downtime deploys'],['Infrastructure as Code (Terraform)','prog',55,'Used on ZakaFlow; modules, state, AWS provisioning'],['Monitoring & Observability','prog',45,'Health checks, logs and alerts; next up: Prometheus and Grafana'],['Kubernetes','next',30,'Pods, services, deployments, Helm basics']];
 
+
+/* ===== ARTICLES ===== */
+const esc = t => String(t).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const slugify = t => t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+function renderArticle(slug){
+  const k = ARTICLES.findIndex(a=>a.slug===slug); if(k<0) return null; const a=ARTICLES[k];
+  const tmp=document.createElement('div'); tmp.innerHTML=a.body;
+  const heads=[...tmp.querySelectorAll('h2')]; heads.forEach(h=>h.id='s-'+slugify(h.textContent));
+  tmp.querySelectorAll('pre').forEach(p=>{ const b=document.createElement('button'); b.className='cp'; b.textContent='copy'; p.appendChild(b); });
+  const prev=ARTICLES[(k-1+ARTICLES.length)%ARTICLES.length], next=ARTICLES[(k+1)%ARTICLES.length];
+  $('#artMount').innerHTML=`<header class="arthead"><div class="k"><span class="tag t">${esc(a.cat)}</span><span>${a.read} read</span><span>·</span><span>${a.year}</span></div>
+    <h1>${esc(a.title)}</h1><p class="lead">${esc(a.lead)}</p></header>
+    <div class="byline" style="max-width:780px"><img src="assets/v2/life/headshot-sm.webp" alt="" onerror="this.src='assets/v2/brand/iz-glyph.webp'"><div class="who"><b>Isaac Zachary</b><small>Founder & lead engineer, MobKazi</small></div>
+      <button class="btn btn-g btn-sm" id="artShare"><svg class="i"><use href="#i-share"/></svg>Share</button><button class="btn btn-g btn-sm" id="artPrint">Print</button></div>
+    <div class="artgrid"><article class="doc" id="artDoc">${tmp.innerHTML}</article>
+      <aside class="toc"><b>On this page</b>${heads.map(h=>`<a href="#article/${a.slug}" data-to="${h.id}">${esc(h.textContent)}</a>`).join('')}</aside></div>
+    <nav class="artnav"><a class="card hov" href="#article/${prev.slug}"><small>← previous</small><b>${esc(prev.title)}</b></a><a class="card hov nx" href="#article/${next.slug}"><small>next →</small><b>${esc(next.title)}</b></a></nav>`;
+  $$('#artMount .toc a').forEach(t=>t.onclick=e=>{ e.preventDefault(); const el=document.getElementById(t.dataset.to); if(el) window.scrollTo({top:el.getBoundingClientRect().top+scrollY-80,behavior:'smooth'}); });
+  $$('#artDoc pre .cp').forEach(b=>b.onclick=async()=>{ const code=b.parentElement.querySelector('code').innerText; try{ await navigator.clipboard.writeText(code); b.textContent='copied ✓'; }catch(e){ b.textContent='select & copy'; } setTimeout(()=>b.textContent='copy',1600); });
+  $('#artShare').onclick=async()=>{ const url=location.href; try{ if(navigator.share){ await navigator.share({title:a.title,text:a.lead,url}); return; } }catch(e){ if(e.name==='AbortError') return; } try{ await navigator.clipboard.writeText(url); $('#artShare').lastChild.textContent='Link copied'; setTimeout(()=>$('#artShare').lastChild.textContent='Share',1800);}catch(e){} };
+  $('#artPrint').onclick=()=>window.print();
+  return a;
+}
+addEventListener('scroll',()=>{ const v=$('#v-article'); if(v.hidden) return; const d=$('#artDoc'); if(!d) return;
+  const r=d.getBoundingClientRect(), p=Math.min(Math.max((innerHeight*0.35-r.top)/(r.height-innerHeight*0.35),0),1); $('#rprog').style.width=(p*100)+'%';
+  let cur=null; $$('#artDoc h2').forEach(h=>{ if(h.getBoundingClientRect().top<140) cur=h.id; }); $$('#artMount .toc a').forEach(t=>t.classList.toggle('on',t.dataset.to===cur)); },{passive:true});
+
+/* ===== ACADEMY ===== */
+const AKEY='iz-academy';
+const prog = () => { try{ return JSON.parse(localStorage.getItem(AKEY))||{}; }catch(e){ return {}; } };
+const saveProg = p => { try{ localStorage.setItem(AKEY, JSON.stringify(p)); }catch(e){} };
+const doneOf = c => (prog()[c.id]||[]);
+const pctOf = c => Math.round(doneOf(c).length / c.units.length * 100);
+function courseCards(){
+  const el=$('#courseCards'); if(!el) return;
+  el.innerHTML = COURSES.map(c=>{ const p=pctOf(c); return `<a class="card hov course rv" href="#academy/${c.id}"><span class="tag t">${c.tag}</span><h3>${esc(c.title)}</h3><p>${esc(c.blurb)}</p>
+    <div class="meta-row"><span><b>${c.units.length}</b> units</span><span><b>${c.hours}</b> hrs</span><span>${c.level}</span></div>
+    <div class="cprog"><i style="width:${p}%"></i></div><span class="link">${p===100?'Completed ✓ · review':p?'Continue · '+p+'%':'Start track'} →</span></a>`; }).join('')
+   + `<a class="card hov course rv" href="#contact"><span class="tag" style="color:var(--amber);background:var(--amber-soft);border-color:transparent">Waitlist</span><h3>AI Frameworks & Agentic Pipelines</h3><p>LLM orchestration, Python automation and production AI workflows for infrastructure.</p><div class="meta-row"><span>Advanced</span><span>coming soon</span></div><span class="link">Join the waitlist →</span></a>`;
+}
+function renderAcademy(cid, u){
+  const c = COURSES.find(x=>x.id===cid); if(!c) return null; const m=$('#acMount'); const done=doneOf(c), p=pctOf(c);
+  $('#acBack').href = u ? '#academy/'+c.id : '#learning'; $('#acBack').textContent = u ? '← '+c.title : '← cd ~/academy';
+  if(!u){
+    const next = c.units.findIndex((_,i)=>!done.includes(i));
+    m.innerHTML = `<div class="chero"><div><span class="eyebrow">${c.tag} · ${c.level}</span><h1 style="font-size:clamp(30px,4vw,46px);letter-spacing:-.035em;margin-top:10px">${esc(c.title)}</h1><p class="sub" style="max-width:720px">${esc(c.blurb)}</p>
+      <div class="stat"><span><b>${c.units.length}</b> units</span><span><b>${c.hours}</b> hours</span><span><b>${done.length}</b> completed</span>${c.book?'<span><b>85</b>-page book</span>':''}</div></div>
+      <div class="cta" style="margin:0">${c.book?`<a class="btn btn-g" href="${c.book}">Read the book</a>`:''}<a class="btn btn-p" href="#academy/${c.id}/${next<0?1:next+1}">${next<0?'Review course':done.length?'Continue unit '+(next+1):'Start unit 1'} →</a></div></div>
+      <div class="cprog" style="margin-top:22px"><i style="width:${p}%"></i></div>
+      <div class="ulist">${c.units.map((x,i)=>`<a class="card hov urow ${done.includes(i)?'done':''}" href="#academy/${c.id}/${i+1}"><span class="n">${done.includes(i)?'✓':i+1}</span><div><b>${esc(x.t)}</b><small>${x.d} · ${x.obj.length} objectives${x.q?' · quick check':''}</small></div><span style="color:var(--dim)">→</span></a>`).join('')}</div>`;
+    return c.title;
+  }
+  const i = Math.min(Math.max(parseInt(u,10)-1,0), c.units.length-1); const x=c.units[i];
+  const side = `<aside class="card pside"><h4>${esc(c.title)}</h4><small class="mono" style="color:var(--dim);font-size:11.5px">${done.length}/${c.units.length} complete · ${p}%</small><div class="cprog"><i style="width:${p}%"></i></div>
+    <div class="ul">${c.units.map((y,k)=>`<a href="#academy/${c.id}/${k+1}" class="${k===i?'on':''} ${done.includes(k)?'done':''}"><span class="d">${done.includes(k)?'✓':k+1}</span><span>${esc(y.t)}</span></a>`).join('')}</div></aside>`;
+  const quiz = (x.q||[]).map((q,qi)=>`<div class="qq" data-q="${qi}"><p>${qi+1}. ${esc(q[0])}</p>${q[1].map((o,oi)=>`<button data-o="${oi}">${esc(o)}</button>`).join('')}<div class="fb"></div></div>`).join('');
+  const isDone = done.includes(i), last = i===c.units.length-1;
+  m.innerHTML = `<div class="player">${side}<div class="card lesson">
+    <div class="k"><span>Unit ${i+1} of ${c.units.length}</span><span>·</span><span>${x.d}</span>${isDone?'<span style="color:var(--teal)">· completed ✓</span>':''}</div>
+    <h1>${esc(x.t)}</h1>
+    <div class="obj">${x.obj.map(o=>`<span>${esc(o)}</span>`).join('')}</div>
+    <div class="doc">${x.body}</div>
+    <div class="labcard"><h3>&gt; hands-on lab</h3><p>${esc(x.lab)}</p><label><input type="checkbox" id="labOk" ${isDone?'checked':''}> I completed the lab</label></div>
+    ${quiz?`<div class="quiz"><h3>Quick check</h3>${quiz}</div>`:''}
+    <div class="lfoot">${i>0?`<a class="btn btn-g" href="#academy/${c.id}/${i}">← Unit ${i}</a>`:'<span></span>'}
+      <div style="display:flex;gap:8px;flex-wrap:wrap">${c.book?`<a class="btn btn-g" href="${c.book}">Open the book</a>`:''}<button class="btn btn-p" id="markDone">${isDone?(last?'Finish':'Next unit →'):(last?'Complete course ✓':'Mark complete & continue →')}</button></div></div>
+  </div></div>`;
+  let right=0;
+  $$('#acMount .qq').forEach(qq=>qq.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b||qq.dataset.ans) return; const q=x.q[+qq.dataset.q], ok=+b.dataset.o===q[2];
+    qq.dataset.ans=1; b.classList.add(ok?'right':'wrong'); if(!ok) qq.querySelectorAll('button')[q[2]].classList.add('right'); if(ok) right++;
+    qq.querySelector('.fb').innerHTML = ok?'<span style="color:var(--green)">✓ correct</span>':'<span style="color:var(--red)">✗ not quite. The right answer is highlighted.</span>'; }));
+  $('#markDone').onclick=()=>{ const pr=prog(); const d=new Set(pr[c.id]||[]); d.add(i); pr[c.id]=[...d].sort((a,b)=>a-b); saveProg(pr); courseCards();
+    if(pr[c.id].length===c.units.length && last){ m.innerHTML=`<div class="card donecard"><div class="seal">🎓</div><span class="eyebrow">track complete</span><h1 style="font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;margin:10px 0">You finished ${esc(c.title)}</h1><p class="sub" style="max-width:560px;margin:0 auto">All ${c.units.length} units done. Want your final project reviewed, or an instructor-led class with a certificate for your team?</p><div class="cta" style="justify-content:center;margin-top:22px"><a class="btn btn-p" href="#contact">Talk to Isaac</a><a class="btn btn-g" href="#academy/${c.id}">Back to the course</a></div></div>`; window.scrollTo({top:0,behavior:'smooth'}); return; }
+    location.hash = last ? '#academy/'+c.id : '#academy/'+c.id+'/'+(i+2); };
+  return x.t+' · '+c.title;
+}
+courseCards();
+
+/* ===== PLAYGROUND ===== */
+(() => {
+  const F = {
+    'Dockerfile': ['dockerfile',`FROM python:3.12-slim\nWORKDIR /app\nENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1\n\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\nCOPY . .\nEXPOSE 8000\nCMD ["gunicorn", "core.wsgi:application", "-b", "0.0.0.0:8000", "-w", "3"]\n`],
+    'docker-compose.yml': ['yaml',`services:\n  web:\n    build: .\n    env_file: .env\n    ports: ["8000:8000"]\n    depends_on:\n      db: { condition: service_healthy }\n    restart: unless-stopped\n  db:\n    image: postgres:16-alpine\n    volumes: [pgdata:/var/lib/postgresql/data]\n    healthcheck:\n      test: ["CMD-SHELL", "pg_isready -U postgres"]\n      interval: 5s\nvolumes:\n  pgdata:\n`],
+    'nginx.conf': ['nginx',`server {\n  listen 80;\n  server_name pos.mobkazi.com;\n\n  location /static/ { alias /app/static/; expires 30d; }\n\n  location / {\n    proxy_pass http://web:8000;\n    proxy_set_header Host $host;\n    proxy_set_header X-Forwarded-Proto $scheme;\n  }\n}\n`],
+    'deploy.yml': ['yaml',`name: deploy\non:\n  push:\n    branches: [main]\njobs:\n  ship:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: docker compose build\n      - run: docker compose run --rm web python manage.py test\n      - run: ssh deploy@vps "cd /srv/pos && git pull && docker compose up -d --build"\n`],
+    'healthcheck.py': ['python',`import urllib.request, sys\n\nSITES = ["https://mobkazi.com", "https://pos.mobkazi.com/health"]\n\nfailed = []\nfor url in SITES:\n    try:\n        code = urllib.request.urlopen(url, timeout=5).status\n        print(f"{url} -> {code}")\n    except Exception as e:\n        failed.append(url); print(f"{url} -> DOWN ({e})")\n\nsys.exit(1 if failed else 0)\n`]
+  };
+  const st = {}; Object.keys(F).forEach(k=>st[k]=F[k][1]);
+  let cur='Dockerfile'; const ta=$('#pgCode'), out=$('#pgOut'), tabs=$('#pgTabs'); if(!ta) return;
+  const info=()=>{ $('#pgInfo').textContent = F[cur][0]+' · '+st[cur].split('\n').length+' lines'; };
+  tabs.innerHTML = Object.keys(F).map(k=>`<button data-f="${k}" class="${k===cur?'on':''}">${k}</button>`).join('');
+  tabs.onclick = e=>{ const b=e.target.closest('button'); if(!b) return; st[cur]=ta.value; cur=b.dataset.f; ta.value=st[cur]; tabs.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); info(); };
+  ta.value=st[cur]; info(); ta.oninput=()=>{ st[cur]=ta.value; info(); };
+  ta.addEventListener('keydown',e=>{ if(e.key==='Tab'){ e.preventDefault(); const a=ta.selectionStart; ta.setRangeText('  ',a,ta.selectionEnd,'end'); st[cur]=ta.value; } });
+  $('#pgReset').onclick=()=>{ st[cur]=F[cur][1]; ta.value=st[cur]; info(); out.innerHTML='<span class="c">$</span> reset '+cur; };
+  let running=false;
+  $('#pgRun').onclick=async()=>{ if(running) return; running=true; st[cur]=ta.value; const t=st[cur], L=[]; const sleep=ms=>new Promise(r=>setTimeout(r,reduce?0:ms));
+    const cmd=c=>L.push(['c','$ '+c]), ok=x=>L.push(['ok',x]), o=x=>L.push(['',x]), er=x=>L.push(['er',x]), am=x=>L.push(['am',x]);
+    const kind=F[cur][0];
+    if(kind==='dockerfile'){ cmd('docker build -t app .'); const steps=t.split('\n').filter(l=>/^(FROM|RUN|COPY|WORKDIR|ENV|EXPOSE|CMD|ARG|USER|ADD|ENTRYPOINT)\b/i.test(l.trim()));
+      if(!/^\s*FROM\s+\S+/im.test(t)) er('error: Dockerfile must start with a FROM instruction');
+      else { steps.forEach((l,n)=>o(`[${n+1}/${steps.length}] ${l.trim().slice(0,70)}${/^(RUN|COPY)/i.test(l.trim())&&n<4?'  CACHED':''}`)); if(/COPY \. \./.test(t)&&t.indexOf('COPY . .')<t.indexOf('requirements')) am('hint: copy requirements before source code to keep the pip layer cached'); ok('✓ image built: app:latest'); } }
+    else if(kind==='yaml' && /services:/.test(t)){ cmd('docker compose up -d'); const blk=(t.split(/^services:\s*$/m)[1]||'').split(/^\S/m)[0]; const sv=[...blk.matchAll(/^  ([a-z0-9_-]+):\s*$/gim)].map(m=>m[1]);
+      if(!sv.length) er('error: no services found'); else { o('[+] Network app_default created'); if(/volumes:/.test(t)) o('[+] Volume app_pgdata created'); sv.forEach(s=>ok(`✓ container app-${s}-1  Started`)); if(/healthcheck/.test(t)) ok('✓ db healthy'); if(!/restart:/.test(t)) am('hint: add restart: unless-stopped so services return after a reboot'); } }
+    else if(kind==='yaml'){ cmd('git push origin main'); o('→ workflow "deploy" triggered'); const steps=[...t.matchAll(/- (run|uses): (.+)/g)].map(m=>m[2]); if(!/on:/.test(t)) er('error: workflow has no trigger (on:)'); else { steps.forEach(s=>ok('✓ '+s.slice(0,64))); ok('✓ deployed in 1m 42s'); } }
+    else if(kind==='nginx'){ cmd('nginx -t'); const opens=(t.match(/{/g)||[]).length, closes=(t.match(/}/g)||[]).length;
+      if(opens!==closes) er(`nginx: [emerg] unexpected end of file, expecting "}" (${opens} "{" vs ${closes} "}")`); else if(!/proxy_pass|root|alias/.test(t)) am('warning: no proxy_pass or root: nothing will be served'); else { ok('nginx: configuration file syntax is ok'); ok('nginx: test is successful'); cmd('nginx -s reload'); ok('✓ reloaded'); } }
+    else { cmd('python3 healthcheck.py'); const urls=[...t.matchAll(/"(https?:\/\/[^"]+)"/g)].map(m=>m[1]); if(!/import/.test(t)) am('warning: nothing imported'); urls.length?urls.forEach(u=>ok(`${u} -> 200`)):er('no URLs found in SITES'); o('exit code 0'); }
+    out.innerHTML=''; for(const [c,x] of L){ out.innerHTML+=`<span class="${c}">${esc(x)}</span>\n`; out.scrollTop=out.scrollHeight; await sleep(c==='c'?380:150); } running=false; };
+})();
+
 /* ===== REVEAL / TILT ===== */
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);
   e.target.querySelectorAll?.('.bar i').forEach(b=>b.style.width=b.dataset.w+'%'); } }),{threshold:.08});
@@ -1302,7 +1523,7 @@ $('#skills').innerHTML = skills.map(([h,l])=>`<div class="card skill rv"><h4>${h
 const qdoc={'Micah Gesimba':'ssl-security-recommendation','Eric Muriithi':'plp-recommendation','Dr. Simon Mwendia':'kca-confirmation-letter','Col. (Dr) J. R. Kisilu':'deftec-recommendation','Headteacher\'s report':'school-leaving-certificate','Fred Maina':'https://www.linkedin.com/in/isaaczachary/details/recommendations/','Suleiman Mashuhuli':'https://www.linkedin.com/in/isaaczachary/details/recommendations/'};
 const qhtml = quotes.map(([q,n,r,i])=>{ const d=qdoc[n]; const u=d?(d.startsWith('http')?d:D+d+'.pdf'):''; return `<div class="card quote rv"><svg class="i q" style="fill:currentColor;stroke:none"><use href="#i-quote"/></svg><p>${q}</p><div class="who"><i>${i}</i><div><b>${n}</b><small>${r}</small></div></div>${u?`<a class="link" style="font-size:13px" href="${u}" target="_blank" rel="noopener">${u.startsWith('http')?'View on LinkedIn':'View letter'} ↗</a>`:''}</div>`; }).join('');
 $('#quotes').innerHTML = qhtml; $('#quotes2').innerHTML = qhtml;
-$('#arts').innerHTML = articles.map(([c,m,t,d])=>`<a class="card hov art rv" href="writing.html"><div class="k"><b>${c}</b><span>${m}</span></div><h3>${t}</h3><p>${d}</p><span class="go">Read article →</span></a>`).join('');
+$('#arts').innerHTML = articles.map(([c,m,t,d],k)=>`<a class="card hov art rv" href="#article/${ARTICLES[k].slug}"><div class="k"><b>${c}</b><span>${m}</span></div><h3>${t}</h3><p>${d}</p><span class="go">Read article →</span></a>`).join('');
 $('#roadPct').textContent = Math.round(road.reduce((t,r)=>t+r[2],0)/road.length)+'%';
 $('#road').innerHTML = road.map(([t,s,p,d])=>`<div class="row"><b>${t}</b><span class="st ${s}">${{done:'completed',prog:'in progress '+p+'%',next:'next up',plan:'planned'}[s]}</span><small>${d}</small><div class="bar"><i data-w="${p}"></i></div></div>`).join('');
 
@@ -1410,11 +1631,16 @@ $$('[data-theme-toggle]').forEach(b=>b.onclick=()=>setTheme(document.documentEle
 
 /* ===== ROUTER ===== */
 const views = $$('.view'), names = views.map(v=>v.id.slice(2));
+const NAVOF={article:'writing',academy:'learning'};
 function route(){
-  let h = location.hash.slice(1); if(!names.includes(h)) h='home';
+  const parts = decodeURIComponent(location.hash.slice(1)).split('/'); let h = parts[0]; if(!names.includes(h)) h='home';
+  let title = h==='home'?'':$('#v-'+h).dataset.title;
+  if(h==='article'){ const a=renderArticle(parts[1]); if(!a){ location.replace('#writing'); return; } title=a.title; }
+  if(h==='academy'){ const t=renderAcademy(parts[1],parts[2]); if(!t){ location.replace('#learning'); return; } title=t; }
   views.forEach(v=>v.hidden = v.id!=='v-'+h);
-  $$('#navs a').forEach(a=>a.classList.toggle('on', a.dataset.v===h));
-  $('#crumb').textContent = h; document.title = (h==='home'?'':$('#v-'+h).dataset.title+' · ')+'Isaac Zachary · Software Engineer & Founder of MobKazi';
+  $$('#navs a').forEach(a=>a.classList.toggle('on', a.dataset.v===(NAVOF[h]||h)));
+  $('#crumb').textContent = h==='article'?'writing/'+parts[1]:h==='academy'?['academy',parts[1],parts[2]&&('unit-'+parts[2])].filter(Boolean).join('/'):h;
+  document.title = (title?title+' · ':'')+'Isaac Zachary · Software Engineer & Founder of MobKazi';
   document.body.classList.remove('nav-open'); window.scrollTo({top:0,behavior:'instant'});
   afterRender('#v-'+h);
   if(h==='home') startPipe();
@@ -1473,7 +1699,7 @@ $('#printBtn').onclick = () => { try{ window.print(); }catch(e){} };
   const say = t => { out.innerHTML='<div class="msg">'+t.replace(/</g,'&lt;')+'</div>'; };
   const cmds = [['home','landing page',go('home')],['about','who I am',go('about')],['inspiration','icons that inspire me',go('inspiration')],['life','photos: life & work',go('life')],['experience','career & certs',go('experience')],['projects','all projects',go('projects')],['mobkazi','product ecosystem',go('mobkazi')],['designs','design gallery',go('designs')],['learning','learning hub / academy',go('learning')],['writing','articles',go('writing')],['resume','resume',go('resume')],['documents','certificates & letters',go('documents')],['contact','get in touch',go('contact')],
     ['theme','toggle light / dark',()=>{ setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'); close(); }],
-    ['cv','download CV (PDF)',ext('pdf/Isaac_Zachary_CV.pdf')],['github','open GitHub ↗',ext('https://github.com/IsaacZachary')],['linkedin','open LinkedIn ↗',ext('https://linkedin.com/in/isaaczachary/')],['whatsapp','chat on WhatsApp ↗',ext('https://wa.me/254759325915')],
+    ['cv','preview my CV',()=>{ close(); openViewer(docList(),0); }],['academy','free computer packages track',go('academy/computer-packages')],['mpesa','M-PESA kiosk workshop',go('academy/coffee-kiosk')],...ARTICLES.map(a=>['read '+a.slug.split('-').slice(0,2).join('-'),a.title.slice(0,44)+(a.title.length>44?'…':''),go('article/'+a.slug)]),['github','open GitHub ↗',ext('https://github.com/IsaacZachary')],['linkedin','open LinkedIn ↗',ext('https://linkedin.com/in/isaaczachary/')],['whatsapp','chat on WhatsApp ↗',ext('https://wa.me/254759325915')],
     ['whoami','print bio',()=>say('Isaac Zachary. Founder & lead engineer, MobKazi.\nSoftware · DevOps · Networks & security systems.')],
     ['sudo hire isaac','🙂',()=>{ say('[sudo] permission granted. Opening ./contact.sh…'); setTimeout(go('contact'),900); }]];
   let sel=0, list=cmds;

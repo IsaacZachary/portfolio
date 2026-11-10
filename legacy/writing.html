@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Isaac Zachary's Technical Writing - Industry insights, tutorials, and thought leadership on DevOps, cloud architecture, and modern engineering practices.">
+    <title>Writing & Resources - Isaac Zachary</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon">
+    <!-- CodeMirror for Code Playground -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+</head>
+
+<body class="bg-background text-text-primary">
+
+    <!-- Navigation (same as other pages) -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="glass-card mx-4 mt-4 rounded-2xl">
+            <div class="container-custom">
+                <div class="flex items-center justify-between py-4">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary"
+                            class="w-10 h-10 rounded-full transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-headline font-bold text-xl text-gradient">Isaac Zachary</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm px-5 py-2">Get in Touch</a>
+                    </div>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border-light mt-4 pt-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="index.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="about.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">About</a>
+                        <a href="projects.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="experience.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Experience</a>
+                        <a href="learning.html"
+                            class="font-body text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-300">Learning
+                            Hub</a>
+                        <a href="writing.html"
+                            class="font-body text-sm font-medium text-primary hover:text-primary-700 transition-colors duration-300">Writing</a>
+                        <a href="contact.html" class="btn-primary text-sm w-full text-center">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="writing-hero"
+        class="section-padding pt-32 md:pt-40 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-secondary-50 rounded-full mb-4">
+                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <span class="font-body text-sm font-medium text-secondary-700">Technical Writing & Industry
+                        Insights</span>
+                </div>
+
+                <h1 class="font-headline text-display-md md:text-display-lg text-text-primary leading-tight">
+                    Knowledge Sharing Through
+                    <span class="text-gradient">Technical Excellence</span>
+                </h1>
+
+                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    In-depth articles on DevOps practices, cloud architecture patterns, and modern engineering
+                    methodologies. Sharing insights from real-world implementations and industry best practices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section id="popular-topics" class="section-padding bg-gradient-to-br from-background via-accent-50 to-background">
+        <div class="container-custom">
+            <div class="text-center mb-12 space-y-4">
+                <h2 class="font-headline text-display-sm text-text-primary">Popular Topics</h2>
+                <p class="text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    Explore articles by technology and practice area
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Topic Card 1 -->
+                <a href="javascript:void(0)" class="card group hover:shadow-interactive">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
+                            <i class="fas fa-server text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">Kubernetes</h3>
+                            <p class="text-body-sm text-text-tertiary">24 articles</p>
+                        </div>
+                    </div>
+                    <p class="text-body-sm text-text-secondary">Container orchestration, deployment strategies, and
+                        production patterns</p>
+                </a>
+
+                <!-- Topic Card 2 -->
+                <a href="javascript:void(0)" class="card group hover:shadow-interactive">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center group-hover:bg-secondary-200 transition-colors duration-300">
+                            <i class="fas fa-random text-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">CI/CD</h3>
+                            <p class="text-body-sm text-text-tertiary">18 articles</p>
+                        </div>
+                    </div>
+                    <p class="text-body-sm text-text-secondary">Automation pipelines, testing strategies, and deployment
+                        workflows</p>
+                </a>
+
+                <!-- Topic Card 3 -->
+                <a href="javascript:void(0)" class="card group hover:shadow-interactive">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center group-hover:bg-accent-200 transition-colors duration-300">
+                            <i class="fas fa-cloud text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">Infrastructure</h3>
+                            <p class="text-body-sm text-text-tertiary">32 articles</p>
+                        </div>
+                    </div>
+                    <p class="text-body-sm text-text-secondary">IaC, Terraform, cloud architecture, and infrastructure
+                        patterns</p>
+                </a>
+
+                <!-- Topic Card 4 -->
+                <a href="javascript:void(0)" class="card group hover:shadow-interactive">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-h4 font-semibold text-text-primary">Security</h3>
+                            <p class="text-body-sm text-text-tertiary">15 articles</p>
+                        </div>
+                    </div>
+                    <p class="text-body-sm text-text-secondary">Security best practices, compliance, and vulnerability
+                        management</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Articles Section -->
+    <section id="my-articles" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+                <div>
+                    <h2 class="font-headline text-display-sm text-text-primary mb-2">My Articles</h2>
+                    <p class="text-body-lg text-text-secondary">
+                        Practical insights from real-world DevOps implementations.
+                    </p>
+                </div>
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-96">
+                    <input type="text" id="article-search" oninput="filterArticles()" placeholder="Search articles..."
+                        class="input-field pl-10 focus:ring-2 focus:ring-primary/20">
+                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-tertiary"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Article Card  -->
+                <article class="card-interactive group article-card" data-category="best-practices">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-accent-100 to-accent-200">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2664&auto=format&fit=crop"
+                            alt="AI Assisted Development"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">AI</span>
+                            <span class="tech-badge">Development</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-body-sm text-text-tertiary">
+                            <span>Best Practices</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3
+                            class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            AI-Assisted Development: Boosting Productivity Without Sacrificing Quality
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Practical techniques for leveraging AI tools in the development lifecycle while maintaining
+                            code integrity and technical depth.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Article 1: Docker Lessons -->
+                <article class="card-interactive group">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-primary-200">
+                        <img src="./assets/Docker.png" alt="ZakaFlow - Containerized data pipeline architecture"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">DevOps</span>
+                            <span class="tech-badge">Docker</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-body-sm text-text-tertiary">
+                            <span>2024</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                        <h3
+                            class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Getting Started with Docker: Lessons from My First Containerized Deployments
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Real-world Docker patterns learned from containerizing production applications. Layer
+                            caching, multi-stage builds, and service networking explained.
+                        </p>
+                        <a href="#docker-article"
+                            class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
+                            <span>Read Article</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Support to DevOps -->
+                <article class="card-interactive group">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-secondary-100 to-secondary-200">
+                        <div class="w-full h-full flex items-center justify-center text-6xl">🚀</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Career</span>
+                            <span class="tech-badge">DevOps</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-body-sm text-text-tertiary">
+                            <span>2024</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3
+                            class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            From Technical Support to DevOps: A Practical Transition Guide
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            How support experience provides valuable troubleshooting skills and the intentional steps
+                            needed to transition into DevOps engineering.
+                        </p>
+                        <a href="#support-article"
+                            class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
+                            <span>Read Article</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3: AI-Assisted Development -->
+                <article class="card-interactive group">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-accent-100 to-accent-200">
+                        <div class="w-full h-full flex items-center justify-center text-6xl">🤖</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Development</span>
+                            <span class="tech-badge">AI</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-body-sm text-text-tertiary">
+                            <span>2024</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3
+                            class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            AI-Assisted Development: Practical Workflows for Building Faster
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Effective prompt patterns, when to use AI vs. write manually, and the review process that
+                            ensures code quality and understanding.
+                        </p>
+                        <a href="#ai-article"
+                            class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
+                            <span>Read Article</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4: M-Pesa Integration -->
+                <article class="card-interactive group">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-primary-200">
+                        <div class="w-full h-full flex items-center justify-center text-6xl">💳</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Development</span>
+                            <span class="tech-badge">Payments</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-body-sm text-text-tertiary">
+                            <span>2023</span>
+                            <span>•</span>
+                            <span>11 min read</span>
+                        </div>
+                        <h3
+                            class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            M-Pesa API Integration for Kenyan Applications
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Complete guide to integrating M-Pesa payments including sandbox setup, callback handling,
+                            error management, and UX considerations.
+                        </p>
+                        <a href="#mpesa-article"
+                            class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
+                            <span>Read Article</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 5: Computer Packages Tutorial -->
+                <article class="card-interactive group">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-secondary-100 to-secondary-200">
+                        <div class="w-full h-full flex items-center justify-center text-6xl">📚</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="tech-badge">Tutorial</span>
+                            <span class="tech-badge">Education</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-body-sm text-text-tertiary">
+                            <span>2022</span>
+                            <span>•</span>
+                            <span>15 min read</span>
+                        </div>
+                        <h3
+                            class="font-headline text-h3 font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+                            Computer Packages Practical Tutorial Guide
+                        </h3>
+                        <p class="text-body-sm text-text-secondary">
+                            Comprehensive guide covering Microsoft Office, graphic design basics, and networking
+                            fundamentals with real-world scenarios for local businesses.
+                        </p>
+                        <a href="learning.html#packages"
+                            class="inline-flex items-center space-x-2 text-primary font-medium hover:text-primary-700 transition-colors duration-300">
+                            <span>Start Learning</span>
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="flex justify-center mt-12" id="load-more-container">
+                <button onclick="loadMoreArticles()"
+                    class="btn-outline px-8 py-3 text-sm font-bold flex items-center space-x-2">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Load More Articles</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Code Playground -->
+    <section id="playground" class="section-padding bg-gradient-to-br from-background via-primary-50 to-background">
+        <div class="container-custom">
+            <div class="mb-12">
+                <h2 class="font-headline text-display-sm text-text-primary mb-4">Interactive Code Playground</h2>
+                <p class="text-body-lg text-text-secondary max-w-3xl">
+                    Edit and experiment with Docker, configuration files, and scripts. This is a demonstration
+                    playground for learning purposes.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="flex flex-col md:flex-row gap-4 mb-6">
+                    <select id="example-select" class="input-field flex-1">
+                        <option value="dockerfile">Dockerfile</option>
+                        <option value="docker-compose">docker-compose.yml</option>
+                        <option value="nginx">nginx.conf</option>
+                        <option value="python">Python Script</option>
+                    </select>
+                    <button id="deploy-btn" class="btn-primary whitespace-nowrap">
+                        Simulate Deploy
+                    </button>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <div>
+                        <div class="mb-2 font-headline text-h4 font-semibold text-text-primary" id="editor-title">
+                            Dockerfile</div>
+                        <textarea id="code-editor"
+                            class="w-full h-96 p-4 rounded-xl bg-text-primary text-white font-mono text-sm"></textarea>
+                    </div>
+                    <div>
+                        <div class="mb-2 font-headline text-h4 font-semibold text-text-primary">Terminal Output</div>
+                        <div id="terminal-output"
+                            class="w-full h-96 p-4 rounded-xl bg-text-primary text-secondary overflow-y-auto font-mono text-sm">
+                            <div>$ Ready. Select an example and click "Simulate Deploy"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DevOps Learning Roadmap -->
+    <section id="roadmap" class="section-padding bg-surface">
+        <div class="container-custom">
+            <div class="mb-12">
+                <h2 class="font-headline text-display-sm text-text-primary mb-4">DevOps Learning Roadmap</h2>
+                <p class="text-body-lg text-text-secondary max-w-3xl">
+                    My structured learning path from fundamentals to advanced DevOps practices. Current progress: <span
+                        class="text-primary font-semibold">65%</span>
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Completed Step -->
+                <div class="card flex items-start space-x-4 border-l-4 border-secondary">
+                    <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Linux Fundamentals</h4>
+                        <p class="text-body-sm text-text-secondary mb-2">Command line, file systems, permissions,
+                            package management</p>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-700">Completed</span>
+                    </div>
+                </div>
+
+                <!-- Completed Step -->
+                <div class="card flex items-start space-x-4 border-l-4 border-secondary">
+                    <div class="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Networking Basics</h4>
+                        <p class="text-body-sm text-text-secondary mb-2">TCP/IP, DNS, HTTP, firewalls, troubleshooting
+                        </p>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-700">Completed</span>
+                    </div>
+                </div>
+
+                <!-- In Progress Step -->
+                <div class="card flex items-start space-x-4 border-l-4 border-primary">
+                    <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Containerization with
+                            Docker</h4>
+                        <p class="text-body-sm text-text-secondary mb-2">Dockerfiles, Docker Compose, container
+                            networking, volumes</p>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="flex-1 h-2 bg-primary-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+                            </div>
+                            <span class="text-body-xs text-text-tertiary">85%</span>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">In
+                            Progress</span>
+                    </div>
+                </div>
+
+                <!-- Upcoming Steps -->
+                <div class="card flex items-start space-x-4 border-l-4 border-border">
+                    <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-2xl">○</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Container Orchestration
+                            (Kubernetes)</h4>
+                        <p class="text-body-sm text-text-secondary mb-2">Pods, services, deployments, configuration,
+                            Helm basics</p>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">Next
+                            Up</span>
+                    </div>
+                </div>
+
+                <div class="card flex items-start space-x-4 border-l-4 border-border">
+                    <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-2xl">○</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Infrastructure as Code
+                            (Terraform)</h4>
+                        <p class="text-body-sm text-text-secondary mb-2">AWS resource provisioning, modules, state
+                            management</p>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">Planned</span>
+                    </div>
+                </div>
+
+                <div class="card flex items-start space-x-4 border-l-4 border-border">
+                    <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-2xl">○</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-headline text-h4 font-semibold text-text-primary mb-2">Monitoring &
+                            Observability</h4>
+                        <p class="text-body-sm text-text-secondary mb-2">Prometheus, Grafana, logging, alerting,
+                            performance metrics</p>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">Planned</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Learning Resources -->
+            <div class="mt-12">
+                <h3 class="font-headline text-h2 font-semibold text-text-primary mb-6">Learning Resources</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="https://roadmap.sh/devops" target="_blank" class="card group hover:shadow-interactive">
+                        <h4
+                            class="font-headline text-h4 font-semibold text-text-primary mb-2 group-hover:text-primary transition-colors duration-300">
+                            DevOps Roadmap</h4>
+                        <p class="text-body-sm text-text-secondary">Comprehensive learning path</p>
+                    </a>
+                    <a href="https://docs.docker.com/get-started/" target="_blank"
+                        class="card group hover:shadow-interactive">
+                        <h4
+                            class="font-headline text-h4 font-semibold text-text-primary mb-2 group-hover:text-primary transition-colors duration-300">
+                            Docker Getting Started</h4>
+                        <p class="text-body-sm text-text-secondary">Official tutorials</p>
+                    </a>
+                    <a href="https://kubernetes.io/docs/tutorials/" target="_blank"
+                        class="card group hover:shadow-interactive">
+                        <h4
+                            class="font-headline text-h4 font-semibold text-text-primary mb-2 group-hover:text-primary transition-colors duration-300">
+                            Kubernetes Tutorials</h4>
+                        <p class="text-body-sm text-text-secondary">Official documentation</p>
+                    </a>
+                    <a href="https://learn.hashicorp.com/terraform" target="_blank"
+                        class="card group hover:shadow-interactive">
+                        <h4
+                            class="font-headline text-h4 font-semibold text-text-primary mb-2 group-hover:text-primary transition-colors duration-300">
+                            Terraform Learn</h4>
+                        <p class="text-body-sm text-text-secondary">Interactive tutorials</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as other pages) -->
+    <footer class="bg-text-primary text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="./assets/profile-pic.png" alt="Isaac Zachary" class="w-10 h-10 rounded-full">
+                        <span class="font-headline font-bold text-xl">Isaac Zachary</span>
+                    </div>
+                    <p class="text-body-sm text-gray-400">DevOps engineer transforming infrastructure challenges into
+                        elegant solutions.</p>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                        </li>
+                        <li><a href="experience.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
+                        </li>
+                        <li><a href="writing.html"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300">Writing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-body-sm text-gray-400">Cloud Infrastructure</span></li>
+                        <li><span class="text-body-sm text-gray-400">CI/CD Automation</span></li>
+                        <li><span class="text-body-sm text-gray-400">Containerization</span></li>
+                        <li><span class="text-body-sm text-gray-400">Full-Stack Development</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline text-h4 font-semibold mb-4">Get in Touch</h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:isaaczachary18@gmail.com"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fas fa-envelope"></i><span>Email</span></a></li>
+                        <li><a href="https://linkedin.com/in/isaaczachary/" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/IsaacZachary" target="_blank"
+                                class="text-body-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2"><i
+                                    class="fab fa-github"></i><span>GitHub</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-body-sm text-gray-400">© <span id="year"></span> Isaac Zachary. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/dockerfile/dockerfile.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/yaml/yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/nginx/nginx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="js/playground.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Article Filtering & Search
+        function filterArticles() {
+            const query = document.getElementById('article-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.article-card, article.card-interactive');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                if (title.includes(query) || desc.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Hide/Show Load More based on search
+            const loadMore = document.getElementById('load-more-container');
+            if (query.length > 0) {
+                loadMore.classList.add('hidden');
+            } else {
+                loadMore.classList.remove('hidden');
+            }
+        }
+
+        function loadMoreArticles() {
+            const btn = document.querySelector('#load-more-container button');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Loading...</span>';
+
+            setTimeout(() => {
+                // Simulated fetch of more articles
+                alert('All current premium articles have been loaded. Check back soon for new weekly insights!');
+                btn.innerHTML = '<i class="fas fa-check"></i><span>All Articles Loaded</span>';
+                btn.classList.add('opacity-50', 'pointer-events-none');
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

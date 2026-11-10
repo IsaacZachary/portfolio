@@ -36,6 +36,13 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support
 - No build step and no framework. One `index.html` with inline CSS and JS, plus optimised WebP assets
 
+## Writing & Academy
+
+- **Articles** open inside the site at `#article/<slug>` with a reading-progress bar, table of contents, copy-code buttons, share/print and previous/next. Bodies live in `assets/v2/content-articles.js`.
+- **Code playground** on the Writing page: edit a Dockerfile, Compose file, Nginx config, GitHub Actions workflow or Python health check and run a simulated deploy.
+- **Isaac's Academy** at `#academy/<course>/<unit>`: the free 10-unit Computer Packages track (based on the 85-page booklet) and the 8-module M-PESA coffee-kiosk workshop, each unit with objectives, lesson, hands-on lab and a quick check. Progress is saved in the browser (`localStorage`). Content lives in `assets/v2/content-academy.js`.
+- The old standalone `learning.html` and `writing.html` now redirect into the site; the originals are kept in `legacy/`.
+
 ## Media & document viewer
 
 Every image, ad film, PDF and certificate opens in one in-page viewer instead of downloading:
