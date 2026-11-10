@@ -32,6 +32,10 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - 3D tilt cards, scroll reveals and `prefers-reduced-motion` support
 - No build step and no framework. One `index.html` with inline CSS and JS, plus optimised WebP assets
 
+## Walkthrough video
+
+A 90-second tour of every page on desktop and mobile, in light and dark mode: [`assets/videos/portfolio-v2-walkthrough.mp4`](assets/videos/portfolio-v2-walkthrough.mp4)
+
 ## Structure
 
 ```
