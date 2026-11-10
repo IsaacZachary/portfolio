@@ -26,7 +26,7 @@ The site is a fast, single-file app with a corporate light theme by default and 
 - **Keyboard shortcuts:** `g` then `h`/`a`/`i`/`e`/`p`/`m`/`d`/`l`/`w`/`r`/`c` jumps to a page
 - **Life & Work** photo journal (building, in the field, events, travel, portraits) with filters and lightbox
 - **Inspiration** page: Newton, Tesla, Garvey, Musk, Zuckerberg, Jobs, Marcus Aurelius and Kafka, with sourced quotes, short stories and why each matters, plus a rotating "daily fuel" quote on the home page
-- **Design gallery** with 16 MobKazi ad videos (Motion & ads) and 51 print/digital designs, including the MobKazi marketing set,, category filters and a keyboard-friendly lightbox
+- **Design gallery** with 24 MobKazi ad videos (Motion & ads) and 61 print/digital designs, including the MobKazi marketing set,, category filters and a keyboard-friendly lightbox
 - **Learning Hub** covering Isaac's Academy courses, the PLP mentoring highlight and a DevOps roadmap with progress (the overall % is calculated from the stages)
 - **Documents** page: CV, degree, KCSE/KCPE, certificates and recommendation letters to view or download (IDs and referees' private contacts redacted), stored in `docs/`
 - **Floating WhatsApp button** with personal (Kenya), Qatar and MobKazi lines
