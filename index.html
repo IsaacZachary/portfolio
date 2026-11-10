@@ -1334,18 +1334,17 @@ function norm(x){ if(Array.isArray(x)) return {t:x[0], c:x[1], src:x[2], type:ki
 function openViewer(list, i=0){ lbList = list.map(norm); showLB(i); }
 function abs(u){ try{ return new URL(u, location.href).href; }catch(e){ return u; } }
 function toast(m){ const t=$('#lbToast'); t.textContent=m; t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on'),2200); }
-function loadPdfJs(){ if(window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
-  return new Promise((res,rej)=>{ const sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-    sc.onload=()=>{ try{ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; res(pdfjsLib);}catch(e){rej(e)} }; sc.onerror=rej; document.head.appendChild(sc); setTimeout(()=>rej('timeout'),9000); }); }
+let _pdfLib; function loadPdfJs(){ if(_pdfLib) return _pdfLib;
+  _pdfLib = import('./assets/vendor/pdfjs/pdf.min.mjs').then(lib=>{ lib.GlobalWorkerOptions.workerSrc=new URL('assets/vendor/pdfjs/pdf.worker.min.mjs', location.href).href; return lib; }).catch(e=>{ _pdfLib=null; throw e; });
+  return _pdfLib; }
 async function renderPdf(src){
   const job=++pdfJob, st=$('#lbStage'); st.innerHTML='<div class="pdfwrap" id="pdfw"><span class="spin"></span></div>'; const w=$('#pdfw');
-  try{ const lib=await loadPdfJs(); const doc=await lib.getDocument(src).promise; if(job!==pdfJob) return; w.innerHTML='';
-    $('#lbC').textContent=(lbList[li].c||'Document')+' · '+doc.numPages+' page'+(doc.numPages>1?'s':'');
+  try{ const lib=await loadPdfJs(); const doc=await lib.getDocument({url:abs(src)}).promise; if(job!==pdfJob) return; w.innerHTML='';
     const base=Math.min(w.clientWidth-8, 900);
     for(let p=1;p<=doc.numPages;p++){ if(job!==pdfJob) return; const page=await doc.getPage(p); const v0=page.getViewport({scale:1});
       const css=base*pdfZoom, sc=css/v0.width, dpr=Math.min(devicePixelRatio||1,2), vp=page.getViewport({scale:sc*dpr});
       const cv=document.createElement('canvas'); cv.width=vp.width; cv.height=vp.height; cv.style.width=css+'px'; w.appendChild(cv);
-      await page.render({canvasContext:cv.getContext('2d'), viewport:vp}).promise; }
+      await page.render({canvasContext:cv.getContext('2d'), canvas:cv, viewport:vp}).promise; }
   }catch(e){ if(job!==pdfJob) return; w.innerHTML=`<iframe src="${src}#view=FitH" title="Document preview"></iframe>`; }
 }
 function showLB(i){
