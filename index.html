@@ -1215,11 +1215,13 @@ const VISITS_BEFORE_TRACKING = 860;
   gc.onload = () => { hit(); addEventListener('hashchange', () => setTimeout(hit, 50)); };
   document.head.appendChild(gc);
   const gcCount = p => fetch(`https://${GOAT_CODE}.goatcounter.com/counter/${encodeURIComponent(p)}.json`).then(r => r.ok ? r.json() : Promise.reject()).then(d => d && d.count ? d.count : Promise.reject());
-  const countUp = (el, txt) => { const n = parseInt(String(txt).replace(/\D/g,''),10); if(!n || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = txt; return; } const t0 = performance.now(), D = 1400;
-    const f = t => { const k = Math.min((t-t0)/D,1), e = 1-Math.pow(1-k,3); el.textContent = Math.round(n*e).toLocaleString('en-US'); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
+  const countUp = (el, txt) => { const n = parseInt(String(txt).replace(/\D/g,''),10); const id = (el._cu = (el._cu||0)+1);
+    if(!n || matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = txt; return; }
+    const from = parseInt(el.textContent.replace(/\D/g,''),10) || 0, t0 = performance.now(), D = 1400;
+    const f = t => { if(el._cu !== id) return; const k = Math.min((t-t0)/D,1), e = 1-Math.pow(1-k,3); el.textContent = Math.round(from+(n-from)*e).toLocaleString('en-US'); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
   const showTotal = n => { if(!n) return; const c = n.toLocaleString('en-US');
     document.querySelectorAll('.visits').forEach(v => { v.querySelector('b').textContent = c; v.hidden = false; });
-    document.querySelectorAll('.vstat').forEach(v => { const was = v.hidden; v.hidden = false; if(was) countUp(v.querySelector('.vnum'), c); else v.querySelector('.vnum').textContent = c; }); };
+    document.querySelectorAll('.vstat').forEach(v => { v.hidden = false; countUp(v.querySelector('.vnum'), c); }); };
   showTotal(VISITS_BEFORE_TRACKING);
   gcCount('TOTAL').then(c => showTotal(VISITS_BEFORE_TRACKING + (parseInt(String(c).replace(/\D/g,''),10)||0))).catch(()=>{});
   const flag = c => /^[A-Z]{2}$/.test(c) ? String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))) : '🌍';
