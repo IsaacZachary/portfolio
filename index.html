@@ -1203,8 +1203,8 @@ const FORMSPREE_ID = "xnjlgjze";
 /* ===== VISITOR ANALYTICS (GoatCounter: free, cookie-free, shows countries) =====
    Dashboard: https://<GOAT_CODE>.goatcounter.com  ·  set "Allow adding visitor counts on your website" on to show the counter */
 const GOAT_CODE = "izach";
-/* Visits before GoatCounter tracking started (site live since 2020). Added to the live total. */
-const VISITS_BEFORE_TRACKING = 860;
+/* Visits before GoatCounter tracking started (site live since 2020). Baseline = GitHub profile views (1,726 on 11 Nov 2026), the closest real measurement. Added to the live total. */
+const VISITS_BEFORE_TRACKING = 1726;
 (() => {
   if(!GOAT_CODE || /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) || location.protocol==='file:') return;
   const gc = document.createElement('script'); gc.async = true; gc.src = 'https://gc.zgo.at/count.js';
