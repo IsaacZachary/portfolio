@@ -1,4 +1,5 @@
-# www -> apex (permanent). izach.netlify.app is redirected to izach.tech by Netlify
-# automatically once izach.tech is set as the primary domain in Netlify.
+# Everything goes to the real domain (permanent)
+https://izach.netlify.app/*   https://izach.tech/:splat   301!
+http://izach.netlify.app/*    https://izach.tech/:splat   301!
 https://www.izach.tech/*      https://izach.tech/:splat   301!
 http://www.izach.tech/*       https://izach.tech/:splat   301!
