@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://izach.netlify.app">izach.netlify.app</a> ·
+  <a href="https://izach.tech">izach.tech</a> ·
   <a href="https://linkedin.com/in/isaaczachary">LinkedIn</a> ·
   <a href="https://github.com/IsaacZachary">GitHub</a> ·
   <a href="pdf/Isaac_Zachary_CV.pdf">CV (PDF)</a>
